@@ -1,0 +1,96 @@
+# TOOLS.md - Local Notes
+
+Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+
+## What Goes Here
+
+Things like:
+
+- Camera names and locations
+- SSH hosts and aliases
+- Preferred voices for TTS
+- Speaker/room names
+- Device nicknames
+- Anything environment-specific
+
+## Examples
+
+```markdown
+### Cameras
+
+- living-room → Main area, 180° wide angle
+- front-door → Entrance, motion-triggered
+
+### SSH
+
+- home-server → 192.168.1.100, user: admin
+
+### TTS
+
+- Preferred voice: "Nova" (warm, slightly British)
+- Default speaker: Kitchen HomePod
+```
+
+## Why Separate?
+
+Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+
+---
+
+## Open Terminal (Docker)
+- **状态**: ✅ 运行中 (Docker)
+- **镜像**: ghcr.nju.edu.cn/open-webui/open-terminal:main
+- **端口**: 8081 (映射容器内8000)
+- **API Key**: 3SPH6J0J8nytZGU2pOphXgrjm2dkhd3y
+- **API 文档**: http://159.75.77.36:8081/docs
+- **管理**: cd /opt/open-terminal && docker compose up -d
+- **⚠️ 需开通安全组端口 8081**
+
+## ttyd (Web 终端)
+- **状态**: ✅ 运行中 (systemd)
+- **端口**: 8082
+- **登录**: admin / ttyd2026
+- **管理**: systemctl status/start/stop/restart ttyd
+- **⚠️ 需开通安全组端口 8082**
+
+## Docker
+- **版本**: Docker CE 29.3.1 + Compose v5.1.1
+- **代理**: 127.0.0.1:7890 (mihomo)
+- **镜像加速**: docker.1ms.run
+
+## 腾讯云 CLI (tccli)
+- **版本**: 3.1.59.1
+- **状态**: 已安装, 需配置 SecretId/SecretKey
+- **配置**: `tccli configure set`
+
+## Proxy (mihomo)
+
+- **Status**: ✅ Running (systemd, enabled)
+- **Port**: `127.0.0.1:7890` (HTTP + SOCKS5 mixed)
+- **Config**: `/etc/mihomo/config.yaml`
+- **Service**: `systemctl status mihomo` / `systemctl restart mihomo`
+- **Nodes**: 16个 Trojan 节点（上海联通/电信/移动 → 新加坡/日本）
+- **可访问**: OpenRouter ✅, Google ✅, GitHub ✅, httpbin ✅
+- **不可访问**: Google API（TLS 层面被拦截，需通过 OpenRouter 中转）
+
+## AI Models
+
+- **当前免费模型**: `blockrun/nemotron`（Nemotron Ultra 253B，通过 BlockRun 路由，$0 成本）
+- **OpenRouter**: 已充值，可用免费模型11个（详见 MEMORY.md）
+- **备选付费模型**: `openrouter/google/gemini-2.5-flash`（$0.15/M 输入，性价比最高）
+- **Gemini Key**: `AIzaSyAT4rLWTjDh-2Y3zepE5MRXcNfCm8w0pIg`（Google 直连不可用，暂保留）
+- **所有 Cron 任务**: 已统一切换到 `blockrun/nemotron`（免费）
+
+---
+
+Add whatever helps you do your job. This is your cheat sheet.
+
+## Open Terminal
+
+- **状态**: 运行中（裸机模式，虚拟环境）
+- **端口**: 8000
+- **API Key**: `ot-2491494aac7c9b92b0099b68fbab3f63`
+- **虚拟环境**: `/root/.openclaw/workspace/venvs/open-terminal`
+- **启动命令**: `source /root/.openclaw/workspace/venvs/open-terminal/bin/activate && open-terminal run --host 0.0.0.0 --port 8000 --api-key <key>`
+- **API文档**: http://localhost:8000/docs
+- **注意**: 裸机模式无沙箱，root权限运行

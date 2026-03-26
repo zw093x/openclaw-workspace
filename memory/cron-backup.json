@@ -1,0 +1,495 @@
+[
+  {
+    "name": "盘中实时股票监控",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0,15,30,45 9-14 * * 1-5",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "盘中实时股票监控。运行 python3 /root/.openclaw/workspace/scripts/stock_realtime_monitor.py 获取实时行情。\n\n分析中国船舶(600150)、中国动力(600482)、泰禾智能(603656)和视源股份(002841)。\n\n预警触发（任一触发立即通过飞书推送）：\n1. 涨跌幅超±3%（警告）或±5%（紧急）\n2. 触及减仓价位区间\n"
+  },
+  {
+    "name": "盘中减仓监控",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0,30 9-15 * * 1-5",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "执行盘中股票监控任务：\n1. 运行 `python3 /root/.openclaw/workspace/scripts/stock_analyzer.py` 获取实时技术面数据\n2. 检查减仓策略文件 `memory/stock-strategy-20260325.md` 中的减仓位\n3. 如触发以下任一条件，立即通过飞书主动推送（不要回复给当前session）：\n   - 任何股票触及或突破减"
+  },
+  {
+    "name": "每日开源项目推荐",
+    "schedule": {
+      "expr": "0 10 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n推荐1个今日值得关注的AI/3D/开发相关开源项目。\n格式：\n【⭐ 开源推荐】项目名\n---\n🌟 Stars：xxx\n🔗 地址：https://github.com/...\n📝 简介：一句话描述\n✨ 亮点：核心特性\n🎯 适用：适用场景\n---\n控制在8行以内。"
+  },
+  {
+    "name": "航运行业资讯",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 */2 * * *",
+      "tz": "Asia/Shanghai",
+      "staggerMs": 300000
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "搜索并整理全球航运行业最新资讯简报，重点关注：\n1. BDI/CCFI/SCFI航运指数变动及趋势\n2. 中国船舶(600150)、中国动力(600482)相关产业链新闻\n3. 全球航运市场：运价波动、航线变化、港口动态\n4. 地缘政治影响：贸易政策、制裁、航线安全\n5. 造船行业：大额订单签约、新船交付、技术突破\n6. 环保法规（EEXI/CII）对行业的影响\n7. 船用设备及配套：发动机、LN"
+  },
+  {
+    "name": "ComfyUI 生态深度监控",
+    "schedule": {
+      "expr": "0 */2 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai",
+      "staggerMs": 300000
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n执行 ComfyUI 生态深度监控（最高优先级）：\n1. ComfyUI 最新 release/changelog，关注 v0.17.0+ 架构变化\n2. Tripo3D、Meshy、TripoSR、InstantMesh 等 3D 生成节点动态\n3. AI 3D 建模工作流最佳实践（ComfyUI + Blender/Maya 集成"
+  },
+  {
+    "name": "黄金价格播报",
+    "schedule": {
+      "kind": "every",
+      "everyMs": 7200000,
+      "anchorMs": 1774364669925
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是专业的金融助手。请执行以下操作：\n1. 通过 curl 获取黄金实时价格：curl -s \"https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD\"\n2. 通过 curl 获取USD/CNY汇率：curl -s \"https://api.exchangerate-api.com/v4/l"
+  },
+  {
+    "name": "船舶行业新闻监控",
+    "schedule": {
+      "expr": "0 9,11,13,15,17 * * 1-5",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n监控股票新闻和全球局势对船舶行业的影响。关注：中国船舶/中国动力动态、全球地缘政治、国内产业链新闻。\n格式：\n【🚢 船舶行业快讯】时间\n---\n📋 重要新闻（1-3条，每条一句话）\n📊 影响分析：简要评估对持仓的影响\n---\n如无重要新闻，回复 NO_REPLY。"
+  },
+  {
+    "name": "SpaceX上市新闻监控",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9,12,15,18,21 * * *",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "执行 SpaceX 上市/相关新闻监控：\n1. 搜索最新 SpaceX IPO/上市/估值相关动态\n2. 关注马斯克（Elon Musk）关于 SpaceX 上市的表态\n3. 关注星舰（Starship）发射进展\n4. 如有重大新闻（上市时间表、估值变动、监管进展、发射成功/失败），立即通过飞书推送\n5. 如无重大更新，静默完成\n6. 记录到 memory/spacex-news.md"
+  },
+  {
+    "name": "每日股票收盘提醒",
+    "schedule": {
+      "expr": "10 15 * * 1-5",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n获取中国船舶(600150)和中国动力(600482)收盘行情和盘后新闻。\n格式：\n【📊 收盘总结】日期\n---\n🚢 中国船舶(600150)\n  收盘价：xxx | 涨跌：xxx% | 成交额：xxx\n⚡ 中国动力(600482)\n  收盘价：xxx | 涨跌：xxx% | 成交额：xxx\n📰 盘后重要新闻\n🔮 明日展望：简要预判\n"
+  },
+  {
+    "name": "ComfyUI每日学习提醒",
+    "schedule": {
+      "expr": "0 20 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "ComfyUI 学习计划每日提醒。\n\n1. 读取 memory/comfyui-learning-progress.md 获取今日任务\n2. 判断当前处于学习计划第几周第几天\n3. 发送今日学习任务提醒\n\n格式：\n【ComfyUI 学习提醒】\n第X周 第X天 | 今日任务：XXX\n\n如今天没有对应任务（已过4周计划），回复 NO_REPLY。\n\n简洁，1-2句话提醒即可。"
+  },
+  {
+    "name": "股票每日复盘",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 22 * * *",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "执行股票每日复盘任务：\n1. 运行 `python3 /root/.openclaw/workspace/scripts/stock_analyzer.py` 获取今日收盘数据\n2. 回顾今日盘中监控信号和减仓提醒触发情况\n3. 对照减仓策略 memory/stock-strategy-20260325.md，检查是否需要调整\n4. 分析今日大盘走势和持仓股表现\n5. 更新 memory/stoc"
+  },
+  {
+    "name": "晚间复盘",
+    "schedule": {
+      "expr": "0 22 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n今日即将结束，请发送晚间复盘：\n1. 今日中国船舶(600150)和中国动力(600482)收盘数据（如交易日）\n2. 回顾今日是否有重要资讯\n3. 提醒明日重要事项\n格式：\n【🌙 晚间复盘】日期\n---\n📈 今日股市：（简要收盘情况）\n📋 明日提醒：（如有）\n💤 晚安\n---\n简洁温馨，不超过10行。"
+  },
+  {
+    "name": "ComfyUI每日复盘",
+    "schedule": {
+      "kind": "cron",
+      "expr": "5 22 * * *",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "执行 ComfyUI 每日复盘任务：\n1. 检查学习进度 memory/comfyui-learning-progress.md，更新今日完成状态\n2. 搜索 ComfyUI 今日社区动态（GitHub、Discord、B站）\n3. 总结今日学到的知识点，更新 memory/comfyui-knowledge.md\n4. 对照4周学习计划，检查是否按进度推进\n5. 记录遇到的问题和解决方案\n6. "
+  },
+  {
+    "name": "技能自动更新",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 3 * * *",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "逐个检查并更新所有已安装技能。每个技能之间间隔10秒避免限速。只更新有新版本的，已是最新则跳过。完成后汇报更新结果。使用命令：npx clawhub update <skill-name> --no-input"
+  },
+  {
+    "name": "每日节气节日提醒",
+    "schedule": {
+      "expr": "0 7 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n检查今天是否有：中国传统24节气、传统节日、法定节假日、有意义纪念日。\n如有，格式：\n【🎉 节气/节日名】日期\n- 传统习俗：xxx\n- 养生建议：xxx\n- 温馨提示：（对产妇和宝宝的特别提示）\n如无任何节气/节日，回复 NO_REPLY。"
+  },
+  {
+    "name": "每日健康小贴士",
+    "schedule": {
+      "expr": "0 7 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n请根据当前季节和天气（查询广州天气），结合产妇坐月子状态，推送一条实用健康小贴士。\n格式：【💡 今日健康小贴士】+ 1-2句实用建议。\n只发送贴士本身，其他内容不要。\n如无特别值得提醒的内容，回复 NO_REPLY。"
+  },
+  {
+    "name": "每日早报",
+    "schedule": {
+      "expr": "30 7 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n请生成今日早报（专业秘书风格）。\n内容要求：今日日期/星期、产后天数、节气节日、两地天气概况、交易日判断、养生提示。\n\n---\n【输出格式要求】\n1. 标题行：【emoji 任务名】+ 日期\n2. 内容：结构化输出，用 --- 分隔不同板块\n3. 每条信息一行，简洁有力\n4. 总长度控制在 10-15 行以内\n5. 结尾如有需要提醒的"
+  },
+  {
+    "name": "CG行业资讯日报",
+    "schedule": {
+      "expr": "0 8 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n搜索今日CG行业重要资讯（用户是3D模型师）。关注：软件更新、AI+3D进展、行业动态、工具推荐。\n\n---\n【输出格式要求】\n1. 标题行：【emoji 任务名】+ 日期\n2. 内容：结构化输出，用 --- 分隔不同板块\n3. 每条信息一行，简洁有力\n4. 总长度控制在 10-15 行以内\n5. 结尾如有需要提醒的事项，加 ⏰ 提醒"
+  },
+  {
+    "name": "AI行业日报",
+    "schedule": {
+      "expr": "0 8 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n搜索今日AI行业重要资讯。关注：大模型动态、AI应用进展、行业大事、实用工具。\n\n---\n【输出格式要求】\n1. 标题行：【emoji 任务名】+ 日期\n2. 内容：结构化输出，用 --- 分隔不同板块\n3. 每条信息一行，简洁有力\n4. 总长度控制在 10-15 行以内\n5. 结尾如有需要提醒的事项，加 ⏰ 提醒板块\n6. 如无重要"
+  },
+  {
+    "name": "每日天气穿衣饮食提醒",
+    "schedule": {
+      "expr": "0 8 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n查询广州天河猎德和佛山北滘今日天气，计算产后天数（2026.3.11生产），按阶段给出穿衣和饮食建议。\n产后阶段：\n- 1-7天：排恶露，饮食清淡\n- 8-14天：渐进调理\n- 15-21天：催乳滋补\n- 22-28天：调理恢复\n- 28天后：均衡营养\n格式：\n【🌤️ 今日穿衣饮食提醒】日期 | 产后第X天\n---\n📍 天气：广州猎德"
+  },
+  {
+    "name": "AI绘画日报",
+    "schedule": {
+      "expr": "30 8 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n搜索今日AI绘画领域资讯（用户是3D模型师）。关注：工具更新、AI+3D进展、社区热议、创作者建议。\n\n---\n【输出格式要求】\n1. 标题行：【emoji 任务名】+ 日期\n2. 内容：结构化输出，用 --- 分隔不同板块\n3. 每条信息一行，简洁有力\n4. 总长度控制在 10-15 行以内\n5. 结尾如有需要提醒的事项，加 ⏰ 提"
+  },
+  {
+    "name": "A股大盘早评",
+    "schedule": {
+      "expr": "50 8 * * 1-5",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n查询A股市场概况：隔夜外盘（美股/港股）、大盘展望、关注板块（船舶制造等）。\n格式：\n【📈 A股早评】日期\n---\n🌐 外盘回顾：美股/港股情况\n📊 大盘展望：今日走势预判\n🚢 船舶板块：中国船舶/中国动力关注点\n---"
+  },
+  {
+    "name": "每日股票开盘提醒",
+    "schedule": {
+      "expr": "55 8 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n获取中国船舶(600150)和中国动力(600482)实时行情和最新新闻。\n格式：\n【🔔 股票开盘】日期\n---\n🚢 中国船舶(600150)\n  最新价：xxx | 涨跌：xxx% | 成交量：xxx\n⚡ 中国动力(600482)\n  最新价：xxx | 涨跌：xxx% | 成交量：xxx\n📰 相关资讯：（1-2条重要新闻）\n⏰ 操"
+  },
+  {
+    "name": "科技资讯日报",
+    "schedule": {
+      "expr": "0 9 * * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n搜索今日科技行业重要资讯。分4类：硬件/芯片、软件/平台、游戏、互联网/数字经济，每类1-2条。\n\n---\n【输出格式要求】\n1. 标题行：【emoji 任务名】+ 日期\n2. 内容：结构化输出，用 --- 分隔不同板块\n3. 每条信息一行，简洁有力\n4. 总长度控制在 10-15 行以内\n5. 结尾如有需要提醒的事项，加 ⏰ 提醒板"
+  },
+  {
+    "name": "周末生活指南",
+    "schedule": {
+      "expr": "0 9 * * 6",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n发送周末生活指南：天气、家庭建议（产妇护理+宝宝照护+家人互动）、饮食建议。\n格式：\n【🏡 周末生活指南】日期\n---\n🌤️ 天气：广州/佛山概况\n👶 护理提示：（产后+宝宝）\n🍲 饮食建议：周末适宜的月子餐\n👨‍👩‍👧 家庭活动：（如有建议）\n---\n温馨简洁。"
+  },
+  {
+    "name": "股票每周总结",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 22 * * 6",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "执行股票每周总结任务：\n1. 回顾本周所有股票每日复盘记录\n2. 统计本周操作盈亏（memory/stock-portfolio.md）\n3. 评估减仓策略执行效果，调整下周参数\n4. 总结本周技术分析的成功与失败案例\n5. 深度更新 memory/stock-knowledge.md，补充系统性知识\n6. 预判下周大盘趋势和持仓股展望\n7. 通过飞书推送完整周报（含数据和建议）"
+  },
+  {
+    "name": "每周日综合周报",
+    "schedule": {
+      "expr": "0 10 * * 0",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n输出综合周报：\n1. 本周股票表现（中国船舶600150 + 中国动力600482）\n2. 坐月子护理周报\n3. 下周重点关注\n格式：\n【📋 综合周报】本周日期范围\n---\n📈 股票周报：本周表现+涨跌幅\n👶 月子进度：产后第X周护理要点\n📅 下周预告：重要日程+提醒\n---\n不超过15行。"
+  },
+  {
+    "name": "ComfyUI每周总结",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 22 * * 0",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "执行 ComfyUI 每周总结任务：\n1. 回顾本周所有 ComfyUI 每日复盘记录\n2. 统计学习进度：memory/comfyui-learning-progress.md 完成率\n3. 总结本周掌握的核心知识和技能\n4. 深度更新 memory/comfyui-knowledge.md，补充系统性知识\n5. 规划下周学习重点和目标\n6. 检查 ComfyUI 版本更新和插件生态变化\n7. "
+  },
+  {
+    "name": "AI模型价格监控周报",
+    "schedule": {
+      "expr": "0 9 * * 1",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n检查当前配置的模型提供商状态、模型可用性、搜索主流模型最新定价。\n格式：\n【💰 AI模型价格周报】日期\n---\n📊 当前配置模型：（可用性状态）\n💲 价格变动：（如有调整）\n🏆 性价比推荐：（最优选择建议）\n---"
+  },
+  {
+    "name": "月子阶段转换-第21天",
+    "schedule": {
+      "at": "2026-04-01T00:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n产妇进入产后第21天，第三阶段→第四阶段（调理恢复期）。\n格式：\n【🍼 月子阶段转换】产后第21天 | 第四阶段开启\n---\n📋 护理重点调整：从催乳滋补转为调理恢复\n🍲 饮食建议：温补食材——当归、黄芪、党参\n⏰ 提醒：恭喜月子即将满月！\n---"
+  },
+  {
+    "name": "每月财务提醒",
+    "schedule": {
+      "expr": "0 9 1 * *",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n每月1号财务规划提醒。\n格式：\n【💰 每月财务提醒】X月\n---\n🏠 房贷：本月提醒\n👶 宝宝开支：预计费用\n🍼 月子相关：（如适用）\n📊 投资关注：中国船舶/中国动力\n💡 理财建议：（如有）\n---\n简洁实用。"
+  },
+  {
+    "name": "宝宝成长与健康提醒",
+    "schedule": {
+      "expr": "0 10 * * 3",
+      "kind": "cron",
+      "tz": "Asia/Shanghai"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n根据宝宝月龄输出成长报告（宝宝2026.3.11出生，母乳喂养）。\n格式：\n【👶 宝宝成长周报】出生第X周\n---\n📏 发育参考：身高/体重/头围参考值\n🍼 喂养建议：母乳喂养注意事项\n🩺 护理重点：本周照护要点\n💉 疫苗提醒：（如有近期疫苗）\n---\n温馨专业。"
+  },
+  {
+    "name": "ComfyUI学习-第1周检查点",
+    "schedule": {
+      "at": "2026-04-01T14:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "ComfyUI 学习计划第 1 周检查点（3/22-3/28）。\n\n请检查学习进度：\n1. 读取 memory/comfyui-learning-progress.md 了解当前进度\n2. 询问用户本周完成情况\n3. 更新进度文件\n4. 如有延迟，给出调整建议\n\n以专业秘书口吻发送周报：\n【ComfyUI 学习周报 - 第 1 周】\n本周目标完成情况、遇到的问题、下周计划预览。"
+  },
+  {
+    "name": "月子阶段转换-第28天",
+    "schedule": {
+      "at": "2026-04-08T00:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n产妇产后第28天，月子正式结束！\n格式：\n【🎉 月子圆满结束】产后第28天\n---\n📋 回顾：四阶段全部完成\n⏰ 下一步：产后42天复查（5/22），请提前预约\n💡 后续护理：饮食可逐渐恢复正常，注意休息\n🎊 恭喜：顺利完成月子！\n---"
+  },
+  {
+    "name": "ComfyUI学习-第2周检查点",
+    "schedule": {
+      "at": "2026-04-08T14:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "ComfyUI 学习计划第 2 周检查点（3/29-4/4）。\n\n请检查学习进度：\n1. 读取 memory/comfyui-learning-progress.md 了解当前进度\n2. 询问用户本周完成情况（LoRA管理、批量出图、工作流模块化）\n3. 更新进度文件\n4. 下周进入 3D 生成重点阶段，做好准备提醒\n\n以专业秘书口吻发送周报。"
+  },
+  {
+    "name": "宝宝满月提醒",
+    "schedule": {
+      "at": "2026-04-10T01:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满月啦！2026年4月10日出生满30天。\n格式：\n【🎉 宝宝满月快乐】2026.4.10\n---\n📏 发育参考：身高约xx cm，体重约xx kg\n🍼 喂养：母乳喂养顺利，继续保持\n🎊 传统习俗：满月酒/剃胎发等\n⏰ 近期提醒：疫苗接种计划\n---\n温馨祝福。"
+  },
+  {
+    "name": "ComfyUI学习-第3周检查点",
+    "schedule": {
+      "at": "2026-04-15T14:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "ComfyUI 学习计划第 3 周检查点（4/5-4/11）- 3D 生成重点周。\n\n请检查学习进度：\n1. 读取 memory/comfyui-learning-progress.md 了解当前进度\n2. 询问用户 Tripo3D/Meshy/TripoSR 测试情况\n3. 评估 AI 3D 生成质量是否达到预期\n4. 更新进度文件\n\n以专业秘书口吻发送周报，重点评估 3D 生成能力是否达标。"
+  },
+  {
+    "name": "ComfyUI学习-第4周总结",
+    "schedule": {
+      "at": "2026-04-22T14:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "ComfyUI 学习计划最终总结（4/12-4/18）。\n\n请完成最终评估：\n1. 读取 memory/comfyui-learning-progress.md 了解完整进度\n2. 评估 5 个里程碑是否达成\n3. 整理已掌握的技能清单\n4. 识别仍需深入的领域\n5. 制定后续进阶学习计划\n\n以专业秘书口吻输出最终学习报告：\n【ComfyUI 学习总结报告】\n四周学习成果、技能掌握评估、后续建议。"
+  },
+  {
+    "name": "疫苗提醒-脊灰第1剂(2月龄)",
+    "schedule": {
+      "at": "2026-05-08T01:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满2月龄，5月11日需接种脊灰灭活疫苗第1剂。\n格式：\n【💉 疫苗提醒】5月11日 | 脊灰灭活第1剂\n---\n👶 宝宝：2月龄\n💉 接种：脊灰灭活疫苗第1剂\n⏰ 行动：请提前联系接种门诊预约\n---"
+  },
+  {
+    "name": "产后42天复查提醒",
+    "schedule": {
+      "at": "2026-05-19T00:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n重要提醒：产后42天复查即将到来（5/22）。\n格式：\n【🩺 产后42天复查提醒】5月22日\n---\n⏰ 时间：5月22日（本周五）\n📋 检查项目：B超、伤口愈合、盆底功能、乳房检查\n👶 宝宝体检：同步预约儿科体检\n✅ 行动项：请提前预约挂号\n---"
+  },
+  {
+    "name": "疫苗提醒-百白破+脊灰(3月龄)",
+    "schedule": {
+      "at": "2026-06-08T01:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满3月龄，6月11日需接种百白破第1剂+脊灰。\n格式：\n【💉 疫苗提醒】6月11日 | 百白破+脊灰\n---\n👶 宝宝：3月龄\n💉 接种：百白破第1剂 + 脊灰\n⏰ 行动：请提前联系接种门诊预约\n---"
+  },
+  {
+    "name": "宝宝百天提醒",
+    "schedule": {
+      "at": "2026-06-19T01:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝百天啦！2026年6月19日出生满100天。\n格式：\n【🎉 宝宝百天快乐】2026.6.19\n---\n📏 发育参考：身高约xx cm，体重约xx kg\n🎯 发育里程碑：可能开始会抬头、抓握\n🎊 传统习俗：百天照/百天宴\n⏰ 近期提醒：（如有疫苗或检查）\n---\n祝小公主健康成长！"
+  },
+  {
+    "name": "疫苗提醒-百白破+脊灰(4月龄)",
+    "schedule": {
+      "at": "2026-07-08T01:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满4月龄，7月11日需接种百白破第2剂+脊灰。\n格式：\n【💉 疫苗提醒】7月11日 | 百白破+脊灰\n---\n👶 宝宝：4月龄\n💉 接种：百白破第2剂 + 脊灰\n⏰ 行动：请提前联系接种门诊预约\n---"
+  },
+  {
+    "name": "疫苗提醒-百白破(5月龄)",
+    "schedule": {
+      "at": "2026-08-08T01:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满5月龄，8月11日需接种百白破第3剂。\n格式：\n【💉 疫苗提醒】8月11日 | 百白破第3剂\n---\n👶 宝宝：5月龄\n💉 接种：百白破第3剂\n⏰ 行动：请提前联系接种门诊预约\n---"
+  },
+  {
+    "name": "疫苗提醒-乙肝+A群流脑(6月龄)",
+    "schedule": {
+      "at": "2026-09-08T01:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满6月龄，9月11日需接种乙肝第3剂+A群流脑第1剂。\n格式：\n【💉 疫苗提醒】9月11日 | 乙肝+A群流脑\n---\n👶 宝宝：6月龄\n💉 接种：乙肝第3剂 + A群流脑第1剂\n⏰ 行动：请提前联系接种门诊预约\n---"
+  },
+  {
+    "name": "疫苗提醒-麻腮风+乙脑(8月龄)",
+    "schedule": {
+      "at": "2026-11-08T01:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true,
+    "payload_message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满8月龄，11月11日需接种麻腮风第1剂+乙脑减毒活疫苗第1剂。\n格式：\n【💉 疫苗提醒】11月11日 | 麻腮风+乙脑\n---\n👶 宝宝：8月龄\n💉 接种：麻腮风第1剂 + 乙脑减毒活疫苗第1剂\n⏰ 行动：请提前联系接种门诊预约\n---"
+  }
+]

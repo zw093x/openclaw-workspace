@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "skills": {
+    "self-improving-agent": {
+      "name": "self-improving-agent",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=self-improving-agent",
+      "source": "skillhub",
+      "version": "1.0.11"
+    },
+    "auto-updater": {
+      "name": "Auto-Updater Skill",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=auto-updater",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "caldav-calendar": {
+      "name": "Caldav Calendar",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=caldav-calendar",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "gog": {
+      "name": "Gog",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=gog",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "openai-whisper": {
+      "name": "Openai Whisper",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=openai-whisper",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "tavily-search": {
+      "name": "Tavily Web Search",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=tavily-search",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "skill-vetter": {
+      "name": "Skill Vetter",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=skill-vetter",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "nano-banana-pro": {
+      "name": "Nano Banana Pro",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=nano-banana-pro",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "baidu-search": {
+      "name": "baidu web search",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=baidu-search",
+      "source": "skillhub",
+      "version": "1.1.0"
+    },
+    "ai-ppt-generator": {
+      "name": "Ai Ppt Generator",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ai-ppt-generator",
+      "source": "skillhub",
+      "version": "1.1.2"
+    },
+    "polymarket-odds": {
+      "name": "Polymarket Odds",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=polymarket-odds",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "humanizer": {
+      "name": "Humanizer",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=humanizer",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "free-ride": {
+      "name": "Free Ride - Unlimited free AI",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=free-ride",
+      "source": "skillhub",
+      "version": "1.0.4"
+    },
+    "elite-longterm-memory": {
+      "name": "Elite Longterm Memory",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=elite-longterm-memory",
+      "source": "skillhub",
+      "version": "1.2.3"
+    },
+    "automation-workflows": {
+      "name": "Automation Workflows",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=automation-workflows",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "stock-analysis": {
+      "name": "Stock Analysis",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=stock-analysis",
+      "source": "skillhub",
+      "version": "6.2.0"
+    },
+    "humanizer-zh": {
+      "name": "humanizer-zh",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=humanizer-zh",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "openclaw-browser-auto": {
+      "name": "OpenClaw浏览器自动化配置",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=openclaw-browser-auto",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "fast-browser-use": {
+      "name": "Fastest Browser Use",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=fast-browser-use",
+      "source": "skillhub",
+      "version": "1.0.5"
+    },
+    "save-money": {
+      "name": "Save Money",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=save-money",
+      "source": "skillhub",
+      "version": "4.2.0"
+    },
+    "ontology": {
+      "name": "Ontology",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ontology",
+      "source": "skillhub",
+      "version": "0.1.2"
+    },
+    "proactive-agent": {
+      "name": "Proactive Agent",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=proactive-agent",
+      "source": "skillhub",
+      "version": "3.1.0"
+    },
+    "brave-search": {
+      "name": "Brave Search",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=brave-search",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "clawddocs": {
+      "name": "Clawdbot Documentation Expert",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=clawddocs",
+      "source": "skillhub",
+      "version": "1.2.2"
+    },
+    "imap-smtp-email": {
+      "name": "imap-smtp-email",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=imap-smtp-email",
+      "source": "skillhub",
+      "version": "0.0.10"
+    },
+    "stock-market-pro": {
+      "name": "Stock Market Pro",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=stock-market-pro",
+      "source": "skillhub",
+      "version": "1.2.12"
+    },
+    "multi-search-engine": {
+      "name": "Multi Search Engine",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=multi-search-engine",
+      "source": "skillhub",
+      "version": "2.0.1"
+    },
+    "pdf": {
+      "name": "Pdf",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=pdf",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "searxng": {
+      "name": "Searxng",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=searxng",
+      "source": "skillhub",
+      "version": "1.0.3"
+    },
+    "gifgrep": {
+      "name": "Gifgrep",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=gifgrep",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "a-stock-analysis": {
+      "name": "A股分时量能分析",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=a-stock-analysis",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "skill-vetting": {
+      "name": "Skill Vetting",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=skill-vetting",
+      "source": "skillhub",
+      "version": "1.1.0"
+    },
+    "bilibili-hot-monitor": {
+      "name": "B站 (bilibili) 热门视频监控",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=bilibili-hot-monitor",
+      "source": "skillhub",
+      "version": "1.0.21"
+    },
+    "ai-news-collectors": {
+      "name": "ai-news-collectors",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ai-news-collectors",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "outlook-api": {
+      "name": "Outlook",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=outlook-api",
+      "source": "skillhub",
+      "version": "1.0.3"
+    },
+    "gcalcli-calendar": {
+      "name": "Google Calendar (via gcalcli)",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=gcalcli-calendar",
+      "source": "skillhub",
+      "version": "3.0.0"
+    },
+    "stock-watcher": {
+      "name": "Stock Watcher",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=stock-watcher",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "tushare-finance": {
+      "name": "tushare-finance",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=tushare-finance",
+      "source": "skillhub",
+      "version": "2.0.6"
+    },
+    "senior-devops": {
+      "name": "Senior Devops",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=senior-devops",
+      "source": "skillhub",
+      "version": "2.1.1"
+    },
+    "wechat-article-extractor-skill": {
+      "name": "微信公众号文章解析",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=wechat-article-extractor-skill",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "summarize": {
+      "name": "Summarize",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=summarize",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "agent-browser": {
+      "name": "Agent Browser",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=agent-browser",
+      "source": "skillhub",
+      "version": "0.2.0"
+    },
+    "find-skills": {
+      "name": "Find Skills",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=find-skills",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "github": {
+      "name": "Github",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=github",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "obsidian": {
+      "name": "Obsidian",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=obsidian",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "weather": {
+      "name": "Weather",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=weather",
+      "source": "skillhub",
+      "version": "1.0.0"
+    }
+  }
+}

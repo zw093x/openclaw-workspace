@@ -1,0 +1,23 @@
+# 系统文件
+.DS_Store
+*.swp
+*.swo
+
+# 大文件/虚拟环境
+node_modules/
+venvs/
+__pycache__/
+*.pyc
+
+# 敏感文件（不含 token）
+.openclaw/sessions/
+.openclaw/logs/
+
+# 临时文件
+*.tmp
+*.log
+/clawdbot/
+skills/claw-router/
+skills/lossless-claw/
+skills/claw-router/
+skills/lossless-claw/
