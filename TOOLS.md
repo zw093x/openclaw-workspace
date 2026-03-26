@@ -94,3 +94,17 @@ Add whatever helps you do your job. This is your cheat sheet.
 - **启动命令**: `source /root/.openclaw/workspace/venvs/open-terminal/bin/activate && open-terminal run --host 0.0.0.0 --port 8000 --api-key <key>`
 - **API文档**: http://localhost:8000/docs
 - **注意**: 裸机模式无沙箱，root权限运行
+
+## TurboQuant（KV Cache 量化算法）
+- **位置**: `/root/.openclaw/workspace/TurboQuant/`
+- **文件**: `turboquant_demo.py`（算法实现 + 测试套件）
+- **依赖**: numpy only
+- **用途**: LLM KV Cache 量化压缩，极坐标量化 + QJL 残差纠错
+- **调用**: `python3 /root/.openclaw/workspace/TurboQuant/turboquant_demo.py`
+- **核心 API**:
+  - `block_quantize(block, bits)` — 传统均匀块量化
+  - `polar_quantize_pair(x, y, bits)` — 极坐标量化（零开销）
+  - `turbo_compress(k, bits, S)` — 完整 TurboQuant 压缩
+  - `turbo_score(q, kp, sketch, norm_res, S)` — 推断端打分
+- **适用场景**: KV Cache 压缩、注意力分数近似计算、d≤64 小维度效果最佳
+- **配置参考**: d=128 推荐 PolarQuant 3-bit（10.7x 压缩）或 TurboQuant m=256（6.4x 压缩，接近传统精度）
