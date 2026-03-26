@@ -492,3 +492,10 @@
 
 ---
 *最后更新: 2026-03-26*
+## GitHub 热榜每日探索（2026-03-27 启动）
+- Cron ID: 27e00c89，每天 03:00
+- 探索 GitHub Trending Top 10 热门项目
+- 分析热度原因 + 与工作的相关性
+- 结果存入 memory/github-trending/YYYY-MM-DD.md
+- AI/3D/股票/自动化相关项目 ⭐ 标记
+- 重大突破项目 🔴 标记
