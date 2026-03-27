@@ -1,9 +1,9 @@
 {
-  "lastCheck": "2026-03-27T00:39:00+08:00",
-  "xau_usd": {"bid": 4374.06, "source": "swissquote"},
-  "xau_cny_approx": 30182,
-  "change_from_0326_1743": "-1.22%",
-  "change_from_0325_04am": "-3.46%",
-  "alert_level": "S1",
-  "note": "金价持续下跌，从昨夜4430跌至4374，累计跌幅3.46%"
+  "lastCheck": "2026-03-28T01:33:00+08:00",
+  "xau_usd": {"bid": 4497.50, "ask": 4498.17, "mid": 4497.84, "source": "swissquote"},
+  "usd_cny": 6.92,
+  "xau_cny_per_gram": 1000.80,
+  "change_from_last": "-0.36%",
+  "alert_level": "normal",
+  "note": "金价小幅回落至4498，-0.36%，正常回调，¥1000/克附近整理"
 }

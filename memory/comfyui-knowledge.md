@@ -123,6 +123,13 @@ ComfyUI/
 
 ## 五、实战经验
 
+### 2026-03-27 复盘
+- **今日任务**: 图生图 + Img2Img（第3天）
+- **进度状态**: ✅ Day 3 完成（Img2Img 流程掌握）
+- **Img2Img 关键参数**: denoise=0.5-0.7 区间最适合重绘，低于0.3几乎没有变化
+- **OpenSpec 实践**: concept-art-gen spec 和 upgrade-to-flux change 已通过 validate
+- **社区动态**: ⚠️ 今日网络搜索不可达（GitHub/Discord/B站均超时），无法获取实时动态
+
 ### 2026-03-26 复盘
 - **GitHub 动态**: ComfyUI v0.18.2 已发布（3/25），含 number-convert 精度修复 + Manager 升级至 v4.1
 - **今日任务**: 界面熟悉 + 文生图（Day 2 of 4 周计划）

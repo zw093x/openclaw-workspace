@@ -1,0 +1,13 @@
+{
+  "type": "daily",
+  "topic": "shipping-news",
+  "days": 1,
+  "sections": [
+    {
+      "title": "航运行业资讯汇总",
+      "items": []
+    }
+  ],
+  "impact": "未能获取到航运行业资讯。请检查 TAVILY_API_KEY 是否已正确配置，或网络连接是否存在问题。",
+  "sources": []
+}

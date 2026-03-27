@@ -108,3 +108,38 @@
 - Gemini 模型推理时间明显长于 mimo-v2-pro，影响了实时交互体验
 - **改进**: 对话场景优先使用响应快的模型，复杂推理任务再用大模型
 - **改进**: 批量分析/报告生成用子代理，主对话保持轻量快速
+
+### 2026-03-27: GitHub CLI PAT 登录流程
+- **category**: best_practice
+- **场景**: 用户需要在服务器上登录 GitHub
+- **方法**: `echo "TOKEN" | gh auth login --with-token`（无需终端交互）
+- **验证**: `gh auth status` 确认登录成功
+- **注意**: Token 会存储在 `~/.config/gh/hosts.yml`
+- **适用**: 无头服务器、SSH 环境、CI/CD
+
+### 2026-03-27: OpenRouter 模型配置批量添加
+- **category**: best_practice
+- **场景**: 需要批量添加模型到 OpenClaw 配置
+- **方法**: 读取 openclaw.json → Python 脚本去重追加 → 写回
+- **关键**: 先用 set 去重，避免重复添加
+- **脚本路径**: 可复用，下次直接调用
+
+### 2026-03-27: Cron 任务降频解决 Session 争抢
+- **category**: best_practice
+- **问题**: 多个 every N cron 任务同时触发导致隔离 Session 超时
+- **解决**: 将高频（≤2h）任务降到 6h+，错开触发时间
+- **命令**: `openclaw cron edit <id> --every 6h`
+- **教训**: 不要让多个 cron 任务在同一分钟触发
+
+### 2026-03-27: 会话模型实时切换
+- **category**: best_practice
+- **场景**: 需要临时切换当前会话的模型（如免费→付费验证能力）
+- **方法**: `session_status(model="openrouter/xxx")`
+- **注意**: 仅影响当前会话，不影响全局默认模型
+- **配合**: 修改 openclaw.json 的 models.default 影响全局
+
+### 2026-03-27: 项目评估流程（AI Forge MCP 案例）
+- **category**: best_practice
+- **步骤**: gh repo view 看概要 → gh repo clone → 读 README/INSTALL/PIPELINE/CHANGELOG → 对比分析
+- **关键**: 先确认是否开源（有无源码），闭源项目只看文档即可
+- **输出**: 结构化对比表（与用户工作流的关联度、优劣势、建议）
