@@ -14,7 +14,10 @@ fi
 # Commit with timestamp
 git commit -m "自动备份 $(date '+%Y-%m-%d %H:%M')" 2>/dev/null
 
-# Push
+# Push to Gitee
 git push origin master 2>/dev/null
+echo "$(date '+%Y-%m-%d %H:%M') Gitee 备份完成"
 
-echo "$(date '+%Y-%m-%d %H:%M') 备份完成"
+# Push to GitHub
+git push github master 2>/dev/null
+echo "$(date '+%Y-%m-%d %H:%M') GitHub 备份完成"

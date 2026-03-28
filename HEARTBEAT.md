@@ -9,12 +9,14 @@
 - 如模型不可用 → 切换到可用模型后重试
 - **此事项优先于一切其他监控**
 
-## 黄金价格监控（每次心跳必检）
+## 贵金属 & 大宗商品价格监控（每次心跳必检）
 
-监控黄金（XAU/USD）和 PAXG（PAXGUSDT）实时价格：
-- 通过 Swissquote API 获取黄金报价：`curl -s 'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD'`
-- 通过 CoinGecko 获取 PAXG 价格：`curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd,cny&include_24hr_change=true'`
-- 获取 USD/CNY 汇率：`curl -s 'https://api.exchangerate-api.com/v4/latest/USD'`
+监控黄金（XAU/USD）、白银（XAG/USD）、甲醇期货实时价格：
+- **黄金**：`curl -s 'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD'`
+- **白银**：`curl -s 'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAG/USD'`
+- **甲醇**：`curl -s 'https://hq.sinajs.cn/list=nf_MA0' -H 'Referer: https://finance.sina.com.cn' | iconv -f GBK -t UTF-8`
+- **PAXG**：`curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd,cny&include_24hr_change=true'`
+- **USD/CNY 汇率**：`curl -s 'https://api.exchangerate-api.com/v4/latest/USD'`
 - **触发预警条件：**
   - 单日涨跌幅 > ±2%（S1）→ 主动推送
   - 单日涨跌幅 > ±3%（S2）→ 紧急推送
