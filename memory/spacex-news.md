@@ -143,3 +143,84 @@
 - T-Rex 已提交杠杆 SpaceX IPO ETF 申请（3/26）
 
 *最后更新: 2026-03-27 16:25 CST*
+
+### 2026-03-28 13:19 监控更新
+
+#### 🔴 IPO持续高热——30%散户配置成核心话题
+- **30%散户配额持续发酵**（3/27多源确认）
+  - CNBC、Euronews、Investing.com、Benzinga等多家媒体同日报道
+  - 马斯克计划将IPO高达30%份额分配给个人投资者，为常规IPO零售配额的3倍
+  - 背景：此前路透社（3/26）首发，马斯克重写IPO规则
+  - 来源：[CNBC](https://www.cnbc.com) | [Euronews](https://www.euronews.com) | [Benzinga](https://www.benzinga.com)
+
+- **WSJ独家：SpaceX IPO将如马斯克本人一样"非正统"**（3/27）
+  - 马斯克IPO策略一贯打破华尔街惯例
+  - 30%散户配额、绕过"牵头行"位置等安排均体现这一风格
+  - 来源：[WSJ](https://www.wsj.com/articles/spacex-ipo-unconventional-musk)
+
+- **Polymarket预测市场**（截至3/27）
+  - 高盛领衔SpaceX IPO承销：72%押注概率
+  - SpaceX 6月底前IPO概率：预测市场普遍看涨
+  - 来源：[Yahoo Finance](https://finance.yahoo.com) | [tipranks](https://tipranks.com)
+
+- **4月投资者简报会确认**（Bloomberg，3/26）
+  - SpaceX已通知潜在IPO投资者，4月将安排高管投资者简报会
+  - 承销商正加紧筹备史上最大规模上市
+
+- **X (Twitter) IPO前重组**（The Information，3/26）
+  - 首席营销官（CMO）及多名员工被裁
+  - 剩余员工被告知专注于IPO相关核心工作
+  - 外界视为马斯克为集中资源推进SpaceX上市而采取的举措
+
+- **T-Rex申请杠杆SpaceX IPO ETF**（Reuters，3/26）
+  - 同时申请SpaceX和Anthropic两只ETF
+  - SpaceX IPO热度已传导至ETF市场
+
+- **特斯拉分析师预测：Tesla + SpaceX 2027年合并**（Teslarati，3/27）
+  - 华尔街分析师提出合并预测
+  - 若合并，估值或超$3万亿
+
+#### 🚀 星舰（Starship）进展
+
+- **Flight 12（V3首飞）再度推迟**
+  - 马斯克曾于3/16称距发射"约4周"，现已多次推迟
+  - 尚无新的明确发射日期
+  - Ship 39已出仓库，正在进行测试
+  - 33台发动机全量静态点火尚未完成
+
+- **Gwynne Shotwell登上《Time》封面**（3/26）
+  - SpaceX总裁/COO肖特韦尔成为封面人物
+  - 主题：SpaceX将AI送上月球
+  - 对SpaceX NASA合同和IPO均构成利好信号
+
+#### 📊 整体评估
+- IPO热度：本周末（3/28）较3/27无重大新增实质性进展
+- 主要新闻仍是已报道内容的持续发酵和衍生分析
+- Starship Flight 12无新的实质性进展
+- 无重大监管/估值/发行时间表的新宣布
+
+*最后更新: 2026-03-28 13:19 CST*
+
+### 2026-03-28 15:04 监控更新 - 无新增实质进展
+
+#### 📰 本次搜索来源
+- Google News (RSS): 最后更新 Sat, 28 Mar 2026 07:08:23 GMT
+- Yahoo Finance、CNBC、Reuters、Bloomberg
+
+#### 🔍 今日可见文章（均无新实质进展）
+| 来源 | 标题 | 发布时间 |
+|------|------|---------|
+| Fast Company | SpaceX IPO: What we know about the initial public offering... | 17小时前 (3/28早) |
+| Euronews | SpaceX IPO: Musk plans to allocate 30% of shares for retail investors | 15小时前 (3/28早) |
+| investors.com | Unicorn Crushers: These 3 Names Could Become Largest IPOs Ever | 15小时前 (3/28早) |
+| Reuters | Exclusive: Musk rewrites IPO playbook... | Yesterday (3/27) |
+| The Motley Fool | SpaceX Could File to IPO as Soon as This Week | Yesterday (3/27) |
+| CNBC | Space stocks rally on reports of SpaceX's imminent IPO filing | 2天前 (3/26) |
+
+#### 📊 整体评估
+- **无新增实质性进展**：所有今日可见文章均为已有新闻的二次报道或整合分析
+- **关键节点未触发**：3/31前正式提交招股书（S-1）截至目前尚未发生
+- **市场状态**：周六休市，新闻量自然减少，属于正常整理期
+- **下一次监控**：建议3/31前重点关注（招股书提交截止窗口）
+
+*最后更新: 2026-03-28 15:04 CST*
