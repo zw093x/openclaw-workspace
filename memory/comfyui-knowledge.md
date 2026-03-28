@@ -123,6 +123,18 @@ ComfyUI/
 
 ## 五、实战经验
 
+### 2026-03-28 复盘
+- **今日任务**: ControlNet 入门（第4天）
+- **进度状态**: ⏳ 进行中（今日待完成）
+- **GitHub 最新动态**:
+  - `b353a7c` Integrate RAM cache with model RAM management (#13173) — 内存管理优化
+  - `3696c5b` Add `has_intermediate_output` flag for nodes with interactive UI (#13048) — 交互节点优化
+  - `3a56201` Allow flux conditioning without a pooled output (#13198) — Flux 条件处理改进
+  - `6a2cdb8` fix(api-nodes-nanobana): raise error when no output image is present (#13167) — 错误处理增强
+  - `85b7495` chore: update workflow templates to v0.9.39 (#13196) — 工作流模板更新
+- **学习建议**: v0.18.2+ 新增 RAM 缓存管理，模型加载更高效，学习时可关注 custom_nodes 内存占用
+- **社区动态**: Discord/B站今日未获取到有效信息（网络超时）
+
 ### 2026-03-27 复盘
 - **今日任务**: 图生图 + Img2Img（第3天）
 - **进度状态**: ✅ Day 3 完成（Img2Img 流程掌握）

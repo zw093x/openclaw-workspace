@@ -1,15 +1,27 @@
 {
-  "lastCheck": "2026-03-28T21:09:00+08:00",
+  "lastCheck": "2026-03-29T01:09:37+08:00",
   "xau_usd": {
     "bid": 4494.894,
     "ask": 4496.396,
     "mid": 4495.645,
     "source": "swissquote"
   },
+  "xag_usd": {
+    "bid": 69.67,
+    "ask": 69.777,
+    "mid": 69.724,
+    "source": "swissquote"
+  },
+  "methanol_cny": {
+    "price": 3381.0,
+    "prev_close": 3349.0,
+    "high": 3418.0,
+    "low": 3321.0,
+    "source": "sina"
+  },
   "usd_cny": 6.92,
-  "xau_cny_per_gram": 1000.21,
-  "change_from_last": "0.00%",
-  "change_value": 0,
+  "xau_cny_per_gram": 1000.2,
+  "change_from_last": "+0.00%",
   "alert_level": "normal",
-  "note": "金价$4496/盎司，USD/CNY 6.92，横盘整理中"
+  "note": "黄金$4495.645，↑0.0%；人民币报价¥1000.2/克"
 }

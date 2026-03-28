@@ -14,7 +14,7 @@
 | ComfyUI 安装部署 | 3/25 | ✅ 完成 | v0.18.1 已安装启动 |
 | 界面熟悉 + 文生图 | 3/26 | ⏳ 待执行 | |
 | 图生图 + Img2Img | 3/27 | ✅ 完成 | Img2Img 流程掌握，去噪强度 0.5-0.7 区间适用 |
-| ControlNet 入门 | 3/28 | ⏳ | |
+| ControlNet 入门 | 3/28 | ⏳ 进行中 | 已查阅 GitHub，RAM 缓存集成值得关注 |
 | 模型管理 + LoRA | 3/29 | ⏳ | |
 | ComfyUI Manager | 3/30 | ⏳ | |
 | OpenSpec 概念理解 | 3/25 | ✅ 完成 | 已安装 + 演示项目 |
@@ -58,4 +58,4 @@
 - `comfyui-openspec-demo/openspec/changes/upgrade-to-flux/` — Flux 升级变更提案
 
 ---
-*最后更新: 2026-03-27*
+*最后更新: 2026-03-28*
