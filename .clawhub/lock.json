@@ -36,6 +36,46 @@
     "tencent-cos-skill": {
       "version": "1.0.6",
       "installedAt": 1774109349848
+    },
+    "universal-translate": {
+      "version": "1.0.0",
+      "installedAt": 1774701722257
+    },
+    "translate-en-zh": {
+      "version": "1.0.0",
+      "installedAt": 1774701843187
+    },
+    "kokoro-tts": {
+      "version": "0.1.0",
+      "installedAt": 1774702400552
+    },
+    "feishu-calendar": {
+      "version": "1.0.0",
+      "installedAt": 1774702504645
+    },
+    "email-daily-summary": {
+      "version": "0.1.0",
+      "installedAt": 1774702563697
+    },
+    "finance-report-analyzer": {
+      "version": "1.2.0",
+      "installedAt": 1774703763397
+    },
+    "finance-radar": {
+      "version": "1.1.0",
+      "installedAt": 1774704183449
+    },
+    "rss-reader": {
+      "version": "1.0.0",
+      "installedAt": 1774704422651
+    },
+    "3d-cog": {
+      "version": "1.0.1",
+      "installedAt": 1774704482595
+    },
+    "code-review-fix": {
+      "version": "1.0.0",
+      "installedAt": 1774704723348
     }
   }
 }

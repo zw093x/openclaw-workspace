@@ -1,5 +1,5 @@
 {
-  "lastCheck": "2026-03-28T19:09:00+08:00",
+  "lastCheck": "2026-03-28T21:09:00+08:00",
   "xau_usd": {
     "bid": 4494.894,
     "ask": 4496.396,
@@ -9,6 +9,7 @@
   "usd_cny": 6.92,
   "xau_cny_per_gram": 1000.21,
   "change_from_last": "0.00%",
+  "change_value": 0,
   "alert_level": "normal",
-  "note": "金价维持$4496美元，0.00%，横盘整理，¥1000/克"
+  "note": "金价$4496/盎司，USD/CNY 6.92，横盘整理中"
 }
