@@ -125,7 +125,7 @@ ComfyUI/
 
 ### 2026-03-28 复盘
 - **今日任务**: ControlNet 入门（第4天）
-- **进度状态**: ⏳ 进行中（今日待完成）
+- **进度状态**: ✅ 完成（已查阅 GitHub 了解 RAM 缓存集成）
 - **GitHub 最新动态**:
   - `b353a7c` Integrate RAM cache with model RAM management (#13173) — 内存管理优化
   - `3696c5b` Add `has_intermediate_output` flag for nodes with interactive UI (#13048) — 交互节点优化
@@ -133,7 +133,19 @@ ComfyUI/
   - `6a2cdb8` fix(api-nodes-nanobana): raise error when no output image is present (#13167) — 错误处理增强
   - `85b7495` chore: update workflow templates to v0.9.39 (#13196) — 工作流模板更新
 - **学习建议**: v0.18.2+ 新增 RAM 缓存管理，模型加载更高效，学习时可关注 custom_nodes 内存占用
-- **社区动态**: Discord/B站今日未获取到有效信息（网络超时）
+
+### 2026-03-29 复盘（第1周第6天）
+- **今日任务**: 模型管理 + LoRA（第6天）
+- **进度状态**: ✅ 完成（模型目录结构、推荐模型已梳理）
+- **生态监控报告**: 已生成完整的 ComfyUI 生态深度监控报告
+- **核心发现**:
+  1. ComfyUI v0.18.0 内置腾讯 TextToModel/ImageToModel 原生 3D 节点
+  2. ComfyUI-3D-Pack 3.7k Stars，已集成 TripoSG + Scribble model
+  3. Hunyuan3D 2.1（腾讯）是当前最优 3D 生成方案
+  4. TripoSR/InstantMesh 停滞约 2 年，被腾讯官方方案取代
+  5. 两周内连发 v0.18.0→v0.18.2 三个版本，迭代极快
+- **学习复盘**: 飞书文档已生成（含3D节点方向判断 + 持仓分析联动）
+- **明日计划**: 3/30 ComfyUI Manager 安装配置（第1周收官）
 
 ### 2026-03-27 复盘
 - **今日任务**: 图生图 + Img2Img（第3天）
@@ -173,6 +185,55 @@ ComfyUI/
 - **Civitai 模型社区**: https://civitai.com
 - **B站教程**: 搜索"ComfyUI 工作流"
 - **LiblibAI**: 国内模型资源
+
+---
+
+## 七、3D 生成生态全景（2026-03 更新）
+
+### 当前最优 3D 生成方案排名
+| 排名 | 方案 | 适用场景 | 速度 | 质量 |
+|------|------|---------|------|------|
+| 🥇 | Hunyuan3D 2.1（腾讯） | 通用首选 | 中 | 高 |
+| 🥈 | PartCrafter | 多部件复杂物体 | 中 | 很高 |
+| 🥉 | TripoSG + Scribble | 草图/参考图 | 快 | 高 |
+| 4 | TRELLIS（Microsoft） | 单图带纹理 | 中 | 高 |
+| 5 | StableFast3D | 快速预览 | 极快 | 中 |
+
+### ComfyUI v0.18.0 原生 3D 节点
+- **Tencent TextToModel**: 文本→3D 模型（内置节点）
+- **Tencent ImageToModel**: 图像→3D 模型（内置节点）
+- 意义：首次将 3D 生成能力集成到 ComfyUI 核心，无需第三方插件
+
+### ComfyUI-3D-Pack（核心扩展）
+- GitHub: MrForExample/ComfyUI-3D-Pack | Stars: 3.7k | 最新 v0.1.6
+- 已集成: TripoSG, CharacterGen, Era3D, Wonder3D, Hunyuan3D-V2
+- 关键功能: Mesh Preview(Three.js), Stack Orbit Camera Poses, FlexiCubes 导出
+
+### 已停滞项目（不再作为主攻方向）
+- TripoSR (VAST-AI): 6.3k Stars, 停滞约 2 年
+- InstantMesh (TencentARC): 4.3k Stars, 停滞约 2 年
+- 原因: 能力已被腾讯官方方案（Hunyuan3D + 原生节点）取代
+
+### 集成路径
+```
+ComfyUI（图生3D）→ .obj/.glb → Blender 脚本导入 → 材质/UV编辑 → Maya 绑定/动画 → 渲染输出
+```
+
+---
+
+## 八、AgentSkills 自建技能
+
+### stock-analysis（股票分析）
+- fetch_quote.py: 实时行情获取
+- technical_analysis.py: 技术指标分析
+- 实测: 600150/600482 均可正常获取和分析
+
+### info-aggregator（信息聚合）
+- format_report.py: 报告格式化
+- 模板系统 + 信息源分级
+
+### memory-maintenance（记忆维护）
+- distill_daily / memory_health / weekly_review 三个脚本
 
 ---
 

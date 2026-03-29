@@ -1,13 +1,15 @@
 {
   "lastChecks": {
-    "weather": "2026-03-27T16:53",
-    "stock": "2026-03-27T10:35",
-    "ai_model": "2026-03-27T10:35",
-    "ship_news": "2026-03-27T10:35",
-    "comfyui": "2026-03-27T13:09",
-    "ai_daily_report": "2026-03-27T08:33",
-    "cron_health": "2026-03-27T16:53",
-    "gold": "2026-03-27T16:53"
+    "cron_health": "2026-03-30T01:23",
+    "comfyui": "2026-03-29T20:09",
+    "openclaw_feishu": "2026-03-29T18:33",
+    "gold": "2026-03-30T01:23"
   },
-  "note": "2026-03-27 16:53: 心跳检查。天气广佛+28°C局部多云，无预警。金价正常（PAXG $4437.56, +0.12%）。SpaceX新闻15:00因Gateway重启未执行（下一班18:00）。Cron任务仍全部error（Feishu投递目标缺失，已报告待修复）。深度学习系统上午确认OK。"
+  "gatewayStatus": "stable, single process (158767), version 2026.3.28",
+  "cronTaskStatus": {
+    "3273567b_deepLearning": "MISSING 01:00 run (last Sunday 01:44) - manually triggered subagent",
+    "73d65bb2_learningReview": "OK, enabled"
+  },
+  "feishuPluginStatus": "v2026.3.28, stable",
+  "note": "2026-03-30 01:23: Deep learning task missed 01:00 trigger (gateway restart likely). Manually spawned subagent. Gold XAU $4495.61 stable. Other checks normal."
 }

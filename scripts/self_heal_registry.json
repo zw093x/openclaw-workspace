@@ -1,0 +1,130 @@
+{
+  "errors": [
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982762+08:00",
+      "severity": "medium",
+      "msg": "学习复盘报告 cron 0 6 * * * @ Asia/Shangha... in 6h 3h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982777+08:00",
+      "severity": "medium",
+      "msg": "每日早报 cron 30 7 * * * @ Asia/Shangh... in 8h 3h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982781+08:00",
+      "severity": "medium",
+      "msg": "AI行业日报 cron 0 8 * * * @ Asia/Shangha... in 8h 16h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982784+08:00",
+      "severity": "medium",
+      "msg": "CG行业资讯日报 cron 0 8 * * * @ Asia/Shangha... in 8h 16h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982786+08:00",
+      "severity": "medium",
+      "msg": "每日天气穿衣饮食提醒 cron 0 8 * * * @ Asia/Shangha... in 8h 16h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982789+08:00",
+      "severity": "medium",
+      "msg": "AI绘画日报 cron 30 8 * * * @ Asia/Shangh... in 9h 15h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982791+08:00",
+      "severity": "medium",
+      "msg": "每日股票开盘提醒 cron 55 8 * * * @ Asia/Shangh... in 9h 15h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982793+08:00",
+      "severity": "medium",
+      "msg": "科技资讯日报 cron 0 9 * * * @ Asia/Shangha... in 9h 15h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982795+08:00",
+      "severity": "medium",
+      "msg": "SpaceX上市新闻监控 cron 0 9,12,15,18,21 * * * @ ... in 9h 3h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982797+08:00",
+      "severity": "medium",
+      "msg": "ComfyUI每日学习提醒 cron 0 20 * * * @ Asia/Shangh... in 20h 4h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982799+08:00",
+      "severity": "medium",
+      "msg": "晚间复盘 cron 0 22 * * * @ Asia/Shangh... in 22h 2h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982801+08:00",
+      "severity": "medium",
+      "msg": "ComfyUI每日复盘 cron 5 22 * * * @ Asia/Shangh... in 22h 1h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982803+08:00",
+      "severity": "medium",
+      "msg": "每周日综合周报 cron 0 10 * * 0 @ Asia/Shangh... in 6d 14h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "cron_error",
+      "first_seen": "2026-03-29T23:40:10.982805+08:00",
+      "severity": "medium",
+      "msg": "ComfyUI每周总结 cron 0 22 * * 0 @ Asia/Shangh... in 7d 2h ago error isolated",
+      "auto_fixed": true
+    },
+    {
+      "type": "disk_warning",
+      "first_seen": "2026-03-29T23:40:10.982807+08:00",
+      "severity": "low",
+      "msg": "磁盘使用率 81%",
+      "auto_fixed": false
+    },
+    {
+      "type": "disk_warning",
+      "first_seen": "2026-03-30T00:05:48.127883+08:00",
+      "severity": "low",
+      "msg": "磁盘使用率 81%",
+      "auto_fixed": false
+    }
+  ],
+  "fixes": {
+    "cron_error": {
+      "first_seen": "2026-03-29T23:40:10.982825+08:00",
+      "fix_count": 2,
+      "fix_action": "fix_cron_error",
+      "description": "重启失败的 cron 任务",
+      "last_fixed": "2026-03-30T00:05:48.127911+08:00"
+    }
+  },
+  "stats": {
+    "total_scans": 3,
+    "total_fixes": 2,
+    "last_scan": "2026-03-30T00:05:09.172385+08:00"
+  }
+}

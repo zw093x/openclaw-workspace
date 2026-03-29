@@ -37,6 +37,16 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+- **Token**: `3d1438146f355d26c67c44516d809171ae180cedf85981d2`（2026-03-29 更新）
+- **UI**: http://127.0.0.1:18789（WebSocket 连接）
+
+## 服务器称呼规范
+
+| 称呼 | 指向 | IP |
+|------|------|-----|
+| **云服务器** | 腾讯云轻量应用 | 42.193.183.176 |
+| **本地服务器** | P工的本机/本地部署 | 127.0.0.1 |
+
 ## Open Terminal (Docker)
 - **状态**: ✅ 运行中 (Docker)
 - **镜像**: ghcr.nju.edu.cn/open-webui/open-terminal:main
