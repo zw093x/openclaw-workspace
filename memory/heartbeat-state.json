@@ -1,15 +1,13 @@
 {
   "lastChecks": {
-    "cron_health": "2026-03-30T01:23",
+    "cron_health": "2026-03-30T02:48",
     "comfyui": "2026-03-29T20:09",
     "openclaw_feishu": "2026-03-29T18:33",
-    "gold": "2026-03-30T01:23"
+    "gold": "2026-03-29T20:07"
   },
-  "gatewayStatus": "stable, single process (158767), version 2026.3.28",
   "cronTaskStatus": {
-    "3273567b_deepLearning": "MISSING 01:00 run (last Sunday 01:44) - manually triggered subagent",
-    "73d65bb2_learningReview": "OK, enabled"
+    "3273567b_deepLearning": "OK - 02:03 file edit error (auto-recovered), 02:17 success",
+    "73d65bb2_learningReview": "OK, enabled, delivery issue accepted"
   },
-  "feishuPluginStatus": "v2026.3.28, stable",
-  "note": "2026-03-30 01:23: Deep learning task missed 01:00 trigger (gateway restart likely). Manually spawned subagent. Gold XAU $4495.61 stable. Other checks normal."
+  "note": "2026-03-30 02:48: Deep learning recovered from 02:03 error. System healthy."
 }

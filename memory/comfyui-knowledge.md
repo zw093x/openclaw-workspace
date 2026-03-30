@@ -134,6 +134,28 @@ ComfyUI/
   - `85b7495` chore: update workflow templates to v0.9.39 (#13196) — 工作流模板更新
 - **学习建议**: v0.18.2+ 新增 RAM 缓存管理，模型加载更高效，学习时可关注 custom_nodes 内存占用
 
+### 2026-03-30 复盘（第1周收官 🎉）
+- **今日任务**: ComfyUI Manager 配置 + 第1周总结（第7天）
+- **进度状态**: ✅ 第1周全部完成（7/7 = 100%）
+- **GitHub 最新动态**（3/29-3/30）:
+  - `8d723d2` Fix/tweak pinned memory accounting (#13221) — 显存管理优化
+  - `d113d1c` feat(api-nodes-Tencent3D): allow smaller possible face_count; add uv_image output (#13207) — 🔴 重要：腾讯3D节点新增 uv_image 输出 + 更小面数选项
+  - `a500f1e` CORE-13 feat: Support RT-DETRv4 detection model (#12748) — 新检测模型支持
+  - `3f77450` Fix #13214 (#13216) — Bug 修复
+- **ComfyUI Manager 动态**:
+  - 新增 Vega Flow V8.9 — Temporal Stabilisation 节点（视频时序稳定）
+  - 新增 ComfyUI-MVNT — AI 舞蹈编排（音乐→舞蹈）
+  - Manager DB 更新频繁
+- **第1周总结**:
+  - ✅ ComfyUI v0.18.1 安装部署
+  - ✅ OpenSpec 安装 + 规范管理概念
+  - ✅ 文生图完整流程
+  - ✅ 图生图 + Img2Img
+  - ✅ ControlNet 入门
+  - ✅ 模型管理 + LoRA
+  - ✅ ComfyUI Manager
+- **第2周预告**: Tripo3D 节点 + 图生3D 流程（4/1 开始）
+
 ### 2026-03-29 复盘（第1周第6天）
 - **今日任务**: 模型管理 + LoRA（第6天）
 - **进度状态**: ✅ 完成（模型目录结构、推荐模型已梳理）
@@ -199,10 +221,11 @@ ComfyUI/
 | 4 | TRELLIS（Microsoft） | 单图带纹理 | 中 | 高 |
 | 5 | StableFast3D | 快速预览 | 极快 | 中 |
 
-### ComfyUI v0.18.0 原生 3D 节点
+### ComfyUI v0.18.0 原生 3D 节点（持续迭代中）
 - **Tencent TextToModel**: 文本→3D 模型（内置节点）
 - **Tencent ImageToModel**: 图像→3D 模型（内置节点）
 - 意义：首次将 3D 生成能力集成到 ComfyUI 核心，无需第三方插件
+- **🆕 3/29 更新**: `d113d1c` 新增 uv_image 输出 + 更小面数选项 — 3D 节点仍在快速迭代
 
 ### ComfyUI-3D-Pack（核心扩展）
 - GitHub: MrForExample/ComfyUI-3D-Pack | Stars: 3.7k | 最新 v0.1.6

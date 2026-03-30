@@ -1,20 +1,28 @@
 {
-  "lastCheck": "2026-03-30T00:01:00+08:00",
+  "lastCheck": "2026-03-30T15:36:00+08:00",
   "xau_usd": {
-    "bid": 4494.88,
-    "ask": 4496.41,
-    "mid": 4495.645,
-    "source": "swissquote"
+    "bid": 4517.39,
+    "ask": 4518.08,
+    "mid": 4517.74,
+    "source": "swissquote",
+    "ts": 1774856207751
   },
   "xag_usd": {
-    "bid": 69.67,
-    "ask": 69.777,
-    "mid": 69.724,
-    "source": "swissquote"
+    "bid": 70.10,
+    "ask": 70.16,
+    "mid": 70.13,
+    "source": "swissquote",
+    "ts": 1774856207792
+  },
+  "methanol_MA0": {
+    "current": 3319,
+    "open": 3349,
+    "high": 3498,
+    "low": 3293,
+    "change_pct": -0.90,
+    "source": "sina"
   },
   "usd_cny": 6.92,
-  "xau_cny_per_gram": 1000.21,
-  "change_from_last": "+0.00%",
   "alert_level": "normal",
-  "note": "黄金$4495.645，↓0.00%；白银$69.724；甲醇期货3381元（持平）。午夜检查，无异动。"
+  "note": "15:36检查，金价微跌-0.11%，白银微涨+0.06%，甲醇-0.9%。均未达预警阈值。"
 }

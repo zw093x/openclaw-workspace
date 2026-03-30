@@ -1,6 +1,6 @@
 {
-  "lastCheck": 1774799000,
-  "checkedAt": "2026-03-29T23:43:00+08:00",
+  "lastCheck": 1774808160,
+  "checkedAt": "2026-03-30T04:56:00+08:00",
   "latestVersion": "v0.18.2",
   "versionsChecked": ["v0.16.1", "v0.16.2", "v0.16.3", "v0.16.4", "v0.17.0", "v0.17.1", "v0.17.2", "v0.18.0", "v0.18.1", "v0.18.2"],
   "thisSessionUpdates": [
@@ -8,16 +8,17 @@
       "version": "v0.18.2",
       "date": "2026-03-25",
       "type": "Latest",
-      "detail": "Released 4 days ago. No further releases since. Changelog pending.",
+      "detail": "Deep monitoring delivered 04:04. Key findings: CacheProvider API, fp16 intermediates (-30-40% VRAM), mxfp8 quantization, TRELLIS2 ecosystem most mature 3D solution, asset-mcp (Meshy MCP) new agentic workflow entry.",
       "severity": "medium"
     }
   ],
   "nodeEcosystem": {
     "ComfyUI-3D-Pack": {"lastCommit": "2025-11-17", "status": "stable"},
     "Hunyuan3D-2.1": {"lastCommit": "none since Mar 20", "status": "stable"},
-    "TRELLIS": {"lastCommit": "none since Mar 20", "status": "stable"},
-    "StableFast3D": {"lastCommit": "none since Mar 20", "status": "stable"}
+    "TRELLIS": {"lastCommit": "active multi-fork", "status": "hot"},
+    "StableFast3D": {"lastCommit": "none since Mar 20", "status": "stable"},
+    "asset-mcp (Meshy)": {"status": "new - MCP protocol integration"}
   },
-  "notificationSent": false,
-  "notificationNote": "Quick check at 23:43 - no new releases or updates since 10:12 AM check."
+  "notificationSent": true,
+  "notificationNote": "Deep monitoring report delivered at 04:04. TRELLIS2 recommended as primary 3D pipeline. v0.18.2 stable."
 }

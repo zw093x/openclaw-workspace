@@ -13,67 +13,47 @@ import os
 from datetime import datetime, timedelta
 
 # ====== 配置 ======
-# 持仓股票
-HOLDINGS = {
-    "sh600150": {
-        "name": "中国船舶",
-        "cost": 38.696,
-        "shares": 3000,
-        "reduce_levels": [
-            {"range": (32.50, 33.00), "sell": 250, "label": "第一减仓"},
-            {"range": (34.00, 34.50), "sell": 250, "label": "第二减仓"},
-        ],
-        "stop_loss": 29.00,
-        "key_levels": {
-            "MA5": 32.15, "MA10": 33.46, "MA20": 35.47,
-            "support": 30.83, "resistance": 32.15,
-        }
-    },
-    "sh600482": {
-        "name": "中国动力",
-        "cost": 34.389,
-        "shares": 3000,
-        "reduce_levels": [
-            {"range": (32.50, 33.00), "sell": 250, "label": "第一减仓"},
-            {"range": (33.50, 34.00), "sell": 250, "label": "第二减仓"},
-        ],
-        "stop_loss": 28.50,
-        "key_levels": {
-            "MA5": 30.25, "MA10": 31.24, "MA20": 32.72,
-            "support": 29.10, "resistance": 32.72,
-        }
-    },
-    "sh603656": {
-        "name": "泰禾智能",
-        "cost": 22.000,
-        "shares": 800,
-        "reduce_levels": [
-            {"range": (22.50, 22.70), "sell": 400, "label": "第一减仓"},
-            {"range": (23.00, 99.00), "sell": 400, "label": "清仓"},
-        ],
-        "stop_loss": 20.00,
-        "key_levels": {
-            "MA5": 21.34, "MA10": 21.73, "MA20": 22.09,
-            "support": 20.46, "resistance": 22.09,
-        }
-    },
-}
+HOLDINGS_FILE = "/root/.openclaw/workspace/config/holdings.json"
 
-# 视源股份（朋友账户）
-FRIEND = {
-    "sz002841": {
-        "name": "视源股份",
-        "cost": 33.80,
-        "shares": 500,
-        "stop_loss": 32.11,
-        "stop_loss_hard": 30.42,
-        "take_profit": [
-            {"range": (34.50, 35.00), "sell": 200, "label": "第一止盈"},
-            {"range": (35.00, 35.60), "sell": 300, "label": "第二止盈"},
-            {"range": (36.00, 99.00), "sell": 500, "label": "清仓"},
-        ],
-    },
-}
+def load_holdings():
+    """从 holdings.json 加载持仓配置"""
+    try:
+        with open(HOLDINGS_FILE, "r") as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"⚠️ 无法读取 {HOLDINGS_FILE}: {e}")
+        return {}, {}
+
+    holdings = {}
+    friends = {}
+
+    for item in data.get("holdings", []):
+        if item.get("status") == "sold" or item.get("shares", 0) == 0:
+            continue  # 跳过已清仓
+        code = f"{item['market']}{item['code']}"
+        holdings[code] = {
+            "name": item["name"],
+            "cost": item["cost_price"],
+            "shares": item["shares"],
+            "reduce_levels": [
+                {"range": tuple(r["range"]), "sell": r["sell"], "label": r["label"]}
+                for r in item.get("reduce_levels", [])
+            ],
+            "stop_loss": item.get("stop_loss", 0),
+        }
+
+    for item in data.get("watching", []):
+        code = f"{item['market']}{item['code']}"
+        friends[code] = {
+            "name": item["name"],
+            "cost": item.get("cost", 0),
+            "shares": item.get("shares", 0),
+            "stop_loss": item.get("stop_loss", 0),
+        }
+
+    return holdings, friends
+
+HOLDINGS, FRIEND = load_holdings()
 
 # 异动阈值
 ALERT_S1 = 3.0   # ±3%警告
@@ -159,6 +139,30 @@ def fetch_quotes(codes):
     except Exception as e:
         return {"error": str(e)}
 
+# ====== 动态技术指标 ======
+TECH_FILE = "/root/.openclaw/workspace/config/tech_levels.json"
+
+def load_tech_levels():
+    """加载动态技术指标"""
+    try:
+        with open(TECH_FILE, "r") as f:
+            data = json.load(f)
+        return data.get("stocks", {})
+    except:
+        return {}
+
+TECH_LEVELS = load_tech_levels()
+
+# ====== 专有分析模块 ======
+def run_proprietary_analysis(quotes):
+    """运行专有分析（板块强弱 + 资金流向）"""
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from proprietary_analysis import full_analysis
+        return full_analysis(quotes)
+    except Exception as e:
+        return {"error": str(e)}
+
 def check_alerts(quotes):
     """检查所有预警条件"""
     alerts = []
@@ -168,6 +172,8 @@ def check_alerts(quotes):
     for code, config in all_stocks.items():
         if code not in quotes:
             continue
+        if config.get("shares", 0) == 0:
+            continue  # 已清仓，跳过
         q = quotes[code]
         name = config["name"]
         price = q["price"]
@@ -175,6 +181,9 @@ def check_alerts(quotes):
         
         if price == 0:
             continue
+        
+        # 获取动态技术指标（如有）
+        tech = TECH_LEVELS.get(code, {})
         
         # 1. 涨跌幅异动
         if abs(change) >= ALERT_S2:
@@ -184,12 +193,12 @@ def check_alerts(quotes):
             severity = "⚠️警告"
             alerts.append(f"{severity} {name} 涨跌幅 {change:+.2f}%（超±{ALERT_S1}%阈值）")
         
-        # 2. 减仓位触发
-        if "reduce_levels" in config:
-            for level in config["reduce_levels"]:
-                lo, hi = level["range"]
-                if lo <= price <= hi:
-                    alerts.append(f"💰减仓触发 {name} 现价{price:.2f} 进入{level['label']}区间[{lo}-{hi}]，建议卖出{level['sell']}股")
+        # 2. 减仓位触发（优先用动态指标）
+        reduce_levels = tech.get("reduce_levels", []) or config.get("reduce_levels", [])
+        for level in reduce_levels:
+            lo, hi = level["range"]
+            if lo <= price <= hi:
+                alerts.append(f"💰减仓触发 {name} 现价{price:.2f} 进入{level['label']}区间[{lo}-{hi}]，建议卖出{level['sell']}股")
         
         # 3. 止盈位触发（朋友账户）
         if "take_profit" in config:
@@ -198,34 +207,92 @@ def check_alerts(quotes):
                 if lo <= price <= hi:
                     alerts.append(f"💰止盈触发 {name} 现价{price:.2f} 进入{level['label']}区间[{lo}-{hi}]，建议卖出{level['sell']}股")
         
-        # 4. 止损位
-        if "stop_loss" in config and price <= config["stop_loss"]:
+        # 4. 止损位（动态止损 > 静态止损）
+        dynamic_sl = tech.get("dynamic_stop_loss")
+        static_sl = config.get("stop_loss", 0)
+        effective_sl = dynamic_sl if dynamic_sl else static_sl
+        if effective_sl and price <= effective_sl:
             pct = (price - config["cost"]) / config["cost"] * 100
-            alerts.append(f"🛑止损警报 {name} 现价{price:.2f} 触及止损位{config['stop_loss']}，浮亏{pct:.1f}%")
+            sl_type = "动态止损" if dynamic_sl else "止损"
+            alerts.append(f"🛑{sl_type}警报 {name} 现价{price:.2f} 触及{sl_type}位{effective_sl}，浮亏{pct:.1f}%")
         
         if "stop_loss_hard" in config and price <= config["stop_loss_hard"]:
             alerts.append(f"🛑硬止损 {name} 现价{price:.2f} 跌破硬止损{config['stop_loss_hard']}，建议清仓")
         
-        # 5. 关键技术位突破
-        if "key_levels" in config:
-            levels = config["key_levels"]
-            for label, level_price in levels.items():
-                if "MA" in label or label in ["support", "resistance"]:
-                    # 向上突破
-                    if q["high"] >= level_price and q["open"] < level_price:
-                        direction = "突破" if change > 0 else "触及"
-                        alerts.append(f"📊技术信号 {name} 盘中{direction}{label}({level_price:.2f})，当前{price:.2f}")
-                    # 向下跌破
-                    elif q["low"] <= level_price and q["open"] > level_price:
-                        alerts.append(f"📊技术信号 {name} 盘中跌破{label}({level_price:.2f})，当前{price:.2f}")
+        # 5. 关键技术位突破（动态 > 静态）
+        key_levels = {}
+        if tech:
+            key_levels = {
+                "MA5": tech.get("ma5"),
+                "MA10": tech.get("ma10"),
+                "MA20": tech.get("ma20"),
+                "support": tech.get("support"),
+                "resistance": tech.get("resistance"),
+            }
+        elif "key_levels" in config:
+            key_levels = config["key_levels"]
         
-        # 6. 盈亏状态
+        for label, level_price in key_levels.items():
+            if level_price is None:
+                continue
+            if "MA" in label or label in ["support", "resistance"]:
+                # 向上突破
+                if q["high"] >= level_price and q["open"] < level_price:
+                    direction = "突破" if change > 0 else "触及"
+                    alerts.append(f"📊技术信号 {name} 盘中{direction}{label}({level_price:.2f})，当前{price:.2f}")
+                # 向下跌破
+                elif q["low"] <= level_price and q["open"] > level_price:
+                    alerts.append(f"📊技术信号 {name} 盘中跌破{label}({level_price:.2f})，当前{price:.2f}")
+        
+        # 6. 成交量异常
+        if tech and tech.get("volume_ratio"):
+            vol_r = tech["volume_ratio"]
+            if vol_r >= VOLUME_RATIO:
+                alerts.append(f"📈量能异动 {name} 成交量比{vol_r}x（>{VOLUME_RATIO}x阈值）")
+        
+        # 7. RSI 超买超卖
+        rsi = tech.get("rsi_14")
+        if rsi:
+            if rsi > 75:
+                alerts.append(f"🔴RSI超买 {name} RSI={rsi}，强烈建议减仓")
+            elif rsi > 70:
+                alerts.append(f"🟡RSI偏高 {name} RSI={rsi}，考虑分批减仓")
+            elif rsi < 25:
+                alerts.append(f"🟢RSI极度超卖 {name} RSI={rsi}，关注反弹机会")
+        
+        # 8. 布林带触及
+        bb_upper = tech.get("bb_upper")
+        bb_lower = tech.get("bb_lower")
+        if bb_upper and price >= bb_upper * 0.99:
+            alerts.append(f"📊触及布林上轨 {name} 现价{price:.2f} 上轨{bb_upper}，短期超涨")
+        if bb_lower and price <= bb_lower * 1.01:
+            alerts.append(f"📊触及布林下轨 {name} 现价{price:.2f} 下轨{bb_lower}，关注支撑")
+        
+        # 9. 量价背离
+        divergence = tech.get("volume_divergence")
+        if divergence == "bearish":
+            alerts.append(f"⚠️量价背离 {name} 价涨量缩，趋势弱化信号")
+        
+        # 7. 盈亏状态
         pnl_pct = (price - config["cost"]) / config["cost"] * 100
         pnl_amount = (price - config["cost"]) * config["shares"]
         
         # 大幅亏损警告
         if pnl_pct <= -10:
             alerts.append(f"📉深度套牢 {name} 浮亏{pnl_pct:.1f}%（{pnl_amount:+.0f}元）")
+    
+    # 10. 专有分析：板块强弱 + 资金流向（仅在有预警时追加）
+    if alerts:
+        analysis = run_proprietary_analysis(quotes)
+        if analysis and not analysis.get("error"):
+            ss = analysis.get("sector_strength", {})
+            for s in ss.get("stocks", []):
+                if s.get("rs_vs_sector", 0) < -1.0:
+                    alerts.append(f"📉板块弱跑 {s['name']}跑输板块{abs(s['rs_vs_sector']):.1f}%，优先减仓此股")
+            mf = analysis.get("money_flow", {})
+            for code, info in mf.items():
+                if info.get("main_net", 0) < -3000:
+                    alerts.append(f"💸大资金流出 {info['name']}主力净流出{abs(info['main_net']):.0f}万，注意出货风险")
     
     return alerts
 
@@ -238,6 +305,8 @@ def generate_status(quotes):
     for code, config in all_stocks.items():
         if code not in quotes:
             continue
+        if config.get("shares", 0) == 0:
+            continue  # 已清仓，跳过
         q = quotes[code]
         price = q["price"]
         if price == 0:
@@ -249,9 +318,41 @@ def generate_status(quotes):
         total_pnl += pnl_amount
         
         emoji = "🔴" if change < 0 else "🟢" if change > 0 else "⚪"
+        
+        # 动态技术指标
+        tech = TECH_LEVELS.get(code, {})
+        trend = tech.get("trend", "")
+        sl = tech.get("dynamic_stop_loss", config.get("stop_loss", 0))
+        
         lines.append(f"{emoji} **{config['name']}** {price:.2f} ({change:+.2f}%) | 成本{config['cost']:.3f} | 浮亏{pnl_pct:+.1f}% ({pnl_amount:+.0f}元)")
+        if trend or sl:
+            tech_info = []
+            if trend:
+                tech_info.append(f"趋势:{trend}")
+            if sl:
+                tech_info.append(f"止损:{sl}")
+            lines.append(f"   {' | '.join(tech_info)}")
     
     lines.append(f"\n💰 **总浮亏: {total_pnl:+.0f}元**")
+
+    # 专有分析（板块强弱 + 资金流向）
+    analysis = run_proprietary_analysis(quotes)
+    if analysis and not analysis.get("error"):
+        ss = analysis.get("sector_strength")
+        if ss and ss.get("sector"):
+            sector = ss["sector"]
+            lines.append(f"\n📊 **板块: {sector.get('name','?')} {sector.get('change_pct',0):+.2f}%**")
+            for s in ss.get("stocks", []):
+                lines.append(f"  {s['name']}: vs板块 {s['rs_vs_sector']:+.2f}% {s['verdict']}")
+
+        mf = analysis.get("money_flow", {})
+        for code, info in mf.items():
+            lines.append(f"  💰 {info['name']}主力: {info['main_net']:+.0f}万 {info['signal']}")
+
+        for s in analysis.get("summary", []):
+            if "BDI" in s:
+                lines.append(f"  {s}")
+
     return "\n".join(lines)
 
 def is_trading_time():

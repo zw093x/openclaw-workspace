@@ -1,0 +1,108 @@
+{
+  "updated_at": "2026-03-30T15:20:01.642011",
+  "stocks": {
+    "sh600150": {
+      "code": "600150",
+      "name": "中国船舶",
+      "market": "sh",
+      "date": "2026-03-30",
+      "price": 30.55,
+      "ma5": 31.1,
+      "ma10": 32.29,
+      "ma20": 34.69,
+      "ma60": 35.07,
+      "support": 30.0,
+      "secondary_support": 30.83,
+      "resistance": 39.45,
+      "atr_14": 0.947,
+      "volume_ratio": 0.6,
+      "rsi_14": 12.5,
+      "macd_dif": -1.434,
+      "macd_dea": -0.877,
+      "macd_bar": -1.113,
+      "bb_upper": 40.29,
+      "bb_middle": 34.69,
+      "bb_lower": 29.08,
+      "volume_divergence": "none",
+      "dynamic_stop_loss": 29.88,
+      "reduce_levels": [
+        {
+          "range": [
+            32.13,
+            32.45
+          ],
+          "sell": 250,
+          "label": "MA10减仓(32.29)",
+          "trigger": "price_in_range"
+        },
+        {
+          "range": [
+            34.52,
+            34.86
+          ],
+          "sell": 250,
+          "label": "MA20减仓(34.69)",
+          "trigger": "price_in_range"
+        },
+        {
+          "range": [
+            38.66,
+            39.45
+          ],
+          "sell": 250,
+          "label": "阻力位减仓(39.45)",
+          "trigger": "price_in_range"
+        }
+      ],
+      "trend": "MA5<MA10 死叉 跌破MA60 RSI=12.5(超卖) MACD死叉",
+      "updated_at": "2026-03-30T15:20:01.597038"
+    },
+    "sh600482": {
+      "code": "600482",
+      "name": "中国动力",
+      "market": "sh",
+      "date": "2026-03-30",
+      "price": 31.75,
+      "ma5": 31.46,
+      "ma10": 31.28,
+      "ma20": 33.31,
+      "ma60": 28.74,
+      "support": 29.1,
+      "secondary_support": 30.36,
+      "resistance": 39.26,
+      "atr_14": 1.839,
+      "volume_ratio": 0.59,
+      "rsi_14": 28.9,
+      "macd_dif": 0.095,
+      "macd_dea": 0.571,
+      "macd_bar": -0.952,
+      "bb_upper": 38.62,
+      "bb_middle": 33.31,
+      "bb_lower": 28.0,
+      "volume_divergence": "none",
+      "dynamic_stop_loss": 28.52,
+      "reduce_levels": [
+        {
+          "range": [
+            33.14,
+            33.48
+          ],
+          "sell": 250,
+          "label": "MA20减仓(33.31)",
+          "trigger": "price_in_range"
+        },
+        {
+          "range": [
+            38.47,
+            39.26
+          ],
+          "sell": 250,
+          "label": "阻力位减仓(39.26)",
+          "trigger": "price_in_range"
+        }
+      ],
+      "trend": "MA5>MA10 金叉 站上MA60 RSI=28.9(超卖) MACD死叉 零轴上方",
+      "updated_at": "2026-03-30T15:20:01.641969"
+    }
+  }
+}

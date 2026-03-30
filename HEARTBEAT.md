@@ -23,11 +23,11 @@
   - 突破历史关键价位（如整数关口）→ 主动推送
 - 状态文件：`memory/gold-price-state.json`
 
-## ComfyUI 生态监控（每12小时检查一次）
+## ComfyUI 生态监控（每日1次）
 
 **监控目标：** ComfyUI 架构变化 + 3D 节点生态 + AI 建模工作流
-**检查频率：** 每12小时检查一次（通过状态文件记录上次检查时间）
-**状态文件：** `memory/comfyui-monitor-state.json`（记录 lastCheck 时间戳，心跳时若距上次>=12小时则执行）
+**检查频率：** 每天 10:00（已配置 cron，无需心跳检查）
+**状态文件：** `memory/comfyui-monitor-state.json`
 **触发条件：** 发现任何重大更新/新节点/工作流突破 → 立即主动推送
 
 ## OpenClaw 飞书插件动态监控（每日检查1次）

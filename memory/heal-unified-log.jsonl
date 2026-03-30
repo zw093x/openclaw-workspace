@@ -1,0 +1,2 @@
+{"ts": "2026-03-30T15:17:59.268855", "pattern": "cron_timeout", "target": "全球热点新闻 (fa6cf991)", "error": "300s timeout, 多源搜索耗时过长", "action": "timeout 300→600s, 简化prompt从12条减到8条", "result": "fixed", "lesson": "搜索类任务默认应设600s，尤其是多源聚合类"}
+{"ts": "2026-03-30T15:24:35.258414", "pattern": "cron_timeout", "target": "批量修复 20个搜索类任务", "error": "timeout=0s 或过短，搜索类任务需要更长时间", "action": "全部设为 600s", "result": "fixed", "count": 20, "lesson": "所有搜索/资讯/复盘类任务默认 timeout 应为 600s，非搜索类（监控/健康检查）可保持较短"}

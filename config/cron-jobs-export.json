@@ -1,0 +1,1306 @@
+{
+  "jobs": [
+    {
+      "id": "2fc3762f-5e73-4e68-9b50-24a5581b6db3",
+      "name": "船舶行业新闻监控",
+      "enabled": true,
+      "createdAtMs": 1774725718887,
+      "updatedAtMs": 1774855285029,
+      "schedule": {
+        "expr": "0 9,11,13,15,17 * * 1-5",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。搜索船舶行业最新新闻。\n\n关注方向：\n1. 个股动态：中国船舶(600150)、中国动力(600482)公告/研报/异动\n2. 全球局势：地缘政治对船舶行业的影响\n3. 产业链消息：发动机、配套设备、LNG船/集装箱船订单\n4. 政策动向：船舶产业政策、环保法规\n5. 运价关联：BDI/运价对造船业的影响\n\n搜索关键词：中国船舶新闻、造船订单、shipbuilding news\n\n---\n【输出格式要求】\n1. 标题：🚢 船舶快讯 | 日期\n2. 用 --- 分隔：个股动态 / 全球局势 / 产业链 / 政策 / 运价\n3. 关键数据加粗\n4. 全文 10-15 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774861200000,
+        "lastRunAtMs": 1774854000012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 704541,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
+      "name": "飞书连接健康检查",
+      "enabled": true,
+      "createdAtMs": 1774798057079,
+      "updatedAtMs": 1774859425941,
+      "schedule": {
+        "expr": "*/30 * * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "飞书连接自检任务：\n1. 运行 `probeFeishu` 工具检测飞书连接状态\n2. 如果连接异常（无法发送消息/超时/未响应），尝试通过 `openclaw gateway restart` 重启 gateway 重建连接\n3. 检查连接恢复正常后，汇报结果\n4. 如一切正常，回复 NO_REPLY\n\n仅在连接异常时推送告警，格式：\n【🔌 飞书连接异常】\n---\n⚠️ 问题描述\n🔧 已采取措施\n📊 当前状态\n---",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "channel": "feishu",
+        "mode": "announce",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774861200000,
+        "lastRunAtMs": 1774859400010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 25931,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "2d07315a-9e35-4fe1-a594-b4fab676172e",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
+      "name": "OpenClaw 自愈系统",
+      "enabled": true,
+      "createdAtMs": 1774798709213,
+      "updatedAtMs": 1774848231997,
+      "schedule": {
+        "expr": "0 * * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "运行统一自愈系统：\n`python3 /root/.openclaw/workspace/scripts/unified_heal.py --fix --report`\n\n如有问题，汇报结果。如全部正常，回复 NO_REPLY。",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "channel": "feishu",
+        "mode": "announce",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774861442061,
+        "lastRunAtMs": 1774837146120,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180254,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "lastFailureAlertAtMs": 1774837326852
+      }
+    },
+    {
+      "id": "7f7a0ce8-4d2c-478f-9f63-78bc05ca9147",
+      "name": "黄金价格播报",
+      "enabled": true,
+      "createdAtMs": 1774725718865,
+      "updatedAtMs": 1774855552339,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000,
+        "anchorMs": 1774364669925
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是专业的金融助手。请执行以下操作：\n1. 通过 curl 获取黄金实时价格：curl -s \"https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD\"\n2. 通过 curl 获取USD/CNY汇率：curl -s \"https://api.exchangerate-api.com/v4/l",
+        "kind": "agentTurn",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774862412301,
+        "lastRunAtMs": 1774855212301,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 118149,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "5397caff-f1de-463d-9051-e8b42222092f",
+      "name": "SpaceX上市新闻监控",
+      "enabled": true,
+      "createdAtMs": 1774725718902,
+      "updatedAtMs": 1774855288062,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9,12,15,18,21 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。搜索SpaceX上市相关最新新闻。\n\n关注方向：\n1. SpaceX估值变动、IPO时间表\n2. Starship发射进展、星链业务\n3. 商业航天行业动态\n4. 对A股航天板块的影响\n\n搜索关键词：SpaceX IPO、SpaceX valuation、SpaceX上市、商业航天新闻\n\n---\n【输出格式要求】\n1. 标题：🚀 SpaceX追踪 | 日期\n2. 用 --- 分隔板块\n3. 全文 8-12 行（精简聚焦）",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774864800000,
+        "lastRunAtMs": 1774854704553,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 178353,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "f2b10d4e-e461-4a56-903e-9bfefaa170e5",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
+      "name": "Cron 自检修复",
+      "enabled": true,
+      "createdAtMs": 1774796653232,
+      "updatedAtMs": 1774855293442,
+      "schedule": {
+        "expr": "0 */6 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行 cron 自检任务：\n1. 运行 `python3 /root/.openclaw/workspace/scripts/cron_healthcheck.py` 检查所有 cron 任务的 delivery 配置\n2. 如有缺失配置的任务，运行 `python3 /root/.openclaw/workspace/scripts/cron_healthcheck.py --fix` 自动修复\n3. 检查是否有 error 状态的任务（`openclaw cron list | grep error`）\n4. 如有配置问题已修复，汇报修复结果\n5. 如全部正常，回复 NO_REPLY\n\n格式（有问题时）：\n【🔧 Cron 自检报告】\n---\n⚠️ 发现问题：X 个任务配置缺失\n✅ 已自动修复，需重启生效\n---",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "channel": "feishu",
+        "mode": "announce",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774864819434,
+        "lastRunAtMs": 1774847133504,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 47373,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "fa6cf991-1467-4fcf-9650-f0d312678790",
+      "agentId": "main",
+      "name": "🌍 全球热点新闻",
+      "enabled": true,
+      "createdAtMs": 1774854356046,
+      "updatedAtMs": 1774855294863,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,20 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "获取全球最新热点新闻（5分钟内完成）。\n\n快速搜索2-3个源（如 Google News、微博热搜、BBC），整理8条最热门新闻。\n每条：标题 + 一句话。覆盖科技/社会/娱乐各1-2条。\n\n输出格式：\n🌍 全球热点速递 | 日期\n• 新闻1\n• 新闻2\n...\n共8-10条，简洁明了。",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774872000000,
+        "lastRunAtMs": 1774855116268,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 178595,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "7922caa8-18ee-477f-b61b-8ebe8a8ee706",
+      "name": "股票每日复盘",
+      "enabled": true,
+      "createdAtMs": 1774725718948,
+      "updatedAtMs": 1774855299159,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 22 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。分析今日股票市场表现。\n\n当前持仓：中国船舶(600150) 3000股（成本38.696）、中国动力(600482) 3000股（成本34.389）\n\n要求：\n1. 搜索今日收盘数据：各持仓股收盘价、涨跌幅、成交量\n2. 大盘回顾：上证/深成/创业板收盘\n3. 板块分析：船舶制造板块表现\n4. 技术面：K线形态、均线、MACD简析\n5. 持仓盈亏：各股当日盈亏、总盈亏\n6. 明日展望：简要预判\n\n---\n【输出格式要求】\n1. 标题：📊 股票复盘 | 日期\n2. 用 --- 分隔板块\n3. 数据加粗，盈亏标注红绿\n4. 全文 15-20 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774879200000,
+        "lastRunAtMs": 1774795834223,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 64713,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "8ec0edd5-015a-435c-bd9f-7e8a0e8c5604",
+      "name": "晚间复盘",
+      "enabled": true,
+      "createdAtMs": 1774725718968,
+      "updatedAtMs": 1774855302096,
+      "schedule": {
+        "expr": "0 22 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。生成今日综合复盘报告。\n\n内容要求：\n1. 今日大事：今天最重要的3件事（与用户相关）\n2. 股票复盘：持仓股票今日表现、关键数据、技术面分析\n3. 学习进度：ComfyUI学习/股票学习今日进展\n4. 明日预告：明天的重要日程/提醒\n5. 晚安提示：结合天气的温馨提醒\n\n---\n【输出格式要求】\n1. 标题：🌙 晚间复盘 | 日期\n2. 用 --- 分隔板块\n3. 股票部分数据加粗\n4. 全文 15-20 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774879200000,
+        "lastRunAtMs": 1774834163885,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 59616,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "3273567b-986e-4840-985d-d4158cf423ba",
+      "name": "深度学习时段",
+      "enabled": true,
+      "createdAtMs": 1774547091297,
+      "updatedAtMs": 1774855305059,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 1,2,3,4,5 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业股票学习系统。每晚01:30-05:30进行4小时深度学习。学习内容追加到memory/stock-knowledge.md，不推送飞书，只在summary输出复盘。分析标的：中国船舶(600150)、中国动力(600482)。",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774890000000,
+        "lastRunAtMs": 1774819234439,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 65118,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "bf6a5a60-fe46-4c12-92e8-aa83f92fb61a",
+      "name": "技能自动更新",
+      "enabled": true,
+      "createdAtMs": 1774725719002,
+      "updatedAtMs": 1774855555331,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "逐个检查并更新所有已安装技能。每个技能之间间隔10秒避免限速。只更新有新版本的，已是最新则跳过。完成后汇报更新结果。使用命令：npx clawhub update <skill-name> --no-input",
+        "kind": "agentTurn",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774897200000
+      }
+    },
+    {
+      "id": "b826f128-7234-4f56-bea5-8602b82ccf61",
+      "name": "每日节气节日提醒",
+      "enabled": true,
+      "createdAtMs": 1774725719014,
+      "updatedAtMs": 1774855558237,
+      "schedule": {
+        "expr": "0 7 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。查询今日节气/节日信息并推送。\n\n要求：\n1. 查询今日农历、节气（距下一节气天数）\n2. 传统节日/现代节日\n3. 节气习俗和养生要点\n4. 与坐月子结合的建议（配偶产后恢复中）\n\n---\n【输出格式要求】\n1. 标题：🌸 节气节日 | 日期\n2. 用 --- 分隔板块\n3. 全文 8-12 行\n4. 无特殊节日时回复简洁版",
+        "kind": "agentTurn",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774911600000,
+        "lastRunAtMs": 1774833197245,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 20921,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "e96cd217-9d93-42f0-a0a0-bbaaa1fe12e9",
+      "name": "每日健康小贴士",
+      "enabled": true,
+      "createdAtMs": 1774725719029,
+      "updatedAtMs": 1774855307942,
+      "schedule": {
+        "expr": "0 7 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。结合今日天气推送健康养生建议。\n\n背景：配偶坐月子中（产后第19天），宝宝出生19天\n\n要求：\n1. 搜索今日广州/佛山天气\n2. 结合天气的养生建议（饮食/起居/运动）\n3. 产妇专项护理建议\n4. 宝宝护理提示\n5. 推荐1-2道适合今日的汤品/菜品\n\n\n信息来源：\n1. 运行 `python3 /root/.openclaw/workspace/scripts/get_weather.py` 获取逐时天气预报\n2. 将脚本输出的天气数据融入报告\n\n---\n【输出格式要求】\n1. 标题：💡 健康小贴士 | 日期\n2. 用 --- 分隔板块\n3. 全文 10-15 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774911600000,
+        "lastRunAtMs": 1774833218176,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 19756,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "17468e27-b4e1-4858-a735-491cb1ec1712",
+      "name": "每日早报",
+      "enabled": true,
+      "createdAtMs": 1774725719049,
+      "updatedAtMs": 1774855310885,
+      "schedule": {
+        "expr": "30 7 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n请生成今日早报，天气数据已自动获取（见下方），直接引用即可。\n\n内容要求：\n1. **日期信息**：公历日期、星期、农历、节气（距下一节气天数）、节日\n2. **产后护理**：产后天数、当前阶段、今日重点护理建议\n3. **两地天气详情**（佛山北滘 + 广州猎德）：\n   - 必须引用下方提供的天气数据（逐时降雨时段、温度范围）\n   - 标注变天时间点（如 \"⏰ 14:00 起雷阵雨，17:00 转阴\"）\n   - 出行建议（是否带伞、最佳外出时段）\n4. **交易提示**：今日是否交易日，关注标的（中国船舶600150、中国动力600482）\n5. **养生建议**：结合天气+节气+产后阶段，给出饮食/起居建议（推荐1-2道汤品）\n6. **节日节气习俗**：如有传统习俗或注意事项，简要提醒\n\n---\n【输出格式要求】\n1. 第一行：**标题**（emoji + 任务名 + 日期）\n2. 用 --- 分隔不同板块\n3. 每个板块用 **板块名** 开头\n4. 每行一条信息，用 • 开头\n5. 天气板块必须引用下方数据中的降雨时段和温度范围\n6. 全文 15-20 行\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-03-30 09:14\n---\n**佛山北滘**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：06:00 （降雨概率71%）\n🌡 全天温度：24°C ~ 32°C\n---\n**广州天河**：23°C（体感25°C）| Heavy rain with thunderstorm, squalls | 湿度94% | S17km/h\n⏰ 降雨时段：09:00 （降雨概率84%） | 18:00 （降雨概率81%） | 21:00 （降雨概率82%）\n🌡 全天温度：24°C ~ 33°C\n---\n🌂 出行建议：预计 06:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-03-30 09:22\n---\n**佛山北滘**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：06:00 （降雨概率71%）\n🌡 全天温度：24°C ~ 32°C\n---\n**广州天河**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：09:00 （降雨概率84%） | 18:00 （降雨概率81%） | 21:00 （降雨概率82%）\n🌡 全天温度：24°C ~ 33°C\n---\n🌂 出行建议：预计 06:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-03-30 09:30\n---\n**佛山北滘**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：06:00 （降雨概率71%）\n🌡 全天温度：24°C ~ 32°C\n---\n**广州天河**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：09:00 （降雨概率84%） | 18:00 （降雨概率81%） | 21:00 （降雨概率82%）\n🌡 全天温度：24°C ~ 33°C\n---\n🌂 出行建议：预计 06:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-03-30 09:31\n---\n**佛山北滘**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：06:00 （降雨概率71%）\n🌡 全天温度：24°C ~ 32°C\n---\n**广州天河**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：09:00 （降雨概率84%） | 18:00 （降雨概率81%） | 21:00 （降雨概率82%）\n🌡 全天温度：24°C ~ 33°C\n---\n🌂 出行建议：预计 06:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774913400000,
+        "lastRunAtMs": 1774834280450,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 23410,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "8944a88c-bf11-484c-b594-ff8ac4f5517e",
+      "name": "AI行业日报",
+      "enabled": true,
+      "createdAtMs": 1774725719080,
+      "updatedAtMs": 1774855314068,
+      "schedule": {
+        "expr": "0 8 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。搜索今日AI行业最新资讯。\n\n关注方向：\n1. 大模型动态：GPT/Claude/Gemini/国产大模型最新发布、性能对比\n2. AI应用：视频生成（Sora/可灵）、图像生成（Midjourney/SD）、代码助手\n3. AI+3D：3D生成模型、NeRF、Gaussian Splatting、AI建模工具\n4. 芯片/算力：GPU供应、算力价格、英伟达/AMD动态\n5. 行业大事：融资并购、政策法规、开源项目\n\n搜索关键词：今日AI新闻、AI行业大事、artificial intelligence news today\n\n---\n【输出格式要求】\n1. 标题：🤖 AI日报 | 日期\n2. 用 --- 分隔：大模型 / AI应用 / AI+3D / 芯片算力 / 行业大事\n3. 每条标注来源（如 \"[Reuters]\"）\n4. 重点新闻加粗标题\n5. 全文 15-20 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774915200000,
+        "lastRunAtMs": 1774829135800,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 176740,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "a8d0f9e7-adf1-4308-87a0-c48d0a9cb62e",
+      "name": "CG行业资讯日报",
+      "enabled": true,
+      "createdAtMs": 1774725719064,
+      "updatedAtMs": 1774855316993,
+      "schedule": {
+        "expr": "0 8 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。搜索今日CG/影视/游戏行业资讯。\n\n关注方向：\n1. 软件更新：Maya/Blender/Houdini/ZBrush/UE5/Unity版本更新\n2. AI+CG：ComfyUI更新、AI渲染器、AI动画工具\n3. 行业动态：大厂项目、技术突破、艺术家分享\n4. 渲染技术：实时光追、离线渲染器更新\n5. 用户相关：建模工具链优化、工作流改进\n\n搜索关键词：CG行业新闻、VFX news、3D软件更新、Blender更新\n\n---\n【输出格式要求】\n1. 标题：🎨 CG日报 | 日期\n2. 用 --- 分隔：软件更新 / AI+CG / 行业动态 / 技术前沿\n3. 软件更新标注版本号\n4. 全文 12-18 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774915200000,
+        "lastRunAtMs": 1774828800008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 335792,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "e1a5659e-5cf0-4da9-bf86-9564ccda671b",
+      "name": "每日天气穿衣饮食提醒",
+      "enabled": true,
+      "createdAtMs": 1774725719093,
+      "updatedAtMs": 1774855561175,
+      "schedule": {
+        "expr": "0 8 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。基于天气数据生成穿衣+饮食建议。\n天气数据已自动获取（见下方），直接引用即可。\n\n背景：配偶坐月子中，宝宝出生不久。\n\n内容：\n1. 引用下方天气数据（逐时降雨、温度范围）\n2. 穿衣建议：产妇（纯棉透气、防潮保暖）+ 家人\n3. 月子饮食推荐：结合天气+产后阶段推荐2-3道菜/汤\n4. 宝宝护理提示：结合天气的护理建议\n5. 出行建议：最佳外出时段、需带伞时段\n\n---\n【输出格式要求】\n1. 标题：emoji + 任务名 + 日期\n2. 用 --- 分隔板块：天气概况 / 穿衣建议 / 月子饮食 / 宝宝护理\n3. 天气需标注变天时间点（引用下方数据）\n4. 全文 15-20 行\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-03-30 09:14\n---\n**佛山北滘**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：06:00 （降雨概率71%）\n🌡 全天温度：24°C ~ 32°C\n---\n**广州天河**：23°C（体感25°C）| Heavy rain with thunderstorm, squalls | 湿度94% | S17km/h\n⏰ 降雨时段：09:00 （降雨概率84%） | 18:00 （降雨概率81%） | 21:00 （降雨概率82%）\n🌡 全天温度：24°C ~ 33°C\n---\n🌂 出行建议：预计 06:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-03-30 09:22\n---\n**佛山北滘**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：06:00 （降雨概率71%）\n🌡 全天温度：24°C ~ 32°C\n---\n**广州天河**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：09:00 （降雨概率84%） | 18:00 （降雨概率81%） | 21:00 （降雨概率82%）\n🌡 全天温度：24°C ~ 33°C\n---\n🌂 出行建议：预计 06:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-03-30 09:30\n---\n**佛山北滘**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：06:00 （降雨概率71%）\n🌡 全天温度：24°C ~ 32°C\n---\n**广州天河**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：09:00 （降雨概率84%） | 18:00 （降雨概率81%） | 21:00 （降雨概率82%）\n🌡 全天温度：24°C ~ 33°C\n---\n🌂 出行建议：预计 06:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-03-30 09:31\n---\n**佛山北滘**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：06:00 （降雨概率71%）\n🌡 全天温度：24°C ~ 32°C\n---\n**广州天河**：24°C（体感26°C）| Heavy rain with thunderstorm, squalls, light rain with thunderstorm | 湿度89% | S16km/h\n⏰ 降雨时段：09:00 （降雨概率84%） | 18:00 （降雨概率81%） | 21:00 （降雨概率82%）\n🌡 全天温度：24°C ~ 33°C\n---\n🌂 出行建议：预计 06:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】",
+        "kind": "agentTurn",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774915200000,
+        "lastRunAtMs": 1774829312540,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 34679,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "9ab1a76b-d2fc-4a5e-b67e-a3c2c141b0c9",
+      "name": "AI绘画日报",
+      "enabled": true,
+      "createdAtMs": 1774725719109,
+      "updatedAtMs": 1774855320262,
+      "schedule": {
+        "expr": "30 8 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。搜索今日AI绘画领域资讯（用户是3D模型师）。\n\n关注方向：\n1. 工具更新：Stable Diffusion/ComfyUI/Midjourney/Flux/可灵版本更新\n2. AI+3D：图转3D、文转3D、AI建模工具\n3. 社区热议：热门模型、LoRA、工作流分享\n4. 创作技巧：提示词技巧、工作流优化\n5. 商业应用：AI绘画在游戏/影视/广告中的应用案例\n\n搜索关键词：AI绘画最新消息、ComfyUI更新、Stable Diffusion news\n\n---\n【输出格式要求】\n1. 标题：🎨 AI绘画日报 | 日期\n2. 用 --- 分隔：工具更新 / AI+3D / 社区热议 / 创作技巧\n3. 全文 12-18 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774917000000,
+        "lastRunAtMs": 1774837123077,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 278367,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "a47a4994-6c25-4521-99d9-c9a47519347c",
+      "name": "A股大盘早评",
+      "enabled": true,
+      "createdAtMs": 1774725719130,
+      "updatedAtMs": 1774855324581,
+      "schedule": {
+        "expr": "50 8 * * 1-5",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。查询A股市场概况并推送早评。\n\n要求：\n1. 搜索\"隔夜美股收盘\"、\"港股恒生指数\"、\"A股大盘今日展望\"\n2. 外盘回顾：美股三大指数涨跌、港股表现、对A股影响\n3. 大盘展望：上证指数关键点位、支撑/压力位、今日走势预判\n4. 板块关注：船舶制造板块动态（中国船舶600150、中国动力600482）\n5. 重要消息面：影响市场的重大新闻（限3条）\n6. 操作建议：基于盘面的简要建议\n\n---\n【输出格式要求】\n1. 标题：emoji + 任务名 + 日期\n2. 用 --- 分隔板块：外盘回顾 / 大盘展望 / 板块关注 / 消息面 / 操作建议\n3. 每板块 • 列表，3-5 行\n4. 关键数据加粗（涨跌幅、点位）\n5. 全文 15-20 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774918200000,
+        "lastRunAtMs": 1774831800858,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 151481,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "817bddbc-9d36-4b73-9578-5431c29db316",
+      "name": "每日股票开盘提醒",
+      "enabled": true,
+      "createdAtMs": 1774725719147,
+      "updatedAtMs": 1774855328442,
+      "schedule": {
+        "expr": "55 8 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。A股开盘前推送持仓股票行情+相关新闻。\n\n要求：\n1. 搜索\"中国船舶600150今日行情\"、\"中国动力600482今日行情\"\n2. 持仓股票：中国船舶、中国动力的当前价、涨跌幅、技术面关键位\n3. 板块联动：船舶制造板块整体表现\n4. 盘前重要新闻：影响持仓的3条重要消息\n5. 操作提醒：是否需要关注减仓/加仓信号\n\n---\n【输出格式要求】\n1. 标题：🚢 开盘提醒 | 日期\n2. 用 --- 分隔板块\n3. 股票数据：当前价、涨跌幅、支撑/压力位\n4. 消息面每条一行，简明扼要\n5. 全文 10-15 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774918500000,
+        "lastRunAtMs": 1774832100366,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 379484,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "3ed26121-06e1-4765-9221-2dc9a0b530dd",
+      "name": "科技资讯日报",
+      "enabled": true,
+      "createdAtMs": 1774725719168,
+      "updatedAtMs": 1774855333806,
+      "schedule": {
+        "expr": "0 9 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。搜索今日科技行业资讯。\n\n关注方向：\n1. 硬件芯片：GPU/CPU新品、存储技术、消费电子\n2. 软件平台：操作系统、开发工具、云服务\n3. 互联网：社交平台、电商、搜索引擎\n4. 游戏：新游发布、游戏技术、主机/PC硬件\n5. 手机/智能设备：手机新品、穿戴设备、IoT\n\n搜索关键词：今日科技新闻、科技行业大事、tech news today\n\n---\n【输出格式要求】\n1. 标题：⚡ 科技日报 | 日期\n2. 用 --- 分隔：硬件芯片 / 软件平台 / 互联网 / 游戏 / 手机数码\n3. 每条标注来源\n4. 重要新闻加粗\n5. 全文 12-18 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774918800000,
+        "lastRunAtMs": 1774832800779,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 262280,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "93c3207a-3a43-4c29-afdc-e382dfa47483",
+      "agentId": "main",
+      "name": "📊 BDI指数每日更新",
+      "enabled": true,
+      "createdAtMs": 1774854728473,
+      "updatedAtMs": 1774855279209,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1-6",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "搜索今天的波罗的海干散货指数（BDI），获取数值后更新 /root/.openclaw/workspace/config/bdi_data.json。\n\n搜索1个源即可（如 \"BDI index today\"），获取今日数值。\n对比上次数据（读取 bdi_data.json），写入新数据。\n\n如变动>±3% 输出简短分析，否则回复 NO_REPLY。",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774918800000,
+        "lastError": "Error: cron: job execution timed out",
+        "lastRunAtMs": 1774854785715,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 120012,
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "ecc93a08-094b-4bf0-a89e-9db004515750",
+      "name": "盘中实时股票监控",
+      "enabled": true,
+      "createdAtMs": 1774725718767,
+      "updatedAtMs": 1774855336945,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0,15,30,45 9-14 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "盘中实时股票监控。运行 python3 /root/.openclaw/workspace/scripts/stock_realtime_monitor.py 获取实时行情。分析标的从 /root/.openclaw/workspace/config/holdings.json 读取。预警触发条件：1)涨跌幅超±3%(警告)或±5%(紧急) 2)触及减仓价位 3)跌破止损价 4)关键技术位突破 5)成交量异常。防消息轰炸：同类预警1小时内不重复。无预警时静默。",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774918800000,
+        "lastRunAtMs": 1774853100010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 27485,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "e9a9fdac-f203-421b-9311-8f59cca4c82b",
+      "name": "ComfyUI 生态深度监控",
+      "enabled": true,
+      "createdAtMs": 1774725718832,
+      "updatedAtMs": 1774855339907,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。执行 ComfyUI 每日综合推送（一天一次，包含生态+学习+复盘）。\n\n1. ComfyUI 最新动态：版本更新、新节点、3D生成生态变化\n2. 学习进度：根据4周学习计划（3/25-4/21），汇报当前进度和今日/明日任务\n3. 重点关注：Tripo3D/Meshy/Hunyuan3D 等3D节点、腾讯原生3D节点\n4. 实用建议：适合用户（3D模型师）的工作流优化建议\n\n搜索关键词：ComfyUI update、ComfyUI 3D node、comfyui new nodes\n\n---\n【输出格式要求】\n1. 标题：🎨 ComfyUI日报 | 日期 | 第X周\n2. 用 --- 分隔板块：生态动态 / 学习进度 / 重点关注\n3. 全文 12-18 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774922583057,
+        "lastRunAtMs": 1774836183064,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 343714,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "63fc0d6c-3c4b-4491-9358-70b2bc9b76d1",
+      "name": "每日股票收盘提醒",
+      "enabled": true,
+      "createdAtMs": 1774725718917,
+      "updatedAtMs": 1774855342842,
+      "schedule": {
+        "expr": "10 15 * * 1-5",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。A股收盘后推送收盘总结+盘后分析。\n\n要求：\n1. 搜索\"中国船舶600150收盘\"、\"中国动力600482收盘\"、\"A股收盘总结\"\n2. 持仓股票收盘：收盘价、涨跌幅、成交量变化、换手率\n3. 大盘收盘：上证/深成/创业板收盘情况\n4. 板块表现：船舶制造板块涨跌排名\n5. 盘后重要新闻：3条影响明日走势的消息\n6. 明日展望：简要预判+操作建议\n\n---\n【输出格式要求】\n1. 标题：📊 收盘总结 | 日期\n2. 用 --- 分隔板块\n3. 关键数据加粗\n4. 全文 15-20 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774941000000,
+        "lastRunAtMs": 1774854907606,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 208650,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "1992aa8b-6f31-4a5a-86da-eb4291ff98df",
+      "name": "月子阶段转换-第21天",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719269,
+      "updatedAtMs": 1774792343740,
+      "schedule": {
+        "at": "2026-04-01T00:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n产妇进入产后第21天，第三阶段→第四阶段（调理恢复期）。\n格式：\n【🍼 月子阶段转换】产后第21天 | 第四阶段开启\n---\n📋 护理重点调整：从催乳滋补转为调理恢复\n🍲 饮食建议：温补食材——当归、黄芪、党参\n⏰ 提醒：恭喜月子即将满月！\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775001600000
+      }
+    },
+    {
+      "id": "cafbeb91-edc8-4b69-af1a-8235c885472d",
+      "name": "每月财务提醒",
+      "enabled": true,
+      "createdAtMs": 1774725719283,
+      "updatedAtMs": 1774855565471,
+      "schedule": {
+        "expr": "0 9 1 * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n每月1号财务规划提醒。\n格式：\n【💰 每月财务提醒】X月\n---\n🏠 房贷：本月提醒\n👶 宝宝开支：预计费用\n🍼 月子相关：（如适用）\n📊 投资关注：中国船舶/中国动力\n💡 理财建议：（如有）\n---\n简洁实用。",
+        "kind": "agentTurn",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775005200000
+      }
+    },
+    {
+      "id": "2f6e53cf-9b9e-46b3-a1ac-15f94b58724d",
+      "name": "宝宝成长与健康提醒",
+      "enabled": true,
+      "createdAtMs": 1774725719302,
+      "updatedAtMs": 1774855345801,
+      "schedule": {
+        "expr": "0 10 * * 3",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n根据宝宝月龄输出成长报告（宝宝2026.3.11出生，母乳喂养）。\n格式：\n【👶 宝宝成长周报】出生第X周\n---\n📏 发育参考：身高/体重/头围参考值\n🍼 喂养建议：母乳喂养注意事项\n🩺 护理重点：本周照护要点\n💉 疫苗提醒：（如有近期疫苗）\n---\n温馨专业。",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775008800000
+      }
+    },
+    {
+      "id": "ee28465e-ff6a-4fa0-a35a-13e96cd9bbc6",
+      "name": "每周日综合周报",
+      "enabled": true,
+      "createdAtMs": 1774725719222,
+      "updatedAtMs": 1774855348733,
+      "schedule": {
+        "expr": "0 10 * * 0",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。生成本周综合周报。\n\n内容要求：\n1. 股票周表现：本周持仓涨跌、关键事件、技术面变化\n2. 月子护理进度：本周产后恢复情况、饮食建议\n3. ComfyUI学习进度：本周学习内容、完成情况\n4. 下周预告：重要日期/事件/提醒\n5. 数据回顾：本周重要数据汇总\n\n---\n【输出格式要求】\n1. 标题：📋 综合周报 | 日期范围\n2. 用 --- 分隔板块\n3. 数据加粗对比（本周vs上周）\n4. 全文 20-25 行（周报可稍长）",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775354400000,
+        "lastRunAtMs": 1774832632035,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 220366,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "324d8b01-b798-4486-915e-0a0a26e52934",
+      "name": "ComfyUI每周总结",
+      "enabled": true,
+      "createdAtMs": 1774725719238,
+      "updatedAtMs": 1774855568438,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 22 * * 0",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。生成本周ComfyUI学习总结。\n\n学习计划：4周掌握ComfyUI（3/25-4/21），用户是3D模型师。\n\n要求：\n1. 本周学习完成度（对照计划逐天检查）\n2. 已掌握的核心技能清单\n3. 本周重点发现（如新节点、新工作流）\n4. 知识库更新情况\n5. 下周学习重点\n6. 学习建议和调整\n\n---\n【输出格式要求】\n1. 标题：📊 ComfyUI周总结 | 日期\n2. 用 --- 分隔板块\n3. 数据对比用表格或列表\n4. 全文 15-20 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775397600000,
+        "lastRunAtMs": 1774832852415,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 254599,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "ac38642c-ce0a-4900-888c-7b2252ce446d",
+      "name": "AI模型价格监控周报",
+      "enabled": true,
+      "createdAtMs": 1774725719254,
+      "updatedAtMs": 1774855352958,
+      "schedule": {
+        "expr": "0 9 * * 1",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n检查当前配置的模型提供商状态、模型可用性、搜索主流模型最新定价。\n格式：\n【💰 AI模型价格周报】日期\n---\n📊 当前配置模型：（可用性状态）\n💲 价格变动：（如有调整）\n🏆 性价比推荐：（最优选择建议）\n---",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775437200000,
+        "lastRunAtMs": 1774833063059,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 100711,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "0376f8ba-a63b-404e-a966-80847177c008",
+      "name": "月子阶段转换-第28天",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719332,
+      "updatedAtMs": 1774792346263,
+      "schedule": {
+        "at": "2026-04-08T00:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n产妇产后第28天，月子正式结束！\n格式：\n【🎉 月子圆满结束】产后第28天\n---\n📋 回顾：四阶段全部完成\n⏰ 下一步：产后42天复查（5/22），请提前预约\n💡 后续护理：饮食可逐渐恢复正常，注意休息\n🎊 恭喜：顺利完成月子！\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775606400000
+      }
+    },
+    {
+      "id": "a124d144-2f0d-4593-a180-e92fa1847043",
+      "name": "宝宝满月提醒",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719365,
+      "updatedAtMs": 1774792346934,
+      "schedule": {
+        "at": "2026-04-10T01:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满月啦！2026年4月10日出生满30天。\n格式：\n【🎉 宝宝满月快乐】2026.4.10\n---\n📏 发育参考：身高约xx cm，体重约xx kg\n🍼 喂养：母乳喂养顺利，继续保持\n🎊 传统习俗：满月酒/剃胎发等\n⏰ 近期提醒：疫苗接种计划\n---\n温馨祝福。",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775782800000
+      }
+    },
+    {
+      "id": "2dbbdd11-0dac-4a0f-9d9c-35d0c036a2e3",
+      "name": "疫苗提醒-脊灰第1剂(2月龄)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719417,
+      "updatedAtMs": 1774792347939,
+      "schedule": {
+        "at": "2026-05-08T01:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满2月龄，5月11日需接种脊灰灭活疫苗第1剂。\n格式：\n【💉 疫苗提醒】5月11日 | 脊灰灭活第1剂\n---\n👶 宝宝：2月龄\n💉 接种：脊灰灭活疫苗第1剂\n⏰ 行动：请提前联系接种门诊预约\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1778202000000
+      }
+    },
+    {
+      "id": "3612039b-19af-4728-b67a-977fc5f048c6",
+      "name": "产后42天复查提醒",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719440,
+      "updatedAtMs": 1774792348182,
+      "schedule": {
+        "at": "2026-05-19T00:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n重要提醒：产后42天复查即将到来（5/22）。\n格式：\n【🩺 产后42天复查提醒】5月22日\n---\n⏰ 时间：5月22日（本周五）\n📋 检查项目：B超、伤口愈合、盆底功能、乳房检查\n👶 宝宝体检：同步预约儿科体检\n✅ 行动项：请提前预约挂号\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1779148800000
+      }
+    },
+    {
+      "id": "c16a2031-fc45-4edc-a5ae-af6dbdc021f6",
+      "name": "疫苗提醒-百白破+脊灰(3月龄)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719453,
+      "updatedAtMs": 1774792348430,
+      "schedule": {
+        "at": "2026-06-08T01:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满3月龄，6月11日需接种百白破第1剂+脊灰。\n格式：\n【💉 疫苗提醒】6月11日 | 百白破+脊灰\n---\n👶 宝宝：3月龄\n💉 接种：百白破第1剂 + 脊灰\n⏰ 行动：请提前联系接种门诊预约\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1780880400000
+      }
+    },
+    {
+      "id": "f6b3581e-9261-4f0b-89ea-c0d001aa5621",
+      "name": "宝宝百天提醒",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719475,
+      "updatedAtMs": 1774792348675,
+      "schedule": {
+        "at": "2026-06-19T01:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝百天啦！2026年6月19日出生满100天。\n格式：\n【🎉 宝宝百天快乐】2026.6.19\n---\n📏 发育参考：身高约xx cm，体重约xx kg\n🎯 发育里程碑：可能开始会抬头、抓握\n🎊 传统习俗：百天照/百天宴\n⏰ 近期提醒：（如有疫苗或检查）\n---\n祝小公主健康成长！",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1781830800000
+      }
+    },
+    {
+      "id": "8aacaca7-a4ad-43f4-8df9-63b6e7fa0836",
+      "name": "疫苗提醒-百白破+脊灰(4月龄)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719488,
+      "updatedAtMs": 1774792348923,
+      "schedule": {
+        "at": "2026-07-08T01:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满4月龄，7月11日需接种百白破第2剂+脊灰。\n格式：\n【💉 疫苗提醒】7月11日 | 百白破+脊灰\n---\n👶 宝宝：4月龄\n💉 接种：百白破第2剂 + 脊灰\n⏰ 行动：请提前联系接种门诊预约\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1783472400000
+      }
+    },
+    {
+      "id": "d150a68a-88e1-4547-8c12-3e234fd7d393",
+      "name": "疫苗提醒-百白破(5月龄)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719502,
+      "updatedAtMs": 1774792349170,
+      "schedule": {
+        "at": "2026-08-08T01:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满5月龄，8月11日需接种百白破第3剂。\n格式：\n【💉 疫苗提醒】8月11日 | 百白破第3剂\n---\n👶 宝宝：5月龄\n💉 接种：百白破第3剂\n⏰ 行动：请提前联系接种门诊预约\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1786150800000
+      }
+    },
+    {
+      "id": "6f347bc2-4f75-4783-8818-61de42430592",
+      "name": "疫苗提醒-乙肝+A群流脑(6月龄)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719519,
+      "updatedAtMs": 1774792349419,
+      "schedule": {
+        "at": "2026-09-08T01:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满6月龄，9月11日需接种乙肝第3剂+A群流脑第1剂。\n格式：\n【💉 疫苗提醒】9月11日 | 乙肝+A群流脑\n---\n👶 宝宝：6月龄\n💉 接种：乙肝第3剂 + A群流脑第1剂\n⏰ 行动：请提前联系接种门诊预约\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1788829200000
+      }
+    },
+    {
+      "id": "0fc45414-7b38-4575-b579-93ffe16cfdb8",
+      "name": "疫苗提醒-麻腮风+乙脑(8月龄)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774725719538,
+      "updatedAtMs": 1774792349666,
+      "schedule": {
+        "at": "2026-11-08T01:00:00.000Z",
+        "kind": "at"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n宝宝满8月龄，11月11日需接种麻腮风第1剂+乙脑减毒活疫苗第1剂。\n格式：\n【💉 疫苗提醒】11月11日 | 麻腮风+乙脑\n---\n👶 宝宝：8月龄\n💉 接种：麻腮风第1剂 + 乙脑减毒活疫苗第1剂\n⏰ 行动：请提前联系接种门诊预约\n---",
+        "kind": "agentTurn"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1794099600000
+      }
+    }
+  ],
+  "total": 41,
+  "offset": 0,
+  "limit": 41,
+  "hasMore": false,
+  "nextOffset": null
+}
