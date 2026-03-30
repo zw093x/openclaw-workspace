@@ -12,7 +12,7 @@
 ## 贵金属 & 大宗商品价格监控（每次心跳必检）
 
 监控黄金（XAU/USD）、白银（XAG/USD）、甲醇期货实时价格：
-- **黄金**：`curl -s 'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD'`
+- **黄金**：`curl -s "https://hq.sinajs.cn/list=hf_GC" -H "Referer: https://finance.sina.com.cn" | iconv -f GBK -t UTF-8`
 - **白银**：`curl -s 'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAG/USD'`
 - **甲醇**：`curl -s 'https://hq.sinajs.cn/list=nf_MA0' -H 'Referer: https://finance.sina.com.cn' | iconv -f GBK -t UTF-8`
 - **PAXG**：`curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd,cny&include_24hr_change=true'`

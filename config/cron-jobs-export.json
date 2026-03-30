@@ -1,327 +1,11 @@
 {
   "jobs": [
     {
-      "id": "2fc3762f-5e73-4e68-9b50-24a5581b6db3",
-      "name": "船舶行业新闻监控",
-      "enabled": true,
-      "createdAtMs": 1774725718887,
-      "updatedAtMs": 1774855285029,
-      "schedule": {
-        "expr": "0 9,11,13,15,17 * * 1-5",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。搜索船舶行业最新新闻。\n\n关注方向：\n1. 个股动态：中国船舶(600150)、中国动力(600482)公告/研报/异动\n2. 全球局势：地缘政治对船舶行业的影响\n3. 产业链消息：发动机、配套设备、LNG船/集装箱船订单\n4. 政策动向：船舶产业政策、环保法规\n5. 运价关联：BDI/运价对造船业的影响\n\n搜索关键词：中国船舶新闻、造船订单、shipbuilding news\n\n---\n【输出格式要求】\n1. 标题：🚢 船舶快讯 | 日期\n2. 用 --- 分隔：个股动态 / 全球局势 / 产业链 / 政策 / 运价\n3. 关键数据加粗\n4. 全文 10-15 行",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774861200000,
-        "lastRunAtMs": 1774854000012,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 704541,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7",
-      "agentId": "main",
-      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
-      "name": "飞书连接健康检查",
-      "enabled": true,
-      "createdAtMs": 1774798057079,
-      "updatedAtMs": 1774859425941,
-      "schedule": {
-        "expr": "*/30 * * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "飞书连接自检任务：\n1. 运行 `probeFeishu` 工具检测飞书连接状态\n2. 如果连接异常（无法发送消息/超时/未响应），尝试通过 `openclaw gateway restart` 重启 gateway 重建连接\n3. 检查连接恢复正常后，汇报结果\n4. 如一切正常，回复 NO_REPLY\n\n仅在连接异常时推送告警，格式：\n【🔌 飞书连接异常】\n---\n⚠️ 问题描述\n🔧 已采取措施\n📊 当前状态\n---",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "channel": "feishu",
-        "mode": "announce",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774861200000,
-        "lastRunAtMs": 1774859400010,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 25931,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "2d07315a-9e35-4fe1-a594-b4fab676172e",
-      "agentId": "main",
-      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
-      "name": "OpenClaw 自愈系统",
-      "enabled": true,
-      "createdAtMs": 1774798709213,
-      "updatedAtMs": 1774848231997,
-      "schedule": {
-        "expr": "0 * * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "运行统一自愈系统：\n`python3 /root/.openclaw/workspace/scripts/unified_heal.py --fix --report`\n\n如有问题，汇报结果。如全部正常，回复 NO_REPLY。",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "channel": "feishu",
-        "mode": "announce",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774861442061,
-        "lastRunAtMs": 1774837146120,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 180254,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "lastFailureAlertAtMs": 1774837326852
-      }
-    },
-    {
-      "id": "7f7a0ce8-4d2c-478f-9f63-78bc05ca9147",
-      "name": "黄金价格播报",
-      "enabled": true,
-      "createdAtMs": 1774725718865,
-      "updatedAtMs": 1774855552339,
-      "schedule": {
-        "kind": "every",
-        "everyMs": 7200000,
-        "anchorMs": 1774364669925
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是专业的金融助手。请执行以下操作：\n1. 通过 curl 获取黄金实时价格：curl -s \"https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD\"\n2. 通过 curl 获取USD/CNY汇率：curl -s \"https://api.exchangerate-api.com/v4/l",
-        "kind": "agentTurn",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774862412301,
-        "lastRunAtMs": 1774855212301,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 118149,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
-      }
-    },
-    {
-      "id": "5397caff-f1de-463d-9051-e8b42222092f",
-      "name": "SpaceX上市新闻监控",
-      "enabled": true,
-      "createdAtMs": 1774725718902,
-      "updatedAtMs": 1774855288062,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9,12,15,18,21 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。搜索SpaceX上市相关最新新闻。\n\n关注方向：\n1. SpaceX估值变动、IPO时间表\n2. Starship发射进展、星链业务\n3. 商业航天行业动态\n4. 对A股航天板块的影响\n\n搜索关键词：SpaceX IPO、SpaceX valuation、SpaceX上市、商业航天新闻\n\n---\n【输出格式要求】\n1. 标题：🚀 SpaceX追踪 | 日期\n2. 用 --- 分隔板块\n3. 全文 8-12 行（精简聚焦）",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774864800000,
-        "lastRunAtMs": 1774854704553,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 178353,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "f2b10d4e-e461-4a56-903e-9bfefaa170e5",
-      "agentId": "main",
-      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
-      "name": "Cron 自检修复",
-      "enabled": true,
-      "createdAtMs": 1774796653232,
-      "updatedAtMs": 1774855293442,
-      "schedule": {
-        "expr": "0 */6 * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "执行 cron 自检任务：\n1. 运行 `python3 /root/.openclaw/workspace/scripts/cron_healthcheck.py` 检查所有 cron 任务的 delivery 配置\n2. 如有缺失配置的任务，运行 `python3 /root/.openclaw/workspace/scripts/cron_healthcheck.py --fix` 自动修复\n3. 检查是否有 error 状态的任务（`openclaw cron list | grep error`）\n4. 如有配置问题已修复，汇报修复结果\n5. 如全部正常，回复 NO_REPLY\n\n格式（有问题时）：\n【🔧 Cron 自检报告】\n---\n⚠️ 发现问题：X 个任务配置缺失\n✅ 已自动修复，需重启生效\n---",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "channel": "feishu",
-        "mode": "announce",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774864819434,
-        "lastRunAtMs": 1774847133504,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 47373,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "fa6cf991-1467-4fcf-9650-f0d312678790",
-      "agentId": "main",
-      "name": "🌍 全球热点新闻",
-      "enabled": true,
-      "createdAtMs": 1774854356046,
-      "updatedAtMs": 1774855294863,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,20 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "获取全球最新热点新闻（5分钟内完成）。\n\n快速搜索2-3个源（如 Google News、微博热搜、BBC），整理8条最热门新闻。\n每条：标题 + 一句话。覆盖科技/社会/娱乐各1-2条。\n\n输出格式：\n🌍 全球热点速递 | 日期\n• 新闻1\n• 新闻2\n...\n共8-10条，简洁明了。",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774872000000,
-        "lastRunAtMs": 1774855116268,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 178595,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "7922caa8-18ee-477f-b61b-8ebe8a8ee706",
-      "name": "股票每日复盘",
-      "enabled": true,
-      "createdAtMs": 1774725718948,
-      "updatedAtMs": 1774855299159,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 22 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。分析今日股票市场表现。\n\n当前持仓：中国船舶(600150) 3000股（成本38.696）、中国动力(600482) 3000股（成本34.389）\n\n要求：\n1. 搜索今日收盘数据：各持仓股收盘价、涨跌幅、成交量\n2. 大盘回顾：上证/深成/创业板收盘\n3. 板块分析：船舶制造板块表现\n4. 技术面：K线形态、均线、MACD简析\n5. 持仓盈亏：各股当日盈亏、总盈亏\n6. 明日展望：简要预判\n\n---\n【输出格式要求】\n1. 标题：📊 股票复盘 | 日期\n2. 用 --- 分隔板块\n3. 数据加粗，盈亏标注红绿\n4. 全文 15-20 行",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774879200000,
-        "lastRunAtMs": 1774795834223,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 64713,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
-      }
-    },
-    {
-      "id": "8ec0edd5-015a-435c-bd9f-7e8a0e8c5604",
-      "name": "晚间复盘",
-      "enabled": true,
-      "createdAtMs": 1774725718968,
-      "updatedAtMs": 1774855302096,
-      "schedule": {
-        "expr": "0 22 * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。生成今日综合复盘报告。\n\n内容要求：\n1. 今日大事：今天最重要的3件事（与用户相关）\n2. 股票复盘：持仓股票今日表现、关键数据、技术面分析\n3. 学习进度：ComfyUI学习/股票学习今日进展\n4. 明日预告：明天的重要日程/提醒\n5. 晚安提示：结合天气的温馨提醒\n\n---\n【输出格式要求】\n1. 标题：🌙 晚间复盘 | 日期\n2. 用 --- 分隔板块\n3. 股票部分数据加粗\n4. 全文 15-20 行",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1774879200000,
-        "lastRunAtMs": 1774834163885,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 59616,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
-      }
-    },
-    {
       "id": "3273567b-986e-4840-985d-d4158cf423ba",
       "name": "深度学习时段",
       "enabled": true,
       "createdAtMs": 1774547091297,
-      "updatedAtMs": 1774855305059,
+      "updatedAtMs": 1774890196058,
       "schedule": {
         "kind": "cron",
         "expr": "0 1,2,3,4,5 * * *",
@@ -340,14 +24,88 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1774890000000,
-        "lastRunAtMs": 1774819234439,
+        "nextRunAtMs": 1774893600000,
+        "lastRunAtMs": 1774890000015,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 65118,
+        "lastDurationMs": 196043,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
+      "name": "飞书连接健康检查",
+      "enabled": true,
+      "createdAtMs": 1774798057079,
+      "updatedAtMs": 1774891816788,
+      "schedule": {
+        "expr": "*/30 * * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "飞书连接自检任务：\n1. 运行 `probeFeishu` 工具检测飞书连接状态\n2. 如果连接异常（无法发送消息/超时/未响应），尝试通过 `openclaw gateway restart` 重启 gateway 重建连接\n3. 检查连接恢复正常后，汇报结果\n4. 如一切正常，回复 NO_REPLY\n\n仅在连接异常时推送告警，格式：\n【🔌 飞书连接异常】\n---\n⚠️ 问题描述\n🔧 已采取措施\n📊 当前状态\n---",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774893600000,
+        "lastRunAtMs": 1774891800004,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 16784,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "2d07315a-9e35-4fe1-a594-b4fab676172e",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
+      "name": "OpenClaw 自愈系统",
+      "enabled": true,
+      "createdAtMs": 1774798709213,
+      "updatedAtMs": 1774867556113,
+      "schedule": {
+        "expr": "0 * * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "运行统一自愈系统：\n`python3 /root/.openclaw/workspace/scripts/unified_heal.py --fix --report`\n\n如有问题，汇报结果。如全部正常，回复 NO_REPLY。",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "channel": "feishu",
+        "mode": "announce",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774893842061,
+        "lastRunAtMs": 1774837146120,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180254,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "lastFailureAlertAtMs": 1774837326852
       }
     },
     {
@@ -378,11 +136,82 @@
       }
     },
     {
+      "id": "7f7a0ce8-4d2c-478f-9f63-78bc05ca9147",
+      "name": "黄金价格播报",
+      "enabled": true,
+      "createdAtMs": 1774725718865,
+      "updatedAtMs": 1774891253982,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000,
+        "anchorMs": 1774364669925
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "执行黄金价格获取脚本，获取结果后用卡片投递：\n\n1. 运行：python3 /root/.openclaw/workspace/scripts/gold_price.py\n2. 将结果通过卡片发送：python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"💰 黄金价格播报\" --type gold --text \"$(结果内容)\"\n\n如有预警信号（S1/S2）在卡片中额外说明。",
+        "kind": "agentTurn",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774898412329,
+        "lastRunAtMs": 1774891212329,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 41653,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "f2b10d4e-e461-4a56-903e-9bfefaa170e5",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
+      "name": "Cron 自检修复",
+      "enabled": true,
+      "createdAtMs": 1774796653232,
+      "updatedAtMs": 1774886480318,
+      "schedule": {
+        "expr": "0 */6 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行 cron 自检任务：\n1. 运行 `python3 /root/.openclaw/workspace/scripts/cron_healthcheck.py` 检查所有 cron 任务的 delivery 配置\n2. 如有缺失配置的任务，运行 `python3 /root/.openclaw/workspace/scripts/cron_healthcheck.py --fix` 自动修复\n3. 检查是否有 error 状态的任务（`openclaw cron list | grep error`）\n4. 如有配置问题已修复，汇报修复结果\n5. 如全部正常，回复 NO_REPLY\n\n格式（有问题时）：\n【🔧 Cron 自检报告】\n---\n⚠️ 发现问题：X 个任务配置缺失\n✅ 已自动修复，需重启生效\n---",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "channel": "feishu",
+        "mode": "announce",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774908019434,
+        "lastRunAtMs": 1774886426366,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 53952,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "b826f128-7234-4f56-bea5-8602b82ccf61",
       "name": "每日节气节日提醒",
       "enabled": true,
       "createdAtMs": 1774725719014,
-      "updatedAtMs": 1774855558237,
+      "updatedAtMs": 1774881994366,
       "schedule": {
         "expr": "0 7 * * *",
         "kind": "cron",
@@ -396,7 +225,7 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -416,7 +245,7 @@
       "name": "每日健康小贴士",
       "enabled": true,
       "createdAtMs": 1774725719029,
-      "updatedAtMs": 1774855307942,
+      "updatedAtMs": 1774881959463,
       "schedule": {
         "expr": "0 7 * * *",
         "kind": "cron",
@@ -430,7 +259,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -450,7 +279,7 @@
       "name": "每日早报",
       "enabled": true,
       "createdAtMs": 1774725719049,
-      "updatedAtMs": 1774855310885,
+      "updatedAtMs": 1774881868937,
       "schedule": {
         "expr": "30 7 * * *",
         "kind": "cron",
@@ -464,7 +293,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -498,7 +327,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -532,7 +361,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -552,7 +381,7 @@
       "name": "每日天气穿衣饮食提醒",
       "enabled": true,
       "createdAtMs": 1774725719093,
-      "updatedAtMs": 1774855561175,
+      "updatedAtMs": 1774881965463,
       "schedule": {
         "expr": "0 8 * * *",
         "kind": "cron",
@@ -566,7 +395,7 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -579,6 +408,41 @@
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
+      }
+    },
+    {
+      "id": "fa6cf991-1467-4fcf-9650-f0d312678790",
+      "agentId": "main",
+      "name": "🌍 全球热点新闻",
+      "enabled": true,
+      "createdAtMs": 1774854356046,
+      "updatedAtMs": 1774872201218,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8,20 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "获取全球最新热点新闻（5分钟内完成）。\n\n快速搜索2-3个源（如 Google News、微博热搜、BBC），整理8条最热门新闻。\n每条：标题 + 一句话。覆盖科技/社会/娱乐各1-2条。\n\n输出格式：\n🌍 全球热点速递 | 日期\n• 新闻1\n• 新闻2\n...\n共8-10条，简洁明了。",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774915200000,
+        "lastRunAtMs": 1774872011886,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 189332,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       }
     },
     {
@@ -600,7 +464,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -620,7 +484,7 @@
       "name": "A股大盘早评",
       "enabled": true,
       "createdAtMs": 1774725719130,
-      "updatedAtMs": 1774855324581,
+      "updatedAtMs": 1774882006349,
       "schedule": {
         "expr": "50 8 * * 1-5",
         "kind": "cron",
@@ -634,7 +498,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -702,7 +566,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -718,12 +582,46 @@
       }
     },
     {
+      "id": "5397caff-f1de-463d-9051-e8b42222092f",
+      "name": "SpaceX上市新闻监控",
+      "enabled": true,
+      "createdAtMs": 1774725718902,
+      "updatedAtMs": 1774875938134,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9,12,15,18,21 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。搜索SpaceX上市相关最新新闻。\n\n关注方向：\n1. SpaceX估值变动、IPO时间表\n2. Starship发射进展、星链业务\n3. 商业航天行业动态\n4. 对A股航天板块的影响\n\n搜索关键词：SpaceX IPO、SpaceX valuation、SpaceX上市、商业航天新闻\n\n---\n【输出格式要求】\n1. 标题：🚀 SpaceX追踪 | 日期\n2. 用 --- 分隔板块\n3. 全文 8-12 行（精简聚焦）",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774918800000,
+        "lastRunAtMs": 1774875600007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 338127,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
       "id": "93c3207a-3a43-4c29-afdc-e382dfa47483",
       "agentId": "main",
       "name": "📊 BDI指数每日更新",
       "enabled": true,
       "createdAtMs": 1774854728473,
-      "updatedAtMs": 1774855279209,
+      "updatedAtMs": 1774890148475,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1-6",
@@ -733,7 +631,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "搜索今天的波罗的海干散货指数（BDI），获取数值后更新 /root/.openclaw/workspace/config/bdi_data.json。\n\n搜索1个源即可（如 \"BDI index today\"），获取今日数值。\n对比上次数据（读取 bdi_data.json），写入新数据。\n\n如变动>±3% 输出简短分析，否则回复 NO_REPLY。",
+        "message": "执行航运指数获取脚本，输出结果即可：\n\npython3 /root/.openclaw/workspace/scripts/shipping_index.py\n\n直接输出脚本结果，不做额外解读。重点关注板块涨跌幅和个股走势。",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -758,7 +656,7 @@
       "name": "盘中实时股票监控",
       "enabled": true,
       "createdAtMs": 1774725718767,
-      "updatedAtMs": 1774855336945,
+      "updatedAtMs": 1774881801906,
       "schedule": {
         "kind": "cron",
         "expr": "0,15,30,45 9-14 * * 1-5",
@@ -767,12 +665,12 @@
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "message": "盘中实时股票监控。运行 python3 /root/.openclaw/workspace/scripts/stock_realtime_monitor.py 获取实时行情。分析标的从 /root/.openclaw/workspace/config/holdings.json 读取。预警触发条件：1)涨跌幅超±3%(警告)或±5%(紧急) 2)触及减仓价位 3)跌破止损价 4)关键技术位突破 5)成交量异常。防消息轰炸：同类预警1小时内不重复。无预警时静默。",
+        "message": "盘中实时股票监控。\n\n1. 运行：python3 /root/.openclaw/workspace/scripts/stock_realtime_monitor.py\n2. 检查输出：如果有预警信号（包含\"⚠️\"或\"🚨\"），用卡片发送：\n   python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"🚨 股票异动预警\" --type stock_alert --text \"输出内容\"\n3. 无预警时不发送任何消息（静默）。\n\n分析标的从 /root/.openclaw/workspace/config/holdings.json 读取。\n预警触发：涨跌幅±3%(警告)/±5%(紧急)、触及减仓价位、跌破止损、关键技术位突破、成交量异常。\n同类预警1小时内不重复。",
         "kind": "agentTurn",
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "announce",
+        "mode": "none",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -806,7 +704,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -826,7 +724,7 @@
       "name": "每日股票收盘提醒",
       "enabled": true,
       "createdAtMs": 1774725718917,
-      "updatedAtMs": 1774855342842,
+      "updatedAtMs": 1774881697592,
       "schedule": {
         "expr": "10 15 * * 1-5",
         "kind": "cron",
@@ -853,6 +751,74 @@
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "7922caa8-18ee-477f-b61b-8ebe8a8ee706",
+      "name": "股票每日复盘",
+      "enabled": true,
+      "createdAtMs": 1774725718948,
+      "updatedAtMs": 1774882012257,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 22 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。分析今日股票市场表现。\n\n当前持仓：中国船舶(600150) 3000股（成本38.696）、中国动力(600482) 3000股（成本34.389）\n\n要求：\n1. 搜索今日收盘数据：各持仓股收盘价、涨跌幅、成交量\n2. 大盘回顾：上证/深成/创业板收盘\n3. 板块分析：船舶制造板块表现\n4. 技术面：K线形态、均线、MACD简析\n5. 持仓盈亏：各股当日盈亏、总盈亏\n6. 明日展望：简要预判\n\n---\n【输出格式要求】\n1. 标题：📊 股票复盘 | 日期\n2. 用 --- 分隔板块\n3. 数据加粗，盈亏标注红绿\n4. 全文 15-20 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774965600000,
+        "lastRunAtMs": 1774879200013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 166498,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "8ec0edd5-015a-435c-bd9f-7e8a0e8c5604",
+      "name": "晚间复盘",
+      "enabled": true,
+      "createdAtMs": 1774725718968,
+      "updatedAtMs": 1774881971171,
+      "schedule": {
+        "expr": "0 22 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "你是用户的专业秘书。生成今日综合复盘报告。\n\n内容要求：\n1. 今日大事：今天最重要的3件事（与用户相关）\n2. 股票复盘：持仓股票今日表现、关键数据、技术面分析\n3. 学习进度：ComfyUI学习/股票学习今日进展\n4. 明日预告：明天的重要日程/提醒\n5. 晚安提示：结合天气的温馨提醒\n\n---\n【输出格式要求】\n1. 标题：🌙 晚间复盘 | 日期\n2. 用 --- 分隔板块\n3. 股票部分数据加粗\n4. 全文 15-20 行",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1774965600000,
+        "lastRunAtMs": 1774879805227,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 83182,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       }
     },
     {
@@ -886,7 +852,7 @@
       "name": "每月财务提醒",
       "enabled": true,
       "createdAtMs": 1774725719283,
-      "updatedAtMs": 1774855565471,
+      "updatedAtMs": 1774881988656,
       "schedule": {
         "expr": "0 9 1 * *",
         "kind": "cron",
@@ -900,7 +866,7 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -913,7 +879,7 @@
       "name": "宝宝成长与健康提醒",
       "enabled": true,
       "createdAtMs": 1774725719302,
-      "updatedAtMs": 1774855345801,
+      "updatedAtMs": 1774881977078,
       "schedule": {
         "expr": "0 10 * * 3",
         "kind": "cron",
@@ -927,7 +893,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -940,7 +906,7 @@
       "name": "每周日综合周报",
       "enabled": true,
       "createdAtMs": 1774725719222,
-      "updatedAtMs": 1774855348733,
+      "updatedAtMs": 1774881982773,
       "schedule": {
         "expr": "0 10 * * 0",
         "kind": "cron",
@@ -954,7 +920,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -988,7 +954,7 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -1022,7 +988,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -1298,9 +1264,9 @@
       }
     }
   ],
-  "total": 41,
+  "total": 40,
   "offset": 0,
-  "limit": 41,
+  "limit": 40,
   "hasMore": false,
   "nextOffset": null
 }

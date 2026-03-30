@@ -4,6 +4,7 @@
 
 # === 系统基础任务 ===
 */5 * * * * flock -xn /tmp/stargate.lock -c '/usr/local/qcloud/stargate/admin/start.sh > /dev/null 2>&1 &'
+55 1 * * * /bin/bash /root/.openclaw/workspace/scripts/auto-config-backup.sh >> /tmp/config-backup.log 2>0 2 * * * /bin/bash /root/.openclaw/workspace/scripts/auto-git-backup1
 0 2 * * * /bin/bash /root/.openclaw/workspace/scripts/auto-git-backup.sh >> /tmp/git-backup.log 2>&1
 
 # === 天气预加载（在早报前运行） ===
@@ -45,7 +46,6 @@
 00 22 * * * /usr/bin/python3 /root/.openclaw/workspace/scripts/cron_card_wrapper.py '7922caa8-18ee-477f-b61b-8ebe8a8ee706' '📊 股票复盘' 'orange' >> /root/.openclaw/workspace/memory/card-delivery.log 2>&1
 
 # === 每周卡片投递 ===
-# 每周日综合周报
 0 10 * * 0 /usr/bin/python3 /root/.openclaw/workspace/scripts/cron_card_wrapper.py 'ee28465e-ff6a-4fa0-a35a-13e96cd9bbc6' '📋 每周综合周报' 'orange' >> /root/.openclaw/workspace/memory/card-delivery.log 2>&1
 # ComfyUI每周总结
 25 22 * * 0 /usr/bin/python3 /root/.openclaw/workspace/scripts/cron_card_wrapper.py '324d8b01-b798-4486-915e-0a0a26e52934' '📊 ComfyUI每周总结' 'purple' >> /root/.openclaw/workspace/memory/card-delivery.log 2>&1
@@ -65,3 +65,13 @@
 # === 全球热点新闻（每12小时） ===
 0 8 * * * /usr/bin/python3 /root/.openclaw/workspace/scripts/cron_card_wrapper.py 'fa6cf991-1467-4fcf-9650-f0d312678790' '🌍 全球热点速递' 'purple' >> /root/.openclaw/workspace/memory/card-delivery.log 2>&1
 0 20 * * * /usr/bin/python3 /root/.openclaw/workspace/scripts/cron_card_wrapper.py 'fa6cf991-1467-4fcf-9650-f0d312678790' '🌍 全球热点速递' 'purple' >> /root/.openclaw/workspace/memory/card-delivery.log 2>&1
+
+# === 飞书对话备份（每天23:50，仅推Gitee） ===
+50 23 * * * /bin/bash /root/.openclaw/workspace/scripts/backup_feishu_chat.sh >> /tmp/feishu-backup.log 2>&1
+
+# === OpenClaw Session 备份（每天23:55，仅推Gitee） ===
+55 23 * * * python3 /root/.openclaw/workspace/scripts/backup_sessions.py >> /tmp/session-backup.log 2>&1
+
+
+# === 每周日凌晨3:00清理旧 session 文件 ===
+0 3 * * 0 /usr/bin/find /root/.openclaw/agents/main/sessions/ -name "*.deleted.*" -type f -mtime +3 -delete && /usr/bin/find /root/.openclaw/agents/main/sessions/ -name "*.reset.*" -type f -mtime +14 -delete >> /tmp/session-cleanup.log 2>&1

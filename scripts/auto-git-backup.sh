@@ -14,10 +14,13 @@ fi
 # Commit with timestamp
 git commit -m "自动备份 $(date '+%Y-%m-%d %H:%M')" 2>/dev/null
 
-# Push to Gitee
+# Push to Gitee (全部)
 git push origin master 2>/dev/null
 echo "$(date '+%Y-%m-%d %H:%M') Gitee 备份完成"
 
-# Push to GitHub
+# Push to GitHub (排除飞书聊天备份 - 保护隐私)
+# 先暂存 feishu-chat-backup 的状态
+git stash push -q -- memory/feishu-chat-backup/ 2>/dev/null
 git push github master 2>/dev/null
-echo "$(date '+%Y-%m-%d %H:%M') GitHub 备份完成"
+echo "$(date '+%Y-%m-%d %H:%M') GitHub 备份完成（不含飞书聊天）"
+git stash pop -q 2>/dev/null

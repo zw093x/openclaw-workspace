@@ -1,11 +1,13 @@
 {
   "version": "2.0",
-  "last_updated": "2026-03-30T11:45:00+08:00",
+  "last_updated": "2026-03-31T00:45:00+08:00",
   "patterns": {
     "cron_channel_missing": {
       "type": "cron",
       "severity": "high",
-      "match": ["Channel is required when multiple channels"],
+      "match": [
+        "Channel is required when multiple channels"
+      ],
       "root_cause": "多渠道配置后 cron delivery channel 解析失败",
       "auto_fix": "重新设置 delivery channel + target",
       "fix_cmd": "openclaw cron edit {job_id} --channel {channel} --to {to} --announce",
@@ -18,7 +20,10 @@
     "cron_feishu_target": {
       "type": "cron",
       "severity": "high",
-      "match": ["Delivering to Feishu requires target", "Delivering to feishu requires target"],
+      "match": [
+        "Delivering to Feishu requires target",
+        "Delivering to feishu requires target"
+      ],
       "root_cause": "飞书投递目标格式问题",
       "auto_fix": "重新设置 delivery.to 为 open_id 格式",
       "fix_cmd": "openclaw cron edit {job_id} --channel feishu --to {target} --announce",
@@ -31,7 +36,10 @@
     "cron_message_failed": {
       "type": "cron",
       "severity": "medium",
-      "match": ["Message failed", "message failed"],
+      "match": [
+        "Message failed",
+        "message failed"
+      ],
       "root_cause": "瞬态投递竞态，消息可能实际已送达",
       "auto_fix": "触发重试",
       "fix_cmd": "openclaw cron run {job_id}",
@@ -44,7 +52,10 @@
     "cron_timeout": {
       "type": "cron",
       "severity": "medium",
-      "match": ["timed out", "SIGTERM"],
+      "match": [
+        "timed out",
+        "SIGTERM"
+      ],
       "root_cause": "任务耗时超过 timeout 限制",
       "auto_fix": "增加 timeout 到 300s（搜索类）或 180s（简单类）",
       "fix_cmd": "openclaw cron edit {job_id} --timeout-seconds 300",
@@ -57,7 +68,10 @@
     "cron_duplicate_delivery": {
       "type": "cron",
       "severity": "high",
-      "match": ["duplicate", "repeated message"],
+      "match": [
+        "duplicate",
+        "repeated message"
+      ],
       "root_cause": "OpenClaw cron + 系统 crontab 同时触发",
       "auto_fix": "设置 --no-deliver",
       "fix_cmd": "openclaw cron edit {job_id} --no-deliver",
@@ -70,7 +84,11 @@
     "cron_card_garbled": {
       "type": "cron",
       "severity": "medium",
-      "match": ["{\"header\":", "{\"card\":", "card"],
+      "match": [
+        "{\"header\":",
+        "{\"card\":",
+        "card"
+      ],
       "root_cause": "agent 输出 JSON 卡片格式被当文本发送",
       "auto_fix": "去掉 prompt 中 JSON 卡片指令",
       "fix_cmd": null,
@@ -83,7 +101,10 @@
     "cron_agent_no_tool": {
       "type": "cron",
       "severity": "medium",
-      "match": ["no tool call", "missing data"],
+      "match": [
+        "no tool call",
+        "missing data"
+      ],
       "root_cause": "模型在隔离会话中不调用工具",
       "auto_fix": "数据预注入到 prompt 中",
       "fix_cmd": null,
@@ -96,7 +117,11 @@
     "cron_stream_no_content": {
       "type": "cron",
       "severity": "low",
-      "match": ["NO_REPLY", "not-delivered", "deliveryStatus=not-delivered"],
+      "match": [
+        "NO_REPLY",
+        "not-delivered",
+        "deliveryStatus=not-delivered"
+      ],
       "root_cause": "agent 返回 NO_REPLY 或流式卡片无实际投递",
       "auto_fix": "检查 agent 行为和 prompt 设计",
       "fix_cmd": null,
@@ -109,7 +134,10 @@
     "cron_config_side_effect": {
       "type": "cron",
       "severity": "high",
-      "match": ["批量错误", "multiple failures"],
+      "match": [
+        "批量错误",
+        "multiple failures"
+      ],
       "root_cause": "配置变更后未检查副作用（如新增渠道/修改模型）",
       "auto_fix": "扫描所有任务 delivery 配置并修复",
       "fix_cmd": "python3 /root/.openclaw/workspace/scripts/cron_diagnose.py --fix",
@@ -122,7 +150,11 @@
     "feishu_unreachable": {
       "type": "connection",
       "severity": "critical",
-      "match": ["feishu connection lost", "feishu disconnected", "飞书连接异常"],
+      "match": [
+        "feishu connection lost",
+        "feishu disconnected",
+        "飞书连接异常"
+      ],
       "root_cause": "飞书 WebSocket 连接断开",
       "auto_fix": "重启 gateway",
       "fix_cmd": "openclaw gateway restart",
@@ -134,16 +166,21 @@
     },
     "disk_warning": {
       "type": "system",
+      "severity": "high",
+      "match": [
+        "磁盘使用率超80%"
+      ],
+      "fix": "清理 /tmp + session 文件 + Docker",
+      "auto_fix": true
+    },
+    "memory_warning": {
+      "type": "system",
       "severity": "medium",
-      "match": ["disk", "space", "磁盘"],
-      "root_cause": "磁盘空间不足（>80%）",
-      "auto_fix": "清理临时文件和旧日志",
-      "fix_cmd": "find /tmp -mtime +7 -delete; find /root/.openclaw -name '*.log' -size +10M -delete",
-      "verify": "df -h 检查磁盘使用率",
-      "prevention": "定期清理旧日志",
-      "fix_success": 0,
-      "fix_total": 0,
-      "last_seen": null
+      "match": [
+        "内存使用率超90%"
+      ],
+      "fix": "检查并清理大内存进程",
+      "auto_fix": true
     }
   },
   "stats": {
