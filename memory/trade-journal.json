@@ -1,0 +1,24 @@
+{
+  "trades": [
+    {
+      "id": 1,
+      "date": "2026-03-31",
+      "time": "14:00",
+      "code": "600150",
+      "name": "中国船舶",
+      "action": "sell",
+      "price": 31.5,
+      "shares": 500,
+      "amount": 15750.0,
+      "signals": [
+        "RSI超买",
+        "触及减仓位"
+      ],
+      "reason": "RSI=72超买 + 价格进入31.50-32.00减仓区间",
+      "notes": "",
+      "result": null,
+      "review": null
+    }
+  ],
+  "last_id": 1
+}

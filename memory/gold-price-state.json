@@ -1,29 +1,18 @@
 {
-  "lastCheck": "2026-03-30T22:03:00+08:00",
+  "lastCheck": "2026-04-01T00:48:00+08:00",
   "xau_usd": {
-    "bid": 4532.43,
-    "ask": 4533.12,
-    "mid": 4532.78,
-    "source": "swissquote",
-    "ts": 1774879442536
+    "price": 4665.256,
+    "open": 4557.5,
+    "change_pct": 2.36,
+    "source": "script"
   },
   "xag_usd": {
-    "bid": 70.57,
-    "ask": 70.62,
-    "mid": 70.60,
-    "source": "swissquote",
-    "ts": 1774879454159
-  },
-  "methanol_MA0": {
-    "current": 3319,
-    "open": 3349,
-    "high": 3498,
-    "low": 3293,
-    "change_pct": -0.90,
-    "source": "sina",
-    "note": "盘后数据，未更新"
+    "price": 74.696,
+    "open": 70.569,
+    "change_pct": 5.85,
+    "source": "script"
   },
   "usd_cny": 6.92,
-  "alert_level": "normal",
-  "note": "22:03检查，金价4532.78（+0.33%），白银70.60（+0.67%），均未达预警阈值。晚间无异常。"
+  "alert_level": "s2_silver",
+  "note": "00:48检查，金价4665.26（+2.36% S1），白银74.70（+5.85% S2紧急），已推送预警。"
 }

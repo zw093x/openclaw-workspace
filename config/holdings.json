@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30T10:24:00+08:00",
+  "last_updated": "2026-03-31T13:20:00+08:00",
   "holdings": [
     {
       "name": "中国船舶",
@@ -8,10 +8,13 @@
       "shares": 3000,
       "cost_price": 38.696,
       "reduce_levels": [
-        {"range": [32.50, 33.00], "sell": 250, "label": "第一减仓"},
-        {"range": [34.00, 34.50], "sell": 250, "label": "第二减仓"}
+        {"range": [31.50, 32.00], "sell": 500, "label": "第一档减仓"},
+        {"range": [32.50, 33.00], "sell": 500, "label": "第二档减仓"},
+        {"range": [34.00, 99.00], "sell": 500, "label": "第三档减仓"}
       ],
-      "stop_loss": 29.00,
+      "stop_loss": 30.00,
+      "add_level": {"range": [28.00, 29.00], "buy": 500, "label": "试探加仓"},
+      "target_floor": 1500,
       "status": "holding"
     },
     {
@@ -21,10 +24,12 @@
       "shares": 3000,
       "cost_price": 34.389,
       "reduce_levels": [
-        {"range": [32.50, 33.00], "sell": 250, "label": "第一减仓"},
-        {"range": [33.50, 34.00], "sell": 250, "label": "第二减仓"}
+        {"range": [32.50, 32.50], "sell": 500, "label": "第一档减仓"},
+        {"range": [33.50, 34.00], "sell": 1000, "label": "第二档减仓"}
       ],
-      "stop_loss": 28.50,
+      "stop_loss": 30.50,
+      "add_level": {"range": [29.00, 30.00], "buy": 500, "label": "试探加仓"},
+      "target_floor": 1500,
       "status": "holding"
     },
     {
@@ -38,7 +43,8 @@
       "status": "sold",
       "sold_date": "2026-03-27",
       "sold_price": 22.18,
-      "sold_pnl": 144
+      "sold_pnl": 144,
+      "note": "已清仓，不再纳入监控"
     }
   ],
   "watching": [
@@ -53,6 +59,13 @@
       "note": "朋友账户"
     }
   ],
+  "index": ["sh000001"],
   "total_cost": 219255,
-  "concentration": "船舶+动力=100%, 严重超限，等待反弹降仓"
+  "concentration": "船舶+动力=100%, 严重超限，等待反弹降仓",
+  "market_bias": {
+    "cautious_zone": [3900, 3950],
+    "accelerate_above": 3950,
+    "hold_below": 3880,
+    "panic_below": 3800
+  }
 }

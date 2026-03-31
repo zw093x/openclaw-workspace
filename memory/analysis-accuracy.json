@@ -1,0 +1,35 @@
+{
+  "predictions": [
+    {
+      "id": 1,
+      "date": "2026-03-31",
+      "code": "600150",
+      "name": "中国船舶",
+      "direction": "up",
+      "target_price": 31.07,
+      "timeframe": "5d",
+      "signals": [
+        "RSI超卖",
+        "KDJ低位金叉"
+      ],
+      "confidence": "medium",
+      "result": null
+    },
+    {
+      "id": 2,
+      "date": "2026-03-31",
+      "code": "600150",
+      "name": "中国船舶",
+      "direction": "up",
+      "target_price": 31.07,
+      "timeframe": "5d",
+      "signals": [
+        "RSI超卖",
+        "KDJ低位金叉"
+      ],
+      "confidence": "medium",
+      "result": null
+    }
+  ],
+  "last_id": 2
+}

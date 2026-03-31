@@ -1,8 +1,19 @@
 {
-  "lastCheck": 1774808160,
-  "checkedAt": "2026-03-30T04:56:00+08:00",
+  "lastCheck": 1774915765,
+  "checkedAt": "2026-03-31T08:07:00+08:00",
   "latestVersion": "v0.18.2",
-  "versionsChecked": ["v0.16.1", "v0.16.2", "v0.16.3", "v0.16.4", "v0.17.0", "v0.17.1", "v0.17.2", "v0.18.0", "v0.18.1", "v0.18.2"],
+  "versionsChecked": [
+    "v0.16.1",
+    "v0.16.2",
+    "v0.16.3",
+    "v0.16.4",
+    "v0.17.0",
+    "v0.17.1",
+    "v0.17.2",
+    "v0.18.0",
+    "v0.18.1",
+    "v0.18.2"
+  ],
   "thisSessionUpdates": [
     {
       "version": "v0.18.2",
@@ -13,11 +24,25 @@
     }
   ],
   "nodeEcosystem": {
-    "ComfyUI-3D-Pack": {"lastCommit": "2025-11-17", "status": "stable"},
-    "Hunyuan3D-2.1": {"lastCommit": "none since Mar 20", "status": "stable"},
-    "TRELLIS": {"lastCommit": "active multi-fork", "status": "hot"},
-    "StableFast3D": {"lastCommit": "none since Mar 20", "status": "stable"},
-    "asset-mcp (Meshy)": {"status": "new - MCP protocol integration"}
+    "ComfyUI-3D-Pack": {
+      "lastCommit": "2025-11-17",
+      "status": "stable"
+    },
+    "Hunyuan3D-2.1": {
+      "lastCommit": "none since Mar 20",
+      "status": "stable"
+    },
+    "TRELLIS": {
+      "lastCommit": "active multi-fork",
+      "status": "hot"
+    },
+    "StableFast3D": {
+      "lastCommit": "none since Mar 20",
+      "status": "stable"
+    },
+    "asset-mcp (Meshy)": {
+      "status": "new - MCP protocol integration"
+    }
   },
   "notificationSent": true,
   "notificationNote": "Deep monitoring report delivered at 04:04. TRELLIS2 recommended as primary 3D pipeline. v0.18.2 stable."

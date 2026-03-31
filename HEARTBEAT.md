@@ -4,57 +4,55 @@
 
 **确保深度学习系统正常运转，任何异常立即修复。**
 - 检查深度学习 cron 任务（ID: 3273567b）是否 enabled 且正常执行
-- 检查学习复盘报告 cron 任务（ID: 73d65bb2）是否 enabled
 - 如任务失败 → 立即重新触发
 - 如模型不可用 → 切换到可用模型后重试
 - **此事项优先于一切其他监控**
 
-## 贵金属 & 大宗商品价格监控（每次心跳必检）
+## 大宗商品紧急监控（每次心跳必检）
 
-监控黄金（XAU/USD）、白银（XAG/USD）、甲醇期货实时价格：
-- **黄金**：`curl -s "https://hq.sinajs.cn/list=hf_GC" -H "Referer: https://finance.sina.com.cn" | iconv -f GBK -t UTF-8`
-- **白银**：`curl -s 'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAG/USD'`
-- **甲醇**：`curl -s 'https://hq.sinajs.cn/list=nf_MA0' -H 'Referer: https://finance.sina.com.cn' | iconv -f GBK -t UTF-8`
-- **PAXG**：`curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd,cny&include_24hr_change=true'`
-- **USD/CNY 汇率**：`curl -s 'https://api.exchangerate-api.com/v4/latest/USD'`
+使用统一脚本获取实时数据：
+- 运行：`python3 /root/.openclaw/workspace/scripts/commodity_report.py`
+- 覆盖：黄金(XAU/USD)、白银(XAG/USD)、甲醇(郑商所)、USD/CNY
 - **触发预警条件：**
   - 单日涨跌幅 > ±2%（S1）→ 主动推送
   - 单日涨跌幅 > ±3%（S2）→ 紧急推送
-  - 突破历史关键价位（如整数关口）→ 主动推送
+  - 突破关键整数关口 → 主动推送
+- **仅在触发预警时推送**，正常波动不推送（已有cron每6h定期播报）
 - 状态文件：`memory/gold-price-state.json`
 
-## ComfyUI 生态监控（每日1次）
+## ComfyUI 变更监控（由Cron处理，心跳不执行）
 
-**监控目标：** ComfyUI 架构变化 + 3D 节点生态 + AI 建模工作流
-**检查频率：** 每天 10:00（已配置 cron，无需心跳检查）
+**已配置 cron：** ComfyUI 变更监控（有更新才推送，无更新静默）
 **状态文件：** `memory/comfyui-monitor-state.json`
-**触发条件：** 发现任何重大更新/新节点/工作流突破 → 立即主动推送
+**周报：** 周日 20:00 完整总结
 
 ## OpenClaw 飞书插件动态监控（每日检查1次）
 
-监控 OpenClaw 飞书官方插件更新动态：
-- **检查方式：** 运行 `npx @larksuite/openclaw-lark info` 查看本地版本 vs 最新版本
-- **触发推送条件：** 版本更新、新功能上线、破坏性更新、安全策略调整、重大 bug 修复
-- **当前版本：** 2026.3.24（2026-03-29 06:47 由 cron 自动检查确认）
-- **注意事项：** OpenClaw 3.22 存在不兼容变更，预计 3.24 修复完成
-
-### 自动更新+自动学习流程
-检测到新版本时，按以下流程自动执行：
-1. **自动更新插件：** 运行 `npx -y @larksuite/openclaw-lark update`
-2. **重新读取文档：** 获取飞书文档 `MFK7dDFLFoVlOGxWCv5cTXKmnMh` 最新内容
-3. **学习变更内容：** 对比新旧版本差异
-4. **主动推送通知：** 向用户汇报更新结果
-5. **更新记忆文件：** 将版本信息和变更要点写入 `memory/`
+- **检查方式：** 运行 `npx @larksuite/openclaw-lark info` 查看版本
+- **触发条件：** 版本更新、新功能、破坏性变更、安全修复
+- **当前版本：** 2026.3.24
 
 ---
 
-## ℹ️ 已交由 Cron 处理的监控项（不在心跳中执行）
+## ℹ️ 已交由 Cron 处理的监控项（心跳不执行）
 
-以下任务已移至 cron 定时任务，无需心跳重复检查：
-- 股票技术面监控 → 盘中实时股票监控（cron，工作日15分钟一次）
-- 股票减仓监控 → 盘中减仓监控（cron，工作日30分钟一次）
-- 天气异常监控 → 每日天气穿衣饮食提醒（cron，每日08:00）
-- AI模型状态 → AI模型价格监控周报（cron，每周一09:00）
-- 船舶行业新闻 → 航运/船舶快讯（cron，每日每6小时）
-- SpaceX上市新闻 → SpaceX上市新闻监控（cron，每日9/12/15/18/21点）
-- 每日推送任务跟进 → cron 自动投递，无需心跳检查
+| 监控项 | Cron 任务 | 频率 |
+|--------|----------|------|
+| 每日早报（含天气/节气/健康/穿衣/饮食） | 每日早报 | 每天 07:30 |
+| AI综合日报（含AI绘画） | AI综合日报 | 每天 08:00 |
+| CG科技日报（含科技资讯） | CG科技日报 | 每天 12:30 |
+| A股盘前播报（含开盘提醒） | A股盘前播报 | 工作日 08:50 |
+| 收盘总结 | 每日股票收盘提醒 | 工作日 15:10 |
+| 大宗商品播报（金/银/甲醇/汇率） | 大宗商品播报 | 每6小时 |
+| 晚间综合复盘（含股票复盘） | 晚间综合复盘 | 每天 22:00 |
+| SpaceX上市追踪 | SpaceX上市新闻监控 | 每天 9/15/21点 |
+| 全球热点速递 | 全球热点新闻 | 每天 08:00/20:00 |
+| 深度学习时段 | 深度学习时段 | 每天 01:30 |
+| ComfyUI变更监控 | ComfyUI 变更监控 | 每天 10:00（有更新才推送） |
+| AI模型价格周报 | AI模型价格监控周报 | 每周一 09:00 |
+| 宝宝成长周报 | 宝宝成长与健康提醒 | 每周三 10:00 |
+| 综合周报 | 每周日综合周报 | 每周日 10:00 |
+| ComfyUI周总结 | ComfyUI每周总结 | 每周日 20:00 |
+| 飞书连接健康检查 | 飞书连接健康检查 | 每2小时 |
+| Cron自检修复 | Cron 自检修复 | 每6小时 |
+| OpenClaw自愈系统 | OpenClaw 自愈系统 | 每小时 |

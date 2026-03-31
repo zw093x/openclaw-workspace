@@ -104,6 +104,47 @@ def filter_alerts_by_cooldown(alerts):
     return filtered
 
 def fetch_quotes(codes):
+    """获取实时行情 - 使用统一数据源（通达信→新浪→腾讯）"""
+    import sys
+    sys.path.insert(0, "/root/.openclaw/workspace/scripts")
+    from stock_data_provider import get_stock_quotes
+
+    # 去掉市场前缀（sh/sz）以适配数据源接口
+    code_map = {}  # raw_code -> original_code
+    raw_codes = []
+    for c in codes:
+        if c.startswith("sh") or c.startswith("sz"):
+            stripped = c[2:]
+        elif c == "sh000001":
+            stripped = "000001"
+        else:
+            stripped = c
+        code_map[stripped] = c
+        raw_codes.append(stripped)
+
+    raw = get_stock_quotes(raw_codes)
+    if raw:
+        quotes = {"data": {}, "error": None}
+        for stripped_code, q in raw.items():
+            # 映射回原始带前缀的代码
+            orig_code = code_map.get(stripped_code, stripped_code)
+            pct = (q["price"] - q["prev_close"]) / q["prev_close"] * 100 if q["prev_close"] else 0
+            quotes["data"][orig_code] = {
+                "name": q["name"],
+                "price": q["price"],
+                "prev_close": q["prev_close"],
+                "change_pct": pct,
+                "open": q.get("open", 0),
+                "high": q.get("high", 0),
+                "low": q.get("low", 0),
+                "vol": q.get("vol", 0),
+                "amount": q.get("amount", 0),
+                "source": q.get("source", "?"),
+            }
+        return quotes
+    return {"data": {}, "error": "所有数据源均失败"}
+
+def _fetch_quotes_legacy(codes):
     """获取实时行情"""
     url = f"https://qt.gtimg.cn/q={','.join(codes)}"
     try:
@@ -153,6 +194,43 @@ def load_tech_levels():
 
 TECH_LEVELS = load_tech_levels()
 
+# 动态技术分析（通过通达信K线计算）
+def load_dynamic_tech():
+    """通过通达信K线计算实时技术指标"""
+    try:
+        import sys
+        sys.path.insert(0, "/root/.openclaw/workspace/scripts")
+        from stock_tech_analysis import analyze_stock
+        result = {}
+        for code, cfg in HOLDINGS.items():
+            if cfg.get("shares", 0) == 0:
+                continue
+            analysis = analyze_stock(code, cfg["name"], kline_periods=60)
+            if "error" not in analysis:
+                result[code] = {
+                    "ma5": analysis["ma"].get("MA5"),
+                    "ma10": analysis["ma"].get("MA10"),
+                    "ma20": analysis["ma"].get("MA20"),
+                    "ma60": analysis["ma"].get("MA60"),
+                    "rsi_14": analysis["rsi"],
+                    "macd_signal": analysis["macd"]["signal"] if analysis["macd"] else None,
+                    "macd_dif": analysis["macd"]["DIF"] if analysis["macd"] else None,
+                    "macd_dea": analysis["macd"]["DEA"] if analysis["macd"] else None,
+                    "kdj_j": analysis["kdj"]["J"] if analysis["kdj"] else None,
+                    "bb_upper": analysis["boll"]["UPPER"] if analysis["boll"] else None,
+                    "bb_lower": analysis["boll"]["LOWER"] if analysis["boll"] else None,
+                    "bb_mid": analysis["boll"]["MID"] if analysis["boll"] else None,
+                    "vol_ratio": analysis["vol_ratio"],
+                    "high_5d": analysis["high_5d"],
+                    "low_5d": analysis["low_5d"],
+                    "signals": analysis["signals"],
+                }
+        return result
+    except Exception as e:
+        return {}
+
+DYNAMIC_TECH = load_dynamic_tech()
+
 # ====== 专有分析模块 ======
 def run_proprietary_analysis(quotes):
     """运行专有分析（板块强弱 + 资金流向）"""
@@ -182,8 +260,8 @@ def check_alerts(quotes):
         if price == 0:
             continue
         
-        # 获取动态技术指标（如有）
-        tech = TECH_LEVELS.get(code, {})
+        # 获取动态技术指标（优先用通达信K线计算，其次静态配置）
+        tech = DYNAMIC_TECH.get(code, {}) or TECH_LEVELS.get(code, {})
         
         # 1. 涨跌幅异动
         if abs(change) >= ALERT_S2:
@@ -281,6 +359,31 @@ def check_alerts(quotes):
         if pnl_pct <= -10:
             alerts.append(f"📉深度套牢 {name} 浮亏{pnl_pct:.1f}%（{pnl_amount:+.0f}元）")
     
+    # 10. 策略学习信号（基于最优参数）
+    for code, config in all_stocks.items():
+        if code not in quotes or config.get("shares", 0) == 0:
+            continue
+        try:
+            import sys as _sys
+            _sys.path.insert(0, "/root/.openclaw/workspace/scripts")
+            from strategy_linker import load_strategy_params, generate_strategy_signals
+            params = load_strategy_params()
+            stock_params = params.get('stocks', {}).get(code, {})
+            if stock_params:
+                tech = DYNAMIC_TECH.get(code, {}) or TECH_LEVELS.get(code, {})
+                strategy_name = stock_params.get('best_strategy', '')
+                # RSI策略信号
+                rsi_buy = stock_params.get('rsi_buy', 30)
+                rsi_sell = stock_params.get('rsi_sell', 70)
+                rsi_val = tech.get('rsi_14')
+                if rsi_val:
+                    if rsi_val < rsi_buy:
+                        alerts.append(f"🎯策略信号 {config['name']} 最优策略[{strategy_name}]触发买入信号: RSI={rsi_val:.1f}<{rsi_buy}")
+                    elif rsi_val > rsi_sell:
+                        alerts.append(f"🎯策略信号 {config['name']} 最优策略[{strategy_name}]触发卖出信号: RSI={rsi_val:.1f}>{rsi_sell}")
+        except:
+            pass
+    
     # 10. 专有分析：板块强弱 + 资金流向（仅在有预警时追加）
     if alerts:
         analysis = run_proprietary_analysis(quotes)
@@ -320,7 +423,7 @@ def generate_status(quotes):
         emoji = "🔴" if change < 0 else "🟢" if change > 0 else "⚪"
         
         # 动态技术指标
-        tech = TECH_LEVELS.get(code, {})
+        tech = DYNAMIC_TECH.get(code, {}) or TECH_LEVELS.get(code, {})
         trend = tech.get("trend", "")
         sl = tech.get("dynamic_stop_loss", config.get("stop_loss", 0))
         
@@ -370,18 +473,42 @@ if __name__ == "__main__":
         print("非交易时段，跳过")
         sys.exit(0)
     
-    codes = list(HOLDINGS.keys()) + list(FRIEND.keys()) + ["sh000001"]
+    codes = list(HOLDINGS.keys()) + list(FRIEND.keys())
+    # 上证指数用 mootdx 专用接口获取
+    sh_index_quote = None
+    try:
+        sys.path.insert(0, "/root/.openclaw/workspace/scripts")
+        from stock_data_provider import MootdxSource
+        if MootdxSource.available():
+            from mootdx.quotes import Quotes
+            client = Quotes.factory(market='std', timeout=5)
+            idx_data = client.quotes(symbol="1A0001")
+            if idx_data is not None and not idx_data.empty:
+                row = idx_data.iloc[0]
+                prev_close = float(row.get("last_close", 0))
+                price = float(row.get("price", 0))
+                pct = (price - prev_close) / prev_close * 100 if prev_close else 0
+                sh_index_quote = {
+                    "price": price,
+                    "prev_close": prev_close,
+                    "change_pct": pct,
+                }
+    except Exception:
+        pass
     quotes = fetch_quotes(codes)
     
-    if "error" in quotes:
+    if quotes.get("error"):
         print(f"行情获取失败: {quotes['error']}")
         sys.exit(1)
     
+    # 提取行情数据
+    quotes_data = quotes.get("data", {})
+
     # 输出状态
-    print(generate_status(quotes))
+    print(generate_status(quotes_data))
     
     # 检查预警
-    alerts = check_alerts(quotes)
+    alerts = check_alerts(quotes_data)
     if alerts:
         # 过滤冷却期内的重复预警
         alerts = filter_alerts_by_cooldown(alerts)
@@ -395,6 +522,6 @@ if __name__ == "__main__":
         print("\n✅ 暂无预警信号")
     
     # 输出大盘
-    if "sh000001" in quotes:
-        idx = quotes["sh000001"]
+    if sh_index_quote:
+        idx = sh_index_quote
         print(f"\n📈 上证指数 {idx['price']:.2f} ({idx['change_pct']:+.2f}%)")
