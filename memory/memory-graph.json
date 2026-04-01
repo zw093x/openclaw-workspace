@@ -1,0 +1,496 @@
+{
+  "nodes": [
+    {
+      "id": "彭煜",
+      "type": "人"
+    },
+    {
+      "id": "P工",
+      "type": "人"
+    },
+    {
+      "id": "中国船舶",
+      "type": "股票"
+    },
+    {
+      "id": "中国动力",
+      "type": "股票"
+    },
+    {
+      "id": "飞书",
+      "type": "工具"
+    },
+    {
+      "id": "ComfyUI",
+      "type": "工具"
+    },
+    {
+      "id": "Docker",
+      "type": "工具"
+    },
+    {
+      "id": "云服务器",
+      "type": "服务器"
+    },
+    {
+      "id": "本地服务器",
+      "type": "服务器"
+    },
+    {
+      "id": "OpenClaw",
+      "type": "工具"
+    },
+    {
+      "id": "自愈系统",
+      "type": "系统"
+    },
+    {
+      "id": "湘电股份",
+      "type": "股票"
+    },
+    {
+      "id": "三安光电",
+      "type": "股票"
+    }
+  ],
+  "edges": [
+    {
+      "source": "P工",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "彭煜",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "Docker",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "P工",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "P工",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "P工",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "P工",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "Docker",
+      "target": "P工",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "Docker",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "Docker",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "飞书",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "Docker",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "ComfyUI",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "Docker",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "Docker",
+      "target": "Docker",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "P工",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "TOOLS.md"
+    },
+    {
+      "source": "P工",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "TOOLS.md"
+    },
+    {
+      "source": "Docker",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "TOOLS.md"
+    },
+    {
+      "source": "Docker",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "TOOLS.md"
+    },
+    {
+      "source": "云服务器",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "TOOLS.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "OpenClaw",
+      "relation": "co_mentioned",
+      "file": "memory/migration-guide.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "memory/migration-guide.md"
+    },
+    {
+      "source": "P工",
+      "target": "P工",
+      "relation": "co_mentioned",
+      "file": "memory/deep-dive-protocol.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "P工",
+      "relation": "co_mentioned",
+      "file": "memory/2026-03-26.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "memory/2026-03-26.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "memory/2026-03-26.md"
+    },
+    {
+      "source": "Docker",
+      "target": "OpenClaw",
+      "relation": "co_mentioned",
+      "file": "memory/2026-03-26.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "OpenClaw",
+      "relation": "co_mentioned",
+      "file": "memory/2026-03-26.md"
+    },
+    {
+      "source": "自愈系统",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "memory/cron-fault-knowledge.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/cron-fault-knowledge.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/cron-fault-knowledge.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/knowledge-cpo-microled.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "memory/knowledge-cpo-microled.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/stock-knowledge.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/stock-knowledge.md"
+    },
+    {
+      "source": "湘电股份",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/stock-knowledge.md"
+    },
+    {
+      "source": "自愈系统",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/2026-03-30.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-01.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-01.md"
+    },
+    {
+      "source": "湘电股份",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-01.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-01.md"
+    },
+    {
+      "source": "彭煜",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "三安光电",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "彭煜",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "P工",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "P工",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "P工",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "三安光电",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "三安光电",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "湘电股份",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "Docker",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "三安光电",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "三安光电",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "Docker",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "Docker",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/memory-index.json"
+    },
+    {
+      "source": "云服务器",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": ".learnings/ERRORS.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": ".learnings/ERRORS.md"
+    },
+    {
+      "source": "云服务器",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": ".learnings/ERRORS.md"
+    }
+  ]
+}

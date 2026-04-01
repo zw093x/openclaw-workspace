@@ -19,7 +19,7 @@
     },
     "obsidian": {
       "version": "1.0.0",
-      "installedAt": 1774109340566
+      "installedAt": 1775050922672
     },
     "weather": {
       "version": "1.0.0",
@@ -76,6 +76,26 @@
     "code-review-fix": {
       "version": "1.0.0",
       "installedAt": 1774704723348
+    },
+    "ai-news-collectors": {
+      "version": "1.0.0",
+      "installedAt": 1775052301773
+    },
+    "a-stock-analysis": {
+      "version": "1.0.0",
+      "installedAt": 1775052364200
+    },
+    "automation-workflows": {
+      "version": "0.1.0",
+      "installedAt": 1775052369561
+    },
+    "bilibili-hot-monitor": {
+      "version": "1.0.21",
+      "installedAt": 1775059262507
+    },
+    "brave-search": {
+      "version": "1.0.1",
+      "installedAt": 1775059322450
     }
   }
 }

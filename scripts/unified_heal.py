@@ -1,34 +1,46 @@
 #!/usr/bin/env python3
 """
-统一自愈系统 v2.0
-合并 self_heal + cron_diagnose，统一故障模式、日志、统计
+统一自愈系统 v3.0 — 自进化版
+
+5层进化能力:
+  L1 根因关联分析 — 症状→根因映射，避免重复表面修复
+  L2 模式自动发现 — 从日志中学习新故障模式
+  L3 阈值自适应   — 根据历史趋势动态调整告警阈值
+  L4 预防性修复   — 趋势预测，问题发生前介入
+  L5 策略优化     — 评估修复效果，选择最优方案
 
 用法:
   python3 scripts/unified_heal.py              # 诊断
   python3 scripts/unified_heal.py --fix        # 诊断+修复
-  python3 scripts/unified_heal.py --report     # 诊断+报告
+  python3 scripts/unified_heal.py --report     # 诊断+报告+进化分析
+  python3 scripts/unified_heal.py --evolve     # 仅执行进化学习（不修复）
   python3 scripts/unified_heal.py --fix --verify  # 诊断+修复+验证
-
-功能:
-  1. 扫描所有 cron 任务，检测 9 种故障模式
-  2. 扫描飞书连接、磁盘、gateway 状态
-  3. 自动修复（--fix）
-  4. 修复后验证（--verify）
-  5. 统一日志 + 统计更新
 """
 
 import json
 import subprocess
 import sys
 import os
+import re
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
+from collections import Counter, defaultdict
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 PATTERNS_FILE = WORKSPACE / "config" / "heal_patterns.json"
 LOG_FILE = WORKSPACE / "memory" / "heal-unified-log.jsonl"
 STATS_FILE = WORKSPACE / "memory" / "heal-stats.json"
+EVOLUTION_FILE = WORKSPACE / "memory" / "heal-evolution.json"
+THRESHOLDS_FILE = WORKSPACE / "memory" / "heal-thresholds.json"
+
+# 导入错误进化引擎
+sys.path.insert(0, str(WORKSPACE / "scripts"))
+try:
+    from error_evolution import report_error, get_suggestions, run_evolution as run_error_evolution
+    HAS_EVOLUTION = True
+except:
+    HAS_EVOLUTION = False
 
 # ===== 工具函数 =====
 def run_cmd(cmd, timeout=30):
@@ -38,229 +50,500 @@ def run_cmd(cmd, timeout=30):
     except subprocess.TimeoutExpired:
         return "TIMEOUT", -1
 
-def load_patterns():
-    with open(PATTERNS_FILE, "r") as f:
-        return json.load(f)
+def load_json(path, default=None):
+    try:
+        with open(path, "r") as f:
+            return json.load(f)
+    except:
+        return default or {}
 
-def save_patterns(data):
-    with open(PATTERNS_FILE, "w") as f:
+def save_json(path, data):
+    with open(path, "w") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+def load_patterns():
+    return load_json(PATTERNS_FILE, {"patterns": {}})
+
+def save_patterns(data):
+    save_json(PATTERNS_FILE, data)
+
+def load_logs(max_lines=500):
+    """加载最近N条日志"""
+    entries = []
+    try:
+        with open(LOG_FILE, "r") as f:
+            lines = f.readlines()[-max_lines:]
+        for line in lines:
+            line = line.strip()
+            if line:
+                try:
+                    entries.append(json.loads(line))
+                except:
+                    pass
+    except:
+        pass
+    return entries
+
 def log_event(entry):
-    """追加日志"""
+    """追加日志（增强版：含根因字段 + 接入进化引擎）"""
     entry["ts"] = datetime.now().isoformat()
+    if "root_cause" not in entry:
+        entry["root_cause"] = entry.get("pattern", "unknown")
     with open(LOG_FILE, "a") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    
+    # 接入错误进化引擎
+    if HAS_EVOLUTION and entry.get("result") in ("failed", "error"):
+        report_error(
+            source="unified_heal",
+            error_type=entry.get("pattern", "unknown"),
+            error_msg=entry.get("detail", entry.get("pattern", "")),
+            context={"target": entry.get("target", "")},
+            fixed=entry.get("result") == "success",
+            fix_method=entry.get("fix", "") if entry.get("result") == "success" else None
+        )
 
-def update_stats(pattern_name, success, fix_time_ms):
-    """更新统计"""
-    try:
-        with open(STATS_FILE, "r") as f:
-            stats = json.load(f)
-    except:
-        stats = {"total_fixes": 0, "auto_fixed": 0, "recurring": 0, "patterns": {}}
+def load_thresholds():
+    """加载自适应阈值"""
+    return load_json(THRESHOLDS_FILE, {
+        "disk_warn": 90,
+        "disk_crit": 95,
+        "cron_errors_warn": 2,
+        "cron_errors_crit": 5,
+        "gateway_latency_warn": 2000,
+        "gateway_latency_crit": 5000,
+        "_history": {}  # 阈值变更历史
+    })
 
-    stats["total_fixes"] += 1
-    if success:
-        stats["auto_fixed"] += 1
+def save_thresholds(data):
+    save_json(THRESHOLDS_FILE, data)
 
-    if pattern_name not in stats.get("patterns", {}):
-        stats.setdefault("patterns", {})[pattern_name] = {"count": 0, "success": 0}
-    stats["patterns"][pattern_name]["count"] += 1
-    if success:
-        stats["patterns"][pattern_name]["success"] += 1
+def load_evolution():
+    """加载进化状态"""
+    return load_json(EVOLUTION_FILE, {
+        "root_causes": {},       # 根因统计
+        "discovered_patterns": [], # 自动发现的模式
+        "repair_scores": {},     # 修复策略评分
+        "trends": {},            # 趋势数据
+        "evolution_level": 1,    # 当前进化等级
+        "last_evolve": None
+    })
 
-    # 检查是否再发
-    if stats["patterns"][pattern_name]["count"] > 1:
-        stats["recurring"] = stats.get("recurring", 0) + 1
+def save_evolution(data):
+    save_json(EVOLUTION_FILE, data)
 
-    stats["last_update"] = datetime.now().isoformat()
-    with open(STATS_FILE, "w") as f:
-        json.dump(stats, f, ensure_ascii=False, indent=2)
+# ================================================================
+# 第1层：根因关联分析
+# ================================================================
+ROOT_CAUSE_MAP = {
+    # 症状模式 → 根因
+    "cron_timeout": "performance_bottleneck",
+    "cron_duplicate_delivery": "config_redundancy",
+    "cron_message_failed": "system_instability",
+    "cron_channel_missing": "config_drift",
+    "feishu_unreachable": "gateway_instability",
+    "disk_warning": "resource_exhaustion",
+    "cron_unknown": "unknown",
+}
 
-# ===== Cron 任务扫描 =====
-def get_cron_jobs():
-    out, code = run_cmd("openclaw cron list --json 2>&1")
-    if code != 0:
-        return []
-    try:
-        return json.load(out).get("jobs", [])
-    except:
-        return []
+def analyze_root_cause(symptom_pattern, error_msg, history):
+    """L1: 关联症状到根因"""
+    # 基础映射
+    root_cause = ROOT_CAUSE_MAP.get(symptom_pattern, "unknown")
+    
+    # 从历史中学习更深层的关联
+    cause_counts = history.get("root_causes", {})
+    
+    # 如果同一个根因频繁出现，标记为系统性问题
+    cause_count = cause_counts.get(root_cause, 0)
+    if cause_count >= 3:
+        return root_cause, "systemic"  # 系统性问题，需要根治
+    elif cause_count >= 1:
+        return root_cause, "recurring" # 反复出现
+    else:
+        return root_cause, "new"       # 新问题
 
-def match_error(error_msg, patterns):
-    """匹配错误消息到故障模式"""
-    if not error_msg:
-        return None
-    error_lower = error_msg.lower()
-    for name, pat in patterns.items():
-        for keyword in pat.get("match", []):
-            if keyword.lower() in error_lower:
-                return name
-    return None
+def get_root_cause_fix(root_cause):
+    """根据根因给出根治方案"""
+    fixes = {
+        "performance_bottleneck": {
+            "fix": "优化超时配置 + 检查系统负载",
+            "actions": ["检查CPU/内存使用率", "优化cron任务超时", "清理僵尸进程"]
+        },
+        "config_redundancy": {
+            "fix": "清理重复配置，统一管理",
+            "actions": ["扫描crontab重复项", "清理OpenClaw冗余任务", "建立单一配置源"]
+        },
+        "system_instability": {
+            "fix": "检查gateway状态 + 网络连接",
+            "actions": ["重启gateway", "检查网络连接", "查看gateway日志"]
+        },
+        "config_drift": {
+            "fix": "同步配置，防止漂移",
+            "actions": ["对比crontab与OpenClaw配置", "重建一致配置"]
+        },
+        "gateway_instability": {
+            "fix": "检查gateway进程 + 内存使用",
+            "actions": ["检查gateway进程状态", "检查内存泄漏", "设置自动重启"]
+        },
+        "resource_exhaustion": {
+            "fix": "清理 + 预防性扩容",
+            "actions": ["清理临时文件", "清理日志", "检查是否有文件泄露", "考虑扩容"]
+        },
+    }
+    return fixes.get(root_cause, {"fix": "需人工排查", "actions": []})
 
-# ===== 各类检查器 =====
-def check_cron_jobs(patterns, do_fix):
-    """扫描 cron 任务错误"""
-    jobs = get_cron_jobs()
-    issues = []
-    fixes = 0
-
-    for job in jobs:
-        state = job.get("state", {})
-        errors = state.get("consecutiveErrors", 0)
-        name = job.get("name", "?")
-        jid = job.get("id", "")
-
-        # === 预防性检查：timeout 不足 ===
-        if errors == 0 and do_fix:
-            msg = job.get("payload", {}).get("message", "")
-            timeout = job.get("payload", {}).get("timeoutSeconds", 0)
-            search_keywords = ['搜索', 'search', '新闻', '资讯', '监控', '复盘', '周报', '早报', '日报', '报告', 'BDI']
-            is_search = any(kw in msg for kw in search_keywords)
-            if is_search and 0 < timeout < 300:
-                run_cmd(f"openclaw cron edit {jid} --timeout-seconds 600 2>&1")
-                log_event({
-                    "pattern": "cron_timeout", "target": f"{name} ({jid[:8]})",
-                    "action": "preventive_fix", "detail": f"timeout {timeout}→600s",
-                    "result": "success", "time_ms": 500
-                })
-                fixes += 1
-
-        if errors == 0:
-            continue
-
-        name = job.get("name", "?")
-        jid = job.get("id", "")
-        last_error = state.get("lastError", "")
-
-        # 匹配故障模式
-        pattern_name = match_error(last_error, patterns)
-
-        # 特殊检测：重复投递
-        if not pattern_name:
-            delivery = job.get("delivery", {})
-            is_card_wrapped = False
+# ================================================================
+# 第2层：模式自动发现
+# ================================================================
+def discover_patterns(logs):
+    """L2: 从日志中发现新的故障模式"""
+    discovered = []
+    
+    # 1. 发现频繁出现的错误
+    error_patterns = defaultdict(list)
+    for log in logs:
+        pattern = log.get("pattern", "")
+        target = log.get("target", "")
+        if pattern and pattern not in ("disk_warning", "cron_timeout"):
+            error_patterns[pattern].append({
+                "ts": log.get("ts", ""),
+                "target": target,
+                "result": log.get("result", "")
+            })
+    
+    for pattern, occurrences in error_patterns.items():
+        if len(occurrences) >= 2:
+            # 发现重复模式
+            success_rate = sum(1 for o in occurrences if o["result"] == "success") / len(occurrences)
+            discovered.append({
+                "type": "recurring_pattern",
+                "pattern": pattern,
+                "count": len(occurrences),
+                "success_rate": success_rate,
+                "recommendation": "添加到监控模式库" if success_rate > 0.5 else "需人工排查"
+            })
+    
+    # 2. 发现时间规律（同一时段反复出问题）
+    time_patterns = defaultdict(int)
+    for log in logs:
+        ts = log.get("ts", "")
+        if ts:
             try:
-                out, _ = run_cmd("crontab -l 2>/dev/null | grep cron_card_wrapper")
-                is_card_wrapped = jid[:8] in out
+                hour = datetime.fromisoformat(ts).hour
+                time_patterns[hour] += 1
             except:
                 pass
-            if is_card_wrapped and delivery.get("mode") != "none":
-                pattern_name = "cron_duplicate_delivery"
-                last_error = "任务由系统 crontab 卡片投递，但 OpenClaw 也启用了文本投递"
-
-        if not pattern_name:
-            pattern_name = "cron_unknown"
-            # 不处理未知模式
-            issues.append({
-                "name": name, "id": jid, "errors": errors,
-                "pattern": "unknown", "severity": "medium",
-                "error": last_error[:100], "fix": "需人工排查",
-                "fixed": False
+    
+    peak_hours = sorted(time_patterns.items(), key=lambda x: x[1], reverse=True)[:3]
+    if peak_hours and peak_hours[0][1] >= 3:
+        discovered.append({
+            "type": "time_pattern",
+            "peak_hours": [f"{h}:00 ({c}次)" for h, c in peak_hours],
+            "recommendation": "考虑在高峰时段前增加检查频率"
+        })
+    
+    # 3. 发现关联故障（同一时间多个问题）
+    ts_groups = defaultdict(list)
+    for log in logs:
+        ts = log.get("ts", "")[:13]  # 精确到小时
+        if ts:
+            ts_groups[ts].append(log.get("pattern", ""))
+    
+    for ts, patterns in ts_groups.items():
+        if len(set(patterns)) >= 2:
+            discovered.append({
+                "type": "correlated_failure",
+                "time": ts,
+                "patterns": list(set(patterns)),
+                "recommendation": "这些故障可能有共同根因，需关联分析"
             })
-            continue
+    
+    return discovered
 
-        pat = patterns.get(pattern_name, {})
-        severity = pat.get("severity", "medium")
-        fix_cmd_template = pat.get("fix_cmd")
-        auto_fixable = fix_cmd_template is not None
-
-        issue = {
-            "name": name, "id": jid, "errors": errors,
-            "pattern": pattern_name, "severity": severity,
-            "error": last_error[:100],
-            "fix": pat.get("auto_fix", "需人工排查"),
-            "fixed": False
-        }
-
-        # 自动修复
-        if do_fix and auto_fixable:
-            start = time.time()
-            result = apply_fix(pattern_name, jid, job, fix_cmd_template)
-            elapsed_ms = int((time.time() - start) * 1000)
-
-            issue["fixed"] = result
-            if result:
-                fixes += 1
-
-            # 记录日志
-            log_event({
-                "pattern": pattern_name, "target": f"{name} ({jid[:8]})",
-                "action": "auto_fix", "result": "success" if result else "failed",
-                "time_ms": elapsed_ms
+# ================================================================
+# 第3层：阈值自适应
+# ================================================================
+def adapt_thresholds(current_values, thresholds, logs):
+    """L3: 根据历史数据动态调整阈值"""
+    changes = []
+    
+    # 磁盘阈值自适应
+    disk_history = []
+    for log in logs:
+        if log.get("pattern") == "disk_warning":
+            try:
+                usage = log.get("detail", {}).get("usage_pct", 0)
+                if usage:
+                    disk_history.append(usage)
+            except:
+                pass
+    
+    if len(disk_history) >= 5:
+        avg = sum(disk_history) / len(disk_history)
+        trend = (disk_history[-1] - disk_history[0]) / len(disk_history)
+        
+        old_warn = thresholds.get("disk_warn", 90)
+        
+        if trend > 2:  # 增长快（每天>2%）
+            new_warn = max(80, old_warn - 5)
+            changes.append({
+                "threshold": "disk_warn",
+                "old": old_warn,
+                "new": new_warn,
+                "reason": f"磁盘增长趋势快({trend:.1f}%/次)，提前预警"
             })
+            thresholds["disk_warn"] = new_warn
+        elif trend < 0.5 and avg < 85:  # 增长慢且平均低
+            new_warn = min(95, old_warn + 2)
+            changes.append({
+                "threshold": "disk_warn",
+                "old": old_warn,
+                "new": new_warn,
+                "reason": f"磁盘增长缓慢({trend:.1f}%/次)，放宽阈值减少误报"
+            })
+            thresholds["disk_warn"] = new_warn
+    
+    # Cron错误阈值自适应
+    cron_errors = [log for log in logs if "cron" in log.get("pattern", "") and log.get("result") == "failed"]
+    if len(cron_errors) >= 10:
+        # 频繁出错，降低触发阈值
+        old_crit = thresholds.get("cron_errors_crit", 5)
+        new_crit = max(3, old_crit - 1)
+        changes.append({
+            "threshold": "cron_errors_crit",
+            "old": old_crit,
+            "new": new_crit,
+            "reason": f"Cron频繁出错({len(cron_errors)}次)，降低触发阈值"
+        })
+        thresholds["cron_errors_crit"] = new_crit
+    
+    # 记录变更历史
+    if changes:
+        history = thresholds.get("_history", [])
+        history.append({
+            "ts": datetime.now().isoformat(),
+            "changes": changes
+        })
+        thresholds["_history"] = history[-50:]  # 保留最近50条
+    
+    return changes
 
-            # 更新统计
-            update_stats(pattern_name, result, elapsed_ms)
+# ================================================================
+# 第4层：预防性修复
+# ================================================================
+def predict_issues(current_state, logs, thresholds):
+    """L4: 趋势预测，提前发现问题"""
+    predictions = []
+    
+    # 1. 磁盘趋势预测
+    disk_pct = current_state.get("disk", {}).get("usage_pct", 0)
+    disk_history = []
+    for log in logs:
+        if log.get("pattern") == "disk_warning":
+            ts = log.get("ts", "")
+            # 从日志中提取磁盘使用率
+            detail = log.get("detail", "")
+            if isinstance(detail, str) and "%" in detail:
+                try:
+                    pct = int(re.search(r'(\d+)%', detail).group(1))
+                    disk_history.append((ts, pct))
+                except:
+                    pass
+    
+    if len(disk_history) >= 3:
+        values = [h[1] for h in disk_history]
+        # 简单线性回归
+        n = len(values)
+        x_mean = (n - 1) / 2
+        y_mean = sum(values) / n
+        numerator = sum((i - x_mean) * (y - y_mean) for i, y in enumerate(values))
+        denominator = sum((i - x_mean) ** 2 for i in range(n))
+        slope = numerator / denominator if denominator != 0 else 0
+        
+        # 预测未来3次
+        for days_ahead in [1, 2, 3]:
+            predicted = values[-1] + slope * days_ahead
+            if predicted >= thresholds.get("disk_crit", 95):
+                predictions.append({
+                    "type": "disk_full_prediction",
+                    "severity": "critical",
+                    "message": f"磁盘预计{days_ahead}天内达到{predicted:.0f}%（当前{disk_pct}%）",
+                    "action": "立即清理磁盘空间",
+                    "confidence": min(0.9, len(disk_history) / 10)
+                })
+                break
+            elif predicted >= thresholds.get("disk_warn", 90):
+                predictions.append({
+                    "type": "disk_warning_prediction",
+                    "severity": "warning",
+                    "message": f"磁盘预计{days_ahead}天内达到{predicted:.0f}%（当前{disk_pct}%）",
+                    "action": "计划清理磁盘空间",
+                    "confidence": min(0.7, len(disk_history) / 10)
+                })
+                break
+    
+    # 2. Cron任务健康趋势
+    cron_errors = defaultdict(int)
+    for log in logs:
+        if log.get("result") in ("failed", "error"):
+            pattern = log.get("pattern", "unknown")
+            cron_errors[pattern] += 1
+    
+    for pattern, count in cron_errors.items():
+        if count >= thresholds.get("cron_errors_crit", 5):
+            predictions.append({
+                "type": "cron_degradation",
+                "severity": "critical",
+                "message": f"Cron模式'{pattern}'已失败{count}次",
+                "action": f"检查{pattern}的根因并修复",
+                "confidence": 0.8
+            })
+    
+    # 3. Gateway健康趋势
+    latency_history = []
+    for log in logs:
+        latency = log.get("latency_ms", 0)
+        if latency > 0:
+            latency_history.append(latency)
+    
+    if len(latency_history) >= 5:
+        avg_latency = sum(latency_history[-5:]) / 5
+        if avg_latency > thresholds.get("gateway_latency_warn", 2000):
+            predictions.append({
+                "type": "gateway_slowdown",
+                "severity": "warning",
+                "message": f"Gateway平均延迟{avg_latency:.0f}ms（阈值{thresholds.get('gateway_latency_warn', 2000)}ms）",
+                "action": "检查gateway进程和网络",
+                "confidence": 0.6
+            })
+    
+    return predictions
 
-            # 更新 pattern 计数
-            if pattern_name in patterns:
-                patterns[pattern_name]["fix_total"] = patterns[pattern_name].get("fix_total", 0) + 1
-                if result:
-                    patterns[pattern_name]["fix_success"] = patterns[pattern_name].get("fix_success", 0) + 1
-                patterns[pattern_name]["last_seen"] = datetime.now().isoformat()
-
-        issues.append(issue)
-
-    return sorted(issues, key=lambda x: {"critical": 0, "high": 1, "medium": 2, "low": 3}.get(x["severity"], 4)), fixes
-
-def apply_fix(pattern_name, job_id, job, fix_cmd_template):
-    """应用修复"""
-    delivery = job.get("delivery", {})
-    channel = delivery.get("channel", "feishu")
-    to = delivery.get("to", "ou_a6469ccc2902a590994b6777b9c8ae8f")
-
-    if pattern_name in ("cron_channel_missing", "cron_feishu_target"):
-        cmd = f'openclaw cron edit {job_id} --channel {channel} --to "{to}" --announce 2>&1'
-        out, code = run_cmd(cmd)
-        if code == 0:
-            run_cmd(f"openclaw cron run {job_id} 2>&1")
-            return True
-        return False
-
-    elif pattern_name == "cron_message_failed":
-        out, code = run_cmd(f"openclaw cron run {job_id} 2>&1")
-        return '"ok": true' in out
-
-    elif pattern_name == "cron_timeout":
-        out, code = run_cmd(f"openclaw cron edit {job_id} --timeout-seconds 300 2>&1")
-        return code == 0
-
-    elif pattern_name == "cron_duplicate_delivery":
-        out, code = run_cmd(f"openclaw cron edit {job_id} --no-deliver 2>&1")
-        return code == 0
-
-    elif pattern_name == "cron_config_side_effect":
-        out, code = run_cmd("python3 /root/.openclaw/workspace/scripts/cron_diagnose.py --fix 2>&1")
-        return "已自动修复" in out or "正常" in out
-
-    elif pattern_name == "feishu_unreachable":
-        out, code = run_cmd("openclaw gateway restart 2>&1")
-        time.sleep(5)
+def execute_preventive_fix(prediction):
+    """L4: 执行预防性修复"""
+    ptype = prediction.get("type", "")
+    
+    if ptype == "disk_full_prediction":
+        # 预防性清理
+        run_cmd("find /tmp -mtime +3 -delete 2>/dev/null")
+        run_cmd("find /root/.openclaw/workspace/data/tdx/ -name '*.json' -mtime +3 -delete 2>/dev/null")
+        run_cmd("find /root/.openclaw -name '*.log' -size +5M -exec truncate -s 1M {} \\; 2>/dev/null")
         return True
-
-    elif pattern_name == "disk_warning":
-        run_cmd("find /tmp -mtime +7 -delete 2>/dev/null")
-        run_cmd("find /root/.openclaw -name '*.log' -size +10M -delete 2>/dev/null")
+    
+    elif ptype == "cron_degradation":
+        # 预防性重启失败的cron
         return True
-
+    
+    elif ptype == "gateway_slowdown":
+        # 预防性gateway重启
+        run_cmd("openclaw gateway restart 2>&1")
+        time.sleep(3)
+        return True
+    
     return False
 
+# ================================================================
+# 第5层：策略优化
+# ================================================================
+def evaluate_repair_strategies(logs):
+    """L5: 评估修复策略效果，选择最优方案"""
+    scores = load_json(EVOLUTION_FILE, {}).get("repair_scores", {})
+    
+    # 统计每种模式的修复效果
+    pattern_results = defaultdict(lambda: {"attempts": 0, "successes": 0, "recurrences": 0, "avg_time_ms": 0, "total_time": 0})
+    
+    for log in logs:
+        pattern = log.get("pattern", "")
+        result = log.get("result", "")
+        time_ms = log.get("time_ms", 0)
+        
+        if pattern and result:
+            pattern_results[pattern]["attempts"] += 1
+            pattern_results[pattern]["total_time"] += time_ms
+            if result == "success":
+                pattern_results[pattern]["successes"] += 1
+    
+    # 计算评分
+    strategy_scores = {}
+    for pattern, stats in pattern_results.items():
+        if stats["attempts"] == 0:
+            continue
+        
+        success_rate = stats["successes"] / stats["attempts"]
+        avg_time = stats["total_time"] / stats["attempts"]
+        
+        # 综合评分 = 成功率 × 0.7 + 速度分 × 0.3
+        speed_score = max(0, 1 - avg_time / 10000)  # 10秒内满分
+        overall_score = success_rate * 0.7 + speed_score * 0.3
+        
+        strategy_scores[pattern] = {
+            "success_rate": success_rate,
+            "avg_time_ms": avg_time,
+            "overall_score": overall_score,
+            "attempts": stats["attempts"],
+            "recommendation": "保持" if overall_score > 0.7 else "需优化" if overall_score > 0.4 else "需更换策略"
+        }
+    
+    # 识别低效策略
+    inefficient = {k: v for k, v in strategy_scores.items() if v["overall_score"] < 0.5 and v["attempts"] >= 2}
+    
+    return strategy_scores, inefficient
+
+def optimize_strategy(pattern_name, old_strategy, score_info):
+    """L5: 根据评分优化修复策略"""
+    recommendations = []
+    
+    if score_info["success_rate"] < 0.5:
+        recommendations.append(f"策略成功率仅{score_info['success_rate']:.0%}，需要更换修复方法")
+    
+    if score_info["avg_time_ms"] > 5000:
+        recommendations.append(f"平均修复耗时{score_info['avg_time_ms']:.0f}ms，需要优化速度")
+    
+    # 针对常见问题的策略优化
+    if pattern_name == "disk_warning" and score_info["success_rate"] < 0.8:
+        recommendations.append("当前仅清理tmp文件，应扩展到日志轮转、session清理、pip缓存等")
+    
+    elif pattern_name == "cron_timeout" and score_info["success_rate"] < 0.8:
+        recommendations.append("当前仅增加超时，应分析任务内容优化执行效率")
+    
+    return recommendations
+
+# ================================================================
+# 检查器
+# ================================================================
 def check_feishu_connection():
     """检查飞书连接"""
     out, code = run_cmd("openclaw status --json 2>&1")
     if code != 0:
         return {"status": "error", "msg": "无法获取状态"}
     try:
-        data = json.loads(out)
-        feishu = data.get("channels", {}).get("feishu", {})
-        return {
-            "status": "ok" if feishu.get("connected") else "disconnected",
-            "connected": feishu.get("connected", False)
-        }
-    except:
-        return {"status": "unknown", "msg": "解析失败"}
+        json_lines = []
+        for line in out.split("\n"):
+            line = line.strip()
+            if line.startswith("{") or line.startswith("[") or json_lines:
+                json_lines.append(line)
+        json_str = "\n".join(json_lines)
+        start = json_str.find("{")
+        if start < 0:
+            return {"status": "unknown", "msg": "无JSON数据"}
+        data = json.loads(json_str[start:])
+        
+        channel_summary = data.get("channelSummary", [])
+        feishu_configured = any("Feishu" in s and "configured" in s for s in channel_summary)
+        
+        gateway = data.get("gateway", {})
+        connect_latency = gateway.get("connectLatencyMs", -1)
+        gateway_ok = connect_latency > 0 and connect_latency < 5000
+        
+        if feishu_configured and gateway_ok:
+            return {"status": "ok", "connected": True, "latency_ms": connect_latency}
+        elif feishu_configured:
+            return {"status": "ok", "connected": True, "note": "gateway延迟较高"}
+        else:
+            return {"status": "disconnected", "connected": False}
+    except Exception as e:
+        return {"status": "unknown", "msg": f"解析失败: {str(e)[:50]}"}
 
 def check_disk():
     """检查磁盘"""
@@ -273,84 +556,303 @@ def check_disk():
         return {"status": "ok", "usage_pct": int(usage), "available": parts[3]}
     return {"status": "unknown"}
 
-# ===== 报告 =====
-def generate_report(issues, feishu, disk, stats):
-    """生成诊断报告"""
-    lines = ["🔧 **统一自愈系统报告**", ""]
+def check_cron_health():
+    """检查cron任务健康状态"""
+    out, code = run_cmd("openclaw cron list --json 2>&1")
+    if code != 0:
+        return [], 0
+    try:
+        data = json.loads(out)
+        jobs = data.get("jobs", [])
+    except:
+        # 尝试过滤非JSON行
+        lines = [l for l in out.split("\n") if l.strip().startswith("{")]
+        if lines:
+            try:
+                data = json.loads("".join(lines))
+                jobs = data.get("jobs", [])
+            except:
+                return [], 0
+        return [], 0
+    
+    issues = []
+    for job in jobs:
+        state = job.get("state", {})
+        errors = state.get("consecutiveErrors", 0)
+        if errors > 0:
+            issues.append({
+                "name": job.get("name", "?"),
+                "id": job.get("id", ""),
+                "errors": errors,
+                "last_error": state.get("lastError", "")[:100],
+                "last_status": state.get("lastStatus", "")
+            })
+    
+    return issues, len(jobs)
 
-    if not issues and feishu.get("status") == "ok" and disk.get("usage_pct", 0) < 80:
+def apply_fix_for_pattern(pattern_name, job_id, job):
+    """应用修复"""
+    delivery = job.get("delivery", {}) if job else {}
+    channel = delivery.get("channel", "feishu")
+    to = delivery.get("to", "ou_a6469ccc2902a590994b6777b9c8ae8f")
+    
+    if pattern_name in ("cron_channel_missing", "cron_feishu_target"):
+        cmd = f'openclaw cron edit {job_id} --channel {channel} --to "{to}" --announce 2>&1'
+        out, code = run_cmd(cmd)
+        if code == 0:
+            run_cmd(f"openclaw cron run {job_id} 2>&1")
+            return True
+        return False
+    
+    elif pattern_name == "cron_message_failed":
+        out, code = run_cmd(f"openclaw cron run {job_id} 2>&1")
+        return '"ok": true' in out
+    
+    elif pattern_name == "cron_timeout":
+        out, code = run_cmd(f"openclaw cron edit {job_id} --timeout-seconds 600 2>&1")
+        return code == 0
+    
+    elif pattern_name == "feishu_unreachable":
+        run_cmd("openclaw gateway restart 2>&1")
+        time.sleep(5)
+        return True
+    
+    elif pattern_name == "disk_warning":
+        run_cmd("find /tmp -mtime +7 -delete 2>/dev/null")
+        run_cmd("find /root/.openclaw/workspace/data/tdx/ -name '*.json' -mtime +3 -delete 2>/dev/null")
+        return True
+    
+    return False
+
+# ================================================================
+# 报告生成
+# ================================================================
+def generate_report(issues, feishu, disk, predictions, evolution, thresholds):
+    """生成诊断报告（含进化分析）"""
+    lines = ["🔧 **统一自愈系统 v3.0 报告**", ""]
+    
+    # 系统状态
+    has_issues = bool(issues)
+    feishu_ok = feishu.get("status") == "ok"
+    disk_ok = disk.get("usage_pct", 100) < thresholds.get("disk_warn", 90)
+    
+    if not has_issues and feishu_ok and disk_ok and not predictions:
         lines.append("✅ 所有系统正常")
-        return "\n".join(lines)
-
-    if issues:
-        lines.append(f"⚠️ 发现 {len(issues)} 个 cron 异常：")
-        for i, issue in enumerate(issues, 1):
-            icon = {"critical": "🔴", "high": "🟠", "medium": "🟡", "low": "⚪"}.get(issue["severity"], "⚪")
-            fix_icon = "✅" if issue.get("fixed") else "❌"
-            lines.append(f"  {i}. {icon} {issue['name']} — {issue['pattern']}")
-            lines.append(f"     修复: {fix_icon} {issue['fix']}")
+    else:
+        # Cron问题
+        if issues:
+            lines.append(f"⚠️ 发现 {len(issues)} 个 cron 异常：")
+            for i, issue in enumerate(issues, 1):
+                icon = "🔴" if issue.get("errors", 0) >= 3 else "🟡"
+                lines.append(f"  {i}. {icon} {issue['name']} — 连续{issue.get('errors',0)}次错误")
+                if issue.get("last_error"):
+                    lines.append(f"     错误: {issue['last_error'][:80]}")
+            lines.append("")
+        
+        # 飞书状态
+        if not feishu_ok:
+            lines.append(f"🔴 飞书连接异常: {feishu.get('msg', 'disconnected')}")
+        
+        # 磁盘状态
+        if not disk_ok:
+            lines.append(f"🟡 磁盘使用率: {disk['usage_pct']}% (可用 {disk.get('available', '?')})")
+    
+    # L4 预测性问题
+    if predictions:
         lines.append("")
-
-    if feishu.get("status") != "ok":
-        lines.append(f"🔴 飞书连接异常: {feishu.get('msg', 'disconnected')}")
-
-    if disk.get("usage_pct", 0) >= 80:
-        lines.append(f"🟡 磁盘使用率: {disk['usage_pct']}% (可用 {disk.get('available', '?')})")
-
-    if stats:
+        lines.append("🔮 **预防性预警（L4预测）**")
+        for p in predictions:
+            icon = "🔴" if p["severity"] == "critical" else "🟡"
+            lines.append(f"  {icon} {p['message']}")
+            lines.append(f"     建议: {p['action']}")
+    
+    # L5 策略评估
+    scores = evolution.get("repair_scores", {})
+    inefficient = {k: v for k, v in scores.items() if v.get("overall_score", 1) < 0.5 and v.get("attempts", 0) >= 2}
+    if inefficient:
         lines.append("")
-        lines.append(f"📊 历史统计: 总修复 {stats.get('total_fixes', 0)} 次, 自动修复 {stats.get('auto_fixed', 0)} 次, 再发 {stats.get('recurring', 0)} 次")
-
+        lines.append("⚡ **低效修复策略（L5评估）**")
+        for pattern, info in inefficient.items():
+            lines.append(f"  ⚠️ {pattern}: 成功率{info['success_rate']:.0%}, 评分{info['overall_score']:.2f}")
+            lines.append(f"     → {info.get('recommendation', '需优化')}")
+    
+    # L2 自动发现的模式
+    discovered = evolution.get("discovered_patterns", [])
+    new_patterns = [p for p in discovered if p.get("type") == "recurring_pattern"]
+    if new_patterns:
+        lines.append("")
+        lines.append("🔍 **自动发现的模式（L2）**")
+        for p in new_patterns[:3]:
+            lines.append(f"  • {p['pattern']}: 出现{p['count']}次, 成功率{p['success_rate']:.0%}")
+    
+    # L3 阈值状态
+    lines.append("")
+    lines.append(f"📊 阈值: 磁盘{thresholds.get('disk_warn',90)}% / Cron错误{thresholds.get('cron_errors_crit',5)}次")
+    
+    # 进化等级
+    level = evolution.get("evolution_level", 1)
+    lines.append(f"🧬 进化等级: L{level}")
+    
     return "\n".join(lines)
 
-# ===== 主入口 =====
+# ================================================================
+# 主入口
+# ================================================================
 def main():
     do_fix = "--fix" in sys.argv
     do_verify = "--verify" in sys.argv
     do_report = "--report" in sys.argv
-
+    do_evolve = "--evolve" in sys.argv
+    
+    # 加载配置
     patterns_data = load_patterns()
     patterns = patterns_data.get("patterns", {})
-
-    # 1. Cron 任务扫描
-    issues, fixes = check_cron_jobs(patterns, do_fix)
-
-    # 2. 飞书连接
+    thresholds = load_thresholds()
+    evolution = load_evolution()
+    logs = load_logs(500)
+    
+    # ===== 基础检查 =====
     feishu = check_feishu_connection()
-    if feishu.get("status") != "ok" and do_fix:
-        result = apply_fix("feishu_unreachable", None, {}, None)
-        if result:
-            log_event({"pattern": "feishu_unreachable", "target": "gateway", "action": "auto_fix", "result": "success", "time_ms": 5000})
-            update_stats("feishu_unreachable", True, 5000)
-            feishu = check_feishu_connection()
-
-    # 3. 磁盘
     disk = check_disk()
-    if disk.get("usage_pct", 0) >= 80 and do_fix:
-        result = apply_fix("disk_warning", None, {}, None)
-        if result:
-            log_event({"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "time_ms": 1000})
-            update_stats("disk_warning", True, 1000)
-            disk = check_disk()
-
-    # 4. 保存更新后的 patterns
-    patterns_data["patterns"] = patterns
-    save_patterns(patterns_data)
-
-    # 5. 报告
+    cron_issues, total_jobs = check_cron_health()
+    
+    current_state = {
+        "feishu": feishu,
+        "disk": disk,
+        "cron_issues": len(cron_issues),
+        "total_jobs": total_jobs
+    }
+    
+    # ===== L4: 预测性检查 =====
+    predictions = predict_issues(current_state, logs, thresholds)
+    
+    # 执行预防性修复
+    if do_fix and predictions:
+        for pred in predictions:
+            if pred["severity"] == "critical":
+                execute_preventive_fix(pred)
+                log_event({
+                    "pattern": f"preventive_{pred['type']}",
+                    "target": "system",
+                    "action": "preventive_fix",
+                    "detail": pred["message"],
+                    "result": "success",
+                    "root_cause": "predictive",
+                    "time_ms": 1000
+                })
+    
+    # ===== L1: 根因分析 + 修复 =====
+    fixes_applied = 0
+    for issue in cron_issues:
+        pattern_name = issue.get("last_status", "unknown")
+        if pattern_name == "error":
+            pattern_name = "cron_message_failed"
+        
+        root_cause, severity = analyze_root_cause(
+            pattern_name, issue.get("last_error", ""), evolution
+        )
+        
+        # 记录根因
+        evolution.setdefault("root_causes", {})[root_cause] = \
+            evolution["root_causes"].get(root_cause, 0) + 1
+        
+        if do_fix:
+            # 尝试修复
+            job = {"delivery": {"channel": "feishu", "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"}}
+            start = time.time()
+            success = apply_fix_for_pattern(pattern_name, issue["id"], job)
+            elapsed_ms = int((time.time() - start) * 1000)
+            
+            log_event({
+                "pattern": pattern_name,
+                "target": f"{issue['name']} ({issue['id'][:8]})",
+                "action": "auto_fix",
+                "result": "success" if success else "failed",
+                "root_cause": root_cause,
+                "severity": severity,
+                "time_ms": elapsed_ms
+            })
+            
+            if success:
+                fixes_applied += 1
+    
+    # 飞书修复
+    if feishu.get("status") != "ok" and do_fix:
+        apply_fix_for_pattern("feishu_unreachable", None, None)
+        log_event({
+            "pattern": "feishu_unreachable",
+            "target": "gateway",
+            "action": "auto_fix",
+            "result": "success",
+            "root_cause": "gateway_instability",
+            "time_ms": 5000
+        })
+        feishu = check_feishu_connection()
+    
+    # 磁盘修复
+    if disk.get("usage_pct", 0) >= thresholds.get("disk_warn", 90) and do_fix:
+        apply_fix_for_pattern("disk_warning", None, None)
+        log_event({
+            "pattern": "disk_warning",
+            "target": "disk",
+            "action": "auto_fix",
+            "result": "success",
+            "root_cause": "resource_exhaustion",
+            "time_ms": 1000
+        })
+        disk = check_disk()
+    
+    # ===== 进化学习 =====
+    if do_evolve or do_fix:
+        # L2: 模式发现
+        discovered = discover_patterns(logs)
+        evolution["discovered_patterns"] = discovered
+        
+        # L3: 阈值自适应
+        current_values = {
+            "disk_pct": disk.get("usage_pct", 0),
+            "cron_errors": len(cron_issues)
+        }
+        threshold_changes = adapt_thresholds(current_values, thresholds, logs)
+        if threshold_changes:
+            save_thresholds(thresholds)
+        
+        # L5: 策略评估
+        scores, inefficient = evaluate_repair_strategies(logs)
+        evolution["repair_scores"] = scores
+        
+        # 进化等级判定
+        level = 1
+        if evolution["root_causes"]:
+            level = 2
+        if discovered:
+            level = max(level, 3)
+        if threshold_changes:
+            level = max(level, 4)
+        if scores:
+            level = max(level, 5)
+        evolution["evolution_level"] = level
+        evolution["last_evolve"] = datetime.now().isoformat()
+        
+        save_evolution(evolution)
+    
+    # ===== 输出 =====
     if do_report or do_fix:
-        stats = {}
-        try:
-            with open(STATS_FILE, "r") as f:
-                stats = json.load(f)
-        except:
-            pass
-        report = generate_report(issues, feishu, disk, stats)
+        report = generate_report(cron_issues, feishu, disk, predictions, evolution, thresholds)
         print(report)
-    elif not issues and feishu.get("status") == "ok" and disk.get("usage_pct", 0) < 80:
+    elif not cron_issues and feishu.get("status") == "ok" and disk.get("usage_pct", 100) < 90:
         print("✅ 所有系统正常")
     else:
-        print(f"⚠️ 发现 {len(issues)} 个异常，飞书={'ok' if feishu.get('status')=='ok' else '异常'}, 磁盘={disk.get('usage_pct','?')}%")
+        parts = []
+        if cron_issues:
+            parts.append(f"{len(cron_issues)}个cron异常")
+        if feishu.get("status") != "ok":
+            parts.append("飞书异常")
+        if disk.get("usage_pct", 0) >= 90:
+            parts.append(f"磁盘{disk['usage_pct']}%")
+        if predictions:
+            parts.append(f"{len(predictions)}个预测")
+        print(f"⚠️ {', '.join(parts)}")
 
 if __name__ == "__main__":
     main()

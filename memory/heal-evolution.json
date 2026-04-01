@@ -1,0 +1,50 @@
+{
+  "root_causes": {
+    "system_instability": 5
+  },
+  "discovered_patterns": [
+    {
+      "type": "recurring_pattern",
+      "pattern": "cron_message_failed",
+      "count": 5,
+      "success_rate": 1.0,
+      "recommendation": "添加到监控模式库"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-01T21",
+      "patterns": [
+        "disk_warning",
+        "cron_message_failed"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
+    }
+  ],
+  "repair_scores": {
+    "cron_timeout": {
+      "success_rate": 0.0,
+      "avg_time_ms": 0.0,
+      "overall_score": 0.3,
+      "attempts": 2,
+      "recommendation": "需更换策略"
+    },
+    "disk_warning": {
+      "success_rate": 1.0,
+      "avg_time_ms": 1000.0,
+      "overall_score": 0.97,
+      "attempts": 4,
+      "recommendation": "保持"
+    },
+    "cron_message_failed": {
+      "success_rate": 1.0,
+      "avg_time_ms": 2887.8,
+      "overall_score": 0.9133659999999999,
+      "attempts": 5,
+      "recommendation": "保持"
+    }
+  },
+  "trends": {},
+  "evolution_level": 5,
+  "last_evolve": "2026-04-02T01:04:21.517853",
+  "memory_health": 96
+}

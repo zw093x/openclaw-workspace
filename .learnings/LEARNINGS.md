@@ -175,3 +175,302 @@
 - 强制：涉及脚本运行、文件读写、cron修改、数据查询 → 必须先发确认
 
 **执行方式：使用 message(action=send) 先发确认，再做实际工作。**
+
+### 2026-04-01 | correction | 交易决策前必须深度验证长期逻辑
+
+**事件：** 上午建议动力减仓第一档（32.50卖500股），用户执行后发现长期逻辑是"一机难求"——结构性变化，不应该用周期股逻辑减仓。
+
+**教训：**
+1. 做减仓/止损建议前，先问用户的长期判断是什么
+2. 不要默认套用通用减仓策略，需要深度验证行业逻辑
+3. 用户的行业洞察可能比通用框架更有价值
+4. 对"结构性变化"vs"周期反弹"要区分对待
+
+**规则：** 涉及用户持仓的操作建议，必须先了解其长期投资逻辑，再做验证和补充，而不是先给建议。
+
+---
+
+### 2026-04-01 | knowledge_gap | 信息监控需要覆盖行业深度消息
+
+**事件：** 用户提到"船用发动机订单爆满"的消息，但我之前没有主动监控这个方向。
+
+**教训：**
+- 股票监控不应只看价格和资金流，需要关注行业基本面变化
+- 中国动力的核心变量是发动机供需关系，需要监控相关产业新闻
+- 已将关键词加入 stock-knowledge.md
+
+**行动：** 在盘中监控和每日资讯中增加行业深度消息的采集。
+
+## [LRN-20260401-001] best_practice
+
+**Logged**: 2026-04-01T16:36:00+08:00
+**Priority**: critical
+**Status**: implemented
+
+**What happened**: 交易决策流程倒置 — 先卖出动力500股，事后才改为"长期持有"策略。
+
+**Lesson**: 交易操作前必须先验证用户的长期逻辑，不套用通用减仓框架。用户对行业的深度洞察（一机难求、船周期）比通用策略更有价值。
+
+**Action**: 写入 AGENTS.md 硬编码规则 — 交易决策前置5步流程，任何卖出/买入操作前必须先完成逻辑验证。
+
+---
+
+## [LRN-20260401-002] best_practice
+
+**Logged**: 2026-04-01T16:36:00+08:00
+**Priority**: high
+**Status**: implemented
+
+**What happened**: 信息搜索结果中混入未经验证的说法（"与中际旭创联合开发"等），后被纠正为"未见官方公告"。
+
+**Lesson**: 投资分析中信息来源可靠性必须分级标注，不能将所有搜索结果等同对待。
+
+**Action**: 写入 AGENTS.md 信息可靠性分级规则（A-E五级），核心投资结论必须有A/B级来源支撑。
+
+---
+
+## [LRN-20260401-003] correction
+
+**Logged**: 2026-04-01T16:36:00+08:00
+**Priority**: medium
+**Status**: implemented
+
+**What happened**: 泰禾智能题材股快进快出4.5小时亏损50元。无明确催化剂，买入时机不佳。
+
+**Lesson**: 题材股建仓需要更严格的入场条件：明确催化剂+支撑位+止损位+热度判断。
+
+**Action**: 写入 AGENTS.md 题材股建仓检查清单（6项条件全满足方可建仓）。
+
+## [LRN-20260401-001] correction
+
+**Logged**: 2026-04-01T22:20:20.154168
+**Priority**: medium
+**Status**: pending
+
+### Summary
+交易决策前必须深度验证长期逻辑
+
+### Details
+先卖动力500股才改长期持有，流程倒置
+
+### Metadata
+- Source: auto_record
+- Tags: 交易, correction
+---
+
+
+## [LRN-20260401-002] correction
+
+**Logged**: 2026-04-01T22:20:20.184791
+**Priority**: medium
+**Status**: pending
+
+### Summary
+投资信息必须标注来源等级
+
+### Details
+搜索结果混入未经验证说法
+
+### Metadata
+- Source: auto_record
+- Tags: 信息, correction
+---
+
+
+## [LRN-20260401-003] error
+
+**Logged**: 2026-04-01T22:20:20.215972
+**Priority**: medium
+**Status**: pending
+
+### Summary
+cron任务超时导致连续失败
+
+### Details
+技能更新批量执行超时
+
+### Metadata
+- Source: auto_record
+- Tags: cron, error
+---
+
+
+## [LRN-20260401-004] best_practice
+
+**Logged**: 2026-04-01T22:20:20.248539
+**Priority**: medium
+**Status**: pending
+
+### Summary
+单条推送聚焦1个结论不超过10行
+
+### Details
+信息过载降低可读性
+
+### Metadata
+- Source: auto_record
+- Tags: 推送, best_practice
+---
+
+
+## [LRN-20260401-005] correction
+
+**Logged**: 2026-04-01T22:20:20.278795
+**Priority**: medium
+**Status**: pending
+
+### Summary
+复杂任务先发确认再执行
+
+### Details
+不发确认用户不知道进度
+
+### Metadata
+- Source: auto_record
+- Tags: 回复, correction
+---
+
+
+## [LRN-20260401-006] correction
+
+**Logged**: 2026-04-01T23:09:15.175776
+**Priority**: medium
+**Status**: pending
+
+### Summary
+CG日报信息过载
+
+### Details
+单条消息太长用户看不完
+
+### Metadata
+- Source: auto_record
+- Tags: 推送, correction
+---
+
+
+## [LRN-20260401-007] error
+
+**Logged**: 2026-04-01T23:09:15.226334
+**Priority**: medium
+**Status**: pending
+
+### Summary
+磁盘使用率连续3天超90%
+
+### Details
+session文件堆积导致
+
+### Metadata
+- Source: auto_record
+- Tags: 磁盘, error
+---
+
+
+## [LRN-20260401-008] best_practice
+
+**Logged**: 2026-04-01T23:09:15.278002
+**Priority**: medium
+**Status**: pending
+
+### Summary
+复杂分析用子代理避免阻塞
+
+### Details
+用户等了20秒
+
+### Metadata
+- Source: auto_record
+- Tags: 速度, best_practice
+---
+
+
+## [LRN-20260402-009] error
+
+**Logged**: 2026-04-02T00:04:15.318288
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 500, 500, 000, 500, 000, 500, 3000, 500, 500, 500
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260402-010] error
+
+**Logged**: 2026-04-02T01:04:17.822754
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 500, 500, 000, 500, 000, 500, 3000, 500, 500, 500
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260402-011] error
+
+**Logged**: 2026-04-02T01:25:01.265661
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 500, 500, 000, 500, 000, 500, 3000, 500, 3000, 500, 500
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260402-012] error
+
+**Logged**: 2026-04-02T01:25:01.267018
+**Priority**: medium
+**Status**: pending
+
+### Summary
+复盘低分: 动力减仓 - 32.60卖出500股
+
+### Details
+原因:套用通用减仓框架 教训:减仓前应先验证用户长期逻辑
+
+### Metadata
+- Source: auto_record
+- Tags: 复盘, error
+---
+
+
+## [LRN-20260402-013] error
+
+**Logged**: 2026-04-02T01:25:01.268255
+**Priority**: high
+**Status**: pending
+
+### Summary
+复盘低分: 泰禾买入 - 21.10买入500股
+
+### Details
+原因:阳光新能源借壳题材 教训:题材股无催化剂不应建仓
+
+### Metadata
+- Source: auto_record
+- Tags: 复盘, error
+---
+

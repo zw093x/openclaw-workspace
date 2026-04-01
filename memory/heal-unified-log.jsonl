@@ -1,2 +1,11 @@
 {"ts": "2026-03-30T15:17:59.268855", "pattern": "cron_timeout", "target": "全球热点新闻 (fa6cf991)", "error": "300s timeout, 多源搜索耗时过长", "action": "timeout 300→600s, 简化prompt从12条减到8条", "result": "fixed", "lesson": "搜索类任务默认应设600s，尤其是多源聚合类"}
 {"ts": "2026-03-30T15:24:35.258414", "pattern": "cron_timeout", "target": "批量修复 20个搜索类任务", "error": "timeout=0s 或过短，搜索类任务需要更长时间", "action": "全部设为 600s", "result": "fixed", "count": 20, "lesson": "所有搜索/资讯/复盘类任务默认 timeout 应为 600s，非搜索类（监控/健康检查）可保持较短"}
+{"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "time_ms": 1000, "ts": "2026-04-01T18:32:23.855408"}
+{"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "time_ms": 1000, "ts": "2026-04-01T19:04:24.668089"}
+{"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "time_ms": 1000, "ts": "2026-04-01T20:04:27.818283"}
+{"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "time_ms": 1000, "ts": "2026-04-01T21:04:19.290690"}
+{"pattern": "cron_message_failed", "target": "技能自动更新 (bf6a5a60)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "new", "time_ms": 2632, "ts": "2026-04-01T21:25:38.869076"}
+{"pattern": "cron_message_failed", "target": "技能自动更新 (bf6a5a60)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "recurring", "time_ms": 2690, "ts": "2026-04-01T22:04:33.765251"}
+{"pattern": "cron_message_failed", "target": "每日策略学习 (23344724)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "recurring", "time_ms": 2916, "ts": "2026-04-01T22:04:36.682109"}
+{"pattern": "cron_message_failed", "target": "每日策略学习 (23344724)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 3145, "ts": "2026-04-01T23:04:24.045678"}
+{"pattern": "cron_message_failed", "target": "每日策略学习 (23344724)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 3056, "ts": "2026-04-02T00:04:34.711530"}

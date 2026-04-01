@@ -1,49 +1,34 @@
 {
-  "lastCheck": 1774915765,
-  "checkedAt": "2026-03-31T08:07:00+08:00",
-  "latestVersion": "v0.18.2",
+  "lastCheck": 1745281860,
+  "checkedAt": "2026-04-01T11:11:00+08:00",
+  "latestVersion": "v0.18.3",
   "versionsChecked": [
-    "v0.16.1",
-    "v0.16.2",
-    "v0.16.3",
-    "v0.16.4",
-    "v0.17.0",
-    "v0.17.1",
-    "v0.17.2",
-    "v0.18.0",
-    "v0.18.1",
-    "v0.18.2"
+    "v0.16.1", "v0.16.2", "v0.16.3", "v0.16.4",
+    "v0.17.0", "v0.17.1", "v0.17.2",
+    "v0.18.0", "v0.18.1", "v0.18.2", "v0.18.3"
   ],
   "thisSessionUpdates": [
     {
       "version": "v0.18.2",
       "date": "2026-03-25",
       "type": "Latest",
-      "detail": "Deep monitoring delivered 04:04. Key findings: CacheProvider API, fp16 intermediates (-30-40% VRAM), mxfp8 quantization, TRELLIS2 ecosystem most mature 3D solution, asset-mcp (Meshy MCP) new agentic workflow entry.",
+      "detail": "CacheProvider API, fp16 intermediates, mxfp8 quantization, TRELLIS2 ecosystem, asset-mcp (Meshy MCP).",
       "severity": "medium"
+    },
+    {
+      "version": "v0.18.3",
+      "date": "2026-03-26",
+      "type": "Patch",
+      "detail": "Minor: new Topaz API model + workflow templates v0.9.38 update (2 commits). No 3D changes.",
+      "severity": "low"
     }
   ],
   "nodeEcosystem": {
-    "ComfyUI-3D-Pack": {
-      "lastCommit": "2025-11-17",
-      "status": "stable"
-    },
-    "Hunyuan3D-2.1": {
-      "lastCommit": "none since Mar 20",
-      "status": "stable"
-    },
-    "TRELLIS": {
-      "lastCommit": "active multi-fork",
-      "status": "hot"
-    },
-    "StableFast3D": {
-      "lastCommit": "none since Mar 20",
-      "status": "stable"
-    },
-    "asset-mcp (Meshy)": {
-      "status": "new - MCP protocol integration"
-    }
+    "ComfyUI-3D-Pack": { "lastCommit": "2025-11-17", "status": "stable" },
+    "Hunyuan3D-2.1": { "status": "stable" },
+    "TRELLIS": { "status": "hot" },
+    "StableFast3D": { "status": "stable" },
+    "asset-mcp (Meshy)": { "status": "new" }
   },
-  "notificationSent": true,
-  "notificationNote": "Deep monitoring report delivered at 04:04. TRELLIS2 recommended as primary 3D pipeline. v0.18.2 stable."
+  "notificationSent": true
 }

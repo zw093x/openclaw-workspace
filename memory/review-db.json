@@ -1,0 +1,109 @@
+{
+  "decisions": {
+    "DEC-20260402-001": {
+      "id": "DEC-20260402-001",
+      "topic": "动力减仓",
+      "decision": "32.60卖出500股",
+      "reason": "套用通用减仓框架",
+      "ts": "2026-04-02T01:21:23.297132",
+      "outcome": "卖早了，后续改为长期持有",
+      "score": 0.3,
+      "lesson": "减仓前应先验证用户长期逻辑"
+    },
+    "DEC-20260402-002": {
+      "id": "DEC-20260402-002",
+      "topic": "动力策略",
+      "decision": "改为长期持有",
+      "reason": "一机难求是结构性变化，非周期反弹",
+      "ts": "2026-04-02T01:21:23.343514",
+      "outcome": "正确决策",
+      "score": 0.9,
+      "lesson": "用户行业洞察比通用框架更有价值"
+    },
+    "DEC-20260402-003": {
+      "id": "DEC-20260402-003",
+      "topic": "船舶策略",
+      "decision": "3000股长期持有",
+      "reason": "20年造船超级周期+合并重工+沪东注入",
+      "ts": "2026-04-02T01:21:23.390922",
+      "outcome": "正确决策",
+      "score": 0.9,
+      "lesson": "基于深度行业分析"
+    },
+    "DEC-20260402-004": {
+      "id": "DEC-20260402-004",
+      "topic": "泰禾买入",
+      "decision": "21.10买入500股",
+      "reason": "阳光新能源借壳题材",
+      "ts": "2026-04-02T01:21:23.427257",
+      "outcome": "4.5小时亏损50元",
+      "score": 0.2,
+      "lesson": "题材股无催化剂不应建仓"
+    },
+    "DEC-20260402-005": {
+      "id": "DEC-20260402-005",
+      "topic": "泰禾清仓",
+      "decision": "21.00卖出500股",
+      "reason": "无明确催化剂，止损出局",
+      "ts": "2026-04-02T01:21:23.459840",
+      "outcome": "止损正确但教训深刻",
+      "score": 0.5,
+      "lesson": "题材股需更低买入点"
+    },
+    "DEC-20260402-006": {
+      "id": "DEC-20260402-006",
+      "topic": "湘电观察",
+      "decision": "加入观察列表",
+      "reason": "船舶电力系统+磁悬浮电机",
+      "ts": "2026-04-02T01:21:23.495971",
+      "outcome": "待验证",
+      "score": 0.5,
+      "lesson": ""
+    },
+    "DEC-20260402-007": {
+      "id": "DEC-20260402-007",
+      "topic": "三安观察",
+      "decision": "加入观察列表",
+      "reason": "SiC碳化硅+CPO光模块",
+      "ts": "2026-04-02T01:21:23.532554",
+      "outcome": "待验证",
+      "score": 0.5,
+      "lesson": ""
+    }
+  },
+  "predictions": {},
+  "patterns": {
+    "success_patterns": [
+      {
+        "type": "decision",
+        "pattern": "基于长期逻辑",
+        "example": "改为长期持有",
+        "score": 0.9
+      }
+    ],
+    "failure_patterns": [],
+    "last_updated": "2026-04-02T01:21:23.800875"
+  },
+  "strategy_scores": {},
+  "cross_lessons": [
+    {
+      "pattern": "基于长期逻辑",
+      "source_example": "改为长期持有",
+      "target_domain": "泰禾买入",
+      "reason": "泰禾买入存在失败记录，可应用成功模式"
+    },
+    {
+      "pattern": "基于长期逻辑",
+      "source_example": "改为长期持有",
+      "target_domain": "动力减仓",
+      "reason": "动力减仓存在失败记录，可应用成功模式"
+    }
+  ],
+  "risks": [],
+  "stats": {
+    "total_decisions": 7,
+    "total_predictions": 0,
+    "avg_accuracy": 0,
+    "avg_decision_score": 0.54
+  }
+}

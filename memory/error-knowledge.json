@@ -1,0 +1,83 @@
+{
+  "errors": {
+    "db0ee6b42742": {
+      "type": "ConnectionError",
+      "category": "network",
+      "root_cause": "network_instability",
+      "severity": "medium",
+      "first_seen": "2026-04-01T21:38:55.343981",
+      "count": 1,
+      "sources": [
+        "stock_monitor"
+      ],
+      "sample_msg": "Connection refused by remote host",
+      "last_seen": "2026-04-01T21:38:55.344002"
+    },
+    "306c34f6ff46": {
+      "type": "TimeoutError",
+      "category": "network",
+      "root_cause": "network_instability",
+      "severity": "medium",
+      "first_seen": "2026-04-01T21:38:55.344588",
+      "count": 1,
+      "sources": [
+        "finance_updater"
+      ],
+      "sample_msg": "Request timeout after 30s",
+      "last_seen": "2026-04-01T21:38:55.344596"
+    },
+    "6fd52a46764a": {
+      "type": "FileNotFoundError",
+      "category": "config",
+      "root_cause": "config_error",
+      "severity": "medium",
+      "first_seen": "2026-04-01T21:38:55.345089",
+      "count": 1,
+      "sources": [
+        "weather"
+      ],
+      "sample_msg": "Config file not found: /path/to/config.json",
+      "last_seen": "2026-04-01T21:38:55.345098"
+    },
+    "51a01b1d13cd": {
+      "type": "KeyError",
+      "category": "config",
+      "root_cause": "config_error",
+      "severity": "medium",
+      "first_seen": "2026-04-01T21:38:55.345693",
+      "count": 1,
+      "sources": [
+        "tech_analysis"
+      ],
+      "sample_msg": "Key 'close' not found in DataFrame",
+      "last_seen": "2026-04-01T21:38:55.345700"
+    },
+    "ef3db0b0be15": {
+      "type": "PermissionError",
+      "category": "permission",
+      "root_cause": "permission_denied",
+      "severity": "high",
+      "first_seen": "2026-04-01T21:38:55.346178",
+      "count": 1,
+      "sources": [
+        "card_delivery"
+      ],
+      "sample_msg": "Permission denied: /tmp/output.txt",
+      "last_seen": "2026-04-01T21:38:55.346186"
+    }
+  },
+  "fixes": {},
+  "stats": {
+    "total_errors": 5,
+    "by_category": {
+      "network": 2,
+      "config": 2,
+      "permission": 1
+    },
+    "by_root_cause": {
+      "network_instability": 2,
+      "config_error": 2,
+      "permission_denied": 1
+    }
+  }
+}

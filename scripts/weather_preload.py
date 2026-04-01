@@ -40,19 +40,27 @@ def update_cron_message(job_id, new_message):
     return result.returncode == 0
 
 def inject_weather(message, weather_data):
-    """将天气数据注入到 prompt 中"""
+    """将天气数据注入到 prompt 中（替换已有注入，避免重复）"""
     marker = "【WEATHER_DATA_INJECTED】"
-    if marker in message:
-        # 替换已有的天气数据
-        start = message.find("以下是今日天气数据：\n")
-        end = message.find(marker) + len(marker)
-        if start > 0:
-            message = message[:start] + f"以下是今日天气数据：\n{weather_data}\n{marker}" + message[end:]
-            return message
+    injection_block = f"\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n{weather_data}\n{marker}\n"
     
-    # 首次注入，在开头注入天气数据
-    injection = f"\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n{weather_data}\n{marker}\n"
-    return message + injection
+    if marker in message:
+        # 找到已有注入块的起止位置，整块替换
+        marker_pos = message.find(marker)
+        # 向前找到注入块开头（双换行 + "以下是今日天气数据"）
+        search_start = message.rfind("以下是今日天气数据", 0, marker_pos)
+        if search_start > 0:
+            # 向前找最近的双换行作为块开头
+            block_start = message.rfind("\n\n", 0, search_start)
+            if block_start < 0:
+                block_start = search_start
+            block_end = marker_pos + len(marker)
+            return message[:block_start] + injection_block + message[block_end:]
+        # 找不到开头，用 marker 之后的内容重建
+        return message[:message.rfind("\n\n", 0, marker_pos)] + injection_block + message[marker_pos + len(marker):]
+    
+    # 首次注入，在末尾追加
+    return message + injection_block
 
 def main():
     print(f"[{datetime.now().isoformat()}] 开始天气预加载...")

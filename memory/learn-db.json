@@ -1,0 +1,477 @@
+{
+  "lessons": {
+    "LRN-20260401-001": {
+      "id": "LRN-20260401-001",
+      "type": "correction",
+      "category": "交易",
+      "summary": "交易决策前必须深度验证长期逻辑",
+      "details": "先卖动力500股才改长期持有，流程倒置",
+      "priority": "medium",
+      "files": [],
+      "created": "2026-04-01T22:20:20.154168",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending"
+    },
+    "LRN-20260401-002": {
+      "id": "LRN-20260401-002",
+      "type": "correction",
+      "category": "信息",
+      "summary": "投资信息必须标注来源等级",
+      "details": "搜索结果混入未经验证说法",
+      "priority": "medium",
+      "files": [],
+      "created": "2026-04-01T22:20:20.184791",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending"
+    },
+    "LRN-20260401-003": {
+      "id": "LRN-20260401-003",
+      "type": "error",
+      "category": "cron",
+      "summary": "cron任务超时导致连续失败",
+      "details": "技能更新批量执行超时",
+      "priority": "medium",
+      "files": [],
+      "created": "2026-04-01T22:20:20.215972",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending"
+    },
+    "LRN-20260401-004": {
+      "id": "LRN-20260401-004",
+      "type": "best_practice",
+      "category": "推送",
+      "summary": "单条推送聚焦1个结论不超过10行",
+      "details": "信息过载降低可读性",
+      "priority": "medium",
+      "files": [],
+      "created": "2026-04-01T22:20:20.248539",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending"
+    },
+    "LRN-20260401-005": {
+      "id": "LRN-20260401-005",
+      "type": "correction",
+      "category": "回复",
+      "summary": "复杂任务先发确认再执行",
+      "details": "不发确认用户不知道进度",
+      "priority": "medium",
+      "files": [],
+      "created": "2026-04-01T22:20:20.278795",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending"
+    },
+    "LRN-20260401-006": {
+      "id": "LRN-20260401-006",
+      "type": "correction",
+      "category": "推送",
+      "summary": "CG日报信息过载",
+      "details": "单条消息太长用户看不完",
+      "priority": "medium",
+      "files": [],
+      "domains": [
+        "推送"
+      ],
+      "created": "2026-04-01T23:09:15.175776",
+      "last_triggered": "2026-04-01T23:09:15.175776",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260401-007": {
+      "id": "LRN-20260401-007",
+      "type": "error",
+      "category": "磁盘",
+      "summary": "磁盘使用率连续3天超90%",
+      "details": "session文件堆积导致",
+      "priority": "medium",
+      "files": [],
+      "domains": [
+        "磁盘"
+      ],
+      "created": "2026-04-01T23:09:15.226334",
+      "last_triggered": "2026-04-01T23:09:15.226334",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260401-008": {
+      "id": "LRN-20260401-008",
+      "type": "best_practice",
+      "category": "速度",
+      "summary": "复杂分析用子代理避免阻塞",
+      "details": "用户等了20秒",
+      "priority": "medium",
+      "files": [],
+      "domains": [
+        "速度"
+      ],
+      "created": "2026-04-01T23:09:15.278002",
+      "last_triggered": "2026-04-01T23:09:15.278002",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260402-009": {
+      "id": "LRN-20260402-009",
+      "type": "error",
+      "category": "记忆冲突",
+      "summary": "发现持仓矛盾: 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 500, 500, 000, 500, 000, 500, 3000, 500, 500, 500",
+      "details": "",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "记忆冲突"
+      ],
+      "created": "2026-04-02T00:04:15.318288",
+      "last_triggered": "2026-04-02T00:04:15.318288",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260402-010": {
+      "id": "LRN-20260402-010",
+      "type": "error",
+      "category": "记忆冲突",
+      "summary": "发现持仓矛盾: 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 500, 500, 000, 500, 000, 500, 3000, 500, 500, 500",
+      "details": "",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "记忆冲突"
+      ],
+      "created": "2026-04-02T01:04:17.822754",
+      "last_triggered": "2026-04-02T01:04:17.822754",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260402-011": {
+      "id": "LRN-20260402-011",
+      "type": "error",
+      "category": "记忆冲突",
+      "summary": "发现持仓矛盾: 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 500, 500, 000, 500, 000, 500, 3000, 500, 3000, 500, 500",
+      "details": "",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "记忆冲突"
+      ],
+      "created": "2026-04-02T01:25:01.265661",
+      "last_triggered": "2026-04-02T01:25:01.265661",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260402-012": {
+      "id": "LRN-20260402-012",
+      "type": "error",
+      "category": "复盘",
+      "summary": "复盘低分: 动力减仓 - 32.60卖出500股",
+      "details": "原因:套用通用减仓框架 教训:减仓前应先验证用户长期逻辑",
+      "priority": "medium",
+      "files": [],
+      "domains": [
+        "复盘"
+      ],
+      "created": "2026-04-02T01:25:01.267018",
+      "last_triggered": "2026-04-02T01:25:01.267018",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260402-013": {
+      "id": "LRN-20260402-013",
+      "type": "error",
+      "category": "复盘",
+      "summary": "复盘低分: 泰禾买入 - 21.10买入500股",
+      "details": "原因:阳光新能源借壳题材 教训:题材股无催化剂不应建仓",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "复盘"
+      ],
+      "created": "2026-04-02T01:25:01.268255",
+      "last_triggered": "2026-04-02T01:25:01.268255",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    }
+  },
+  "rules": {
+    "LRN-20260401-001": {
+      "rule": "涉及用户持仓操作前，必须先了解长期逻辑，验证后再给建议",
+      "source": "LRN-20260401-001",
+      "keyword": "交易",
+      "created": "2026-04-01T22:20:20.154168",
+      "applied": 0
+    },
+    "LRN-20260401-002": {
+      "rule": "信息来源必须标注可靠性等级（A-E级），核心结论需A/B级来源",
+      "source": "LRN-20260401-002",
+      "keyword": "信息",
+      "created": "2026-04-01T22:20:20.184791",
+      "applied": 0
+    },
+    "LRN-20260401-003": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260401-003",
+      "keyword": "cron",
+      "created": "2026-04-01T22:20:20.215972",
+      "applied": 0
+    },
+    "LRN-20260401-004": {
+      "rule": "单条推送聚焦1个结论，不超过10行",
+      "source": "LRN-20260401-004",
+      "keyword": "推送",
+      "created": "2026-04-01T22:20:20.248539",
+      "applied": 0
+    },
+    "LRN-20260401-005": {
+      "rule": "复杂任务先发确认消息，再执行",
+      "source": "LRN-20260401-005",
+      "keyword": "回复",
+      "created": "2026-04-01T22:20:20.278795",
+      "applied": 0
+    },
+    "LRN-20260401-006": {
+      "rule": "信息来源必须标注可靠性等级（A-E级），核心结论需A/B级来源",
+      "source": "LRN-20260401-006",
+      "keyword": "信息",
+      "created": "2026-04-01T23:09:15.175776",
+      "applied": 0
+    },
+    "LRN-20260401-007": {
+      "rule": "磁盘告警→清理tmp/日志/session文件",
+      "source": "LRN-20260401-007",
+      "keyword": "磁盘",
+      "created": "2026-04-01T23:09:15.226334",
+      "applied": 0
+    },
+    "LRN-20260401-008": {
+      "rule": "耗时>10秒的任务用子代理，主对话保持轻量",
+      "source": "LRN-20260401-008",
+      "keyword": "速度",
+      "created": "2026-04-01T23:09:15.278002",
+      "applied": 0
+    }
+  },
+  "stats": {
+    "total_recorded": 13,
+    "corrections": 4,
+    "errors": 7,
+    "feature_requests": 0
+  },
+  "effectiveness": {},
+  "cross_domain": {
+    "LRN-20260401-001": [
+      "投资",
+      "仓位",
+      "建仓",
+      "减仓"
+    ],
+    "LRN-20260401-002": [
+      "搜索",
+      "资讯",
+      "新闻",
+      "数据"
+    ],
+    "LRN-20260401-003": [
+      "定时",
+      "任务",
+      "调度"
+    ],
+    "LRN-20260401-004": [
+      "日报",
+      "播报",
+      "通知",
+      "提醒"
+    ],
+    "LRN-20260401-005": [
+      "响应",
+      "确认",
+      "沟通"
+    ],
+    "LRN-20260401-006": [
+      "日报",
+      "播报",
+      "通知",
+      "提醒"
+    ],
+    "LRN-20260401-007": [
+      "存储",
+      "清理",
+      "资源"
+    ]
+  },
+  "decay_state": {
+    "LRN-20260401-001": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    },
+    "LRN-20260401-002": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    },
+    "LRN-20260401-003": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    },
+    "LRN-20260401-004": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    },
+    "LRN-20260401-005": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    },
+    "LRN-20260401-006": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    },
+    "LRN-20260401-007": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    },
+    "LRN-20260401-008": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    },
+    "LRN-20260402-009": {
+      "level": 0,
+      "last_check": "2026-04-02T01:04:13.989751"
+    }
+  },
+  "external_rules": [
+    {
+      "domain": "系统运维",
+      "rule": "定期清理日志，防止单文件超过100MB",
+      "source": "ops_best_practice"
+    },
+    {
+      "domain": "系统运维",
+      "rule": "磁盘使用率超过85%时主动清理",
+      "source": "ops_best_practice"
+    },
+    {
+      "domain": "投资分析",
+      "rule": "建仓前必须确认止损位，距离不超过5%",
+      "source": "trading_best_practice"
+    },
+    {
+      "domain": "投资分析",
+      "rule": "题材股持仓不超过总仓位10%",
+      "source": "trading_best_practice"
+    },
+    {
+      "domain": "自动化",
+      "rule": "定时任务失败3次应通知人工介入",
+      "source": "automation_best_practice"
+    },
+    {
+      "domain": "自动化",
+      "rule": "批量操作之间加入间隔，避免被限速",
+      "source": "automation_best_practice"
+    },
+    {
+      "domain": "AI使用",
+      "rule": "复杂推理用大模型，日常对话用快模型",
+      "source": "ai_best_practice"
+    },
+    {
+      "domain": "AI使用",
+      "rule": "上下文超过2小时主动建议开新会话",
+      "source": "ai_best_practice"
+    },
+    {
+      "domain": "安全",
+      "rule": "敏感信息不写入日志文件",
+      "source": "security_best_practice"
+    },
+    {
+      "domain": "安全",
+      "rule": "外部操作前必须确认",
+      "source": "security_best_practice"
+    }
+  ],
+  "meta_stats": {
+    "type_stats": {
+      "correction": {
+        "count": 4,
+        "promoted": 0,
+        "internalized": 0,
+        "deprecated": 0,
+        "avg_confidence": 0.5,
+        "success_rate": 0.0
+      },
+      "error": {
+        "count": 3,
+        "promoted": 0,
+        "internalized": 0,
+        "deprecated": 0,
+        "avg_confidence": 0.5,
+        "success_rate": 0.0
+      },
+      "best_practice": {
+        "count": 2,
+        "promoted": 0,
+        "internalized": 0,
+        "deprecated": 0,
+        "avg_confidence": 0.5,
+        "success_rate": 0.0
+      }
+    },
+    "category_effectiveness": {
+      "交易": {
+        "learned": 1,
+        "repeated": 0
+      },
+      "信息": {
+        "learned": 1,
+        "repeated": 0
+      },
+      "cron": {
+        "learned": 1,
+        "repeated": 0
+      },
+      "推送": {
+        "learned": 2,
+        "repeated": 0
+      },
+      "回复": {
+        "learned": 1,
+        "repeated": 0
+      },
+      "磁盘": {
+        "learned": 1,
+        "repeated": 0
+      },
+      "速度": {
+        "learned": 1,
+        "repeated": 0
+      },
+      "记忆冲突": {
+        "learned": 1,
+        "repeated": 0
+      }
+    },
+    "best_learning_type": "correction",
+    "hardest_categories": [],
+    "last_run": "2026-04-02T01:04:13.998422",
+    "recommendations": [
+      "学习效率最高: correction类教训（成功率0%）"
+    ]
+  }
+}

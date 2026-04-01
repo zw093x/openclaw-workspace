@@ -1,0 +1,52 @@
+{
+  "ts": "2026-04-02T01:04:14.002948",
+  "root_cause_analysis": {
+    "total_errors": 5,
+    "total_fixes": 0,
+    "fix_rate": 0.0,
+    "systemic_issues": {},
+    "high_frequency_errors": {},
+    "by_category": {
+      "network": 2,
+      "config": 2,
+      "permission": 1
+    },
+    "by_root_cause": {
+      "network_instability": 2,
+      "config_error": 2,
+      "permission_denied": 1
+    }
+  },
+  "discovered_patterns": [
+    {
+      "type": "time_concentration",
+      "detail": "错误集中在21:00时段（5次）",
+      "action": "在该时段前增加预防性检查"
+    },
+    {
+      "type": "chain_failure",
+      "detail": "连锁故障: network, config",
+      "action": "可能存在共同根因，需关联分析"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "fix_rate_low",
+      "priority": "medium",
+      "message": "整体修复率仅0%（0/5）",
+      "action": "审视修复策略，增加自动化修复能力"
+    },
+    {
+      "type": "pattern_discovered",
+      "priority": "medium",
+      "message": "错误集中在21:00时段（5次）",
+      "action": "在该时段前增加预防性检查"
+    },
+    {
+      "type": "pattern_discovered",
+      "priority": "medium",
+      "message": "连锁故障: network, config",
+      "action": "可能存在共同根因，需关联分析"
+    }
+  ]
+}

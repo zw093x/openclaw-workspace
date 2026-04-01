@@ -1,0 +1,2245 @@
+{
+  "entities": {
+    "中国船舶": {
+      "files": [
+        ".learnings/LEARNINGS.md",
+        "memory/stock-strategy-20260325.md",
+        "memory/knowledge-600150-finance.md",
+        "memory/knowledge-shipping.md",
+        "memory/cron-backup.json",
+        "memory/trade-journal.json",
+        "memory/analysis-accuracy.md",
+        "USER.md",
+        "memory/alert-cooldown.json",
+        "memory/stock-portfolio.md",
+        "MEMORY.md",
+        "memory/2026-03-31.md",
+        "memory/deep-dive-protocol.md",
+        "memory/trade-journal.md",
+        "memory/2026-04-01.md",
+        "memory/stock-knowledge.md",
+        "memory/2026-03-26.md",
+        "memory/2026-03-25.md",
+        "memory/2026-03-27.md",
+        "memory/analysis-accuracy.json",
+        "memory/info-priority-rules.md",
+        "memory/stock-strategy-20260331.md",
+        "memory/memory-index.json"
+      ],
+      "mentions": 156
+    },
+    "600150": {
+      "files": [
+        "memory/analysis-accuracy.json",
+        "memory/stock-strategy-20260325.md",
+        "memory/stock-strategy-20260331.md",
+        "memory/memory-index.json",
+        "memory/cron-backup.json",
+        "memory/comfyui-knowledge.md",
+        "memory/trade-journal.json",
+        "memory/knowledge-600150-finance.md",
+        "memory/stock-knowledge.md",
+        "memory/analysis-accuracy.md",
+        "USER.md",
+        "memory/knowledge-shipping.md",
+        "memory/2026-03-25.md",
+        "memory/stock-portfolio.md",
+        "memory/2026-03-27.md",
+        "MEMORY.md",
+        "memory/trade-journal.md",
+        "memory/2026-04-01.md"
+      ],
+      "mentions": 43
+    },
+    "中国动力": {
+      "files": [
+        ".learnings/LEARNINGS.md",
+        "memory/stock-strategy-20260325.md",
+        "memory/knowledge-shipping.md",
+        "memory/knowledge-cpo-microled.md",
+        "memory/cron-backup.json",
+        "USER.md",
+        "memory/alert-cooldown.json",
+        "memory/stock-portfolio.md",
+        "MEMORY.md",
+        "memory/2026-03-31.md",
+        "memory/deep-dive-protocol.md",
+        "memory/trade-journal.md",
+        "memory/2026-04-01.md",
+        "memory/stock-knowledge.md",
+        "memory/2026-03-26.md",
+        "memory/2026-03-25.md",
+        "memory/knowledge-600482-finance.md",
+        "memory/2026-03-27.md",
+        "memory/info-priority-rules.md",
+        "memory/stock-strategy-20260331.md",
+        "memory/memory-index.json"
+      ],
+      "mentions": 144
+    },
+    "600482": {
+      "files": [
+        "memory/stock-strategy-20260325.md",
+        "memory/stock-strategy-20260331.md",
+        "memory/memory-index.json",
+        "memory/cron-backup.json",
+        "memory/comfyui-knowledge.md",
+        "memory/stock-knowledge.md",
+        "memory/2026-03-27.md",
+        "USER.md",
+        "memory/knowledge-shipping.md",
+        "memory/2026-03-25.md",
+        "memory/stock-portfolio.md",
+        "MEMORY.md",
+        "memory/knowledge-600482-finance.md",
+        "memory/trade-journal.md",
+        "memory/2026-04-01.md"
+      ],
+      "mentions": 35
+    },
+    "彭煜": {
+      "files": [
+        "memory/memory-index.json",
+        "MEMORY.md",
+        "USER.md"
+      ],
+      "mentions": 3
+    },
+    "配偶": {
+      "files": [
+        "memory/memory-index.json",
+        "MEMORY.md",
+        "USER.md"
+      ],
+      "mentions": 6
+    },
+    "宝宝": {
+      "files": [
+        "memory/育儿月子指南.md",
+        "memory/广桂月子饮食指南.md",
+        "memory/memory-index.json",
+        "memory/cron-backup.json",
+        "USER.md",
+        "memory/2026-03-25.md",
+        "MEMORY.md",
+        "memory/migration-guide.md"
+      ],
+      "mentions": 53
+    },
+    "P工": {
+      "files": [
+        ".learnings/LEARNINGS.md",
+        "memory/agentskills-deep-digest.md",
+        "memory/comfyui-openspec-concept.md",
+        "memory/knowledge-ai.md",
+        "memory/memory-index.json",
+        "memory/2026-03-28.md",
+        "TOOLS.md",
+        ".learnings/ERRORS.md",
+        "memory/2026-03-27.md",
+        "USER.md",
+        "memory/2026-03-25.md",
+        "memory/2026-03-26.md",
+        "memory/friend-account.md",
+        "MEMORY.md",
+        "memory/deep-dive-protocol.md"
+      ],
+      "mentions": 76
+    },
+    "Cron": {
+      "files": [
+        ".learnings/LEARNINGS.md",
+        "memory/cron-fault-knowledge.md",
+        "memory/2026-03-30-review.md",
+        "memory/2026-03-29.md",
+        "memory/2026-03-30.md",
+        "memory/memory-index.json",
+        "memory/2026-03-28.md",
+        "TOOLS.md",
+        "memory/2026-04-01.md",
+        "memory/intel-hub-state.json",
+        "memory/2026-03-27.md",
+        "memory/2026-03-26.md",
+        "MEMORY.md",
+        "memory/2026-03-31.md",
+        "memory/deep-dive-protocol.md",
+        "memory/migration-guide.md"
+      ],
+      "mentions": 46
+    },
+    "159.75.77.36": {
+      "files": [
+        "memory/2026-03-26.md",
+        ".learnings/ERRORS.md",
+        "TOOLS.md",
+        "memory/2026-03-25.md",
+        "MEMORY.md",
+        "memory/memory-index.json"
+      ],
+      "mentions": 8
+    },
+    "42.193.183.176": {
+      "files": [
+        ".learnings/ERRORS.md",
+        "TOOLS.md",
+        "memory/2026-03-26.md",
+        "MEMORY.md",
+        "memory/memory-index.json"
+      ],
+      "mentions": 6
+    },
+    "127.0.0.1": {
+      "files": [
+        "memory/2026-03-26.md",
+        "memory/memory-index.json",
+        "TOOLS.md",
+        "memory/comfyui-install-guide.md",
+        "memory/2026-03-25.md",
+        "MEMORY.md"
+      ],
+      "mentions": 11
+    },
+    "飞书": {
+      "files": [
+        "memory/info-priority-rules.md",
+        "memory/cron-fault-knowledge.md",
+        "memory/2026-03-29.md",
+        "memory/2026-03-30-review.md",
+        "memory/2026-03-30.md",
+        "memory/memory-index.json",
+        "memory/2026-03-28.md",
+        "memory/comfyui-knowledge.md",
+        "memory/cron-backup.json",
+        ".learnings/ERRORS.md",
+        "USER.md",
+        "memory/2026-03-26.md",
+        "MEMORY.md",
+        "memory/2026-03-27.md",
+        "memory/migration-guide.md"
+      ],
+      "mentions": 67
+    },
+    "ComfyUI": {
+      "files": [
+        "memory/comfyui-learning-progress.md",
+        "memory/agentskills-spec-study.md",
+        "memory/2026-03-30.md",
+        "memory/agentskills-deep-digest.md",
+        "memory/clawhub-skills-catalog.md",
+        "memory/cron-backup.json",
+        "USER.md",
+        "MEMORY.md",
+        "memory/cron-fault-knowledge.md",
+        "memory/comfyui-openspec-concept.md",
+        "memory/comfyui-ecosystem-monitor-2026-03-29.md",
+        "memory/2026-03-28.md",
+        "memory/comfyui-knowledge.md",
+        "memory/2026-03-25.md",
+        "memory/2026-03-27.md",
+        "memory/2026-03-29.md",
+        "memory/knowledge-ai.md",
+        "memory/comfyui-openspec-learning-plan.md",
+        "memory/2026-03-24.md",
+        "memory/2026-03-22.md",
+        "memory/2026-03-22-comfyui-analysis.md",
+        "memory/comfyui-monitor-state.json",
+        "memory/comfyui-install-guide.md",
+        "memory/comfyui-tutorial-guide.md",
+        "memory/memory-index.json",
+        "memory/migration-guide.md"
+      ],
+      "mentions": 300
+    },
+    "Docker": {
+      "files": [
+        "memory/memory-index.json",
+        "MEMORY.md",
+        "TOOLS.md",
+        "memory/2026-03-26.md"
+      ],
+      "mentions": 17
+    },
+    "mihomo": {
+      "files": [
+        "memory/2026-03-26.md",
+        "memory/memory-index.json",
+        "TOOLS.md",
+        "memory/2026-03-25.md",
+        "MEMORY.md",
+        "memory/migration-guide.md"
+      ],
+      "mentions": 22
+    },
+    "192.168.1.100": {
+      "files": [
+        "memory/memory-index.json",
+        "TOOLS.md"
+      ],
+      "mentions": 2
+    },
+    "3.1.59.1": {
+      "files": [
+        "memory/memory-index.json",
+        "TOOLS.md",
+        "memory/2026-03-26.md"
+      ],
+      "mentions": 3
+    },
+    "0.0.0.0": {
+      "files": [
+        "memory/memory-index.json",
+        "TOOLS.md"
+      ],
+      "mentions": 2
+    },
+    "OpenClaw": {
+      "files": [
+        ".learnings/LEARNINGS.md",
+        "memory/cron-fault-knowledge.md",
+        "memory/agentskills-deep-digest.md",
+        "memory/2026-03-30-review.md",
+        "memory/2026-03-26.md",
+        "memory/2026-03-30.md",
+        ".learnings/ERRORS.md",
+        "memory/2026-03-28.md",
+        "memory/2026-04-01.md",
+        "memory/2026-03-22.md",
+        "memory/2026-03-27.md",
+        "memory/2026-03-25.md",
+        "memory/memory-index.json",
+        "memory/agentskills-spec-study.md",
+        "memory/migration-guide.md"
+      ],
+      "mentions": 28
+    },
+    "10.1.0.6": {
+      "files": [
+        "memory/memory-index.json",
+        "memory/2026-03-26.md"
+      ],
+      "mentions": 2
+    },
+    "自愈系统": {
+      "files": [
+        "memory/cron-fault-knowledge.md",
+        "memory/2026-03-30-review.md",
+        "memory/2026-03-30.md",
+        "memory/memory-index.json",
+        "memory/2026-04-01.md"
+      ],
+      "mentions": 11
+    },
+    "湘电股份": {
+      "files": [
+        "memory/memory-index.json",
+        "memory/stock-knowledge.md",
+        "memory/knowledge-600416.md",
+        "memory/stock-portfolio.md",
+        "memory/knowledge-600416-finance.md",
+        "memory/2026-04-01.md"
+      ],
+      "mentions": 10
+    },
+    "600416": {
+      "files": [
+        "memory/memory-index.json",
+        "memory/stock-knowledge.md",
+        "memory/knowledge-600416.md",
+        "memory/stock-portfolio.md",
+        "memory/knowledge-600416-finance.md",
+        "memory/2026-04-01.md"
+      ],
+      "mentions": 20
+    },
+    "三安光电": {
+      "files": [
+        "memory/knowledge-600703-finance.md",
+        "memory/knowledge-cpo-microled.md",
+        "memory/memory-index.json",
+        "memory/knowledge-600703.md"
+      ],
+      "mentions": 13
+    },
+    "600703": {
+      "files": [
+        "memory/knowledge-600703-finance.md",
+        "memory/knowledge-cpo-microled.md",
+        "memory/memory-index.json",
+        "memory/knowledge-600703.md"
+      ],
+      "mentions": 18
+    },
+    "224.0.0.1": {
+      "files": [
+        ".learnings/ERRORS.md",
+        "memory/memory-index.json"
+      ],
+      "mentions": 3
+    }
+  },
+  "topics": {
+    "用户档案": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "消息投递偏好": {
+      "files": [
+        "MEMORY.md",
+        "USER.md"
+      ],
+      "keywords": []
+    },
+    "模型状态行规则（2026-03-28 确认）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "任务合并记录（2026-03-28 历史记录，已被2026-03-31精简覆盖））": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "沟通偏好": {
+      "files": [
+        "MEMORY.md",
+        "USER.md"
+      ],
+      "keywords": []
+    },
+    "股票持仓（最新）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "信息采集原则（2026-03-26 确认）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "关注领域": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "定时任务": {
+      "files": [
+        "MEMORY.md",
+        "USER.md"
+      ],
+      "keywords": []
+    },
+    "已安装技能（SkillHub）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "🔴 最高优先级：自主学习系统（2026-03-26 确立）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "重点追踪事项": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "减仓策略（2026-03-31 修订）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "服务器信息（2026-03-26 迁移）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "P工核心行为准则（2026-03-26 确立）⭐": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "AgentSkills 规格（深度消化版）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "重点待处理": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "重要事项": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "GitHub 热榜每日探索（2026-03-27 启动）": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "基本信息": {
+      "files": [
+        "USER.md",
+        "memory/comfyui-learning-progress.md"
+      ],
+      "keywords": []
+    },
+    "家庭情况": {
+      "files": [
+        "USER.md"
+      ],
+      "keywords": []
+    },
+    "操作风格": {
+      "files": [
+        "USER.md"
+      ],
+      "keywords": []
+    },
+    "核心关注领域": {
+      "files": [
+        "USER.md"
+      ],
+      "keywords": []
+    },
+    "已配置渠道": {
+      "files": [
+        "USER.md"
+      ],
+      "keywords": []
+    },
+    "What Goes Here": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "Examples": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "Why Separate?": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "服务器称呼规范": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "Open Terminal (Docker)": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "ttyd (Web 终端)": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "Docker": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "腾讯云 CLI (tccli)": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "Proxy (mihomo)": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "AI Models": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "Open Terminal": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "TurboQuant（KV Cache 量化算法）": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-30 监控更新": {
+      "files": [
+        "memory/spacex-news.md"
+      ],
+      "keywords": []
+    },
+    "一、Workspace 文件（核心）": {
+      "files": [
+        "memory/migration-guide.md"
+      ],
+      "keywords": []
+    },
+    "二、Cron定时任务重建": {
+      "files": [
+        "memory/migration-guide.md"
+      ],
+      "keywords": []
+    },
+    "三、恢复步骤": {
+      "files": [
+        "memory/migration-guide.md"
+      ],
+      "keywords": []
+    },
+    "四、信息源体系（31大类，250+源）": {
+      "files": [
+        "memory/migration-guide.md"
+      ],
+      "keywords": []
+    },
+    "五、股票自学体系": {
+      "files": [
+        "memory/migration-guide.md"
+      ],
+      "keywords": []
+    },
+    "一、ComfyUI 基础架构": {
+      "files": [
+        "memory/comfyui-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "二、模型管理": {
+      "files": [
+        "memory/comfyui-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "三、3D 生成节点生态": {
+      "files": [
+        "memory/comfyui-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "四、自定义节点（插件）": {
+      "files": [
+        "memory/comfyui-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "五、实战经验": {
+      "files": [
+        "memory/comfyui-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "六、学习资源": {
+      "files": [
+        "memory/comfyui-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "七、3D 生成生态全景（2026-03 更新）": {
+      "files": [
+        "memory/comfyui-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "八、AgentSkills 自建技能": {
+      "files": [
+        "memory/comfyui-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "年报数据（近5年）": {
+      "files": [
+        "memory/knowledge-600150-finance.md",
+        "memory/knowledge-600482-finance.md",
+        "memory/knowledge-600416-finance.md",
+        "memory/knowledge-600703-finance.md"
+      ],
+      "keywords": []
+    },
+    "季报数据（近4期）": {
+      "files": [
+        "memory/knowledge-600150-finance.md",
+        "memory/knowledge-600482-finance.md",
+        "memory/knowledge-600416-finance.md",
+        "memory/knowledge-600703-finance.md"
+      ],
+      "keywords": []
+    },
+    "数据来源": {
+      "files": [
+        "memory/knowledge-600150-finance.md",
+        "memory/knowledge-600482-finance.md",
+        "memory/knowledge-600416-finance.md",
+        "memory/knowledge-600703-finance.md"
+      ],
+      "keywords": []
+    },
+    "一、ComfyUI v0.17.0 核心架构变化": {
+      "files": [
+        "memory/2026-03-22-comfyui-analysis.md"
+      ],
+      "keywords": []
+    },
+    "二、AI 3D 生成节点生态（模型师核心关注）": {
+      "files": [
+        "memory/2026-03-22-comfyui-analysis.md"
+      ],
+      "keywords": []
+    },
+    "三、AI 建模流水线实战建议（针对模型师）": {
+      "files": [
+        "memory/2026-03-22-comfyui-analysis.md"
+      ],
+      "keywords": []
+    },
+    "四、ComfyUI 旧版整合包 vs 独立环境": {
+      "files": [
+        "memory/2026-03-22-comfyui-analysis.md"
+      ],
+      "keywords": []
+    },
+    "五、延展知识：模型师的 AI 工具链全景": {
+      "files": [
+        "memory/2026-03-22-comfyui-analysis.md"
+      ],
+      "keywords": []
+    },
+    "六、本周行动清单": {
+      "files": [
+        "memory/2026-03-22-comfyui-analysis.md"
+      ],
+      "keywords": []
+    },
+    "一、ComfyUI 最新版本动态": {
+      "files": [
+        "memory/comfyui-ecosystem-monitor-2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "二、3D 生成节点动态": {
+      "files": [
+        "memory/comfyui-ecosystem-monitor-2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "三、推荐工作流与最佳实践": {
+      "files": [
+        "memory/comfyui-ecosystem-monitor-2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "四、生态关键节点一览": {
+      "files": [
+        "memory/comfyui-ecosystem-monitor-2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "五、行动建议": {
+      "files": [
+        "memory/comfyui-ecosystem-monitor-2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "触发条件": {
+      "files": [
+        "memory/deep-dive-protocol.md"
+      ],
+      "keywords": []
+    },
+    "深挖流程": {
+      "files": [
+        "memory/deep-dive-protocol.md"
+      ],
+      "keywords": []
+    },
+    "输出格式": {
+      "files": [
+        "memory/deep-dive-protocol.md"
+      ],
+      "keywords": []
+    },
+    "示例": {
+      "files": [
+        "memory/deep-dive-protocol.md"
+      ],
+      "keywords": []
+    },
+    "与盘中监控的集成": {
+      "files": [
+        "memory/deep-dive-protocol.md"
+      ],
+      "keywords": []
+    },
+    "信息采集策略确认（08:29）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "信息源扩展（08:33）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "权威机构信息源补充（08:35）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "信息源继续扩展 - 社交媒体 + 数据平台（08:41）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "信息源最终扩展（08:46）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "P工补充4个重点行业（08:47）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "信息源最终补充 - 我主动提出的7个方向+研报（08:50）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "小P股票自学体系启动（08:53）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "角色定位校正（08:55）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "学习进度汇报机制（08:55）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "盘中实时监控系统建立（09:06）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "系统优化（09:14）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "进阶能力模块建立（09:20-09:40）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "Open Terminal 安装（12:22-12:53）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "OpenRouter 余额不足（12:39）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "补充执行（12:56）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "OpenRouter 充值 + 免费模型配置（11:24）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "P工行为纠正（13:13-13:18）⭐ 重要": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "Billing Error 连环故障（13:50-16:00）🔴": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "模型切换尝试（13:50-16:33）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "服务器迁移（17:07-18:30）🖥️": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "今日 P工 行为反馈汇总 ⭐": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "晚间聊天记录检索（20:35-20:46）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "核心学习系统建立（22:57）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "Git 备份系统建立（21:08-21:12）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "安全组开通 + 服务安装（21:19-21:46）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "旧服务器清理（21:56-22:00）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "定时任务恢复（22:05-22:17）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "P工作息与偏好记录（22:17）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "ClawHub 技能浏览（22:27-22:42）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "核心学习系统设为最高优先级（23:00）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "今日总结": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "模型可用性测试（23:05-23:18）": {
+      "files": [
+        "memory/2026-03-26.md"
+      ],
+      "keywords": []
+    },
+    "🔴 一级 — 实时推送（立即飞书通知）": {
+      "files": [
+        "memory/info-priority-rules.md"
+      ],
+      "keywords": []
+    },
+    "🟡 二级 — 每日汇总推送": {
+      "files": [
+        "memory/info-priority-rules.md"
+      ],
+      "keywords": []
+    },
+    "🟢 三级 — 每周回顾": {
+      "files": [
+        "memory/info-priority-rules.md"
+      ],
+      "keywords": []
+    },
+    "⚪ 四级 — 仅记录不推送": {
+      "files": [
+        "memory/info-priority-rules.md"
+      ],
+      "keywords": []
+    },
+    "过滤规则": {
+      "files": [
+        "memory/info-priority-rules.md"
+      ],
+      "keywords": []
+    },
+    "中国动力/中船动力 行业监控（2026-04-01 新增）": {
+      "files": [
+        "memory/info-priority-rules.md"
+      ],
+      "keywords": []
+    },
+    "深度学习（Day 11）- 凌晨": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "Cron 任务大规模精简（上午）": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "减仓策略修订（上午）": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "通达信数据源接入（下午）": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "技术指标模块（下午）": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "通达信全量数据采集（下午）": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "策略学习结果": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "Cron prompt精简（下午）": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "盘中监控升级": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "盘面（14:46）": {
+      "files": [
+        "memory/2026-03-31.md"
+      ],
+      "keywords": []
+    },
+    "大盘环境": {
+      "files": [
+        "memory/stock-strategy-20260325.md"
+      ],
+      "keywords": []
+    },
+    "持仓分析": {
+      "files": [
+        "memory/stock-strategy-20260325.md"
+      ],
+      "keywords": []
+    },
+    "模型状态行规则确立": {
+      "files": [
+        "memory/2026-03-28.md"
+      ],
+      "keywords": []
+    },
+    "系统级模型标识": {
+      "files": [
+        "memory/2026-03-28.md"
+      ],
+      "keywords": []
+    },
+    "Cron 任务批量优化（4项全部执行）": {
+      "files": [
+        "memory/2026-03-28.md"
+      ],
+      "keywords": []
+    },
+    "飞书 streaming 配置": {
+      "files": [
+        "memory/2026-03-28.md"
+      ],
+      "keywords": []
+    },
+    "模型切换记录": {
+      "files": [
+        "memory/2026-03-28.md"
+      ],
+      "keywords": []
+    },
+    "国际新闻测试": {
+      "files": [
+        "memory/2026-03-28.md"
+      ],
+      "keywords": []
+    },
+    "重要发现": {
+      "files": [
+        "memory/2026-03-28.md"
+      ],
+      "keywords": []
+    },
+    "行业概况": {
+      "files": [
+        "memory/knowledge-shipping.md"
+      ],
+      "keywords": []
+    },
+    "产业链结构": {
+      "files": [
+        "memory/knowledge-shipping.md"
+      ],
+      "keywords": []
+    },
+    "景气判断核心指标": {
+      "files": [
+        "memory/knowledge-shipping.md"
+      ],
+      "keywords": []
+    },
+    "IMO环保法规影响": {
+      "files": [
+        "memory/knowledge-shipping.md"
+      ],
+      "keywords": []
+    },
+    "船舶行业周期（复盘）": {
+      "files": [
+        "memory/knowledge-shipping.md"
+      ],
+      "keywords": []
+    },
+    "A股相关标的": {
+      "files": [
+        "memory/knowledge-shipping.md"
+      ],
+      "keywords": []
+    },
+    "Gateway Token 更新": {
+      "files": [
+        "memory/2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "每日学习复盘报告（20:49）": {
+      "files": [
+        "memory/2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "每日学习复盘报告（21:06，Cron 自动生成）": {
+      "files": [
+        "memory/2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "已知故障模式（9种）": {
+      "files": [
+        "memory/cron-fault-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "卡片投递架构（当前方案）": {
+      "files": [
+        "memory/cron-fault-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "新建 cron 任务检查清单": {
+      "files": [
+        "memory/cron-fault-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "最近预测记录": {
+      "files": [
+        "memory/analysis-accuracy.md"
+      ],
+      "keywords": []
+    },
+    "股票持仓更新（09:56）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "🔴 最高优先级事项": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "自建 AgentSkill：股票分析 + 信息聚合（21:50）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "AgentSkills 深度消化（21:40）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "自建 AgentSkill：记忆维护（21:35）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "AgentSkills 规格学习（21:30）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "ComfyUI + OpenSpec 工程化概念（21:27）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "日常检查": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "OpenRouter 模型性价比讨论 & 代理部署（17:07-17:37）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "📋 今日工作复盘：OpenRouter 模型选型与代理部署（17:07-18:46）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "📊 2026-03-25 全天工作复盘": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "👶 宝宝出生证明（今日办理）": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "ComfyUI 学习进展": {
+      "files": [
+        "memory/2026-03-25.md"
+      ],
+      "keywords": []
+    },
+    "市场环境（3/31 上午收盘）": {
+      "files": [
+        "memory/stock-strategy-20260331.md"
+      ],
+      "keywords": []
+    },
+    "持仓概况": {
+      "files": [
+        "memory/stock-strategy-20260331.md"
+      ],
+      "keywords": []
+    },
+    "决策框架": {
+      "files": [
+        "memory/stock-strategy-20260331.md"
+      ],
+      "keywords": []
+    },
+    "具体操作方案": {
+      "files": [
+        "memory/stock-strategy-20260331.md"
+      ],
+      "keywords": []
+    },
+    "行业格局": {
+      "files": [
+        "memory/knowledge-ai.md"
+      ],
+      "keywords": []
+    },
+    "算力产业链": {
+      "files": [
+        "memory/knowledge-ai.md"
+      ],
+      "keywords": []
+    },
+    "AI应用落地": {
+      "files": [
+        "memory/knowledge-ai.md"
+      ],
+      "keywords": []
+    },
+    "一、学习目标": {
+      "files": [
+        "memory/comfyui-openspec-learning-plan.md"
+      ],
+      "keywords": []
+    },
+    "二、工具概览": {
+      "files": [
+        "memory/comfyui-openspec-learning-plan.md"
+      ],
+      "keywords": []
+    },
+    "三、4 周学习计划（详细版）": {
+      "files": [
+        "memory/comfyui-openspec-learning-plan.md"
+      ],
+      "keywords": []
+    },
+    "四、学习资源汇总": {
+      "files": [
+        "memory/comfyui-openspec-learning-plan.md"
+      ],
+      "keywords": []
+    },
+    "五、关键里程碑": {
+      "files": [
+        "memory/comfyui-openspec-learning-plan.md"
+      ],
+      "keywords": []
+    },
+    "六、当前状态": {
+      "files": [
+        "memory/comfyui-openspec-learning-plan.md"
+      ],
+      "keywords": []
+    },
+    "一、环境要求": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "二、下载资源": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "三、ComfyUI Manager（节点管理器）": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "四、基础模型下载": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "五、v0.18.0/0.18.1 更新要点": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "六、首次启动步骤": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "七、目录结构参考": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "八、常见问题": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "✅ 准备检查清单": {
+      "files": [
+        "memory/comfyui-install-guide.md"
+      ],
+      "keywords": []
+    },
+    "一、广东佛山经典月子菜": {
+      "files": [
+        "memory/广桂月子饮食指南.md"
+      ],
+      "keywords": []
+    },
+    "二、广西梧州传统月子菜": {
+      "files": [
+        "memory/广桂月子饮食指南.md"
+      ],
+      "keywords": []
+    },
+    "三、42天月子餐分周建议": {
+      "files": [
+        "memory/广桂月子饮食指南.md"
+      ],
+      "keywords": []
+    },
+    "四、佛山北滘本地采购建议": {
+      "files": [
+        "memory/广桂月子饮食指南.md"
+      ],
+      "keywords": []
+    },
+    "五、梧州老婆家乡风味融合": {
+      "files": [
+        "memory/广桂月子饮食指南.md"
+      ],
+      "keywords": []
+    },
+    "六、温馨提示": {
+      "files": [
+        "memory/广桂月子饮食指南.md"
+      ],
+      "keywords": []
+    },
+    "一、Micro LED CPO 技术本质": {
+      "files": [
+        "memory/knowledge-cpo-microled.md"
+      ],
+      "keywords": []
+    },
+    "二、市场规模": {
+      "files": [
+        "memory/knowledge-cpo-microled.md"
+      ],
+      "keywords": []
+    },
+    "三、三安光电核心卡位": {
+      "files": [
+        "memory/knowledge-cpo-microled.md"
+      ],
+      "keywords": []
+    },
+    "四、三安光电三增长曲线": {
+      "files": [
+        "memory/knowledge-cpo-microled.md"
+      ],
+      "keywords": []
+    },
+    "五、受益产业链梳理": {
+      "files": [
+        "memory/knowledge-cpo-microled.md"
+      ],
+      "keywords": []
+    },
+    "六、投资逻辑对比": {
+      "files": [
+        "memory/knowledge-cpo-microled.md"
+      ],
+      "keywords": []
+    },
+    "七、催化剂时间线": {
+      "files": [
+        "memory/knowledge-cpo-microled.md"
+      ],
+      "keywords": []
+    },
+    "八、风险提示": {
+      "files": [
+        "memory/knowledge-cpo-microled.md"
+      ],
+      "keywords": []
+    },
+    "第一层理解：规格表面": {
+      "files": [
+        "memory/agentskills-deep-digest.md"
+      ],
+      "keywords": []
+    },
+    "第二层理解：源码揭示的真实规则": {
+      "files": [
+        "memory/agentskills-deep-digest.md"
+      ],
+      "keywords": []
+    },
+    "第三层理解：对我自己写技能的启示": {
+      "files": [
+        "memory/agentskills-deep-digest.md"
+      ],
+      "keywords": []
+    },
+    "与其他规范的关系": {
+      "files": [
+        "memory/agentskills-deep-digest.md"
+      ],
+      "keywords": []
+    },
+    "痛点分析（ComfyUI 当前困境）": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "解决思路：OpenSpec 分层规范": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "输入": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "参数标准": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "输出规范": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "验收场景": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "对模型师的价值": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "落地路径": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "下一步": {
+      "files": [
+        "memory/comfyui-openspec-concept.md"
+      ],
+      "keywords": []
+    },
+    "进度追踪": {
+      "files": [
+        "memory/comfyui-learning-progress.md"
+      ],
+      "keywords": []
+    },
+    "已完成": {
+      "files": [
+        "memory/comfyui-learning-progress.md"
+      ],
+      "keywords": []
+    },
+    "关键产出物": {
+      "files": [
+        "memory/comfyui-learning-progress.md"
+      ],
+      "keywords": []
+    },
+    "Day 7 深度学习（2026-03-30 凌晨 03:30）": {
+      "files": [
+        "memory/stock-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "Day 8 深度学习（2026-03-30 凌晨 04:00）": {
+      "files": [
+        "memory/stock-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "Day 9 深度学习（2026-03-30 凌晨 05:20）": {
+      "files": [
+        "memory/stock-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "Day 10 深度学习（2026-03-31 凌晨 01:30）": {
+      "files": [
+        "memory/stock-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "Day 15 深度学习（2026-04-01 凌晨 01:30）—— 关税落地前夜": {
+      "files": [
+        "memory/stock-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "中国动力 / 中船动力 核心投资逻辑（2026-04-01 确立）": {
+      "files": [
+        "memory/stock-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "湘电股份(600416) 跟踪（2026-04-01 新增）": {
+      "files": [
+        "memory/stock-knowledge.md"
+      ],
+      "keywords": []
+    },
+    "核心逻辑": {
+      "files": [
+        "memory/knowledge-600416.md",
+        "memory/knowledge-600703.md"
+      ],
+      "keywords": []
+    },
+    "财务数据（2022-2024）": {
+      "files": [
+        "memory/knowledge-600416.md"
+      ],
+      "keywords": []
+    },
+    "估值分析": {
+      "files": [
+        "memory/knowledge-600416.md"
+      ],
+      "keywords": []
+    },
+    "技术面分析（2026-04-01）": {
+      "files": [
+        "memory/knowledge-600416.md"
+      ],
+      "keywords": []
+    },
+    "建仓策略": {
+      "files": [
+        "memory/knowledge-600416.md",
+        "memory/knowledge-600703.md"
+      ],
+      "keywords": []
+    },
+    "关键跟踪指标": {
+      "files": [
+        "memory/knowledge-600416.md"
+      ],
+      "keywords": []
+    },
+    "今日问题汇总": {
+      "files": [
+        "memory/2026-03-30-review.md"
+      ],
+      "keywords": []
+    },
+    "架构优化记录": {
+      "files": [
+        "memory/2026-03-30-review.md"
+      ],
+      "keywords": []
+    },
+    "准确率统计": {
+      "files": [
+        "memory/2026-03-30-review.md"
+      ],
+      "keywords": []
+    },
+    "第一周：环境搭建 + 基础工作流": {
+      "files": [
+        "memory/comfyui-tutorial-guide.md"
+      ],
+      "keywords": []
+    },
+    "第二周：高级工作流 + 模型管理": {
+      "files": [
+        "memory/comfyui-tutorial-guide.md"
+      ],
+      "keywords": []
+    },
+    "第三周：3D 生成节点（核心重点）⭐": {
+      "files": [
+        "memory/comfyui-tutorial-guide.md"
+      ],
+      "keywords": []
+    },
+    "第四周：流水线集成 + 效率优化": {
+      "files": [
+        "memory/comfyui-tutorial-guide.md"
+      ],
+      "keywords": []
+    },
+    "📺 推荐 UP 主 / YouTube 频道": {
+      "files": [
+        "memory/comfyui-tutorial-guide.md"
+      ],
+      "keywords": []
+    },
+    "📥 必装节点包": {
+      "files": [
+        "memory/comfyui-tutorial-guide.md"
+      ],
+      "keywords": []
+    },
+    "🔗 模型下载资源": {
+      "files": [
+        "memory/comfyui-tutorial-guide.md"
+      ],
+      "keywords": []
+    },
+    "Top 25 热门技能（按下载量）": {
+      "files": [
+        "memory/clawhub-skills-catalog.md"
+      ],
+      "keywords": []
+    },
+    "待安装（限速解除后）": {
+      "files": [
+        "memory/clawhub-skills-catalog.md"
+      ],
+      "keywords": []
+    },
+    "已有但不在Top25的特色技能": {
+      "files": [
+        "memory/clawhub-skills-catalog.md"
+      ],
+      "keywords": []
+    },
+    "安装命令速查": {
+      "files": [
+        "memory/clawhub-skills-catalog.md"
+      ],
+      "keywords": []
+    },
+    "核心概念": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "SKILL.md 格式规范": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "渐进式加载设计（Progressive Disclosure）": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "目录结构详解": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "渐进式拆分模式": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "技能创建流程": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "权限控制（allowed-tools）": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "验证": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "对 ComfyUI 工程化的意义": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "与 OpenSpec 的关系": {
+      "files": [
+        "memory/agentskills-spec-study.md"
+      ],
+      "keywords": []
+    },
+    "微信 OpenClaw 安装与定时任务迁移": {
+      "files": [
+        "memory/2026-03-22.md"
+      ],
+      "keywords": []
+    },
+    "ComfyUI 学习计划": {
+      "files": [
+        "memory/2026-03-22.md"
+      ],
+      "keywords": []
+    },
+    "ComfyUI 学习管理系统建立": {
+      "files": [
+        "memory/2026-03-22.md"
+      ],
+      "keywords": []
+    },
+    "关键文件变更": {
+      "files": [
+        "memory/2026-03-22.md"
+      ],
+      "keywords": []
+    },
+    "微信频道配置备注": {
+      "files": [
+        "memory/2026-03-22.md"
+      ],
+      "keywords": []
+    },
+    "当前持仓": {
+      "files": [
+        "memory/stock-portfolio.md"
+      ],
+      "keywords": []
+    },
+    "观察列表": {
+      "files": [
+        "memory/stock-portfolio.md"
+      ],
+      "keywords": []
+    },
+    "已清仓记录": {
+      "files": [
+        "memory/stock-portfolio.md"
+      ],
+      "keywords": []
+    },
+    "ComfyUI 生态深度监控 (08:12 再次确认)": {
+      "files": [
+        "memory/2026-03-24.md"
+      ],
+      "keywords": []
+    },
+    "ComfyUI 每日复盘（第1周收官）": {
+      "files": [
+        "memory/2026-03-30.md",
+        "memory/2026-03-30.md"
+      ],
+      "keywords": []
+    },
+    "00:00 - 22:54 Cron/插件/飞书通道修复（前晚工作）": {
+      "files": [
+        "memory/2026-03-30.md",
+        "memory/2026-03-30.md"
+      ],
+      "keywords": []
+    },
+    "08:11 - 11:06 Cron 投递故障修复 + 推送体验优化": {
+      "files": [
+        "memory/2026-03-30.md"
+      ],
+      "keywords": []
+    },
+    "财务数据": {
+      "files": [
+        "memory/knowledge-600703.md"
+      ],
+      "keywords": []
+    },
+    "暴跌分析（2026-03-20 ~ 04-01）": {
+      "files": [
+        "memory/knowledge-600703.md"
+      ],
+      "keywords": []
+    },
+    "关键价位": {
+      "files": [
+        "memory/knowledge-600703.md"
+      ],
+      "keywords": []
+    },
+    "Micro LED CPO — 核心新增逻辑（2026-04-01）": {
+      "files": [
+        "memory/knowledge-600703.md"
+      ],
+      "keywords": []
+    },
+    "交易记录": {
+      "files": [
+        "memory/trade-journal.md"
+      ],
+      "keywords": []
+    },
+    "深度学习时段（01:30-05:30）": {
+      "files": [
+        "memory/2026-03-27.md"
+      ],
+      "keywords": []
+    },
+    "Day 2 综合分析报告（03:30完成）": {
+      "files": [
+        "memory/2026-03-27.md"
+      ],
+      "keywords": []
+    },
+    "Day 2 学习总成果": {
+      "files": [
+        "memory/2026-03-27.md"
+      ],
+      "keywords": []
+    },
+    "深度学习时段完成总结（01:30-05:30）": {
+      "files": [
+        "memory/2026-03-27.md"
+      ],
+      "keywords": []
+    },
+    "下午运维与工具配置（15:00-17:44）": {
+      "files": [
+        "memory/2026-03-27.md"
+      ],
+      "keywords": []
+    },
+    "本地 OpenClaw 部署规划（23:49 确认）": {
+      "files": [
+        "memory/2026-03-27.md"
+      ],
+      "keywords": []
+    },
+    "Day 3 凌晨深度学习（01:30-05:30，2026-03-28完成）": {
+      "files": [
+        "memory/2026-03-27.md"
+      ],
+      "keywords": []
+    },
+    "一、新生儿护理（0-28天）": {
+      "files": [
+        "memory/育儿月子指南.md"
+      ],
+      "keywords": []
+    },
+    "二、产后月子护理": {
+      "files": [
+        "memory/育儿月子指南.md"
+      ],
+      "keywords": []
+    },
+    "三、母乳喂养指导": {
+      "files": [
+        "memory/育儿月子指南.md"
+      ],
+      "keywords": []
+    },
+    "四、疫苗接种时间表": {
+      "files": [
+        "memory/育儿月子指南.md"
+      ],
+      "keywords": []
+    },
+    "五、需要立即就医的情况": {
+      "files": [
+        "memory/育儿月子指南.md"
+      ],
+      "keywords": []
+    },
+    "六、实用资源": {
+      "files": [
+        "memory/育儿月子指南.md"
+      ],
+      "keywords": []
+    },
+    "账户信息": {
+      "files": [
+        "memory/friend-account.md"
+      ],
+      "keywords": []
+    },
+    "视源股份（002841）": {
+      "files": [
+        "memory/friend-account.md"
+      ],
+      "keywords": []
+    },
+    "止盈止损策略": {
+      "files": [
+        "memory/friend-account.md"
+      ],
+      "keywords": []
+    },
+    "监控规则": {
+      "files": [
+        "memory/friend-account.md"
+      ],
+      "keywords": []
+    },
+    "规则更新": {
+      "files": [
+        "memory/2026-04-01.md",
+        "memory/2026-04-01.md"
+      ],
+      "keywords": []
+    },
+    "2026-04-01 核心决策记录": {
+      "files": [
+        "memory/2026-04-01.md",
+        "memory/2026-04-01.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260325-001] correction": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-25: Google API 代理封锁规律": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-25: Cloudflare 数据中心 IP 封锁": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-26 | correction | 信息采集必须从一手源头获取": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-26 | correction | 角色定位：我是学习和分析的执行者": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-26 | correction | 模型切换是高风险操作": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-26 | correction | 记住用户说过的话": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-26 | best_practice | 推送不要信息过载": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-26 | best_practice | 响应速度影响用户体验": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "提速实践（2026-03-31）": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "响应速度强制规则（2026-03-31 第二次确认）": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-001] best_practice": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-002] best_practice": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-003] correction": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-001] correction": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-002] correction": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-003] error": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-004] best_practice": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-005] correction": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-006] correction": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-007] error": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260401-008] best_practice": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[LRN-20260402-009] error": {
+      "files": [
+        ".learnings/LEARNINGS.md"
+      ],
+      "keywords": []
+    },
+    "[ERR-20260325-001] 航运行业资讯 cron 任务超时": {
+      "files": [
+        ".learnings/ERRORS.md"
+      ],
+      "keywords": []
+    },
+    "[ERR-20260326-001] Billing Error 连环故障（模型切换事故）": {
+      "files": [
+        ".learnings/ERRORS.md"
+      ],
+      "keywords": []
+    },
+    "[ERR-20260326-002] 飞书 Pairing 失效（服务器迁移后）": {
+      "files": [
+        ".learnings/ERRORS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-25: 股票记录严重失实": {
+      "files": [
+        ".learnings/ERRORS.md"
+      ],
+      "keywords": []
+    },
+    "2026-03-25: 全天复盘质量差": {
+      "files": [
+        ".learnings/ERRORS.md"
+      ],
+      "keywords": []
+    },
+    "[FEAT-YYYYMMDD-XXX] capability_name": {
+      "files": [
+        ".learnings/FEATURE_REQUESTS.md"
+      ],
+      "keywords": []
+    }
+  },
+  "file_hashes": {},
+  "last_updated": "2026-04-02T00:35:47.400951"
+}
