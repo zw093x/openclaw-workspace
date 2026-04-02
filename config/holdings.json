@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T15:01:00+08:00",
+  "last_updated": "2026-04-02T13:49:56+08:00",
   "holdings": [
     {
       "name": "中国船舶",
@@ -24,7 +24,7 @@
       "name": "中国动力",
       "code": "600482",
       "market": "sh",
-      "shares": 2500,
+      "shares": 2000,
       "cost_price": 34.389,
       "reduce_levels": [],
       "stop_loss": 0,
@@ -52,6 +52,25 @@
       "sold_date": "2026-04-01",
       "sold_price": 21.0,
       "sold_pnl": -50.0
+    },
+    {
+      "name": "三安光电",
+      "code": "600703",
+      "market": "sh",
+      "shares": 500,
+      "cost_price": 11.44,
+      "reduce_levels": [],
+      "stop_loss": 11.0,
+      "add_level": {
+        "range": [
+          10.5,
+          11.0
+        ],
+        "buy": 500,
+        "label": "10.5-11.0加仓"
+      },
+      "target_floor": 500,
+      "status": "holding"
     }
   ],
   "watching": [
@@ -71,13 +90,6 @@
       "market": "sh",
       "shares": 0,
       "note": "船舶综合电力系统(市占100%)+磁悬浮核心电机，待建仓"
-    },
-    {
-      "name": "三安光电",
-      "code": "600703",
-      "market": "sh",
-      "shares": 0,
-      "note": "SiC碳化硅+MicroLED，暴跌33%后企稳观察"
     }
   ],
   "index": [

@@ -45,11 +45,11 @@
       "type": "系统"
     },
     {
-      "id": "湘电股份",
+      "id": "三安光电",
       "type": "股票"
     },
     {
-      "id": "三安光电",
+      "id": "湘电股份",
       "type": "股票"
     }
   ],
@@ -87,6 +87,12 @@
     {
       "source": "Docker",
       "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "P工",
+      "target": "P工",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
     },
@@ -241,6 +247,12 @@
       "file": "TOOLS.md"
     },
     {
+      "source": "本地服务器",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "TOOLS.md"
+    },
+    {
       "source": "ComfyUI",
       "target": "OpenClaw",
       "relation": "co_mentioned",
@@ -253,10 +265,28 @@
       "file": "memory/migration-guide.md"
     },
     {
-      "source": "P工",
-      "target": "P工",
+      "source": "自愈系统",
+      "target": "自愈系统",
       "relation": "co_mentioned",
-      "file": "memory/deep-dive-protocol.md"
+      "file": "memory/heal-log.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-02.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-02.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-02.md"
     },
     {
       "source": "OpenClaw",
@@ -313,12 +343,6 @@
       "file": "memory/knowledge-cpo-microled.md"
     },
     {
-      "source": "三安光电",
-      "target": "中国动力",
-      "relation": "co_mentioned",
-      "file": "memory/knowledge-cpo-microled.md"
-    },
-    {
       "source": "中国船舶",
       "target": "湘电股份",
       "relation": "co_mentioned",
@@ -337,10 +361,28 @@
       "file": "memory/stock-knowledge.md"
     },
     {
-      "source": "自愈系统",
-      "target": "自愈系统",
+      "source": "中国动力",
+      "target": "云服务器",
       "relation": "co_mentioned",
-      "file": "memory/2026-03-30.md"
+      "file": "memory/knowledge-gaps.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/knowledge-gaps.md"
+    },
+    {
+      "source": "云服务器",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "memory/knowledge-gaps.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/stock-portfolio.md"
     },
     {
       "source": "中国船舶",
@@ -368,129 +410,195 @@
     },
     {
       "source": "彭煜",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "彭煜",
       "target": "湘电股份",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "三安光电",
       "target": "彭煜",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "彭煜",
       "target": "自愈系统",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "OpenClaw",
       "target": "彭煜",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "云服务器",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "彭煜",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "P工",
       "target": "湘电股份",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "P工",
       "target": "三安光电",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "P工",
       "target": "自愈系统",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
-      "source": "三安光电",
-      "target": "中国船舶",
+      "source": "中国船舶",
+      "target": "云服务器",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
-      "source": "三安光电",
-      "target": "湘电股份",
+      "source": "中国船舶",
+      "target": "本地服务器",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "中国动力",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "湘电股份",
       "target": "飞书",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "ComfyUI",
       "target": "湘电股份",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "Docker",
       "target": "湘电股份",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "云服务器",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "本地服务器",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "三安光电",
       "target": "自愈系统",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
-    },
-    {
-      "source": "三安光电",
-      "target": "飞书",
-      "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "ComfyUI",
       "target": "三安光电",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "Docker",
       "target": "三安光电",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "OpenClaw",
       "target": "三安光电",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "三安光电",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "Docker",
       "target": "自愈系统",
       "relation": "co_mentioned",
-      "file": "memory/memory-index.json"
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "云服务器",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "本地服务器",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "本地服务器",
       "target": "飞书",
       "relation": "co_mentioned",
-      "file": ".learnings/ERRORS.md"
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "OpenClaw",
       "target": "云服务器",
       "relation": "co_mentioned",
-      "file": ".learnings/ERRORS.md"
+      "file": "memory/memory-graph.json"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "本地服务器",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "云服务器",
       "target": "云服务器",
       "relation": "co_mentioned",
-      "file": ".learnings/ERRORS.md"
+      "file": "memory/memory-graph.json"
     }
   ]
 }

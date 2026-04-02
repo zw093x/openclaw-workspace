@@ -49,6 +49,7 @@ def load_holdings():
             "cost": item.get("cost", 0),
             "shares": item.get("shares", 0),
             "stop_loss": item.get("stop_loss", 0),
+            "is_watching": True,  # 标记为关注股，即使shares=0也监控
         }
 
     return holdings, friends
@@ -202,8 +203,9 @@ def load_dynamic_tech():
         sys.path.insert(0, "/root/.openclaw/workspace/scripts")
         from stock_tech_analysis import analyze_stock
         result = {}
-        for code, cfg in HOLDINGS.items():
-            if cfg.get("shares", 0) == 0:
+        all_stocks = {**HOLDINGS, **FRIEND}
+        for code, cfg in all_stocks.items():
+            if cfg.get("shares", 0) == 0 and not cfg.get("is_watching", False):
                 continue
             analysis = analyze_stock(code, cfg["name"], kline_periods=60)
             if "error" not in analysis:
@@ -250,8 +252,9 @@ def check_alerts(quotes):
     for code, config in all_stocks.items():
         if code not in quotes:
             continue
-        if config.get("shares", 0) == 0:
-            continue  # 已清仓，跳过
+        # 跳过已清仓的，但保留关注中的（shares=0但无sold标记）
+        if config.get("shares", 0) == 0 and not config.get("is_watching", False):
+            continue
         q = quotes[code]
         name = config["name"]
         price = q["price"]
@@ -351,9 +354,16 @@ def check_alerts(quotes):
         if divergence == "bearish":
             alerts.append(f"⚠️量价背离 {name} 价涨量缩，趋势弱化信号")
         
-        # 7. 盈亏状态
-        pnl_pct = (price - config["cost"]) / config["cost"] * 100
-        pnl_amount = (price - config["cost"]) * config["shares"]
+        # 7. 盈亏状态（关注股成本可能为0，跳过盈亏分析）
+        cost = config.get("cost", 0)
+        if cost > 0:
+            pnl_pct = (price - cost) / cost * 100
+            pnl_amount = (price - cost) * config.get("shares", 0)
+            # 大幅亏损警告
+            if pnl_pct <= -10:
+                alerts.append(f"📉深度套牢 {name} 浮亏{pnl_pct:.1f}%（{pnl_amount:+.0f}元）")
+        else:
+            pnl_pct = 0
         
         # 大幅亏损警告
         if pnl_pct <= -10:
@@ -408,16 +418,21 @@ def generate_status(quotes):
     for code, config in all_stocks.items():
         if code not in quotes:
             continue
-        if config.get("shares", 0) == 0:
-            continue  # 已清仓，跳过
+        if config.get("shares", 0) == 0 and not config.get("is_watching", False):
+            continue  # 已清仓且非关注股，跳过
         q = quotes[code]
         price = q["price"]
         if price == 0:
             continue
         
         change = q["change_pct"]
-        pnl_pct = (price - config["cost"]) / config["cost"] * 100
-        pnl_amount = (price - config["cost"]) * config["shares"]
+        cost = config.get("cost", 0)
+        if cost > 0:
+            pnl_pct = (price - cost) / cost * 100
+            pnl_amount = (price - cost) * config.get("shares", 0)
+        else:
+            pnl_pct = 0
+            pnl_amount = 0
         total_pnl += pnl_amount
         
         emoji = "🔴" if change < 0 else "🟢" if change > 0 else "⚪"

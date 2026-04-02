@@ -59,11 +59,11 @@
     },
     "finance-report-analyzer": {
       "version": "1.2.0",
-      "installedAt": 1774703763397
+      "installedAt": 1775124122941
     },
     "finance-radar": {
       "version": "1.1.0",
-      "installedAt": 1774704183449
+      "installedAt": 1775145663005
     },
     "rss-reader": {
       "version": "1.0.0",
@@ -91,11 +91,19 @@
     },
     "bilibili-hot-monitor": {
       "version": "1.0.21",
-      "installedAt": 1775059262507
+      "installedAt": 1775080869393
     },
     "brave-search": {
       "version": "1.0.1",
       "installedAt": 1775059322450
+    },
+    "baidu-search": {
+      "version": "1.1.3",
+      "installedAt": 1775080862248
+    },
+    "clawrouter": {
+      "version": "0.10.5",
+      "installedAt": 1775102882740
     }
   }
 }

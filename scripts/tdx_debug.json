@@ -1,0 +1,292 @@
+[
+  {
+    "ip": "218.85.139.19",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "218.85.139.20",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "58.23.131.163",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "218.6.170.47",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "123.125.108.14",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "180.153.18.170",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "180.153.18.171",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "180.153.18.172",
+    "port": 80,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "202.108.253.130",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "202.108.253.131",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "202.108.253.139",
+    "port": 80,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "60.191.117.167",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "115.238.56.198",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "218.75.126.9",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "115.238.90.165",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "124.160.88.183",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "60.12.136.250",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": true,
+    "get_security_quotes": true,
+    "error": null,
+    "quote_sample": "?",
+    "bars_count": 5
+  },
+  {
+    "ip": "218.108.98.244",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "218.108.47.69",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "223.94.89.115",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "218.57.11.101",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "58.58.33.123",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "14.17.75.71",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "114.80.63.12",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "114.80.63.35",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "180.153.39.51",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "119.147.212.81",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "221.231.141.60",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "101.227.73.20",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  },
+  {
+    "ip": "101.227.77.254",
+    "port": 7709,
+    "connect": true,
+    "get_security_list": false,
+    "get_security_bars": false,
+    "get_security_quotes": false,
+    "error": null
+  }
+]

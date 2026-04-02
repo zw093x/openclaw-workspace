@@ -1,18 +1,22 @@
 {
-  "lastCheck": "2026-04-02T01:33:00+08:00",
-  "xau_usd": {
-    "price": 4812.45,
-    "open": 4678.6,
-    "change_pct": 2.86,
-    "source": "script"
+  "last_check": 1775129322,
+  "last_check_iso": "2026-04-02T19:26:00+08:00",
+  "gold": {
+    "price": 3087.86,
+    "change_pct": -3.6,
+    "alert_sent": true
   },
-  "xag_usd": {
-    "price": 76.22,
-    "open": 74.919,
-    "change_pct": 1.73,
-    "source": "script"
+  "silver": {
+    "price": 70.93,
+    "change_pct": -6.77,
+    "alert_sent": true
   },
-  "usd_cny": 6.90,
-  "alert_level": "S1",
-  "note": "01:33检查，金价4812（+2.86% S1持续），白银76.22（+1.73%）。与00:37数据基本一致，非新增事件。深夜不推送，由06:00大宗商品播报覆盖。"
+  "methanol": {
+    "price": 3245.0,
+    "change_pct": 2.53,
+    "alert_sent": true
+  },
+  "usdcny": {
+    "rate": 6.89
+  }
 }

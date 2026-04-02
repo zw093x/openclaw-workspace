@@ -2,372 +2,472 @@
   "entities": {
     "中国船舶": {
       "files": [
-        ".learnings/LEARNINGS.md",
+        "memory/stock-knowledge.md",
+        "memory/2026-03-31.md",
         "memory/stock-strategy-20260325.md",
+        "memory/memory-clusters.json",
+        "memory/alert-cooldown.json",
+        "memory/2026-03-26.md",
+        "memory/2026-03-25.md",
+        "memory/stock-portfolio.md",
+        "memory/memory-graph.json",
         "memory/knowledge-600150-finance.md",
+        "memory/2026-03-27.md",
+        "memory/trade-journal.md",
         "memory/knowledge-shipping.md",
         "memory/cron-backup.json",
         "memory/trade-journal.json",
+        "memory/2026-04-01.md",
+        "memory/memory-index.json",
+        "memory/2026-04-02.md",
+        "MEMORY.md",
+        "memory/info-priority-rules.md",
+        "memory/deep-dive-protocol.md",
         "memory/analysis-accuracy.md",
         "USER.md",
-        "memory/alert-cooldown.json",
-        "memory/stock-portfolio.md",
-        "MEMORY.md",
-        "memory/2026-03-31.md",
-        "memory/deep-dive-protocol.md",
-        "memory/trade-journal.md",
-        "memory/2026-04-01.md",
-        "memory/stock-knowledge.md",
-        "memory/2026-03-26.md",
-        "memory/2026-03-25.md",
-        "memory/2026-03-27.md",
-        "memory/analysis-accuracy.json",
-        "memory/info-priority-rules.md",
         "memory/stock-strategy-20260331.md",
-        "memory/memory-index.json"
+        "memory/analysis-accuracy.json"
       ],
-      "mentions": 156
+      "mentions": 207
     },
     "600150": {
       "files": [
-        "memory/analysis-accuracy.json",
-        "memory/stock-strategy-20260325.md",
-        "memory/stock-strategy-20260331.md",
-        "memory/memory-index.json",
-        "memory/cron-backup.json",
-        "memory/comfyui-knowledge.md",
-        "memory/trade-journal.json",
-        "memory/knowledge-600150-finance.md",
         "memory/stock-knowledge.md",
-        "memory/analysis-accuracy.md",
-        "USER.md",
-        "memory/knowledge-shipping.md",
+        "memory/stock-strategy-20260325.md",
         "memory/2026-03-25.md",
         "memory/stock-portfolio.md",
+        "memory/comfyui-knowledge.md",
+        "memory/knowledge-600150-finance.md",
         "memory/2026-03-27.md",
-        "MEMORY.md",
         "memory/trade-journal.md",
-        "memory/2026-04-01.md"
+        "memory/cron-backup.json",
+        "memory/knowledge-shipping.md",
+        "memory/trade-journal.json",
+        "memory/2026-04-01.md",
+        "memory/memory-decay.json",
+        "memory/memory-index.json",
+        "MEMORY.md",
+        "memory/2026-04-02.md",
+        "memory/tdx-troubleshoot-report.md",
+        "memory/analysis-accuracy.md",
+        "USER.md",
+        "memory/stock-strategy-20260331.md",
+        "memory/analysis-accuracy.json"
       ],
-      "mentions": 43
+      "mentions": 51
     },
     "中国动力": {
       "files": [
-        ".learnings/LEARNINGS.md",
-        "memory/stock-strategy-20260325.md",
-        "memory/knowledge-shipping.md",
-        "memory/knowledge-cpo-microled.md",
-        "memory/cron-backup.json",
-        "USER.md",
-        "memory/alert-cooldown.json",
-        "memory/stock-portfolio.md",
-        "MEMORY.md",
-        "memory/2026-03-31.md",
-        "memory/deep-dive-protocol.md",
-        "memory/trade-journal.md",
-        "memory/2026-04-01.md",
         "memory/stock-knowledge.md",
+        "memory/2026-03-31.md",
+        "memory/stock-strategy-20260325.md",
+        "memory/memory-clusters.json",
+        "memory/alert-cooldown.json",
         "memory/2026-03-26.md",
         "memory/2026-03-25.md",
-        "memory/knowledge-600482-finance.md",
+        "memory/stock-portfolio.md",
+        "memory/memory-graph.json",
         "memory/2026-03-27.md",
+        "memory/trade-journal.md",
+        "memory/knowledge-cpo-microled.md",
+        "memory/knowledge-shipping.md",
+        "memory/cron-backup.json",
+        "memory/2026-04-01.md",
+        "memory/memory-index.json",
+        "memory/2026-04-02.md",
+        "MEMORY.md",
+        "memory/knowledge-600482-finance.md",
         "memory/info-priority-rules.md",
-        "memory/stock-strategy-20260331.md",
-        "memory/memory-index.json"
+        "memory/deep-dive-protocol.md",
+        "memory/knowledge-gaps.md",
+        "USER.md",
+        "memory/stock-strategy-20260331.md"
       ],
-      "mentions": 144
+      "mentions": 189
     },
     "600482": {
       "files": [
-        "memory/stock-strategy-20260325.md",
-        "memory/stock-strategy-20260331.md",
-        "memory/memory-index.json",
-        "memory/cron-backup.json",
-        "memory/comfyui-knowledge.md",
         "memory/stock-knowledge.md",
+        "memory/2026-04-01.md",
+        "MEMORY.md",
+        "memory/2026-04-02.md",
+        "memory/knowledge-600482-finance.md",
+        "memory/memory-decay.json",
+        "memory/stock-strategy-20260325.md",
         "memory/2026-03-27.md",
-        "USER.md",
-        "memory/knowledge-shipping.md",
+        "memory/cron-backup.json",
+        "memory/trade-journal.md",
+        "memory/tdx-troubleshoot-report.md",
         "memory/2026-03-25.md",
         "memory/stock-portfolio.md",
-        "MEMORY.md",
-        "memory/knowledge-600482-finance.md",
-        "memory/trade-journal.md",
-        "memory/2026-04-01.md"
+        "memory/memory-index.json",
+        "memory/knowledge-shipping.md",
+        "USER.md",
+        "memory/comfyui-knowledge.md",
+        "memory/stock-strategy-20260331.md"
       ],
-      "mentions": 35
+      "mentions": 41
     },
     "彭煜": {
       "files": [
-        "memory/memory-index.json",
+        "memory/memory-graph.json",
         "MEMORY.md",
+        "memory/memory-index.json",
         "USER.md"
       ],
-      "mentions": 3
+      "mentions": 14
     },
     "配偶": {
       "files": [
-        "memory/memory-index.json",
+        "memory/memory-clusters.json",
         "MEMORY.md",
+        "memory/memory-index.json",
         "USER.md"
       ],
-      "mentions": 6
+      "mentions": 7
     },
     "宝宝": {
       "files": [
+        "MEMORY.md",
+        "memory/migration-guide.md",
         "memory/育儿月子指南.md",
+        "memory/memory-clusters.json",
         "memory/广桂月子饮食指南.md",
+        "memory/2026-03-25.md",
         "memory/memory-index.json",
         "memory/cron-backup.json",
-        "USER.md",
-        "memory/2026-03-25.md",
-        "MEMORY.md",
-        "memory/migration-guide.md"
+        "USER.md"
       ],
-      "mentions": 53
+      "mentions": 54
     },
     "P工": {
       "files": [
-        ".learnings/LEARNINGS.md",
-        "memory/agentskills-deep-digest.md",
-        "memory/comfyui-openspec-concept.md",
-        "memory/knowledge-ai.md",
-        "memory/memory-index.json",
-        "memory/2026-03-28.md",
-        "TOOLS.md",
-        ".learnings/ERRORS.md",
-        "memory/2026-03-27.md",
-        "USER.md",
-        "memory/2026-03-25.md",
-        "memory/2026-03-26.md",
-        "memory/friend-account.md",
+        "memory/memory-graph.json",
         "MEMORY.md",
-        "memory/deep-dive-protocol.md"
+        "memory/comfyui-openspec-concept.md",
+        ".learnings/ERRORS.md",
+        "TOOLS.md",
+        "memory/friend-account.md",
+        "memory/2026-03-27.md",
+        "memory/knowledge-ai.md",
+        "memory/deep-dive-protocol.md",
+        "memory/2026-03-26.md",
+        "memory/2026-03-28.md",
+        "memory/2026-03-25.md",
+        "memory/memory-index.json",
+        "memory/agentskills-deep-digest.md",
+        "USER.md"
       ],
-      "mentions": 76
+      "mentions": 87
     },
     "Cron": {
       "files": [
-        ".learnings/LEARNINGS.md",
-        "memory/cron-fault-knowledge.md",
-        "memory/2026-03-30-review.md",
-        "memory/2026-03-29.md",
-        "memory/2026-03-30.md",
-        "memory/memory-index.json",
-        "memory/2026-03-28.md",
-        "TOOLS.md",
         "memory/2026-04-01.md",
-        "memory/intel-hub-state.json",
-        "memory/2026-03-27.md",
-        "memory/2026-03-26.md",
         "MEMORY.md",
+        "memory/migration-guide.md",
+        "memory/2026-04-02.md",
         "memory/2026-03-31.md",
+        "memory/2026-03-29.md",
+        "memory/2026-03-30-review.md",
+        "TOOLS.md",
+        "memory/cron-fault-knowledge.md",
+        "memory/2026-03-27.md",
         "memory/deep-dive-protocol.md",
-        "memory/migration-guide.md"
+        "memory/intel-hub-state.json",
+        "memory/2026-03-26.md",
+        "memory/2026-03-28.md",
+        "memory/knowledge-gaps.md",
+        "memory/memory-index.json",
+        "memory/2026-03-30.md"
       ],
       "mentions": 46
     },
     "159.75.77.36": {
       "files": [
-        "memory/2026-03-26.md",
+        "MEMORY.md",
         ".learnings/ERRORS.md",
         "TOOLS.md",
+        "memory/2026-03-26.md",
         "memory/2026-03-25.md",
-        "MEMORY.md",
         "memory/memory-index.json"
       ],
       "mentions": 8
     },
     "42.193.183.176": {
       "files": [
+        "MEMORY.md",
         ".learnings/ERRORS.md",
         "TOOLS.md",
+        "memory/tdx-troubleshoot-report.md",
         "memory/2026-03-26.md",
-        "MEMORY.md",
         "memory/memory-index.json"
       ],
-      "mentions": 6
+      "mentions": 7
     },
     "127.0.0.1": {
       "files": [
-        "memory/2026-03-26.md",
-        "memory/memory-index.json",
+        "MEMORY.md",
         "TOOLS.md",
-        "memory/comfyui-install-guide.md",
+        "memory/2026-03-26.md",
         "memory/2026-03-25.md",
-        "MEMORY.md"
+        "memory/memory-index.json",
+        "memory/comfyui-install-guide.md"
       ],
-      "mentions": 11
+      "mentions": 13
     },
     "飞书": {
       "files": [
-        "memory/info-priority-rules.md",
+        "memory/migration-guide.md",
+        "memory/memory-clusters.json",
         "memory/cron-fault-knowledge.md",
+        "memory/2026-03-26.md",
+        "memory/comfyui-knowledge.md",
+        "memory/memory-graph.json",
         "memory/2026-03-29.md",
         "memory/2026-03-30-review.md",
-        "memory/2026-03-30.md",
-        "memory/memory-index.json",
-        "memory/2026-03-28.md",
-        "memory/comfyui-knowledge.md",
+        "memory/2026-03-27.md",
         "memory/cron-backup.json",
         ".learnings/ERRORS.md",
-        "USER.md",
-        "memory/2026-03-26.md",
+        "memory/memory-index.json",
+        "memory/2026-04-02.md",
         "MEMORY.md",
-        "memory/2026-03-27.md",
-        "memory/migration-guide.md"
+        "memory/info-priority-rules.md",
+        "memory/2026-03-28.md",
+        "memory/knowledge-gaps.md",
+        "memory/2026-03-30.md",
+        "USER.md"
       ],
-      "mentions": 67
+      "mentions": 90
     },
     "ComfyUI": {
       "files": [
-        "memory/comfyui-learning-progress.md",
-        "memory/agentskills-spec-study.md",
+        "memory/migration-guide.md",
         "memory/2026-03-30.md",
-        "memory/agentskills-deep-digest.md",
-        "memory/clawhub-skills-catalog.md",
-        "memory/cron-backup.json",
-        "USER.md",
-        "MEMORY.md",
         "memory/cron-fault-knowledge.md",
-        "memory/comfyui-openspec-concept.md",
-        "memory/comfyui-ecosystem-monitor-2026-03-29.md",
-        "memory/2026-03-28.md",
-        "memory/comfyui-knowledge.md",
-        "memory/2026-03-25.md",
-        "memory/2026-03-27.md",
-        "memory/2026-03-29.md",
-        "memory/knowledge-ai.md",
-        "memory/comfyui-openspec-learning-plan.md",
-        "memory/2026-03-24.md",
-        "memory/2026-03-22.md",
-        "memory/2026-03-22-comfyui-analysis.md",
         "memory/comfyui-monitor-state.json",
-        "memory/comfyui-install-guide.md",
-        "memory/comfyui-tutorial-guide.md",
+        "memory/knowledge-ai.md",
+        "memory/comfyui-ecosystem-monitor-2026-03-29.md",
+        "memory/2026-03-25.md",
+        "memory/agentskills-deep-digest.md",
+        "memory/comfyui-knowledge.md",
+        "memory/memory-graph.json",
+        "memory/clawhub-skills-catalog.md",
+        "memory/2026-03-29.md",
+        "memory/2026-03-22-comfyui-analysis.md",
+        "memory/2026-03-27.md",
+        "memory/comfyui-openspec-learning-plan.md",
+        "memory/comfyui-openspec-concept.md",
+        "memory/cron-backup.json",
+        "memory/agentskills-spec-study.md",
+        "memory/2026-03-24.md",
+        "memory/comfyui-learning-progress.md",
         "memory/memory-index.json",
-        "memory/migration-guide.md"
+        "memory/comfyui-tutorial-guide.md",
+        "MEMORY.md",
+        "memory/2026-03-22.md",
+        "memory/2026-03-28.md",
+        "memory/comfyui-install-guide.md",
+        "USER.md"
       ],
-      "mentions": 300
+      "mentions": 313
     },
     "Docker": {
       "files": [
-        "memory/memory-index.json",
+        "memory/memory-graph.json",
         "MEMORY.md",
         "TOOLS.md",
-        "memory/2026-03-26.md"
+        "memory/2026-03-26.md",
+        "memory/memory-index.json"
       ],
-      "mentions": 17
+      "mentions": 32
     },
     "mihomo": {
       "files": [
-        "memory/2026-03-26.md",
-        "memory/memory-index.json",
-        "TOOLS.md",
-        "memory/2026-03-25.md",
         "MEMORY.md",
-        "memory/migration-guide.md"
+        "memory/migration-guide.md",
+        "TOOLS.md",
+        "memory/memory-clusters.json",
+        "memory/2026-03-25.md",
+        "memory/2026-03-26.md",
+        "memory/knowledge-gaps.md",
+        "memory/memory-index.json"
       ],
-      "mentions": 22
+      "mentions": 24
     },
     "192.168.1.100": {
       "files": [
-        "memory/memory-index.json",
-        "TOOLS.md"
+        "TOOLS.md",
+        "memory/memory-index.json"
       ],
       "mentions": 2
     },
     "3.1.59.1": {
       "files": [
-        "memory/memory-index.json",
         "TOOLS.md",
-        "memory/2026-03-26.md"
+        "memory/2026-03-26.md",
+        "memory/memory-index.json"
       ],
       "mentions": 3
     },
     "0.0.0.0": {
       "files": [
-        "memory/memory-index.json",
-        "TOOLS.md"
+        "TOOLS.md",
+        "memory/memory-index.json"
       ],
       "mentions": 2
     },
     "OpenClaw": {
       "files": [
-        ".learnings/LEARNINGS.md",
-        "memory/cron-fault-knowledge.md",
-        "memory/agentskills-deep-digest.md",
-        "memory/2026-03-30-review.md",
-        "memory/2026-03-26.md",
-        "memory/2026-03-30.md",
-        ".learnings/ERRORS.md",
-        "memory/2026-03-28.md",
+        "memory/memory-graph.json",
         "memory/2026-04-01.md",
+        ".learnings/ERRORS.md",
+        "memory/migration-guide.md",
+        "memory/agentskills-spec-study.md",
+        "memory/2026-03-30-review.md",
+        "memory/cron-fault-knowledge.md",
         "memory/2026-03-22.md",
         "memory/2026-03-27.md",
         "memory/2026-03-25.md",
+        "memory/2026-03-26.md",
+        "memory/2026-03-28.md",
         "memory/memory-index.json",
-        "memory/agentskills-spec-study.md",
-        "memory/migration-guide.md"
+        "memory/2026-03-30.md",
+        "memory/agentskills-deep-digest.md"
       ],
-      "mentions": 28
-    },
-    "10.1.0.6": {
-      "files": [
-        "memory/memory-index.json",
-        "memory/2026-03-26.md"
-      ],
-      "mentions": 2
+      "mentions": 41
     },
     "自愈系统": {
       "files": [
-        "memory/cron-fault-knowledge.md",
+        "memory/memory-graph.json",
+        "memory/2026-04-01.md",
+        "memory/heal-log.md",
         "memory/2026-03-30-review.md",
-        "memory/2026-03-30.md",
+        "memory/cron-fault-knowledge.md",
         "memory/memory-index.json",
-        "memory/2026-04-01.md"
+        "memory/2026-03-30.md"
       ],
-      "mentions": 11
+      "mentions": 26
     },
-    "湘电股份": {
+    "218.6.170.47": {
       "files": [
-        "memory/memory-index.json",
-        "memory/stock-knowledge.md",
-        "memory/knowledge-600416.md",
-        "memory/stock-portfolio.md",
-        "memory/knowledge-600416-finance.md",
-        "memory/2026-04-01.md"
+        "memory/tdx-troubleshoot-report.md"
       ],
-      "mentions": 10
+      "mentions": 2
     },
-    "600416": {
+    "123.125.108.14": {
       "files": [
-        "memory/memory-index.json",
-        "memory/stock-knowledge.md",
-        "memory/knowledge-600416.md",
-        "memory/stock-portfolio.md",
-        "memory/knowledge-600416-finance.md",
-        "memory/2026-04-01.md"
+        "memory/tdx-troubleshoot-report.md"
       ],
-      "mentions": 20
+      "mentions": 1
+    },
+    "180.153.18.170": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "mentions": 1
+    },
+    "180.153.18.172": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "mentions": 1
+    },
+    "202.108.253.139": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "mentions": 1
+    },
+    "60.191.117.167": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "mentions": 1
+    },
+    "115.238.56.198": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "mentions": 1
+    },
+    "218.75.126.9": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "mentions": 1
+    },
+    "115.238.90.165": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "mentions": 1
+    },
+    "60.12.136.250": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "mentions": 1
     },
     "三安光电": {
       "files": [
-        "memory/knowledge-600703-finance.md",
+        "memory/knowledge-600703.md",
+        "memory/memory-graph.json",
+        "memory/2026-04-02.md",
+        ".learnings/LEARNINGS.md",
+        "memory/alert-cooldown.json",
+        "memory/trade-journal.md",
         "memory/knowledge-cpo-microled.md",
+        "memory/stock-portfolio.md",
+        "memory/knowledge-gaps.md",
         "memory/memory-index.json",
-        "memory/knowledge-600703.md"
+        "memory/knowledge-600703-finance.md"
       ],
-      "mentions": 13
+      "mentions": 40
+    },
+    "10.1.0.6": {
+      "files": [
+        "memory/2026-03-26.md",
+        "memory/memory-index.json"
+      ],
+      "mentions": 2
+    },
+    "湘电股份": {
+      "files": [
+        "memory/knowledge-600416.md",
+        "memory/stock-knowledge.md",
+        "memory/2026-04-01.md",
+        "memory/memory-graph.json",
+        ".learnings/LEARNINGS.md",
+        "memory/knowledge-600416-finance.md",
+        "memory/stock-portfolio.md",
+        "memory/memory-index.json"
+      ],
+      "mentions": 24
+    },
+    "600416": {
+      "files": [
+        "memory/knowledge-600416.md",
+        "memory/stock-knowledge.md",
+        "memory/2026-04-01.md",
+        "memory/memory-decay.json",
+        "memory/knowledge-600416-finance.md",
+        "memory/stock-portfolio.md",
+        "memory/memory-index.json"
+      ],
+      "mentions": 22
     },
     "600703": {
       "files": [
-        "memory/knowledge-600703-finance.md",
+        "memory/knowledge-600703.md",
+        "memory/memory-decay.json",
+        "memory/memory-clusters.json",
+        "memory/trade-journal.md",
         "memory/knowledge-cpo-microled.md",
+        "memory/stock-portfolio.md",
         "memory/memory-index.json",
-        "memory/knowledge-600703.md"
+        "memory/knowledge-600703-finance.md"
       ],
-      "mentions": 18
+      "mentions": 23
     },
     "224.0.0.1": {
       "files": [
@@ -398,6 +498,12 @@
       "keywords": []
     },
     "任务合并记录（2026-03-28 历史记录，已被2026-03-31精简覆盖））": {
+      "files": [
+        "MEMORY.md"
+      ],
+      "keywords": []
+    },
+    "P工核心行为准则（2026-04-02 新增）": {
       "files": [
         "MEMORY.md"
       ],
@@ -581,6 +687,18 @@
       "keywords": []
     },
     "AI Models": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "国际新闻RSS源（通过代理 http://127.0.0.1:7890 访问）": {
+      "files": [
+        "TOOLS.md"
+      ],
+      "keywords": []
+    },
+    "Google 账号": {
       "files": [
         "TOOLS.md"
       ],
@@ -772,6 +890,84 @@
     "五、行动建议": {
       "files": [
         "memory/comfyui-ecosystem-monitor-2026-03-29.md"
+      ],
+      "keywords": []
+    },
+    "一、测试结论": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "keywords": []
+    },
+    "二、服务器可用性": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "keywords": []
+    },
+    "三、故障根因分析": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "keywords": []
+    },
+    "四、与AKShare的分工方案": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "keywords": []
+    },
+    "五、最佳实践": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "keywords": []
+    },
+    "六、待解决问题": {
+      "files": [
+        "memory/tdx-troubleshoot-report.md"
+      ],
+      "keywords": []
+    },
+    "上午交易与分析": {
+      "files": [
+        "memory/2026-04-02.md"
+      ],
+      "keywords": []
+    },
+    "新闻分析": {
+      "files": [
+        "memory/2026-04-02.md"
+      ],
+      "keywords": []
+    },
+    "系统配置": {
+      "files": [
+        "memory/2026-04-02.md"
+      ],
+      "keywords": []
+    },
+    "行为规则": {
+      "files": [
+        "memory/2026-04-02.md"
+      ],
+      "keywords": []
+    },
+    "四大系统闭环优化": {
+      "files": [
+        "memory/2026-04-02.md"
+      ],
+      "keywords": []
+    },
+    "待办": {
+      "files": [
+        "memory/2026-04-02.md"
+      ],
+      "keywords": []
+    },
+    "每日策略学习 (22:04)": {
+      "files": [
+        "memory/2026-04-02.md"
       ],
       "keywords": []
     },
@@ -1651,6 +1847,12 @@
       ],
       "keywords": []
     },
+    "Day 16 深度学习（2026-04-02 凌晨 01:30）—— 关税落地日": {
+      "files": [
+        "memory/stock-knowledge.md"
+      ],
+      "keywords": []
+    },
     "中国动力 / 中船动力 核心投资逻辑（2026-04-01 确立）": {
       "files": [
         "memory/stock-knowledge.md"
@@ -1716,6 +1918,18 @@
     "准确率统计": {
       "files": [
         "memory/2026-03-30-review.md"
+      ],
+      "keywords": []
+    },
+    "待学习（高优先级）": {
+      "files": [
+        "memory/knowledge-gaps.md"
+      ],
+      "keywords": []
+    },
+    "已学习": {
+      "files": [
+        "memory/knowledge-gaps.md"
       ],
       "keywords": []
     },
@@ -1949,6 +2163,12 @@
       ],
       "keywords": []
     },
+    "2026-04-02 13:48 | 买入三安光电(600703) 500股 @ 11.44": {
+      "files": [
+        "memory/trade-journal.md"
+      ],
+      "keywords": []
+    },
     "深度学习时段（01:30-05:30）": {
       "files": [
         "memory/2026-03-27.md"
@@ -2065,139 +2285,115 @@
       ],
       "keywords": []
     },
-    "[LRN-20260325-001] correction": {
+    "[LRN-20260402-002] correction": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "2026-03-25: Google API 代理封锁规律": {
+    "[LRN-20260402-027] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "2026-03-25: Cloudflare 数据中心 IP 封锁": {
+    "[LRN-20260402-028] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "2026-03-26 | correction | 信息采集必须从一手源头获取": {
+    "[LRN-20260402-029] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "2026-03-26 | correction | 角色定位：我是学习和分析的执行者": {
+    "[LRN-20260402-030] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "2026-03-26 | correction | 模型切换是高风险操作": {
+    "[LRN-20260402-031] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "2026-03-26 | correction | 记住用户说过的话": {
+    "[LRN-20260402-032] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "2026-03-26 | best_practice | 推送不要信息过载": {
+    "[LRN-20260402-033] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "2026-03-26 | best_practice | 响应速度影响用户体验": {
+    "[LRN-20260402-034] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "提速实践（2026-03-31）": {
+    "[LRN-20260402-035] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "响应速度强制规则（2026-03-31 第二次确认）": {
+    "[LRN-20260402-036] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "[LRN-20260401-001] best_practice": {
+    "[LRN-20260402-037] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "[LRN-20260401-002] best_practice": {
+    "[LRN-20260402-038] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "[LRN-20260401-003] correction": {
+    "[LRN-20260402-039] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "[LRN-20260401-001] correction": {
+    "[LRN-20260402-040] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "[LRN-20260401-002] correction": {
+    "[LRN-20260402-041] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "[LRN-20260401-003] error": {
+    "[LRN-20260402-042] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "[LRN-20260401-004] best_practice": {
+    "[LRN-20260402-043] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
       "keywords": []
     },
-    "[LRN-20260401-005] correction": {
-      "files": [
-        ".learnings/LEARNINGS.md"
-      ],
-      "keywords": []
-    },
-    "[LRN-20260401-006] correction": {
-      "files": [
-        ".learnings/LEARNINGS.md"
-      ],
-      "keywords": []
-    },
-    "[LRN-20260401-007] error": {
-      "files": [
-        ".learnings/LEARNINGS.md"
-      ],
-      "keywords": []
-    },
-    "[LRN-20260401-008] best_practice": {
-      "files": [
-        ".learnings/LEARNINGS.md"
-      ],
-      "keywords": []
-    },
-    "[LRN-20260402-009] error": {
+    "[LRN-20260402-044] error": {
       "files": [
         ".learnings/LEARNINGS.md"
       ],
@@ -2241,5 +2437,5 @@
     }
   },
   "file_hashes": {},
-  "last_updated": "2026-04-02T00:35:47.400951"
+  "last_updated": "2026-04-02T22:30:13.447043"
 }

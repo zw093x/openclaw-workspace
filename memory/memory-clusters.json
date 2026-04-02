@@ -5,6 +5,7 @@
       "USER.md",
       "memory/migration-guide.md",
       "memory/comfyui-knowledge.md",
+      "memory/2026-04-02.md",
       "memory/deep-dive-protocol.md",
       "memory/2026-03-26.md",
       "memory/info-priority-rules.md",
@@ -15,6 +16,7 @@
       "memory/2026-03-25.md",
       "memory/stock-strategy-20260331.md",
       "memory/stock-knowledge.md",
+      "memory/knowledge-gaps.md",
       "memory/stock-portfolio.md",
       "memory/knowledge-600703.md",
       "memory/trade-journal.md",
@@ -22,8 +24,11 @@
       "memory/friend-account.md",
       "memory/2026-04-01.md",
       "memory/cron-backup.json",
+      "memory/memory-clusters.json",
       "memory/alert-cooldown.json",
       "memory/learn-db.json",
+      "memory/memory-graph.json",
+      "memory/review-db.json",
       "memory/trade-journal.json",
       "memory/memory-index.json",
       ".learnings/LEARNINGS.md",
@@ -31,23 +36,25 @@
     ],
     "keywords": [
       "成本",
+      "策略",
+      "股票",
+      "卖出",
+      "中国船舶",
       "持仓",
       "加仓",
       "中国动力",
-      "卖出",
-      "中国船舶",
-      "股票",
-      "策略",
       "减仓",
       "买入"
     ],
-    "size": 193397
+    "size": 246472
   },
   "系统运维": {
     "members": [
       "MEMORY.md",
       "memory/migration-guide.md",
       "memory/comfyui-knowledge.md",
+      "memory/heal-log.md",
+      "memory/2026-04-02.md",
       "memory/deep-dive-protocol.md",
       "memory/2026-03-26.md",
       "memory/info-priority-rules.md",
@@ -57,35 +64,38 @@
       "memory/2026-03-25.md",
       "memory/comfyui-install-guide.md",
       "memory/2026-03-30-review.md",
+      "memory/knowledge-gaps.md",
       "memory/clawhub-skills-catalog.md",
       "memory/2026-03-30.md",
       "memory/2026-03-27.md",
       "memory/2026-04-01.md",
       "memory/cron-backup.json",
+      "memory/memory-clusters.json",
       "memory/intel-hub-state.json",
       "memory/learn-db.json",
+      "memory/memory-graph.json",
       "memory/error-patterns.json",
       "memory/memory-index.json",
-      ".learnings/LEARNINGS.md",
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "修复",
-      "超时",
-      "cron",
-      "错误",
-      "磁盘",
-      "自愈",
       "异常",
+      "飞书",
+      "超时",
       "gateway",
-      "飞书"
+      "错误",
+      "cron",
+      "自愈",
+      "修复",
+      "磁盘"
     ],
-    "size": 160921
+    "size": 197938
   },
   "学习进化": {
     "members": [
       "MEMORY.md",
       "memory/migration-guide.md",
+      "memory/2026-04-02.md",
       "memory/2026-03-26.md",
       "memory/info-priority-rules.md",
       "memory/cron-fault-knowledge.md",
@@ -101,20 +111,22 @@
       "memory/2026-03-27.md",
       "memory/2026-04-01.md",
       "memory/cron-backup.json",
+      "memory/memory-clusters.json",
       "memory/learn-db.json",
+      "memory/review-db.json",
       "memory/memory-index.json",
-      ".learnings/LEARNINGS.md",
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "教训",
       "学习",
-      "最佳实践",
-      "规则",
       "模式",
-      "纠正"
+      "纠正",
+      "进化",
+      "教训",
+      "最佳实践",
+      "规则"
     ],
-    "size": 180550
+    "size": 212010
   },
   "家庭护理": {
     "members": [
@@ -124,18 +136,19 @@
       "memory/广桂月子饮食指南.md",
       "memory/育儿月子指南.md",
       "memory/cron-backup.json",
+      "memory/memory-clusters.json",
       "memory/memory-index.json"
     ],
     "keywords": [
+      "配偶",
       "护理",
       "宝宝",
-      "喂养",
-      "产后",
-      "配偶",
       "疫苗",
-      "月子"
+      "产后",
+      "月子",
+      "喂养"
     ],
-    "size": 92246
+    "size": 101281
   },
   "AI工具": {
     "members": [
@@ -153,18 +166,18 @@
       "memory/agentskills-spec-study.md",
       "memory/2026-03-27.md",
       "memory/cron-backup.json",
+      "memory/memory-clusters.json",
       "memory/learn-db.json",
       "memory/memory-index.json",
-      ".learnings/LEARNINGS.md",
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "技能",
       "模型",
-      "自动化",
-      "大模型"
+      "技能",
+      "大模型",
+      "自动化"
     ],
-    "size": 173853
+    "size": 199882
   },
   "服务器": {
     "members": [
@@ -173,17 +186,18 @@
       "memory/migration-guide.md",
       "memory/2026-03-26.md",
       "memory/2026-03-25.md",
+      "memory/knowledge-gaps.md",
       "memory/2026-03-27.md",
+      "memory/memory-clusters.json",
       "memory/memory-index.json",
-      ".learnings/LEARNINGS.md",
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "mihomo",
-      "代理",
       "端口",
-      "部署"
+      "部署",
+      "mihomo",
+      "代理"
     ],
-    "size": 102339
+    "size": 104746
   }
 }
