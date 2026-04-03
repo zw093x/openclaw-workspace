@@ -326,6 +326,26 @@ class CardTemplates:
             "elements": elements
         }
 
+    @staticmethod
+    def inspiration(title, elements_content, source=""):
+        """灵感库更新卡片"""
+        content = elements_content
+        if source:
+            content = f"**来源：** {source}\n---\n{elements_content}"
+
+        return {
+            "header": {
+                "title": {"tag": "plain_text", "content": f"🖼️ {title}"},
+                "template": "yellow"
+            },
+            "elements": [
+                {"tag": "markdown", "content": content},
+                {"tag": "note", "elements": [
+                    {"tag": "plain_text", "content": f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M')} · 灵感库更新"}
+                ]}
+            ]
+        }
+
 
 def card_to_json(card):
     """将卡片对象转为 JSON 字符串"""

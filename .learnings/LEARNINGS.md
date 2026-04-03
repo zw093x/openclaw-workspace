@@ -457,3 +457,850 @@ N/A
 - Tags: 记忆冲突, error
 ---
 
+
+## [LRN-20260403-051] error
+
+**Logged**: 2026-04-03T02:04:37.425212
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-052] error
+
+**Logged**: 2026-04-03T02:04:37.427337
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-053] error
+
+**Logged**: 2026-04-03T03:04:10.593611
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-054] error
+
+**Logged**: 2026-04-03T03:04:10.595696
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-055] error
+
+**Logged**: 2026-04-03T04:04:44.456076
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-056] error
+
+**Logged**: 2026-04-03T04:04:44.467950
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-057] error
+
+**Logged**: 2026-04-03T05:04:13.017045
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-058] error
+
+**Logged**: 2026-04-03T05:04:13.020478
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-059] error
+
+**Logged**: 2026-04-03T06:04:36.832509
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-060] error
+
+**Logged**: 2026-04-03T06:04:36.834914
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-061] error
+
+**Logged**: 2026-04-03T07:04:13.839101
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-062] error
+
+**Logged**: 2026-04-03T07:04:13.841617
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-063] error
+
+**Logged**: 2026-04-03T08:04:38.782665
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-064] error
+
+**Logged**: 2026-04-03T08:04:38.786357
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-065] error
+
+**Logged**: 2026-04-03T09:04:13.794148
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-066] error
+
+**Logged**: 2026-04-03T09:04:13.797243
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-067] error
+
+**Logged**: 2026-04-03T10:04:34.452292
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-068] error
+
+**Logged**: 2026-04-03T10:04:34.454834
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-069] error
+
+**Logged**: 2026-04-03T11:04:15.827435
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-070] error
+
+**Logged**: 2026-04-03T11:04:15.831754
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-071] error
+
+**Logged**: 2026-04-03T12:04:52.289329
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-072] error
+
+**Logged**: 2026-04-03T12:04:52.292394
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-073] error
+
+**Logged**: 2026-04-03T13:04:13.247377
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-074] error
+
+**Logged**: 2026-04-03T13:04:13.250124
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-075] error
+
+**Logged**: 2026-04-03T14:04:24.288826
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-076] error
+
+**Logged**: 2026-04-03T14:04:24.291636
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-077] error
+
+**Logged**: 2026-04-03T15:04:41.572742
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-078] error
+
+**Logged**: 2026-04-03T15:04:41.575545
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-079] error
+
+**Logged**: 2026-04-03T16:04:12.398474
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-080] error
+
+**Logged**: 2026-04-03T16:04:12.401435
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-081] error
+
+**Logged**: 2026-04-03T17:04:14.600108
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-082] error
+
+**Logged**: 2026-04-03T17:04:14.603572
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## 2026-04-03 教训：规则建立了但没有执行
+
+**事件：** 用户要求修复三条待处理事项（cron_timeout/预防检查/连锁根因）
+
+**问题：** 我知道"复杂任务要先发收到确认"这条规则，但执行过程中：
+1. 没有先发"收到，正在处理..."
+2. 三条并行执行，用户看不到每条的进度
+3. 直到全部完成才统一汇报
+
+**反面教材：** 用户发完任务后，我在后台一直执行，他们完全不知道我在干什么
+
+**修复承诺：**
+- 收到复杂任务 → **立即**回"收到，正在处理..."
+- 每完成一条 → 简短推送进度
+- 全部完成后 → 汇总结果
+
+**根本原因：** 规则只写在了对话中，没有固化到 AGENTS.md 的执行流程里。
+
+
+## [LRN-20260403-083] error
+
+**Logged**: 2026-04-03T19:04:15.084204
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-084] error
+
+**Logged**: 2026-04-03T19:04:15.088123
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-085] error
+
+**Logged**: 2026-04-03T20:04:40.187759
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-086] error
+
+**Logged**: 2026-04-03T20:04:40.190791
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-087] error
+
+**Logged**: 2026-04-03T21:04:14.892628
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-088] error
+
+**Logged**: 2026-04-03T21:04:14.896509
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-089] error
+
+**Logged**: 2026-04-03T22:06:38.362203
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-090] error
+
+**Logged**: 2026-04-03T22:06:38.365339
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-091] error
+
+**Logged**: 2026-04-03T23:04:20.663266
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260403-092] error
+
+**Logged**: 2026-04-03T23:04:20.666592
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260404-093] error
+
+**Logged**: 2026-04-04T00:07:19.034124
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260404-094] error
+
+**Logged**: 2026-04-04T00:07:19.038721
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260404-095] error
+
+**Logged**: 2026-04-04T01:04:13.146096
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260404-096] error
+
+**Logged**: 2026-04-04T01:04:13.149513
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+

@@ -1,19 +1,19 @@
 {
-  "last_check": 1775129322,
-  "last_check_iso": "2026-04-02T19:26:00+08:00",
+  "last_check": 1743680769,
+  "last_check_iso": "2026-04-03T18:06:00+08:00",
   "gold": {
-    "price": 3087.86,
-    "change_pct": -3.6,
+    "price": 4689.93,
+    "change_pct": -2.56,
     "alert_sent": true
   },
   "silver": {
-    "price": 70.93,
-    "change_pct": -6.77,
+    "price": 73.423,
+    "change_pct": -3.49,
     "alert_sent": true
   },
   "methanol": {
-    "price": 3245.0,
-    "change_pct": 2.53,
+    "price": 3363.0,
+    "change_pct": 2.88,
     "alert_sent": true
   },
   "usdcny": {

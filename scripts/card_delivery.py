@@ -36,6 +36,7 @@ TYPE_COLOR = {
     "tech_news": "purple",
     "cg_news": "indigo",
     "daily": "blue",
+    "inspiration": "yellow",
     "evening": "blue",
     "system": "indigo",
     "alert": "red",
@@ -159,6 +160,7 @@ def auto_detect_type(title):
         "daily": ["早报"],
         "evening": ["晚间", "复盘"],
         "system": ["系统", "状态", "自愈"],
+        "inspiration": ["灵感", "素材", "图片", "元素"],
     }
     
     for type_name, words in keywords.items():
@@ -196,9 +198,13 @@ def main():
     # 确定类型和颜色
     card_type = args.type or auto_detect_type(args.title)
     color = args.color or TYPE_COLOR.get(card_type, "blue")
-    
+
     # 构建卡片
-    card = build_simple_card(args.title, content.strip(), color)
+    if card_type == "inspiration":
+        source = next((w for w in ["来源：", "来源:"] if w in content), "")
+        card = CardTemplates.inspiration(args.title, content.strip(), source)
+    else:
+        card = build_simple_card(args.title, content.strip(), color)
     
     if args.dry_run:
         print(card_to_json(card))

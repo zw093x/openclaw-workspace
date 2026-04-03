@@ -7,7 +7,7 @@
       "name": "飞书连接健康检查",
       "enabled": true,
       "createdAtMs": 1774798057079,
-      "updatedAtMs": 1775138671860,
+      "updatedAtMs": 1775232431843,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -26,14 +26,14 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775152812226,
-        "lastRunAtMs": 1775138649796,
+        "nextRunAtMs": 1775239212226,
+        "lastRunAtMs": 1775232410363,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22064,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 21480,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       }
     },
     {
@@ -41,7 +41,7 @@
       "name": "特朗普动态监控",
       "enabled": true,
       "createdAtMs": 1775094030671,
-      "updatedAtMs": 1775145898171,
+      "updatedAtMs": 1775232568736,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -62,11 +62,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775153033365,
-        "lastRunAtMs": 1775145833372,
+        "nextRunAtMs": 1775239433365,
+        "lastRunAtMs": 1775232481143,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 64799,
+        "lastDurationMs": 87593,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -79,7 +79,7 @@
       "name": "OpenClaw 自愈系统",
       "enabled": true,
       "createdAtMs": 1774798709213,
-      "updatedAtMs": 1775149465423,
+      "updatedAtMs": 1775235892142,
       "schedule": {
         "expr": "0 * * * *",
         "kind": "cron",
@@ -99,14 +99,14 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775153042061,
-        "lastRunAtMs": 1775149442074,
+        "nextRunAtMs": 1775239442061,
+        "lastRunAtMs": 1775235842072,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23349,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 50070,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": true
       }
     },
     {
@@ -114,7 +114,7 @@
       "name": "大宗商品播报",
       "enabled": true,
       "createdAtMs": 1774725718865,
-      "updatedAtMs": 1775136046216,
+      "updatedAtMs": 1775222442447,
       "schedule": {
         "kind": "every",
         "everyMs": 21600000,
@@ -133,11 +133,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775157612431,
-        "lastRunAtMs": 1775136012431,
+        "nextRunAtMs": 1775244012463,
+        "lastRunAtMs": 1775222412463,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 33785,
+        "lastDurationMs": 29984,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -148,7 +148,7 @@
       "name": "技能自动更新",
       "enabled": true,
       "createdAtMs": 1774725719002,
-      "updatedAtMs": 1775145764474,
+      "updatedAtMs": 1775232385175,
       "schedule": {
         "kind": "cron",
         "expr": "0 */6 * * *",
@@ -167,11 +167,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775167200000,
-        "lastRunAtMs": 1775145600012,
+        "nextRunAtMs": 1775253600000,
+        "lastRunAtMs": 1775232000010,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 164462,
+        "lastDurationMs": 385165,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -184,7 +184,7 @@
       "name": "Cron 自检修复",
       "enabled": true,
       "createdAtMs": 1774796653232,
-      "updatedAtMs": 1775124261842,
+      "updatedAtMs": 1775232410363,
       "schedule": {
         "expr": "0 */6 * * *",
         "kind": "cron",
@@ -204,11 +204,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775167219434,
-        "lastRunAtMs": 1775124228390,
+        "nextRunAtMs": 1775253619434,
+        "lastRunAtMs": 1775232388037,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 33452,
+        "lastDurationMs": 22326,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -219,7 +219,7 @@
       "name": "每日早报",
       "enabled": true,
       "createdAtMs": 1774725719049,
-      "updatedAtMs": 1775086235981,
+      "updatedAtMs": 1775172623947,
       "schedule": {
         "kind": "cron",
         "expr": "30 7 * * *",
@@ -229,7 +229,7 @@
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "message": "每日早报（07:30）。\n\n【执行流程】严格按顺序执行，跳过任何步骤将导致失败：\n1. 运行 python3 /root/.openclaw/workspace/scripts/get_weather.py 获取天气\n2. 汇总内容写入 /tmp/morning_report.txt（包含：日期+农历+节气+天气+穿衣建议+饮食推荐+宝宝天数+持仓提示+节日习俗）\n3. 执行卡片投递：python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"☀️ 每日早报\" --type daily --file /tmp/morning_report.txt --fallback\n4. 投递成功后回复 NO_REPLY\n\n【⚠️ 强制要求】\n- 必须使用 card_delivery.py 投递，禁止直接回复文字内容\n- 不要输出任何多余的文字、解释或确认信息\n- 如果脚本失败，仅回复一行错误信息\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-04-02 07:25\n---\n**佛山北滘**：22°C（体感25°C）| Overcast | 湿度78% | SSE15km/h\n⏰ 降雨时段：00:00 （降雨概率100%） | 03:00 （降雨概率100%） | 06:00 （降雨概率73%） | 09:00 （降雨概率100%）\n🌡 全天温度：24°C ~ 27°C\n---\n**广州天河**：22°C（体感25°C）| Overcast | 湿度78% | SE11km/h\n⏰ 降雨时段：00:00 （降雨概率100%） | 03:00 （降雨概率100%） | 06:00 （降雨概率86%） | 09:00 （降雨概率100%）\n🌡 全天温度：24°C ~ 28°C\n---\n🌂 出行建议：预计 00:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】",
+        "message": "每日早报（07:30）。\n\n【执行流程】严格按顺序执行，跳过任何步骤将导致失败：\n1. 运行 python3 /root/.openclaw/workspace/scripts/get_weather.py 获取天气\n2. 汇总内容写入 /tmp/morning_report.txt（包含：日期+农历+节气+天气+穿衣建议+饮食推荐+宝宝天数+持仓提示+节日习俗）\n3. 执行卡片投递：python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"☀️ 每日早报\" --type daily --file /tmp/morning_report.txt --fallback\n4. 投递成功后回复 NO_REPLY\n\n【⚠️ 强制要求】\n- 必须使用 card_delivery.py 投递，禁止直接回复文字内容\n- 不要输出任何多余的文字、解释或确认信息\n- 如果脚本失败，仅回复一行错误信息\n\n以下是今日天气数据（已自动获取，直接引用即可）：\n⏰ 天气数据更新时间：2026-04-03 07:25\n---\n**佛山北滘**：23°C（体感25°C）| Overcast | 湿度89% | SSE21km/h\n⏰ 降雨时段：00:00 （降雨概率84%） | 03:00 （降雨概率69%） | 06:00 （降雨概率100%） | 09:00 （降雨概率100%）\n🌡 全天温度：24°C ~ 31°C\n---\n**广州天河**：23°C（体感25°C）| Overcast | 湿度89% | SSE21km/h\n⏰ 降雨时段：00:00 （降雨概率100%） | 03:00 （降雨概率100%） | 06:00 （降雨概率100%） | 09:00 （降雨概率100%）\n🌡 全天温度：24°C ~ 32°C\n---\n🌂 出行建议：预计 00:00 开始降雨，外出请携带雨具\n【WEATHER_DATA_INJECTED】",
         "kind": "agentTurn",
         "timeoutSeconds": 600
       },
@@ -239,11 +239,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775172600000,
-        "lastRunAtMs": 1775086200009,
+        "nextRunAtMs": 1775259000000,
+        "lastRunAtMs": 1775172600018,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 35972,
+        "lastDurationMs": 23929,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -254,7 +254,7 @@
       "name": "AI综合日报",
       "enabled": true,
       "createdAtMs": 1774725719080,
-      "updatedAtMs": 1775088314357,
+      "updatedAtMs": 1775174510446,
       "schedule": {
         "expr": "0 8 * * *",
         "kind": "cron",
@@ -273,11 +273,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775174400000,
-        "lastRunAtMs": 1775088000009,
+        "nextRunAtMs": 1775260800000,
+        "lastRunAtMs": 1775174400009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 314348,
+        "lastDurationMs": 110437,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -289,7 +289,7 @@
       "name": "🌍 全球热点新闻",
       "enabled": true,
       "createdAtMs": 1774854356046,
-      "updatedAtMs": 1775131259932,
+      "updatedAtMs": 1775217786673,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,20 * * *",
@@ -308,82 +308,14 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775174400000,
-        "lastRunAtMs": 1775131200008,
+        "nextRunAtMs": 1775260800000,
+        "lastRunAtMs": 1775217600012,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 59924,
+        "lastDurationMs": 186661,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
-      }
-    },
-    {
-      "id": "a47a4994-6c25-4521-99d9-c9a47519347c",
-      "name": "A股盘前播报",
-      "enabled": true,
-      "createdAtMs": 1774725719130,
-      "updatedAtMs": 1775091158010,
-      "schedule": {
-        "expr": "50 8 * * 1-5",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "A股盘前播报（08:50工作日）。\n\n1. 搜索外盘+大盘+持仓行情+板块+消息\n2. 每类1-2条，共5-8条\n3. card_delivery.py --title \"📊 A股盘前播报\" --type stock_open --file /tmp/stock_open.txt --fallback\n4. NO_REPLY",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1775177400000,
-        "lastRunAtMs": 1775091000007,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 158003,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "ecc93a08-094b-4bf0-a89e-9db004515750",
-      "name": "盘中实时股票监控",
-      "enabled": true,
-      "createdAtMs": 1774725718767,
-      "updatedAtMs": 1775112349904,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0,15,30,45 9-14 * * 1-5",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "盘中实时股票监控。\n\n1. 先检查当前时间：如果是 11:30-13:00（午间休盘），回复 NO_REPLY（不执行任何操作）\n2. 运行：python3 /root/.openclaw/workspace/scripts/stock_realtime_monitor.py\n3. 检查输出：如果有预警信号（包含\"⚠️\"或\"🚨\"），用卡片发送：\n   将结果写入 /tmp/alert_out.txt，然后执行 python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"🚨 股票异动预警\" --type stock_alert --file /tmp/alert_out.txt --fallback\n4. 无预警时不发送任何消息（静默）。\n\n分析标的从 /root/.openclaw/workspace/config/holdings.json 读取。\n预警触发：涨跌幅±3%(警告)/±5%(紧急)、触及减仓价位、跌破止损、关键技术位突破、成交量异常。\n同类预警1小时内不重复。\n完成后回复 NO_REPLY。",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1775178000000,
-        "lastRunAtMs": 1775112300012,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 49892,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
       }
     },
     {
@@ -391,7 +323,7 @@
       "name": "ComfyUI 变更监控",
       "enabled": true,
       "createdAtMs": 1774725718832,
-      "updatedAtMs": 1775095415223,
+      "updatedAtMs": 1775181792863,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -410,11 +342,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775181783057,
-        "lastRunAtMs": 1775095383069,
+        "nextRunAtMs": 1775268183057,
+        "lastRunAtMs": 1775181783064,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 32154,
+        "lastDurationMs": 9799,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -425,7 +357,7 @@
       "name": "CG科技日报",
       "enabled": true,
       "createdAtMs": 1774725719064,
-      "updatedAtMs": 1775106584954,
+      "updatedAtMs": 1775190750458,
       "schedule": {
         "kind": "cron",
         "expr": "30 12 * * *"
@@ -443,75 +375,47 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775190600000,
-        "lastRunAtMs": 1775106460177,
+        "nextRunAtMs": 1775277000000,
+        "lastRunAtMs": 1775190608310,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 124777,
+        "lastDurationMs": 142148,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
       }
     },
     {
-      "id": "63fc0d6c-3c4b-4491-9358-70b2bc9b76d1",
-      "name": "每日股票收盘提醒",
+      "id": "2e15606e-36d0-4eba-8c5e-b42041ae6f38",
+      "name": "21:00预防性系统检查",
       "enabled": true,
-      "createdAtMs": 1774725718917,
-      "updatedAtMs": 1775113831933,
+      "createdAtMs": 1775202637268,
+      "updatedAtMs": 1775221516969,
       "schedule": {
-        "expr": "10 15 * * 1-5",
         "kind": "cron",
-        "tz": "Asia/Shanghai"
+        "expr": "0 21 * * 1-7"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "message": "每日收盘总结（15:10工作日）。\n\n1. python3 /root/.openclaw/workspace/scripts/tech_snapshot_card.py 获取收盘技术面\n2. 汇总：持仓收盘价+涨跌+浮亏+大盘总结+明日展望1条\n3. card_delivery.py --title \"📊 收盘总结\" --type stock_close --file /tmp/stock_close.txt --fallback\n4. NO_REPLY",
         "kind": "agentTurn",
-        "timeoutSeconds": 600
+        "message": "你是系统健康检查员。在21:00执行预防性检查：\n\n1. 检查自愈日志：tail -5 /root/.openclaw/workspace/scripts/self_heal_log.jsonl\n2. 检查鱼盆数据时效：cat /root/.openclaw/workspace/memory/fish-basin-latest.json | python3 -c 'import sys,json; d=json.load(sys.stdin); print(d.get(\"date\",\"无数据\"))'\n3. 检查 cron 是否有连续 error：openclaw cron list 2>/dev/null | grep error\n4. 检查网络：curl -s --max-time 5 https://www.baidu.com | head -1\n\n严重问题（连续2次error/网络不通）立即推送飞书。\n无问题则输出：✅ 预防性检查完成，无异常",
+        "timeoutSeconds": 120
       },
       "delivery": {
         "mode": "none",
-        "channel": "feishu",
+        "channel": "last",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775200200000,
-        "lastRunAtMs": 1775113800008,
+        "nextRunAtMs": 1775307600000,
+        "lastRunAtMs": 1775221466936,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 31925,
-        "lastDelivered": false,
+        "lastDurationMs": 50033,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "61979e27-a0e5-4203-b361-25a7f2ceaa3c",
-      "name": "鱼盆模型每日更新",
-      "enabled": true,
-      "createdAtMs": 1775125218087,
-      "updatedAtMs": 1775125218087,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 15 * * 1-5",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "执行鱼盆模型每日更新流程：\n1. 运行 python3 /root/.openclaw/workspace/scripts/fish_basin_model.py 获取最新数据\n2. 读取脚本输出结果\n3. 使用 feishu_doc(action=write, doc_token=RGSFdpCnroGdw3xwucucebFwnef, content=...) 将结果写入飞书文档，格式包含市场风格趋势表格和行业板块趋势表格\n4. 飞书卡片推送今日摘要：大盘YES/NO数量、一线板块、最弱板块、综合判断",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "nextRunAtMs": 1775201400000
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       }
     },
     {
@@ -519,7 +423,7 @@
       "name": "每日策略学习",
       "enabled": true,
       "createdAtMs": 1774935955750,
-      "updatedAtMs": 1775138771935,
+      "updatedAtMs": 1775225130216,
       "schedule": {
         "kind": "cron",
         "expr": "0 22 * * *"
@@ -538,13 +442,13 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775224800000,
-        "lastRunAtMs": 1775138690484,
+        "nextRunAtMs": 1775311200000,
+        "lastRunAtMs": 1775225049423,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 81451,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 80793,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
@@ -553,7 +457,7 @@
       "name": "晚间综合复盘",
       "enabled": true,
       "createdAtMs": 1774725718968,
-      "updatedAtMs": 1775138497030,
+      "updatedAtMs": 1775225049423,
       "schedule": {
         "expr": "0 22 * * *",
         "kind": "cron",
@@ -572,11 +476,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775224800000,
-        "lastRunAtMs": 1775138400011,
+        "nextRunAtMs": 1775311200000,
+        "lastRunAtMs": 1775224800008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 97019,
+        "lastDurationMs": 249415,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -587,7 +491,7 @@
       "name": "自学习进化",
       "enabled": true,
       "createdAtMs": 1775056291233,
-      "updatedAtMs": 1775138646974,
+      "updatedAtMs": 1775225148280,
       "schedule": {
         "kind": "cron",
         "expr": "0 22 * * *",
@@ -606,13 +510,13 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775224800000,
-        "lastRunAtMs": 1775138590689,
+        "nextRunAtMs": 1775311200000,
+        "lastRunAtMs": 1775225130216,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 56285,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 18064,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
       }
     },
@@ -621,7 +525,7 @@
       "name": "记忆进化",
       "enabled": true,
       "createdAtMs": 1775058791395,
-      "updatedAtMs": 1775140238828,
+      "updatedAtMs": 1775235934107,
       "schedule": {
         "kind": "cron",
         "expr": "30 22 * * *",
@@ -640,14 +544,16 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775226600000,
-        "lastRunAtMs": 1775140200009,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 38819,
-        "lastDelivered": true,
+        "nextRunAtMs": 1775313000000,
+        "lastRunAtMs": 1775235865503,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 68604,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 4,
+        "lastDelivered": true,
+        "lastFailureAlertAtMs": 1775232523121,
+        "lastError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -655,7 +561,7 @@
       "name": "复盘进化",
       "enabled": true,
       "createdAtMs": 1775064223209,
-      "updatedAtMs": 1775142033460,
+      "updatedAtMs": 1775235945997,
       "schedule": {
         "kind": "cron",
         "expr": "0 23 * * *",
@@ -674,14 +580,14 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775228400000,
-        "lastRunAtMs": 1775142000010,
+        "nextRunAtMs": 1775314800000,
+        "lastRunAtMs": 1775235934122,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 33450,
-        "lastDelivered": false,
+        "lastDurationMs": 11875,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       }
     },
     {
@@ -689,7 +595,7 @@
       "name": "深度学习时段",
       "enabled": true,
       "createdAtMs": 1774547091297,
-      "updatedAtMs": 1775151110852,
+      "updatedAtMs": 1775237707696,
       "schedule": {
         "kind": "cron",
         "expr": "30 1 * * *"
@@ -707,11 +613,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775237400000,
-        "lastRunAtMs": 1775151000015,
+        "nextRunAtMs": 1775323800000,
+        "lastRunAtMs": 1775237400015,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 110837,
+        "lastDurationMs": 307681,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -785,6 +691,40 @@
       }
     },
     {
+      "id": "a47a4994-6c25-4521-99d9-c9a47519347c",
+      "name": "A股盘前播报",
+      "enabled": true,
+      "createdAtMs": 1774725719130,
+      "updatedAtMs": 1775177557387,
+      "schedule": {
+        "expr": "50 8 * * 1-5",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "A股盘前播报（08:50工作日）。\n\n1. 搜索外盘+大盘+持仓行情+板块+消息\n2. 每类1-2条，共5-8条\n3. card_delivery.py --title \"📊 A股盘前播报\" --type stock_open --file /tmp/stock_open.txt --fallback\n4. NO_REPLY",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775436600000,
+        "lastRunAtMs": 1775177400008,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 157379,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
       "id": "ac38642c-ce0a-4900-888c-7b2252ce446d",
       "name": "AI模型价格监控周报",
       "enabled": true,
@@ -813,6 +753,108 @@
         "lastRunStatus": "ok",
         "lastStatus": "ok",
         "lastDurationMs": 100711,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "ecc93a08-094b-4bf0-a89e-9db004515750",
+      "name": "盘中实时股票监控",
+      "enabled": true,
+      "createdAtMs": 1774725718767,
+      "updatedAtMs": 1775198720925,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0,15,30,45 9-14 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "盘中实时股票监控。\n\n1. 先检查当前时间：如果是 11:30-13:00（午间休盘），回复 NO_REPLY（不执行任何操作）\n2. 运行：python3 /root/.openclaw/workspace/scripts/stock_realtime_monitor.py\n3. 检查输出：如果有预警信号（包含\"⚠️\"或\"🚨\"），用卡片发送：\n   将结果写入 /tmp/alert_out.txt，然后执行 python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"🚨 股票异动预警\" --type stock_alert --file /tmp/alert_out.txt --fallback\n4. 无预警时不发送任何消息（静默）。\n\n分析标的从 /root/.openclaw/workspace/config/holdings.json 读取。\n预警触发：涨跌幅±3%(警告)/±5%(紧急)、触及减仓价位、跌破止损、关键技术位突破、成交量异常。\n同类预警1小时内不重复。\n完成后回复 NO_REPLY。",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775437200000,
+        "lastRunAtMs": 1775198700009,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 20916,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "63fc0d6c-3c4b-4491-9358-70b2bc9b76d1",
+      "name": "每日股票收盘提醒",
+      "enabled": true,
+      "createdAtMs": 1774725718917,
+      "updatedAtMs": 1775200237133,
+      "schedule": {
+        "expr": "10 15 * * 1-5",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "message": "每日收盘总结（15:10工作日）。\n\n1. python3 /root/.openclaw/workspace/scripts/tech_snapshot_card.py 获取收盘技术面\n2. 汇总：持仓收盘价+涨跌+浮亏+大盘总结+明日展望1条\n3. card_delivery.py --title \"📊 收盘总结\" --type stock_close --file /tmp/stock_close.txt --fallback\n4. NO_REPLY",
+        "kind": "agentTurn",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775459400000,
+        "lastRunAtMs": 1775200200006,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 37127,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "61979e27-a0e5-4203-b361-25a7f2ceaa3c",
+      "name": "鱼盆模型每日更新",
+      "enabled": true,
+      "createdAtMs": 1775125218087,
+      "updatedAtMs": 1775203659073,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 15 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "只执行以下步骤：\n1. 运行: python3 /root/.openclaw/workspace/scripts/fish_basin_model.py\n2. 等待脚本完成（约2-3分钟）\n3. 完成后输出「鱼盆模型已更新」\n飞书推送由 gateway announce 自动处理，无需手动调用 feishu_doc。",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
+      },
+      "state": {
+        "nextRunAtMs": 1775460600000,
+        "lastRunAtMs": 1775203555417,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 103656,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -1174,9 +1216,9 @@
       }
     }
   ],
-  "total": 37,
+  "total": 38,
   "offset": 0,
-  "limit": 37,
+  "limit": 38,
   "hasMore": false,
   "nextOffset": null
 }

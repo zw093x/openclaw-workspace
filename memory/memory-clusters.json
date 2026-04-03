@@ -35,22 +35,23 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "成本",
+      "卖出",
+      "中国动力",
       "策略",
       "股票",
-      "卖出",
-      "中国船舶",
-      "持仓",
-      "加仓",
-      "中国动力",
       "减仓",
-      "买入"
+      "中国船舶",
+      "加仓",
+      "买入",
+      "持仓",
+      "成本"
     ],
-    "size": 246472
+    "size": 315911
   },
   "系统运维": {
     "members": [
       "MEMORY.md",
+      "TOOLS.md",
       "memory/migration-guide.md",
       "memory/comfyui-knowledge.md",
       "memory/heal-log.md",
@@ -62,7 +63,9 @@
       "memory/2026-03-29.md",
       "memory/cron-fault-knowledge.md",
       "memory/2026-03-25.md",
+      "memory/2026-04-04.md",
       "memory/comfyui-install-guide.md",
+      "memory/stock-knowledge.md",
       "memory/2026-03-30-review.md",
       "memory/knowledge-gaps.md",
       "memory/clawhub-skills-catalog.md",
@@ -76,30 +79,34 @@
       "memory/memory-graph.json",
       "memory/error-patterns.json",
       "memory/memory-index.json",
+      ".learnings/LEARNINGS.md",
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "异常",
+      "磁盘",
       "飞书",
-      "超时",
       "gateway",
-      "错误",
       "cron",
       "自愈",
+      "超时",
+      "错误",
       "修复",
-      "磁盘"
+      "异常"
     ],
-    "size": 197938
+    "size": 308138
   },
   "学习进化": {
     "members": [
       "MEMORY.md",
+      "TOOLS.md",
       "memory/migration-guide.md",
+      "memory/heal-log.md",
       "memory/2026-04-02.md",
       "memory/2026-03-26.md",
       "memory/info-priority-rules.md",
       "memory/cron-fault-knowledge.md",
       "memory/2026-03-25.md",
+      "memory/2026-04-04.md",
       "memory/agentskills-deep-digest.md",
       "memory/stock-knowledge.md",
       "memory/2026-03-30-review.md",
@@ -115,18 +122,19 @@
       "memory/learn-db.json",
       "memory/review-db.json",
       "memory/memory-index.json",
+      ".learnings/LEARNINGS.md",
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "学习",
-      "模式",
       "纠正",
-      "进化",
       "教训",
       "最佳实践",
-      "规则"
+      "模式",
+      "学习",
+      "规则",
+      "进化"
     ],
-    "size": 212010
+    "size": 291893
   },
   "家庭护理": {
     "members": [
@@ -140,15 +148,15 @@
       "memory/memory-index.json"
     ],
     "keywords": [
+      "喂养",
+      "产后",
       "配偶",
+      "疫苗",
       "护理",
       "宝宝",
-      "疫苗",
-      "产后",
-      "月子",
-      "喂养"
+      "月子"
     ],
-    "size": 101281
+    "size": 112099
   },
   "AI工具": {
     "members": [
@@ -157,8 +165,10 @@
       "memory/comfyui-knowledge.md",
       "memory/2026-03-22-comfyui-analysis.md",
       "memory/comfyui-ecosystem-monitor-2026-03-29.md",
+      "memory/heal-log.md",
       "memory/2026-03-26.md",
       "memory/2026-03-25.md",
+      "memory/2026-04-04.md",
       "memory/knowledge-ai.md",
       "memory/comfyui-openspec-learning-plan.md",
       "memory/stock-knowledge.md",
@@ -173,17 +183,18 @@
     ],
     "keywords": [
       "模型",
-      "技能",
       "大模型",
+      "技能",
       "自动化"
     ],
-    "size": 199882
+    "size": 255319
   },
   "服务器": {
     "members": [
       "MEMORY.md",
       "TOOLS.md",
       "memory/migration-guide.md",
+      "memory/heal-log.md",
       "memory/2026-03-26.md",
       "memory/2026-03-25.md",
       "memory/knowledge-gaps.md",
@@ -193,11 +204,11 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "端口",
-      "部署",
       "mihomo",
-      "代理"
+      "端口",
+      "代理",
+      "部署"
     ],
-    "size": 104746
+    "size": 123945
   }
 }

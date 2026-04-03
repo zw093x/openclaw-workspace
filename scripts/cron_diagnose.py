@@ -193,3 +193,64 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# ========== 补充：鱼盆cron专项修复（network+config连锁）==========
+def fix_fish_basin_network_chain():
+    """
+    鱼盆cron的network+config连锁根因分析：
+    - 脚本本身运行正常（~2分钟完成，数据已写入文件）
+    - 但 feishu_doc write 或 卡片推送 在网络抖动时失败
+    - 导致 "Message failed" 但 lastDelivered=true（飞书内部重试成功）
+    - self_heal 看到 error 状态 → 误判为脚本失败 → 错误修复方向
+    
+    修复策略：
+    1. 检测 fish_basin cron 的 "Message failed" 错误
+    2. 检查脚本是否实际完成（数据文件是否更新）
+    3. 如果数据已更新 → 只重试飞书推送，不重跑脚本
+    4. 如果数据未更新 → 增加timeout + 检查网络
+    """
+    import os
+    from datetime import datetime
+    
+    FISH_DATA = "/root/.openclaw/workspace/memory/fish-basin-latest.json"
+    result = {"action": "none", "reason": "", "fix": []}
+    
+    # 检查数据文件是否当天更新
+    if os.path.exists(FISH_DATA):
+        mtime = datetime.fromtimestamp(os.path.getmtime(FISH_DATA))
+        now = datetime.now()
+        is_today = mtime.date() == now.date()
+        result["data_fresh"] = is_today
+        result["data_mtime"] = mtime.isoformat()
+    else:
+        result["data_fresh"] = False
+        result["data_mtime"] = None
+    
+    # 检查飞书连接
+    import subprocess
+    try:
+        r = subprocess.run(
+            ["curl", "-s", "--max-time", "5", "-o", "/dev/null", "-w", "%{http_code}",
+             "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal",
+             "-H", "Content-Type: application/json",
+             "-d", '{"app_id":"cli_xxxx","app_secret":"xxxx"}'],
+            capture_output=True, text=True, timeout=8
+        )
+        result["feishu_http"] = r.stdout.strip()
+    except:
+        result["feishu_http"] = "error"
+    
+    # 如果数据已更新但仍报错 → 问题在推送，不在脚本
+    if result["data_fresh"]:
+        result["action"] = "retry_push_only"
+        result["reason"] = "数据已更新，问题在Feishu推送环节，不重跑脚本"
+    else:
+        result["action"] = "check_network"
+        result["reason"] = "数据未更新，需检查网络+脚本问题"
+    
+    return result
+
+if __name__ == "__main__":
+    print("=== 鱼盆cron网络+配置连锁分析 ===")
+    result = fix_fish_basin_network_chain()
+    print(json.dumps(result, indent=2, ensure_ascii=False))
