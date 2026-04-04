@@ -2,11 +2,11 @@
   "lastChecks": {
     "memory_evolve": "2026-04-05T01:43",
     "unified_heal": "2026-04-05T01:43",
-    "backup": "2026-04-05T01:43",
+    "backup": "2026-04-05T01:47",
     "cron_health": "2026-04-05T01:43"
   },
   "cronTaskStatus": {
-    "4897f5ed_增量Memory备份": "OK (checked 2026-04-05T01:43)",
+    "4897f5ed_增量Memory备份": "静默模式（每天01:30统一汇报）",
     "ec59e68f_飞书连接健康检查": "OK (checked 2026-04-05T01:43)",
     "f0b28140_特朗普动态监控": "OK (checked 2026-04-05T01:43)",
     "2d07315a_OpenClaw 自愈系统": "OK (checked 2026-04-05T01:43)",
