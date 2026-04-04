@@ -42,3 +42,6 @@
 {"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "root_cause": "resource_exhaustion", "time_ms": 1000, "ts": "2026-04-04T17:04:23.663499"}
 {"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "root_cause": "resource_exhaustion", "time_ms": 1000, "ts": "2026-04-04T18:06:02.580531"}
 {"pattern": "cron_message_failed", "target": "21:00预防性系统检查 (2e15606e)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 2661, "ts": "2026-04-04T21:04:23.897276"}
+{"pattern": "cron_message_failed", "target": "增量Memory备份 (4897f5ed)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 2654, "ts": "2026-04-04T23:04:20.939516"}
+{"pattern": "cron_message_failed", "target": "飞书连接健康检查 (ec59e68f)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 3004, "ts": "2026-04-04T23:04:23.944534"}
+{"pattern": "cron_message_failed", "target": "记忆进化 (a1417fac)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 3404, "ts": "2026-04-04T23:04:27.348758"}

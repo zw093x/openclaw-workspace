@@ -924,3 +924,22 @@
 - 整体修复率为0%，需审视修复策略
 
 **待办**: cron_timeout 策略需重新设计或替换
+
+## 关键记录 [23:05]
+- **事件**: 统一自愈系统 v3.0 + 全局进化 执行
+- **问题1**: 增量Memory备份 cron 异常
+  - 错误: Channel is required when multiple channels configured: lightclawbot, feishu
+  - 连续1次错误
+  - 根因: 多渠道配置冲突，backup脚本未指定channel
+- **问题2**: 飞书连接健康检查 cron 异常
+  - 错误: ⚠️ ✉️ Message failed
+  - 连续1次错误
+  - 根因: 飞书消息投递失败
+- **问题3**: 记忆进化 cron 异常
+  - 错误: cron job execution timed out
+  - 连续1次错误
+  - 根因: learn_evolve.py执行超时
+- **L5低效修复**: cron_timeout策略评分0.30，成功率0%，建议更换策略
+- **历史错误分析(error_evolution)**: 共5个错误(网络x2,配置x2,权限x1)，修复率0%
+- **模式发现**: 错误集中在21:00时段(5次)，存在network+config连锁故障可能
+- **建议**: 审查cron_timeout修复策略；在21:00时段前增加预防性检查

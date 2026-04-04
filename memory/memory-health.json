@@ -1,20 +1,24 @@
 {
-  "timestamp": "2026-04-04T22:30:05.775561",
+  "timestamp": "2026-04-04T23:05:45.213747",
   "stale_files": [],
   "empty_files": [],
   "large_files": [
     {
+      "file": "2026-04-04.md",
+      "size_kb": 70
+    },
+    {
       "file": "learn-db.json",
-      "size_kb": 86
+      "size_kb": 87
     },
     {
       "file": "memory-index.json",
-      "size_kb": 59
+      "size_kb": 66
     }
   ],
   "inconsistent_dates": [
     "2026-03-22-comfyui-analysis.md",
     "2026-03-26.md"
   ],
-  "overall_score": 86
+  "overall_score": 81
 }

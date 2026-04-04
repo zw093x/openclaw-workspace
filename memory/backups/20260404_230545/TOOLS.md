@@ -121,6 +121,28 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 Add whatever helps you do your job. This is your cheat sheet.
 
+## 飞书文档分享规则（2026-04-04）
+
+**所有我创建的飞书文档，创建后必须立即设置为任何人可查看。**
+
+操作步骤：
+1. 创建文档后获取 doc_id
+2. 调用飞书权限API：
+```bash
+# 获取 token
+TOKEN=$(curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
+  -H "Content-Type: application/json" \
+  -d '{"app_id":"cli_a9489e1f4c78dbb6","app_secret":"mKeApaf2UE3CDN8wlh1IJcDSxcJlYlhD"}' | python3 -c "import sys,json; print(json.load(sys.stdin).get('tenant_access_token',''))")
+
+# 设置公开
+curl -s -X PATCH "https://open.feishu.cn/open-apis/drive/v1/permissions/{doc_id}/public?type=docx" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"link_share_entity": "anyone_readable"}'
+```
+
+
+
 ## Open Terminal
 
 - **状态**: 运行中（裸机模式，虚拟环境）

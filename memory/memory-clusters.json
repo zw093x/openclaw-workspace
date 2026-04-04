@@ -37,18 +37,18 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "加仓",
-      "减仓",
-      "中国动力",
-      "买入",
       "股票",
-      "成本",
+      "买入",
+      "减仓",
       "中国船舶",
+      "成本",
+      "持仓",
+      "中国动力",
+      "加仓",
       "策略",
-      "卖出",
-      "持仓"
+      "卖出"
     ],
-    "size": 345859
+    "size": 419327
   },
   "系统运维": {
     "members": [
@@ -85,17 +85,17 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "超时",
       "cron",
-      "gateway",
-      "磁盘",
+      "飞书",
+      "修复",
+      "超时",
+      "自愈",
       "错误",
       "异常",
-      "自愈",
-      "飞书",
-      "修复"
+      "gateway",
+      "磁盘"
     ],
-    "size": 341528
+    "size": 415595
   },
   "学习进化": {
     "members": [
@@ -128,21 +128,22 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "学习",
-      "模式",
-      "教训",
       "规则",
-      "纠正",
+      "教训",
+      "最佳实践",
+      "模式",
       "进化",
-      "最佳实践"
+      "纠正",
+      "学习"
     ],
-    "size": 326533
+    "size": 400596
   },
   "家庭护理": {
     "members": [
       "MEMORY.md",
       "USER.md",
       "memory/2026-03-25.md",
+      "memory/2026-04-04.md",
       "memory/广桂月子饮食指南.md",
       "memory/育儿月子指南.md",
       "memory/cron-backup.json",
@@ -150,15 +151,15 @@
       "memory/memory-index.json"
     ],
     "keywords": [
-      "配偶",
-      "喂养",
       "疫苗",
-      "宝宝",
+      "配偶",
       "护理",
       "产后",
+      "喂养",
+      "宝宝",
       "月子"
     ],
-    "size": 119441
+    "size": 193597
   },
   "AI工具": {
     "members": [
@@ -184,12 +185,12 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "自动化",
-      "大模型",
       "模型",
-      "技能"
+      "大模型",
+      "技能",
+      "自动化"
     ],
-    "size": 279312
+    "size": 352868
   },
   "服务器": {
     "members": [
@@ -199,6 +200,7 @@
       "memory/heal-log.md",
       "memory/2026-03-26.md",
       "memory/2026-03-25.md",
+      "memory/2026-04-04.md",
       "memory/knowledge-gaps.md",
       "memory/2026-03-27.md",
       "memory/memory-clusters.json",
@@ -207,10 +209,10 @@
     ],
     "keywords": [
       "代理",
-      "mihomo",
+      "端口",
       "部署",
-      "端口"
+      "mihomo"
     ],
-    "size": 142841
+    "size": 217596
   }
 }
