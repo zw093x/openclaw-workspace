@@ -1,26 +1,38 @@
 {
-  "lastCheck": 1745281860,
-  "checkedAt": "2026-04-01T11:11:00+08:00",
+  "lastCheck": 1743741780,
+  "checkedAt": "2026-04-04T10:03:00+08:00",
   "latestVersion": "v0.18.3",
   "versionsChecked": [
     "v0.16.1", "v0.16.2", "v0.16.3", "v0.16.4",
     "v0.17.0", "v0.17.1", "v0.17.2",
     "v0.18.0", "v0.18.1", "v0.18.2", "v0.18.3"
   ],
-  "thisSessionUpdates": [
+  "thisSessionUpdates": [],
+  "recentCommitsSinceLastCheck": [
     {
-      "version": "v0.18.2",
-      "date": "2026-03-25",
-      "type": "Latest",
-      "detail": "CacheProvider API, fp16 intermediates, mxfp8 quantization, TRELLIS2 ecosystem, asset-mcp (Meshy MCP).",
-      "severity": "medium"
+      "date": "2026-04-03",
+      "commit": "f21f6b2",
+      "message": "Add portable release for intel XPU. (#13272)"
     },
     {
-      "version": "v0.18.3",
-      "date": "2026-03-26",
-      "type": "Patch",
-      "detail": "Minor: new Topaz API model + workflow templates v0.9.38 update (2 commits). No 3D changes.",
-      "severity": "low"
+      "date": "2026-04-03",
+      "commit": "eb0686b",
+      "message": "Update template to 0.9.43 (#13265)"
+    },
+    {
+      "date": "2026-04-03",
+      "commit": "5de94e7",
+      "message": "feat(api-nodes): new Partner nodes for Wan2.7 (#13264)"
+    },
+    {
+      "date": "2026-04-02",
+      "commit": "76b75f3",
+      "message": "Fix some issue with insecure browsers. (#13261)"
+    },
+    {
+      "date": "2026-04-01",
+      "commit": "7d43768",
+      "message": "chore: update workflow templates to v0.9.41 (#13242)"
     }
   ],
   "nodeEcosystem": {
@@ -30,5 +42,5 @@
     "StableFast3D": { "status": "stable" },
     "asset-mcp (Meshy)": { "status": "new" }
   },
-  "notificationSent": true
+  "notificationSent": false
 }

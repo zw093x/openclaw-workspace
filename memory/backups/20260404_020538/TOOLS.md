@@ -93,7 +93,55 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+## 国际新闻RSS源（通过代理 http://127.0.0.1:7890 访问）
+
+| 媒体 | RSS地址 | 覆盖领域 |
+|------|---------|---------|
+| BBC News | `https://feeds.bbci.co.uk/news/world/rss.xml` | 全球综合 |
+| CNBC | `https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114` | 财经/市场/特朗普 |
+| France 24 | `https://www.france24.com/en/rss` | 国际政治/中东 |
+| Al Jazeera | `https://www.aljazeera.com/xml/rss/all.xml` | 中东/伊朗 |
+| The Guardian | `https://www.theguardian.com/world/rss` | 全球深度分析 |
+| NPR | `https://feeds.npr.org/1001/rss.xml` | 美国国内 |
+| Deutsche Welle | `https://rss.dw.com/rdf/rss-en-all` | 欧洲视角 |
+
+**使用方式：** `curl -s --max-time 15 -x http://127.0.0.1:7890 '<RSS地址>'`
+
+---
+
+## Google 账号
+
+- **邮箱：** zw093x@gmail.com
+- **密码：** 0908093x.
+- **用途：** X/Twitter、Google搜索、GitHub等国际网站登录
+
+> ⚠️ 注意：密码为敏感信息，仅存储于本地服务器，不外泄。
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.
+
+## 飞书文档分享规则（2026-04-04）
+
+**所有我创建的飞书文档，创建后必须立即设置为任何人可查看。**
+
+操作步骤：
+1. 创建文档后获取 doc_id
+2. 调用飞书权限API：
+```bash
+# 获取 token
+TOKEN=$(curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
+  -H "Content-Type: application/json" \
+  -d '{"app_id":"cli_a9489e1f4c78dbb6","app_secret":"mKeApaf2UE3CDN8wlh1IJcDSxcJlYlhD"}' | python3 -c "import sys,json; print(json.load(sys.stdin).get('tenant_access_token',''))")
+
+# 设置公开
+curl -s -X PATCH "https://open.feishu.cn/open-apis/drive/v1/permissions/{doc_id}/public?type=docx" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"link_share_entity": "anyone_readable"}'
+```
+
+
 
 ## Open Terminal
 
