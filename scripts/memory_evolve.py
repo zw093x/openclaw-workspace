@@ -159,68 +159,102 @@ def _extract_key_points(content):
 
 # ===== M2: 冲突检测 =====
 def detect_conflicts():
-    """检测记忆文件之间的矛盾信息"""
+    """检测记忆文件之间的矛盾信息（v2.2修复版）
+    
+    核心逻辑：
+    - 同一文件内、同一天的矛盾才算真正矛盾
+    - 跨日期的持仓/成本变化 = 历史演变，不是矛盾
+    - 千分位数字(3,000)正确解析
+    """
+    import re
+    from collections import defaultdict
+    
     conflicts = []
     
-    # 收集所有关键声明
-    statements = {}  # topic -> [(file, statement, line_no)]
-    
     files = get_all_memory_files()
+    
+    # 收集所有数据: date -> topic -> [(value, source_line, line_no)]
+    records = defaultdict(lambda: defaultdict(list))  # date -> topic -> items
+    
     for f in files:
         try:
             content = f.read_text()
         except:
             continue
         
-        for i, line in enumerate(content.split("\n"), 1):
+        fname = str(f)
+        
+        # 从文件名提取日期
+        date_match = re.search(r'(20\d{2}-\d{2}-\d{2})', fname)
+        file_date = date_match.group(1) if date_match else None
+        
+        # 从H1标题提取日期
+        if not file_date:
+            first_line = content.split('\n')[0]
+            hm = re.search(r'(20\d{2}-\d{2}-\d{2})', first_line)
+            if hm:
+                file_date = hm.group(1)
+        
+        if not file_date:
+            continue
+        
+        lines = content.split('\n')
+        
+        for ln, line in enumerate(lines, 1):
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
             
-            # 检测持仓声明
-            if "持仓" in line or "持有" in line:
-                statements.setdefault("持仓", []).append((str(f), line[:100], i))
+            # 排除历史快照行
+            historical_kw = ["原持仓", "当时为", "此前", "之前为", "上日", "昨日", "上个月", "历史"]
+            is_hist = any(kw in line for kw in historical_kw)
             
-            # 检测策略声明
-            if "策略" in line and ("长期" in line or "减仓" in line or "持有" in line):
-                statements.setdefault("策略", []).append((str(f), line[:100], i))
+            # 持仓：支持 3,000股 或 3000股 格式
+            if ("持仓" in line or "持有" in line) and not is_hist:
+                m = re.search(r'[^\d](\d{1,3}(?:,\d{3})*)\s*股', line)
+                if m:
+                    val = m.group(1).replace(",", "")
+                    records[file_date]["持仓"].append((val, line[:80], ln))
             
-            # 检测成本价
-            cost_match = re.search(r'成本[价：:]\s*(\d+\.?\d*)', line)
-            if cost_match:
-                statements.setdefault("成本", []).append((str(f), line[:100], i))
+            # 成本：支持 38.696 / 11.44 等格式
+            if re.search(r'成本[价：:]', line) and not is_hist:
+                m = re.search(r'成本[价：:]\s*(\d+\.\d{2,4})', line)
+                if m:
+                    records[file_date]["成本"].append((m.group(1), line[:80], ln))
             
-            # 检测服务器信息
+            # 服务器IP
             if re.search(r'\d+\.\d+\.\d+\.\d+', line) and ("服务器" in line or "IP" in line):
-                statements.setdefault("服务器", []).append((str(f), line[:100], i))
+                m = re.search(r'(\d+\.\d+\.\d+\.\d+)', line)
+                if m:
+                    records[file_date]["服务器IP"].append((m.group(1), line[:80], ln))
     
-    # 检查矛盾
-    for topic, stmts in statements.items():
-        if len(stmts) >= 2:
-            # 提取数值进行对比
-            values = []
-            for f, stmt, line_no in stmts:
-                if topic == "成本":
-                    m = re.search(r'(\d+\.?\d*)', stmt)
-                    if m:
-                        values.append((f, m.group(1), line_no))
-                elif topic == "持仓":
-                    m = re.search(r'(\d+)\s*股', stmt)
-                    if m:
-                        values.append((f, m.group(1), line_no))
-            
-            # 检查数值是否矛盾
-            if len(values) >= 2:
-                unique_vals = set(v[1] for v in values)
-                if len(unique_vals) > 1:
-                    conflicts.append({
-                        "topic": topic,
-                        "values": [(v[0].split("/")[-1], v[1], v[2]) for v in values],
-                        "severity": "high" if topic in ("持仓", "成本") else "medium"
-                    })
+    # 检测同日期内的矛盾
+    for date, topics in records.items():
+        for topic, items in topics.items():
+            if topic in ("持仓", "成本", "服务器IP"):
+                # 按文件分组
+                by_file = {}
+                for val, line, ln in items:
+                    # 从line中提取文件名（如果有）
+                    key = line[:60]  # 用行首60字符作为key
+                    if key not in by_file:
+                        by_file[key] = []
+                    by_file[key].append(val)
+                
+                # 同源内是否有不同值
+                for src, vals in by_file.items():
+                    unique_vals = list(dict.fromkeys(vals))  # 去重保持顺序
+                    if len(unique_vals) > 1:
+                        conflicts.append({
+                            "topic": topic,
+                            "date": date,
+                            "values": unique_vals,
+                            "source": src[:60],
+                            "severity": "high" if topic in ("持仓", "成本") else "low",
+                            "note": f"同日期{date}内{topic}存在{len(unique_vals)}个不同值"
+                        })
     
     return conflicts
-
 # ===== M3: 健康检查 =====
 def check_memory_health():
     """检查记忆文件的健康状态"""

@@ -1304,3 +1304,39 @@ N/A
 - Tags: 记忆冲突, error
 ---
 
+
+## [LRN-20260405-141] error
+
+**Logged**: 2026-04-05T01:04:14.616477
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
+
+## [LRN-20260405-142] error
+
+**Logged**: 2026-04-05T01:04:14.622315
+**Priority**: high
+**Status**: pending
+
+### Summary
+发现成本矛盾: 2, 002841
+
+### Details
+N/A
+
+### Metadata
+- Source: auto_record
+- Tags: 记忆冲突, error
+---
+
