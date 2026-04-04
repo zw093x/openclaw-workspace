@@ -57,6 +57,14 @@
     {
       "topic": "成本",
       "severity": "high"
+    },
+    {
+      "topic": "持仓",
+      "severity": "high"
+    },
+    {
+      "topic": "成本",
+      "severity": "high"
     }
   ]
 }
