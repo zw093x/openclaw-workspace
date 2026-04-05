@@ -297,3 +297,5 @@
 {"type": "preemptive_fix", "name": "鱼盆模型每日更新", "job_id": "61979e27-a0e5-4203-b361-25a7f2ceaa3c", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-06T03:57:35.292466", "root_cause": "unknown"}
 {"type": "preemptive_fix", "name": "21:00预防性系统检查", "job_id": "2e15606e-36d0-4eba-8c5e-b42041ae6f38", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-06T03:57:43.608084", "root_cause": "unknown"}
 {"type": "preemptive_fix", "name": "每日策略学习", "job_id": "23344724-6cce-47a7-ba28-7791214bebbc", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-06T03:57:48.967768", "root_cause": "unknown"}
+{"pattern": "cron_message_failed", "action": "skip_no_delivery", "job_id": "2d07315a-9e35-4fe1-a594-b4fab676172e", "result": "skipped", "msg": "mode=none，不推送，忽略message_failed检测", "ts": "2026-04-06T04:31:18.560543", "root_cause": "cron_message_failed"}
+{"pattern": "cron_message_failed", "target": "OpenClaw 自愈系统 (2d07315a)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 0, "ts": "2026-04-06T04:31:18.560700"}

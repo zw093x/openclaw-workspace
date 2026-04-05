@@ -3268,6 +3268,24 @@
       "violated_count": 0,
       "status": "pending",
       "confidence": 0.5
+    },
+    "LRN-20260406-184": {
+      "id": "LRN-20260406-184",
+      "type": "success",
+      "category": "自愈-cron_message_failed",
+      "summary": "2d07315a: apply_fix_for_pattern",
+      "details": "适用于cron_message_failed模式",
+      "priority": "low",
+      "files": [],
+      "domains": [
+        "自愈-cron_message_failed"
+      ],
+      "created": "2026-04-06T04:31:18.565814",
+      "last_triggered": "2026-04-06T04:31:18.565814",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
     }
   },
   "rules": {
@@ -3608,7 +3626,7 @@
     }
   },
   "stats": {
-    "total_recorded": 183,
+    "total_recorded": 184,
     "corrections": 4,
     "errors": 175,
     "feature_requests": 0
