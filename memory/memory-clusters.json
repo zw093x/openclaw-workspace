@@ -42,17 +42,17 @@
     ],
     "keywords": [
       "买入",
-      "加仓",
-      "卖出",
-      "持仓",
       "成本",
-      "策略",
       "中国动力",
       "中国船舶",
+      "策略",
+      "加仓",
       "减仓",
+      "卖出",
+      "持仓",
       "股票"
     ],
-    "size": 454002
+    "size": 466228
   },
   "系统运维": {
     "members": [
@@ -81,6 +81,7 @@
       "memory/2026-04-01.md",
       "memory/heartbeat-state.json",
       "memory/cron-backup.json",
+      "memory/heal-thresholds.json",
       "memory/memory-clusters.json",
       "memory/intel-hub-state.json",
       "memory/learn-db.json",
@@ -92,17 +93,17 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "cron",
-      "gateway",
       "超时",
-      "错误",
       "飞书",
-      "自愈",
       "异常",
+      "修复",
+      "gateway",
+      "cron",
+      "错误",
       "磁盘",
-      "修复"
+      "自愈"
     ],
-    "size": 459162
+    "size": 472003
   },
   "学习进化": {
     "members": [
@@ -139,14 +140,14 @@
     ],
     "keywords": [
       "教训",
-      "学习",
-      "规则",
-      "模式",
       "进化",
+      "模式",
       "纠正",
-      "最佳实践"
+      "最佳实践",
+      "规则",
+      "学习"
     ],
-    "size": 436991
+    "size": 449428
   },
   "家庭护理": {
     "members": [
@@ -163,15 +164,15 @@
       "memory/memory-index.json"
     ],
     "keywords": [
-      "配偶",
+      "疫苗",
       "宝宝",
+      "月子",
       "产后",
       "护理",
-      "喂养",
-      "月子",
-      "疫苗"
+      "配偶",
+      "喂养"
     ],
-    "size": 198696
+    "size": 200129
   },
   "AI工具": {
     "members": [
@@ -199,12 +200,12 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "大模型",
-      "技能",
       "模型",
+      "技能",
+      "大模型",
       "自动化"
     ],
-    "size": 382185
+    "size": 391905
   },
   "服务器": {
     "members": [
@@ -223,11 +224,11 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "端口",
+      "部署",
       "代理",
       "mihomo",
-      "部署"
+      "端口"
     ],
-    "size": 229233
+    "size": 230877
   }
 }

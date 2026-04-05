@@ -71,12 +71,12 @@
       "root_cause": "cron_misconfiguration",
       "severity": "medium",
       "first_seen": "2026-04-05T16:14:07.361355",
-      "count": 12,
+      "count": 22,
       "sources": [
         "unified_heal"
       ],
       "sample_msg": "cron_message_failed",
-      "last_seen": "2026-04-05T22:13:14.297583"
+      "last_seen": "2026-04-05T22:35:09.075397"
     },
     "476e077106ae": {
       "type": "cron_timeout",
@@ -84,28 +84,28 @@
       "root_cause": "cron_misconfiguration",
       "severity": "medium",
       "first_seen": "2026-04-05T20:07:56.834194",
-      "count": 5,
+      "count": 9,
       "sources": [
         "unified_heal"
       ],
       "sample_msg": "cron_timeout",
-      "last_seen": "2026-04-05T22:13:11.627904"
+      "last_seen": "2026-04-05T22:34:48.642433"
     }
   },
   "fixes": {},
   "stats": {
-    "total_errors": 22,
+    "total_errors": 36,
     "by_category": {
       "network": 2,
       "config": 2,
       "permission": 1,
-      "cron": 17
+      "cron": 31
     },
     "by_root_cause": {
       "network_instability": 2,
       "config_error": 2,
       "permission_denied": 1,
-      "cron_misconfiguration": 17
+      "cron_misconfiguration": 31
     }
   }
 }

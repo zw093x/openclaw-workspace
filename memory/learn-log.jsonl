@@ -158,3 +158,12 @@
 {"action": "record", "id": "LRN-20260405-158", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T22:10:21.313118"}
 {"action": "record", "id": "LRN-20260405-159", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T22:13:11.639558"}
 {"action": "record", "id": "LRN-20260405-160", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "", "ts": "2026-04-05T22:13:14.306396"}
+{"action": "record", "id": "LRN-20260405-161", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T22:15:34.132230"}
+{"action": "record", "id": "LRN-20260405-162", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T22:15:40.536660"}
+{"action": "record", "id": "LRN-20260405-163", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "", "ts": "2026-04-05T22:15:42.714018"}
+{"action": "record", "id": "LRN-20260405-164", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T22:15:47.921959"}
+{"action": "record", "id": "LRN-20260405-165", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T22:16:01.552306"}
+{"action": "record", "id": "LRN-20260405-166", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T22:16:08.776040"}
+{"action": "record", "id": "LRN-20260405-167", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T22:34:43.321511"}
+{"action": "record", "id": "LRN-20260405-168", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T22:34:48.650454"}
+{"action": "record", "id": "LRN-20260405-169", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T22:35:09.085286"}

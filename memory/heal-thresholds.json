@@ -1,0 +1,32 @@
+{
+  "disk_warn": 90,
+  "disk_crit": 95,
+  "cron_errors_warn": 2,
+  "cron_errors_crit": 3,
+  "gateway_latency_warn": 2000,
+  "gateway_latency_crit": 5000,
+  "_history": [
+    {
+      "ts": "2026-04-05T22:16:08.776931",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 5,
+          "new": 4,
+          "reason": "Cron频繁出错(17次)，降低触发阈值"
+        }
+      ]
+    },
+    {
+      "ts": "2026-04-05T22:35:09.086189",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 4,
+          "new": 3,
+          "reason": "Cron频繁出错(27次)，降低触发阈值"
+        }
+      ]
+    }
+  ]
+}
