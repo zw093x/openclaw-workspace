@@ -141,3 +141,4 @@
 {"action": "record", "id": "LRN-20260405-141", "type": "error", "category": "记忆冲突", "summary": "发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000", "ts": "2026-04-05T01:04:14.620412"}
 {"action": "record", "id": "LRN-20260405-142", "type": "error", "category": "记忆冲突", "summary": "发现成本矛盾: 2, 002841", "ts": "2026-04-05T01:04:14.625841"}
 {"action": "record", "id": "LRN-20260405-143", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T16:14:07.368550"}
+{"action": "record", "id": "LRN-20260405-144", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T16:14:53.989733"}

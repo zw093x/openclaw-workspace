@@ -2548,6 +2548,24 @@
       "violated_count": 0,
       "status": "pending",
       "confidence": 0.5
+    },
+    "LRN-20260405-144": {
+      "id": "LRN-20260405-144",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T16:14:53.986153",
+      "last_triggered": "2026-04-05T16:14:53.986153",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
     }
   },
   "rules": {
@@ -2619,12 +2637,19 @@
       "keyword": "cron",
       "created": "2026-04-05T16:14:07.364978",
       "applied": 0
+    },
+    "LRN-20260405-144": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-144",
+      "keyword": "cron",
+      "created": "2026-04-05T16:14:53.986153",
+      "applied": 0
     }
   },
   "stats": {
-    "total_recorded": 143,
+    "total_recorded": 144,
     "corrections": 4,
-    "errors": 137,
+    "errors": 138,
     "feature_requests": 0
   },
   "effectiveness": {},

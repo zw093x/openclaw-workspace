@@ -71,28 +71,28 @@
       "root_cause": "cron_misconfiguration",
       "severity": "medium",
       "first_seen": "2026-04-05T16:14:07.361355",
-      "count": 2,
+      "count": 4,
       "sources": [
         "unified_heal"
       ],
       "sample_msg": "cron_message_failed",
-      "last_seen": "2026-04-05T16:14:07.362573"
+      "last_seen": "2026-04-05T16:14:53.983470"
     }
   },
   "fixes": {},
   "stats": {
-    "total_errors": 7,
+    "total_errors": 9,
     "by_category": {
       "network": 2,
       "config": 2,
       "permission": 1,
-      "cron": 2
+      "cron": 4
     },
     "by_root_cause": {
       "network_instability": 2,
       "config_error": 2,
       "permission_denied": 1,
-      "cron_misconfiguration": 2
+      "cron_misconfiguration": 4
     }
   }
 }

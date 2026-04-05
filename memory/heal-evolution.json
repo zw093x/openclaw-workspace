@@ -1,13 +1,13 @@
 {
   "root_causes": {
-    "system_instability": 37
+    "system_instability": 38
   },
   "discovered_patterns": [
     {
       "type": "recurring_pattern",
       "pattern": "cron_message_failed",
-      "count": 36,
-      "success_rate": 1.0,
+      "count": 38,
+      "success_rate": 0.9473684210526315,
       "recommendation": "添加到监控模式库"
     },
     {
@@ -15,7 +15,7 @@
       "peak_hours": [
         "23:00 (7次)",
         "13:00 (6次)",
-        "21:00 (4次)"
+        "16:00 (6次)"
       ],
       "recommendation": "考虑在高峰时段前增加检查频率"
     },
@@ -54,15 +54,15 @@
       "recommendation": "保持"
     },
     "cron_message_failed": {
-      "success_rate": 1.0,
-      "avg_time_ms": 2810.1666666666665,
-      "overall_score": 0.9156949999999999,
-      "attempts": 36,
+      "success_rate": 0.9473684210526315,
+      "avg_time_ms": 3208.0789473684213,
+      "overall_score": 0.8669155263157894,
+      "attempts": 38,
       "recommendation": "保持"
     }
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-05T16:14:07.369352",
+  "last_evolve": "2026-04-05T16:14:53.990515",
   "memory_health": 79
 }
