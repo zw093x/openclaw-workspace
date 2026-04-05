@@ -21,6 +21,14 @@
       "type": "股票"
     },
     {
+      "id": "自愈系统",
+      "type": "系统"
+    },
+    {
+      "id": "记忆进化",
+      "type": "系统"
+    },
+    {
       "id": "飞书",
       "type": "工具"
     },
@@ -45,15 +53,7 @@
       "type": "工具"
     },
     {
-      "id": "自愈系统",
-      "type": "系统"
-    },
-    {
       "id": "错误进化",
-      "type": "系统"
-    },
-    {
-      "id": "记忆进化",
       "type": "系统"
     },
     {
@@ -88,6 +88,18 @@
     },
     {
       "source": "彭煜",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "彭煜",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "彭煜",
       "target": "飞书",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
@@ -105,6 +117,12 @@
       "file": "MEMORY.md"
     },
     {
+      "source": "云服务器",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
       "source": "P工",
       "target": "P工",
       "relation": "co_mentioned",
@@ -130,6 +148,18 @@
     },
     {
       "source": "P工",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "P工",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "P工",
       "target": "飞书",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
@@ -143,6 +173,12 @@
     {
       "source": "Docker",
       "target": "P工",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "P工",
+      "target": "云服务器",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
     },
@@ -160,7 +196,13 @@
     },
     {
       "source": "中国船舶",
-      "target": "中国船舶",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
     },
@@ -183,6 +225,12 @@
       "file": "MEMORY.md"
     },
     {
+      "source": "中国船舶",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
       "source": "三安光电",
       "target": "中国动力",
       "relation": "co_mentioned",
@@ -190,7 +238,13 @@
     },
     {
       "source": "中国动力",
-      "target": "中国动力",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
     },
@@ -213,8 +267,20 @@
       "file": "MEMORY.md"
     },
     {
+      "source": "中国动力",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
       "source": "三安光电",
-      "target": "三安光电",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
     },
@@ -233,6 +299,66 @@
     {
       "source": "Docker",
       "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "自愈系统",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "自愈系统",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "Docker",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "云服务器",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "记忆进化",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "Docker",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
+      "source": "云服务器",
+      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
     },
@@ -255,6 +381,12 @@
       "file": "MEMORY.md"
     },
     {
+      "source": "云服务器",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
       "source": "ComfyUI",
       "target": "ComfyUI",
       "relation": "co_mentioned",
@@ -267,38 +399,32 @@
       "file": "MEMORY.md"
     },
     {
+      "source": "ComfyUI",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "MEMORY.md"
+    },
+    {
       "source": "Docker",
-      "target": "Docker",
+      "target": "云服务器",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
     },
     {
       "source": "P工",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "TOOLS.md"
-    },
-    {
-      "source": "P工",
       "target": "本地服务器",
       "relation": "co_mentioned",
       "file": "TOOLS.md"
     },
     {
       "source": "Docker",
-      "target": "云服务器",
+      "target": "Docker",
       "relation": "co_mentioned",
       "file": "TOOLS.md"
     },
     {
       "source": "Docker",
       "target": "本地服务器",
-      "relation": "co_mentioned",
-      "file": "TOOLS.md"
-    },
-    {
-      "source": "云服务器",
-      "target": "飞书",
       "relation": "co_mentioned",
       "file": "TOOLS.md"
     },
@@ -333,6 +459,12 @@
       "file": "memory/migration-guide.md"
     },
     {
+      "source": "中国船舶",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-03.md"
+    },
+    {
       "source": "自愈系统",
       "target": "自愈系统",
       "relation": "co_mentioned",
@@ -345,14 +477,8 @@
       "file": "memory/heal-log.md"
     },
     {
-      "source": "自愈系统",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "memory/heal-log.md"
-    },
-    {
-      "source": "自愈系统",
-      "target": "飞书",
+      "source": "OpenClaw",
+      "target": "自愈系统",
       "relation": "co_mentioned",
       "file": "memory/heal-log.md"
     },
@@ -375,16 +501,34 @@
       "file": "memory/heal-log.md"
     },
     {
+      "source": "ComfyUI",
+      "target": "错误进化",
+      "relation": "co_mentioned",
+      "file": "memory/heal-log.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "错误进化",
+      "relation": "co_mentioned",
+      "file": "memory/heal-log.md"
+    },
+    {
       "source": "记忆进化",
       "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/heal-log.md"
     },
     {
-      "source": "记忆进化",
-      "target": "飞书",
+      "source": "OpenClaw",
+      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/heal-log.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-02.md"
     },
     {
       "source": "OpenClaw",
@@ -417,18 +561,6 @@
       "file": "memory/2026-03-26.md"
     },
     {
-      "source": "OpenClaw",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/cron-fault-knowledge.md"
-    },
-    {
-      "source": "ComfyUI",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/cron-fault-knowledge.md"
-    },
-    {
       "source": "P工",
       "target": "湘电股份",
       "relation": "co_mentioned",
@@ -436,19 +568,7 @@
     },
     {
       "source": "P工",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "P工",
       "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "P工",
-      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -466,19 +586,7 @@
     },
     {
       "source": "彭煜",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "彭煜",
       "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "彭煜",
-      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -502,19 +610,7 @@
     },
     {
       "source": "中国船舶",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "中国船舶",
       "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -532,19 +628,7 @@
     },
     {
       "source": "中国动力",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "中国动力",
       "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -562,19 +646,13 @@
     },
     {
       "source": "三安光电",
-      "target": "自愈系统",
+      "target": "三安光电",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
     {
       "source": "三安光电",
       "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -639,26 +717,8 @@
       "file": "memory/2026-04-04.md"
     },
     {
-      "source": "Docker",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
       "source": "本地服务器",
       "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "OpenClaw",
-      "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "ComfyUI",
-      "target": "错误进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -671,24 +731,6 @@
     {
       "source": "本地服务器",
       "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "OpenClaw",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "ComfyUI",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "Docker",
-      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -717,36 +759,6 @@
       "file": "memory/knowledge-600416.md"
     },
     {
-      "source": "中国动力",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "memory/knowledge-gaps.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "memory/knowledge-gaps.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "memory/knowledge-gaps.md"
-    },
-    {
-      "source": "云服务器",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/knowledge-gaps.md"
-    },
-    {
-      "source": "云服务器",
-      "target": "彭煜",
-      "relation": "co_mentioned",
-      "file": "memory/memory-graph.json"
-    },
-    {
       "source": "云服务器",
       "target": "湘电股份",
       "relation": "co_mentioned",
@@ -755,18 +767,6 @@
     {
       "source": "云服务器",
       "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/memory-graph.json"
-    },
-    {
-      "source": "云服务器",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "memory/memory-graph.json"
-    },
-    {
-      "source": "ComfyUI",
-      "target": "云服务器",
       "relation": "co_mentioned",
       "file": "memory/memory-graph.json"
     },

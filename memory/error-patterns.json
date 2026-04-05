@@ -1,27 +1,27 @@
 {
-  "ts": "2026-04-05T21:05:04.020453",
+  "ts": "2026-04-05T22:10:27.328607",
   "root_cause_analysis": {
-    "total_errors": 14,
+    "total_errors": 19,
     "total_fixes": 0,
     "fix_rate": 0.0,
     "systemic_issues": {
-      "cron_misconfiguration": 9
+      "cron_misconfiguration": 14
     },
     "high_frequency_errors": {
-      "9e923b4e857a": 6,
-      "476e077106ae": 3
+      "9e923b4e857a": 10,
+      "476e077106ae": 4
     },
     "by_category": {
       "network": 2,
       "config": 2,
       "permission": 1,
-      "cron": 9
+      "cron": 14
     },
     "by_root_cause": {
       "network_instability": 2,
       "config_error": 2,
       "permission_denied": 1,
-      "cron_misconfiguration": 9
+      "cron_misconfiguration": 14
     }
   },
   "discovered_patterns": [
@@ -40,13 +40,13 @@
     {
       "type": "systemic_fix",
       "priority": "high",
-      "message": "根因'cron_misconfiguration'已出现9次，需要系统级修复",
+      "message": "根因'cron_misconfiguration'已出现14次，需要系统级修复",
       "action": "检查cron_misconfiguration的底层原因并永久解决"
     },
     {
       "type": "fix_rate_low",
       "priority": "medium",
-      "message": "整体修复率仅0%（0/14）",
+      "message": "整体修复率仅0%（0/19）",
       "action": "审视修复策略，增加自动化修复能力"
     },
     {

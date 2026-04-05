@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-05T00:22:01.235455",
+  "timestamp": "2026-04-05T22:12:29.278965",
   "stale_files": [],
   "empty_files": [],
   "large_files": [
@@ -9,7 +9,7 @@
     },
     {
       "file": "learn-db.json",
-      "size_kb": 87
+      "size_kb": 102
     },
     {
       "file": "memory-index.json",
