@@ -1,6 +1,7 @@
 {
   "root_causes": {
-    "system_instability": 38
+    "system_instability": 39,
+    "performance_bottleneck": 3
   },
   "discovered_patterns": [
     {
@@ -23,8 +24,8 @@
       "type": "correlated_failure",
       "time": "2026-04-01T21",
       "patterns": [
-        "disk_warning",
-        "cron_message_failed"
+        "cron_message_failed",
+        "disk_warning"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -32,8 +33,17 @@
       "type": "correlated_failure",
       "time": "2026-04-04T13",
       "patterns": [
-        "disk_warning",
-        "cron_message_failed"
+        "cron_message_failed",
+        "disk_warning"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-05T20",
+      "patterns": [
+        "",
+        "cron_timeout"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     }
@@ -41,9 +51,9 @@
   "repair_scores": {
     "cron_timeout": {
       "success_rate": 0.0,
-      "avg_time_ms": 0.0,
-      "overall_score": 0.3,
-      "attempts": 2,
+      "avg_time_ms": 1785.6666666666667,
+      "overall_score": 0.24642999999999998,
+      "attempts": 3,
       "recommendation": "需更换策略"
     },
     "disk_warning": {
@@ -63,6 +73,6 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-05T19:04:26.648953",
+  "last_evolve": "2026-04-05T21:04:56.732136",
   "memory_health": 79
 }

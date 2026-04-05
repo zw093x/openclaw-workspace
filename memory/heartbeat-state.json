@@ -1,7 +1,7 @@
 {
   "lastChecks": {
     "memory_evolve": "2026-04-05T01:43",
-    "unified_heal": "2026-04-05T01:43",
+    "unified_heal": "2026-04-05T20:08",
     "backup": "2026-04-05T01:47",
     "cron_health": "2026-04-05T01:43"
   },
@@ -19,7 +19,7 @@
     "ee28465e_每周日综合周报": "OK (checked 2026-04-05T01:43)",
     "e9a9fdac_ComfyUI 变更监控": "OK (checked 2026-04-05T01:43)",
     "a8d0f9e7_CG科技日报": "OK (checked 2026-04-05T01:43)",
-    "324d8b01_ComfyUI每周总结": "OK (checked 2026-04-05T01:43)",
+    "324d8b01_ComfyUI每周总结": "timeout已修复: 600s→900s (2026-04-05T20:37)",
     "2e15606e_21:00预防性系统检查": "OK (checked 2026-04-05T01:43)",
     "23344724_每日策略学习": "OK (checked 2026-04-05T01:43)",
     "8ec0edd5_晚间综合复盘": "OK (checked 2026-04-05T01:43)",
@@ -47,6 +47,6 @@
     "6f347bc2_疫苗提醒-乙肝+A群流脑(6月龄)": "OK (checked 2026-04-05T01:43)",
     "0fc45414_疫苗提醒-麻腮风+乙脑(8月龄)": "OK (checked 2026-04-05T01:43)"
   },
-  "lastHeartbeat": "2026-04-05T01:43",
+  "lastHeartbeat": "2026-04-05T20:37",
   "note": "Last full check: 2026-04-05T01:43"
 }

@@ -147,3 +147,8 @@
 {"action": "record", "id": "LRN-20260405-147", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_message_failed (根因:system_instability)", "ts": "2026-04-05T17:04:12.458562"}
 {"action": "record", "id": "LRN-20260405-148", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_message_failed (根因:cron_message_failed)", "ts": "2026-04-05T17:04:12.463339"}
 {"action": "record", "id": "LRN-20260405-149", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_message_failed (根因:system_instability)", "ts": "2026-04-05T17:04:12.468076"}
+{"action": "record", "id": "LRN-20260405-150", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T20:07:56.843553"}
+{"action": "record", "id": "LRN-20260405-151", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_timeout (根因:performance_bottleneck)", "ts": "2026-04-05T21:04:10.471140"}
+{"action": "record", "id": "LRN-20260405-152", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T21:04:31.452196"}
+{"action": "record", "id": "LRN-20260405-153", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T21:04:36.382559"}
+{"action": "record", "id": "LRN-20260405-154", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T21:04:56.731175"}
