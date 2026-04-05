@@ -178,3 +178,6 @@
 {"action": "record", "id": "LRN-20260406-178", "type": "success", "category": "自愈-cron_timeout", "summary": "2d07315a: apply_fix_for_pattern", "ts": "2026-04-06T01:15:59.648049"}
 {"action": "record", "id": "LRN-20260406-179", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "", "ts": "2026-04-06T01:21:21.218566"}
 {"action": "record", "id": "LRN-20260406-180", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "", "ts": "2026-04-06T01:24:24.352491"}
+{"action": "record", "id": "LRN-20260406-181", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-06T02:08:38.064199"}
+{"action": "record", "id": "LRN-20260406-182", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "", "ts": "2026-04-06T02:12:08.576622"}
+{"action": "record", "id": "LRN-20260406-183", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "", "ts": "2026-04-06T03:07:27.264847"}
