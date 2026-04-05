@@ -174,3 +174,4 @@
 {"action": "record", "id": "LRN-20260405-174", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:36:28.891187"}
 {"action": "record", "id": "LRN-20260405-175", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:36:34.349567"}
 {"action": "record", "id": "LRN-20260405-176", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:36:39.988098"}
+{"action": "record", "id": "LRN-20260406-177", "type": "success", "category": "自愈-cron_timeout", "summary": "2d07315a: apply_fix_for_pattern", "ts": "2026-04-06T01:11:13.609252"}
