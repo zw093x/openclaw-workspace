@@ -57,13 +57,14 @@
         "SIGTERM"
       ],
       "root_cause": "任务耗时超过 timeout 限制",
-      "auto_fix": "增加 timeout 到 300s（搜索类）或 180s（简单类）",
-      "fix_cmd": "openclaw cron edit {job_id} --timeout-seconds 300",
+      "auto_fix": "诊断系统负载+任务耗时，分类处理（增加timeout/降系统负载/切换模型）",
+      "fix_cmd": "[已升级] openclaw cron edit {job_id} --timeout-seconds 600 + 系统诊断",
       "verify": "等待下次执行",
-      "prevention": "搜索类任务默认 timeout=300s",
+      "prevention": "高风险任务默认timeout=600s，避免单纯增加timeout掩盖性能问题",
       "fix_success": 0,
       "fix_total": 0,
-      "last_seen": null
+      "last_seen": null,
+      "strategy_version": "v2.0"
     },
     "cron_duplicate_delivery": {
       "type": "cron",

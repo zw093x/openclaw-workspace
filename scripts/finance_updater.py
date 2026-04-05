@@ -137,6 +137,30 @@ def generate_quarterly_highlights(df):
     return "\n".join(highlights)
 
 
+def generate_key_ratios(df):
+    """生成关键财务比率（来自最新季度）"""
+    if df is None or df.empty:
+        return "暂无数据"
+    latest = df.iloc[-1]
+    def get(val, suffix=""):
+        v = latest.get(val, "--")
+        return f"{v}{suffix}" if v != "--" and v is not False else "--"
+    lines = [
+        f"| 指标 | 最新值 | 参考区间 |",
+        f"|------|--------|--------|",
+        f"| 资产负债率 | {get('资产负债率')} | <70%稳健 |",
+        f"| 存货周转率 | {get('存货周转率')}次 | >1.5良好 |",
+        f"| 应收账款周转天数 | {get('应收账款周转天数')}天 | 越短越好 |",
+        f"| 流动比率 | {get('流动比率')} | >1.5稳健 |",
+        f"| 速动比率 | {get('速动比率')} | >1稳健 |",
+        f"| 每股经营现金流 | {get('每股经营现金流')}元 | 正数好 |",
+        f"| 净资产收益率(摊薄) | {get('净资产收益率-摊薄')} | >8%优秀 |",
+        f"| 销售净利率 | {get('销售净利率')} | >6%优秀 |",
+        f"| 销售毛利率 | {get('销售毛利率')} | — |",
+    ]
+    return "\n".join(lines)
+
+
 def generate_report(name, code, annual_df, quarterly_df):
     """生成完整报告"""
     now = datetime.now(timezone(timedelta(hours=8)))
@@ -144,6 +168,7 @@ def generate_report(name, code, annual_df, quarterly_df):
 
     annual_table = generate_annual_table(annual_df)
     quarterly_highlights = generate_quarterly_highlights(quarterly_df)
+    key_ratios = generate_key_ratios(quarterly_df)
 
     report = f"""# {name}({code}) 财务数据（自动更新）
 
@@ -156,6 +181,10 @@ def generate_report(name, code, annual_df, quarterly_df):
 ## 季报数据（近4期）
 
 {quarterly_highlights}
+
+## 关键财务比率（最新季度）
+
+{key_ratios}
 
 ## 数据来源
 - 同花顺（akshare）

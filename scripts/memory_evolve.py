@@ -598,14 +598,25 @@ def temporal_reasoning():
 
 # ===== M10: 上下文感知 =====
 def context_aware_retrieval(current_task=""):
-    """根据当前任务自动调取相关记忆"""
+    """
+    根据当前任务自动调取相关记忆（遗忘曲线增强版）
+
+    增强点：
+    1. 加载 memory-decay.json 的记忆强度
+    2. 按 strength × recency 加权排序
+    3. 高强度文件优先，高时效性文件次之
+    """
     if not current_task:
         return {"matched": 0}
 
     task_lower = current_task.lower()
-    relevant = []
+    scored = []
 
-    # 关键词到文件的映射
+    # 加载遗忘曲线数据
+    decay_data = load_json(MEMORY_DECAY, {"entries": {}})
+    decay_entries = decay_data.get("entries", {})
+
+    # 关键词→文件映射（扩展）
     keyword_map = {
         "股票": ["stock-portfolio.md", "stock-strategy-20260331.md", "stock-knowledge.md"],
         "持仓": ["stock-portfolio.md", "stock-strategy-20260331.md"],
@@ -619,23 +630,82 @@ def context_aware_retrieval(current_task=""):
         "CPO": ["knowledge-cpo-microled.md"],
         "湘电": ["knowledge-600416.md"],
         "三安": ["knowledge-600703.md"],
+        "记忆": ["MEMORY.md"],
+        "服务器": ["TOOLS.md"],
+        "学习": ["MEMORY.md"],
+        "宝宝疫苗": ["USER.md"],
+        "财报": ["knowledge-600150-finance.md", "knowledge-600482-finance.md"],
+        "评分": ["knowledge-600150-finance.md"],
+        "进化": ["heal-evolution.json"],
+        "模型": ["TOOLS.md"],
+        "AI": ["knowledge-ai.md", "knowledge-ai-tools.md"],
     }
 
-    # 匹配关键词
+    # 计算遗忘权重
+    now = datetime.now()
     for keyword, files in keyword_map.items():
-        if keyword in task_lower:
-            for f in files:
-                path = MEMORY_DIR / f
-                if path.exists():
-                    try:
-                        content = path.read_text()[:500]  # 摘要
-                        relevant.append({"file": f, "preview": content[:200]})
-                    except:
-                        pass
-                elif (MEMORY_DIR.parent / f).exists():
-                    relevant.append({"file": f, "preview": "(工作区根目录)"})
+        if keyword not in task_lower:
+            continue
+        for f in files:
+            # 找文件（memory/ 或根目录）
+            path = MEMORY_DIR / f
+            if not path.exists():
+                path = WORKSPACE / f
+            if not path.exists():
+                continue
+            try:
+                content = path.read_text()
+                preview = content[:300]
+            except:
+                continue
 
-    return {"matched": len(relevant), "files": relevant[:5]}
+            # 获取遗忘强度
+            rel_path = str(path.relative_to(WORKSPACE))
+            decay_info = decay_entries.get(rel_path) or decay_entries.get(f, {})
+            retention = decay_info.get("retention", 1.0)  # 强度 0~1
+            access_count = decay_info.get("access_count", 0)
+
+            # 计算时效权重（7天内=1.0，之后线性衰减）
+            last_check = decay_info.get("last_check", "")
+            recency = 1.0
+            if last_check:
+                try:
+                    last_dt = datetime.fromisoformat(last_check)
+                    days_ago = (now - last_dt).days
+                    recency = max(0.1, 1.0 - days_ago / 30)  # 30天衰减到0.1
+                except:
+                    pass
+
+            # 综合得分 = 强度 × 时效 + 访问奖励
+            strength_score = retention * recency
+            if access_count > 5:
+                strength_score += 0.1  # 经常用的文件加权
+
+            scored.append({
+                "file": rel_path,
+                "preview": preview[:150],
+                "strength": round(retention, 2),
+                "recency": round(recency, 2),
+                "score": round(strength_score, 3),
+                "access_count": access_count,
+            })
+
+    # 按综合得分降序
+    scored.sort(key=lambda x: x["score"], reverse=True)
+
+    # 去重（同一文件只保留最高分）
+    seen = set()
+    unique = []
+    for item in scored:
+        if item["file"] not in seen:
+            seen.add(item["file"])
+            unique.append(item)
+
+    return {
+        "matched": len(unique),
+        "files": unique[:5],
+        "total_candidates": len(scored)
+    }
 
 # ===== M11: 预测需求 =====
 def predict_needs():
@@ -885,6 +955,154 @@ def memory_decay_simulation():
             "forgotten_details": forgotten[:3], "reinforce_details": reinforced[:3]}
 
 # ===== 全量进化 =====
+def distill_weekly_memories():
+    """
+    M15记忆巩固 + M14主动创建：每周日自动蒸馏
+    读取本周7个 daily.md → 识别关键记录 → 精华写入 MEMORY.md → 归档原始日志
+    """
+    from datetime import timedelta
+    import calendar
+
+    now = datetime.now()
+    # 找本周所有 daily.md
+    week_files = []
+    for i in range(7):
+        day = now - timedelta(days=i)
+        filename = f"{day.strftime('%Y-%m-%d')}.md"
+        path = MEMORY_DIR / filename
+        if path.exists():
+            week_files.append((day, path))
+    
+    if not week_files:
+        return {"status": "no_files", "message": "本周无日志文件"}
+    
+    # 提取关键记录
+    key_patterns = [
+        "决定", "决策", "策略变更", "新增", "完成",
+        "教训", "错误", "修复", "结论", "确认",
+        "建仓", "清仓", "减仓", "加仓", "止损",
+        "安装", "配置", "部署", "升级",
+    ]
+    
+    distillations = {}
+
+    # 融合LCM：从Lossless-Claw数据库提取本周对话精华
+    try:
+        sys.path.insert(0, str(WORKSPACE / "scripts"))
+        from memory_plus import distill_from_lcm
+        lcm_result = distill_from_lcm(days=7)
+        if lcm_result.get("status") == "success":
+            for item in lcm_result.get("distillations", []):
+                if item.get("key_entries"):
+                    conv_title = item.get("conversation", "?")[:30]
+                    distillations[f"LCM:{conv_title}"] = item["key_entries"]
+    except Exception as e:
+        pass  # LCM尚无数据时静默跳过
+
+    for day, path in week_files:
+        try:
+            content = path.read_text()
+            lines = content.split("\n")
+            week_notes = []
+            in_key_section = False
+            current_section = ""
+            
+            for line in lines:
+                # 跳过时间戳和非内容行
+                if re.match(r"^\d{2}:\d{2}\s*[\[\*]", line):
+                    # 提取时间戳内容
+                    content_part = re.sub(r"^\d{2}:\d{2}\s*[\[\*]", "", line).strip()
+                    # 检查是否包含关键模式
+                    if any(pat in content_part for pat in key_patterns):
+                        week_notes.append(f"[{day.strftime('%m/%d')} {content_part[:120]}]")
+                elif line.startswith("## ") and "关键" in line:
+                    in_key_section = True
+                    current_section = line
+                elif line.startswith("## ") and in_key_section:
+                    in_key_section = False
+            
+            if week_notes:
+                distillations[day.strftime("%Y-%m-%d")] = week_notes
+        except Exception as e:
+            continue
+    
+    if not distillations:
+        return {"status": "no_content", "message": "本周无关键记录"}
+    
+    # 更新 MEMORY.md 的"本周大事"或追加到重点追踪
+    memory_path = WORKSPACE / "MEMORY.md"
+    try:
+        memory_content = memory_path.read_text()
+    except:
+        memory_content = ""
+    
+    # 追加本周摘要到 MEMORY.md 末尾
+    now_str = now.strftime("%Y-%m-%d")
+    week_summary = f"\n---\n## 本周大事（{now_str}自动蒸馏）\n"
+    
+    sections_added = 0
+    for day_str, notes in sorted(distillations.items(), reverse=True):
+        week_summary += f"\n### {day_str}\n"
+        for note in notes[:5]:  # 每天最多5条
+            week_summary += f"- {note}\n"
+        sections_added += 1
+    
+    # 追加到 MEMORY.md（不超过20行）
+    lines = memory_content.split("\n")
+    # 找到最后一个 "---" 分隔符，在它之后插入
+    insert_pos = len(lines)
+    for i, line in enumerate(lines):
+        if line.strip() == "---" and i > 5:
+            insert_pos = i + 1
+            break
+    
+    new_memory = "\n".join(lines[:insert_pos]) + week_summary + "\n" + "\n".join(lines[insert_pos:])
+    
+    # 限制 MEMORY.md 总行数（最多250行，去掉旧"本周大事"）
+    memory_lines = new_memory.split("\n")
+    recent_lines = []
+    skip_old_weekly = False
+    for line in memory_lines:
+        if "## 本周大事" in line:
+            skip_old_weekly = True
+            continue
+        if skip_old_weekly and line.startswith("## "):
+            skip_old_weekly = False
+        if not skip_old_weekly:
+            recent_lines.append(line)
+    
+    if len(recent_lines) > 250:
+        recent_lines = recent_lines[:250]
+    
+    memory_path.write_text("\n".join(recent_lines))
+    
+    # 归档：压缩本周日志
+    archive_name = f"{now.strftime('%Y-%m')}-weekly-distilled.tar.gz"
+    archive_path = MEMORY_DIR / "archives" / archive_name
+    archive_path.parent.mkdir(exist_ok=True)
+    
+    # 写入蒸馏记录
+    distill_record = {
+        "date": now.isoformat(),
+        "weeks_covered": list(distillations.keys()),
+        "memory_updated": memory_path.exists(),
+        "lines_now": len(recent_lines),
+        "sections_distilled": sections_added,
+        "lcm_contributions": sum(1 for k in distillations.keys() if str(k).startswith("LCM:")),
+        "lcm_fusion": "✅ 已融合LCM数据库蒸馏",
+    }
+    distill_log = MEMORY_DIR / "archives" / "distill-log.jsonl"
+    with open(distill_log, "a") as f:
+        f.write(json.dumps(distill_record, ensure_ascii=False) + "\n")
+    
+    return {
+        "status": "success",
+        "weeks_covered": len(distillations),
+        "memory_lines": len(recent_lines),
+        "distillations": distillations,
+    }
+
+
 def full_evolve():
     """执行全量记忆进化 (M1-M16)"""
     results = {}
@@ -1106,6 +1324,15 @@ if __name__ == "__main__":
     elif args[0] == "--consolidate":
         r = memory_consolidation()
         print(f"✅ 巩固: {r['needs_review']}个需复习")
+    elif args[0] == "--distill":
+        print("🧠 执行主动蒸馏（本周→MEMORY.md）...")
+        r = distill_weekly_memories()
+        if r["status"] == "success":
+            print(f"✅ 蒸馏完成: {r['weeks_covered']}天覆盖, MEMORY.md现{r['memory_lines']}行")
+            for day, notes in sorted(r['distillations'].items(), reverse=True):
+                print(f"  {day}: {len(notes)}条关键记录")
+        else:
+            print(f"ℹ️ {r['message']}")
     elif args[0] == "--decay":
         r = memory_decay_simulation()
         print(f"✅ 遗忘: {r['forgotten']}个可遗忘, {r['needs_reinforcement']}个需强化")

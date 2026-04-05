@@ -126,6 +126,28 @@
           "reason": "Cron频繁出错(24次)，降低触发阈值"
         }
       ]
+    },
+    {
+      "ts": "2026-04-06T01:15:59.648891",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 3,
+          "new": 3,
+          "reason": "Cron频繁出错(24次)，降低触发阈值"
+        }
+      ]
+    },
+    {
+      "ts": "2026-04-06T01:24:24.353722",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 3,
+          "new": 3,
+          "reason": "Cron频繁出错(24次)，降低触发阈值"
+        }
+      ]
     }
   ]
 }

@@ -1340,3 +1340,702 @@ N/A
 - Tags: 记忆冲突, error
 ---
 
+
+## [LRN-20260405-143] error
+
+**Logged**: 2026-04-05T16:14:07.364978
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-144] error
+
+**Logged**: 2026-04-05T16:14:53.986153
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-145] error
+
+**Logged**: 2026-04-05T17:04:12.444464
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron_message_failed错误: cron_message_failed
+
+### Details
+来源:['unified_heal'] 出现4次
+
+### Metadata
+- Source: auto_record
+- Tags: cron, error
+---
+
+
+## [LRN-20260405-146] error
+
+**Logged**: 2026-04-05T17:04:12.450351
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: cron_message_failed (根因:cron_message_failed)
+
+### Details
+自愈系统修复cron_message_failed失败，根因:cron_message_failed
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260405-147] error
+
+**Logged**: 2026-04-05T17:04:12.454967
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: cron_message_failed (根因:system_instability)
+
+### Details
+自愈系统修复cron_message_failed失败，根因:system_instability
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260405-148] error
+
+**Logged**: 2026-04-05T17:04:12.459634
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: cron_message_failed (根因:cron_message_failed)
+
+### Details
+自愈系统修复cron_message_failed失败，根因:cron_message_failed
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260405-149] error
+
+**Logged**: 2026-04-05T17:04:12.464427
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: cron_message_failed (根因:system_instability)
+
+### Details
+自愈系统修复cron_message_failed失败，根因:system_instability
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260405-150] error
+
+**Logged**: 2026-04-05T20:07:56.838377
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-151] error
+
+**Logged**: 2026-04-05T21:04:10.466231
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: cron_timeout (根因:performance_bottleneck)
+
+### Details
+自愈系统修复cron_timeout失败，根因:performance_bottleneck
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260405-152] error
+
+**Logged**: 2026-04-05T21:04:31.447265
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-153] error
+
+**Logged**: 2026-04-05T21:04:36.376810
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-154] error
+
+**Logged**: 2026-04-05T21:04:56.726247
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-155] error
+
+**Logged**: 2026-04-05T22:09:21.391202
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron_timeout错误: cron_timeout
+
+### Details
+来源:['unified_heal'] 出现3次
+
+### Metadata
+- Source: auto_record
+- Tags: cron, error
+---
+
+
+## [LRN-20260405-156] error
+
+**Logged**: 2026-04-05T22:09:40.552052
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-157] error
+
+**Logged**: 2026-04-05T22:10:00.953566
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ 📝 Edit: `in ~/.openclaw/workspace/memory/knowledge-gaps.md (388 chars)` failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-158] error
+
+**Logged**: 2026-04-05T22:10:21.306675
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-159] error
+
+**Logged**: 2026-04-05T22:13:11.633086
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-160] error
+
+**Logged**: 2026-04-05T22:13:14.301295
+**Priority**: high
+**Status**: pending
+
+### Summary
+
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-161] error
+
+**Logged**: 2026-04-05T22:15:34.115442
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-162] error
+
+**Logged**: 2026-04-05T22:15:40.530092
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-163] error
+
+**Logged**: 2026-04-05T22:15:42.706829
+**Priority**: high
+**Status**: pending
+
+### Summary
+
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-164] error
+
+**Logged**: 2026-04-05T22:15:47.916112
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-165] error
+
+**Logged**: 2026-04-05T22:16:01.545851
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-166] error
+
+**Logged**: 2026-04-05T22:16:08.771146
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-167] error
+
+**Logged**: 2026-04-05T22:34:43.316440
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-168] error
+
+**Logged**: 2026-04-05T22:34:48.646197
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-169] error
+
+**Logged**: 2026-04-05T22:35:09.079734
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-170] error
+
+**Logged**: 2026-04-05T23:04:29.702814
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-171] error
+
+**Logged**: 2026-04-05T23:04:35.075115
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-172] error
+
+**Logged**: 2026-04-05T23:04:40.677416
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-173] error
+
+**Logged**: 2026-04-05T23:05:01.140292
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260405-174] error
+
+**Logged**: 2026-04-05T23:36:28.876141
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-175] error
+
+**Logged**: 2026-04-05T23:36:34.342478
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## [LRN-20260405-176] error
+
+**Logged**: 2026-04-05T23:36:39.981609
+**Priority**: high
+**Status**: pending
+
+### Summary
+cron: job execution timed out
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_timeout, error
+---
+
+
+## 2026-04-06 学习：多步骤任务进度反馈
+- **触发**: P工说"执行任务的时候还是不知道进度如何"
+- **根因**: 执行后台任务时只有完成后才汇报，P工看不到中间过程
+- **规则**: 已写入AGENTS.md
+  - 步骤开始前：发送完整步骤计划
+  - 每步完成：推送简短进度
+  - 全部完成：发送结果报告
+- **改进**: message(action=send) 在每步执行前后都要有，不只是开头和结尾
+
+## 2026-04-06 补充：进度反馈范围修正
+- **触发**: P工指出"不止是股票/持仓，所有长运行任务都需要进度反馈"
+- **修正前**: 规范只写了"多步骤任务"，没有明确范围
+- **修正后**: AGENTS.md 明确"所有超过10秒的任务"都适用，列举了7大场景
+- **改进**: 把禁止静默等待的时间从"120秒"改为"30秒"，更严格
+
+## [LRN-20260406-177] success
+
+**Logged**: 2026-04-06T01:11:13.603965
+**Priority**: low
+**Status**: pending
+
+### Summary
+2d07315a: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260406-178] success
+
+**Logged**: 2026-04-06T01:15:59.642491
+**Priority**: low
+**Status**: pending
+
+### Summary
+2d07315a: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260406-179] error
+
+**Logged**: 2026-04-06T01:21:21.212106
+**Priority**: high
+**Status**: pending
+
+### Summary
+
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260406-180] error
+
+**Logged**: 2026-04-06T01:24:24.346770
+**Priority**: high
+**Status**: pending
+
+### Summary
+
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+

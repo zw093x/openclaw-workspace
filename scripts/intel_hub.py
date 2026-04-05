@@ -341,3 +341,66 @@ if __name__ == "__main__":
 
     else:
         print(__doc__)
+
+
+# ============================================================
+# 方向C: 统一知识中枢 — 接收来自各系统的修复事件
+# ============================================================
+def receive_heal_event(event_type: str, data: dict):
+    """
+    方向C核心：统一知识中枢接收自愈系统事件
+    事件类型:
+      - fix_success: 修复成功 → 通知所有系统共享知识
+      - fix_failed: 修复失败 → 导入学习系统找新解法
+      - new_pattern: 发现新模式 → 广播到所有系统
+    """
+    db = learn_evolve.load_learn_db()
+    event = {
+        "timestamp": datetime.now().isoformat(),
+        "source": "unified_heal",
+        "type": event_type,
+        "data": data
+    }
+    
+    if event_type == "fix_success":
+        # 修复成功 → 提炼为可复用知识
+        pattern = data.get("pattern", "")
+        job_name = data.get("job_id", "")[:8]
+        fix_method = data.get("method", "unknown")
+        learn_evolve.record_lesson(
+            "success",
+            f"自愈-{pattern}",
+            f"{job_name}: {fix_method}",
+            f"适用于{pattern}模式",
+            priority="low"
+        )
+    
+    elif event_type == "fix_failed":
+        # 修复失败 → 通知所有系统寻找新解法
+        pattern = data.get("pattern", "")
+        symptom = data.get("symptom", "")
+        learn_evolve.record_lesson(
+            "error",
+            f"自愈失败-{pattern}",
+            symptom,
+            "需要新解法，请分析其他可用工具",
+            priority="high"
+        )
+    
+    elif event_type == "new_pattern":
+        # 新模式 → 广播到错误进化系统
+        pattern_name = data.get("name", "")
+        error_evolution.add_known_pattern(pattern_name, data)
+    
+    # 写入事件日志
+    hub_events = WORKSPACE / "memory" / "intel-hub-events.jsonl"
+    os.makedirs(WORKSPACE / "memory", exist_ok=True)
+    with open(hub_events, "a") as f:
+        f.write(json.dumps(event, ensure_ascii=False) + "\n")
+    
+    # 更新intel hub状态
+    state = load_json_safe(INTEL_STATE, {"last_sync": None, "sync_results": {}})
+    state["last_heal_event"] = datetime.now().isoformat()
+    save_json_safe(INTEL_STATE, state)
+
+

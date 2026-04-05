@@ -1,6 +1,6 @@
 ---
-name: ai-ppt-generator
-description: Generate PPT with Baidu AI. Smart template selection based on content.
+name: Baidu Wenku AIPPT
+description: Generate PPT with Baidu Wenku AI. Smart template selection based on content.
 metadata: { "openclaw": { "emoji": "📑", "requires": { "bins": ["python3"], "env":["BAIDU_API_KEY"]},"primaryEnv":"BAIDU_API_KEY" } }
 ---
 

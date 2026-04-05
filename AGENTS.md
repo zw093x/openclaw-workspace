@@ -69,6 +69,19 @@ Step 5: 用户确认后，方可执行
 **执行规则：**
 - 收到**需执行操作**的消息（脚本/cron/外部查询/多步骤任务）→ **立即回复"收到，处理中..."**，再执行，完成后汇报结果
 - 收到**纯文字问答** → 直接回复，无需确认
+- **多步骤任务进度规范（所有长运行任务通用）**：
+  - 触发条件：任何需要多步骤/多脚本/超过10秒执行时间的任务
+  - 步骤开始前：发送计划（"收到，处理中：① xxx → ② xxx → ③ xxx"）
+  - 每个关键步骤完成：主动推送进度（"①完成 → ②进行中"）
+  - 全部完成后：发送完整结果报告
+  - ⚠️ **所有长任务均适用**：股票分析、记忆进化、脚本构建、文件生成、外部查询、系统修复、文档创建等
+  - ⚠️ **禁止静默等待**：超过30秒的任务必须在每步有反馈，不能只开头结尾各一次
+  - 示例好的节奏：
+    - "收到，处理中：①读取财报 → ②智能评分 → ③推送飞书"
+    - "①完成"
+    - "②评分中（600150/600482）"
+    - "✅全部完成：持仓股评分已更新"
+  - 示例差的节奏：只发"收到"，然后等120秒才出结果
 - 绝不先执行再验证
 - 如果用户明确说"直接执行"，执行后必须记录决策原因到 trade-journal.md
 
@@ -326,3 +339,39 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - 收到飞书 Interactive Card 消息时，自动调用 `feishu_message_fetch.py` 获取真实内容
 - message_id 在每条消息的 metadata 中已提供
 - 不需要用户告知，自动执行
+
+## 记忆使用统计（自动追踪）
+
+**每次调用记忆文件时，自动记录使用统计：**
+
+在 `memory_search` 之后，立即执行：
+```python
+from scripts.memory_plus import record_memory_access
+record_memory_access("memory/stock-portfolio.md")  # 替换为实际文件路径
+```
+
+**用途：** 追踪哪些记忆被频繁调用（高频知识），哪些从未被使用（可归档）。
+
+---
+
+## 🔧 一键体检命令（收到"能解决的问题直接执行"时）
+
+执行顺序：先诊断，发现问题立即修复，不需要再问。
+
+**四大系统检查清单：**
+
+```
+1. 自愈系统 → python3 scripts/unified_heal.py --fix
+   ✅ 能修：历史误判清除、cron_timeout策略升级、验证逻辑修复
+
+2. 记忆进化 → python3 scripts/memory_evolve.py --evolve
+   ✅ 能修：孤立文件清理、topic-index重建、蒸馏执行
+
+3. 复盘进化 → python3 scripts/review_evolve.py --evolve
+   ✅ 能修：跨域教训导入、准确率追踪刷新
+
+4. 财报智能 → python3 scripts/finance_updater.py && python3 scripts/finance_judge.py
+   ✅ 能修：财务数据刷新、持仓股评分重新计算
+```
+
+**执行原则：能修复的立即修，修不了的评估后给出报告+建议。**
