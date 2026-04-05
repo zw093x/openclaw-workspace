@@ -167,3 +167,10 @@
 {"action": "record", "id": "LRN-20260405-167", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T22:34:43.321511"}
 {"action": "record", "id": "LRN-20260405-168", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T22:34:48.650454"}
 {"action": "record", "id": "LRN-20260405-169", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T22:35:09.085286"}
+{"action": "record", "id": "LRN-20260405-170", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:04:29.708038"}
+{"action": "record", "id": "LRN-20260405-171", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:04:35.081222"}
+{"action": "record", "id": "LRN-20260405-172", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:04:40.684111"}
+{"action": "record", "id": "LRN-20260405-173", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T23:05:01.146333"}
+{"action": "record", "id": "LRN-20260405-174", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:36:28.891187"}
+{"action": "record", "id": "LRN-20260405-175", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:36:34.349567"}
+{"action": "record", "id": "LRN-20260405-176", "type": "error", "category": "自愈失败-cron_timeout", "summary": "cron: job execution timed out", "ts": "2026-04-05T23:36:39.988098"}

@@ -2458,6 +2458,690 @@
       "violated_count": 0,
       "status": "pending",
       "confidence": 0.5
+    },
+    "LRN-20260404-139": {
+      "id": "LRN-20260404-139",
+      "type": "error",
+      "category": "记忆冲突",
+      "summary": "发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000",
+      "details": "",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "记忆冲突"
+      ],
+      "created": "2026-04-04T23:04:14.110107",
+      "last_triggered": "2026-04-04T23:04:14.110107",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260404-140": {
+      "id": "LRN-20260404-140",
+      "type": "error",
+      "category": "记忆冲突",
+      "summary": "发现成本矛盾: 2, 002841",
+      "details": "",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "记忆冲突"
+      ],
+      "created": "2026-04-04T23:04:14.114944",
+      "last_triggered": "2026-04-04T23:04:14.114944",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-141": {
+      "id": "LRN-20260405-141",
+      "type": "error",
+      "category": "记忆冲突",
+      "summary": "发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000",
+      "details": "",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "记忆冲突"
+      ],
+      "created": "2026-04-05T01:04:14.616477",
+      "last_triggered": "2026-04-05T01:04:14.616477",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-142": {
+      "id": "LRN-20260405-142",
+      "type": "error",
+      "category": "记忆冲突",
+      "summary": "发现成本矛盾: 2, 002841",
+      "details": "",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "记忆冲突"
+      ],
+      "created": "2026-04-05T01:04:14.622315",
+      "last_triggered": "2026-04-05T01:04:14.622315",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-143": {
+      "id": "LRN-20260405-143",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T16:14:07.364978",
+      "last_triggered": "2026-04-05T16:14:07.364978",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-144": {
+      "id": "LRN-20260405-144",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T16:14:53.986153",
+      "last_triggered": "2026-04-05T16:14:53.986153",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-145": {
+      "id": "LRN-20260405-145",
+      "type": "error",
+      "category": "cron",
+      "summary": "cron_message_failed错误: cron_message_failed",
+      "details": "来源:['unified_heal'] 出现4次",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "cron"
+      ],
+      "created": "2026-04-05T17:04:12.444464",
+      "last_triggered": "2026-04-05T17:04:12.444464",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-146": {
+      "id": "LRN-20260405-146",
+      "type": "error",
+      "category": "self_heal",
+      "summary": "自愈失败: cron_message_failed (根因:cron_message_failed)",
+      "details": "自愈系统修复cron_message_failed失败，根因:cron_message_failed",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "self_heal"
+      ],
+      "created": "2026-04-05T17:04:12.450351",
+      "last_triggered": "2026-04-05T17:04:12.450351",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-147": {
+      "id": "LRN-20260405-147",
+      "type": "error",
+      "category": "self_heal",
+      "summary": "自愈失败: cron_message_failed (根因:system_instability)",
+      "details": "自愈系统修复cron_message_failed失败，根因:system_instability",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "self_heal"
+      ],
+      "created": "2026-04-05T17:04:12.454967",
+      "last_triggered": "2026-04-05T17:04:12.454967",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-148": {
+      "id": "LRN-20260405-148",
+      "type": "error",
+      "category": "self_heal",
+      "summary": "自愈失败: cron_message_failed (根因:cron_message_failed)",
+      "details": "自愈系统修复cron_message_failed失败，根因:cron_message_failed",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "self_heal"
+      ],
+      "created": "2026-04-05T17:04:12.459634",
+      "last_triggered": "2026-04-05T17:04:12.459634",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-149": {
+      "id": "LRN-20260405-149",
+      "type": "error",
+      "category": "self_heal",
+      "summary": "自愈失败: cron_message_failed (根因:system_instability)",
+      "details": "自愈系统修复cron_message_failed失败，根因:system_instability",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "self_heal"
+      ],
+      "created": "2026-04-05T17:04:12.464427",
+      "last_triggered": "2026-04-05T17:04:12.464427",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-150": {
+      "id": "LRN-20260405-150",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T20:07:56.838377",
+      "last_triggered": "2026-04-05T20:07:56.838377",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-151": {
+      "id": "LRN-20260405-151",
+      "type": "error",
+      "category": "self_heal",
+      "summary": "自愈失败: cron_timeout (根因:performance_bottleneck)",
+      "details": "自愈系统修复cron_timeout失败，根因:performance_bottleneck",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "self_heal"
+      ],
+      "created": "2026-04-05T21:04:10.466231",
+      "last_triggered": "2026-04-05T21:04:10.466231",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-152": {
+      "id": "LRN-20260405-152",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T21:04:31.447265",
+      "last_triggered": "2026-04-05T21:04:31.447265",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-153": {
+      "id": "LRN-20260405-153",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T21:04:36.376810",
+      "last_triggered": "2026-04-05T21:04:36.376810",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-154": {
+      "id": "LRN-20260405-154",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T21:04:56.726247",
+      "last_triggered": "2026-04-05T21:04:56.726247",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-155": {
+      "id": "LRN-20260405-155",
+      "type": "error",
+      "category": "cron",
+      "summary": "cron_timeout错误: cron_timeout",
+      "details": "来源:['unified_heal'] 出现3次",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "cron"
+      ],
+      "created": "2026-04-05T22:09:21.391202",
+      "last_triggered": "2026-04-05T22:09:21.391202",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-156": {
+      "id": "LRN-20260405-156",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T22:09:40.552052",
+      "last_triggered": "2026-04-05T22:09:40.552052",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-157": {
+      "id": "LRN-20260405-157",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ 📝 Edit: `in ~/.openclaw/workspace/memory/knowledge-gaps.md (388 chars)` failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T22:10:00.953566",
+      "last_triggered": "2026-04-05T22:10:00.953566",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-158": {
+      "id": "LRN-20260405-158",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T22:10:21.306675",
+      "last_triggered": "2026-04-05T22:10:21.306675",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-159": {
+      "id": "LRN-20260405-159",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T22:13:11.633086",
+      "last_triggered": "2026-04-05T22:13:11.633086",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-160": {
+      "id": "LRN-20260405-160",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T22:13:14.301295",
+      "last_triggered": "2026-04-05T22:13:14.301295",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-161": {
+      "id": "LRN-20260405-161",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T22:15:34.115442",
+      "last_triggered": "2026-04-05T22:15:34.115442",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-162": {
+      "id": "LRN-20260405-162",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T22:15:40.530092",
+      "last_triggered": "2026-04-05T22:15:40.530092",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-163": {
+      "id": "LRN-20260405-163",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T22:15:42.706829",
+      "last_triggered": "2026-04-05T22:15:42.706829",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-164": {
+      "id": "LRN-20260405-164",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T22:15:47.916112",
+      "last_triggered": "2026-04-05T22:15:47.916112",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-165": {
+      "id": "LRN-20260405-165",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T22:16:01.545851",
+      "last_triggered": "2026-04-05T22:16:01.545851",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-166": {
+      "id": "LRN-20260405-166",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T22:16:08.771146",
+      "last_triggered": "2026-04-05T22:16:08.771146",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-167": {
+      "id": "LRN-20260405-167",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T22:34:43.316440",
+      "last_triggered": "2026-04-05T22:34:43.316440",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-168": {
+      "id": "LRN-20260405-168",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T22:34:48.646197",
+      "last_triggered": "2026-04-05T22:34:48.646197",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-169": {
+      "id": "LRN-20260405-169",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T22:35:09.079734",
+      "last_triggered": "2026-04-05T22:35:09.079734",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-170": {
+      "id": "LRN-20260405-170",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T23:04:29.702814",
+      "last_triggered": "2026-04-05T23:04:29.702814",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-171": {
+      "id": "LRN-20260405-171",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T23:04:35.075115",
+      "last_triggered": "2026-04-05T23:04:35.075115",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-172": {
+      "id": "LRN-20260405-172",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T23:04:40.677416",
+      "last_triggered": "2026-04-05T23:04:40.677416",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-173": {
+      "id": "LRN-20260405-173",
+      "type": "error",
+      "category": "自愈失败-cron_message_failed",
+      "summary": "⚠️ ✉️ Message failed",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_message_failed"
+      ],
+      "created": "2026-04-05T23:05:01.140292",
+      "last_triggered": "2026-04-05T23:05:01.140292",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-174": {
+      "id": "LRN-20260405-174",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T23:36:28.876141",
+      "last_triggered": "2026-04-05T23:36:28.876141",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-175": {
+      "id": "LRN-20260405-175",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T23:36:34.342478",
+      "last_triggered": "2026-04-05T23:36:34.342478",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260405-176": {
+      "id": "LRN-20260405-176",
+      "type": "error",
+      "category": "自愈失败-cron_timeout",
+      "summary": "cron: job execution timed out",
+      "details": "需要新解法，请分析其他可用工具",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "自愈失败-cron_timeout"
+      ],
+      "created": "2026-04-05T23:36:39.981609",
+      "last_triggered": "2026-04-05T23:36:39.981609",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
     }
   },
   "rules": {
@@ -2516,12 +3200,256 @@
       "keyword": "速度",
       "created": "2026-04-01T23:09:15.278002",
       "applied": 0
+    },
+    "LRN-20260405-001": {
+      "rule": "中国船舶600150长期持有，成本38.696；中国动力600482成本34.389长期持有",
+      "source": "stock-portfolio.md",
+      "keyword": "持仓",
+      "created": "2026-04-05T01:43:51.158462+08:00"
+    },
+    "LRN-20260405-143": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-143",
+      "keyword": "cron",
+      "created": "2026-04-05T16:14:07.364978",
+      "applied": 0
+    },
+    "LRN-20260405-144": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-144",
+      "keyword": "cron",
+      "created": "2026-04-05T16:14:53.986153",
+      "applied": 0
+    },
+    "LRN-20260405-145": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-145",
+      "keyword": "cron",
+      "created": "2026-04-05T17:04:12.444464",
+      "applied": 0
+    },
+    "LRN-20260405-146": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-146",
+      "keyword": "cron",
+      "created": "2026-04-05T17:04:12.450351",
+      "applied": 0
+    },
+    "LRN-20260405-147": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-147",
+      "keyword": "cron",
+      "created": "2026-04-05T17:04:12.454967",
+      "applied": 0
+    },
+    "LRN-20260405-148": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-148",
+      "keyword": "cron",
+      "created": "2026-04-05T17:04:12.459634",
+      "applied": 0
+    },
+    "LRN-20260405-149": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-149",
+      "keyword": "cron",
+      "created": "2026-04-05T17:04:12.464427",
+      "applied": 0
+    },
+    "LRN-20260405-150": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-150",
+      "keyword": "cron",
+      "created": "2026-04-05T20:07:56.838377",
+      "applied": 0
+    },
+    "LRN-20260405-151": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-151",
+      "keyword": "cron",
+      "created": "2026-04-05T21:04:10.466231",
+      "applied": 0
+    },
+    "LRN-20260405-152": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-152",
+      "keyword": "cron",
+      "created": "2026-04-05T21:04:31.447265",
+      "applied": 0
+    },
+    "LRN-20260405-153": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-153",
+      "keyword": "cron",
+      "created": "2026-04-05T21:04:36.376810",
+      "applied": 0
+    },
+    "LRN-20260405-154": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-154",
+      "keyword": "cron",
+      "created": "2026-04-05T21:04:56.726247",
+      "applied": 0
+    },
+    "LRN-20260405-155": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-155",
+      "keyword": "cron",
+      "created": "2026-04-05T22:09:21.391202",
+      "applied": 0
+    },
+    "LRN-20260405-156": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-156",
+      "keyword": "cron",
+      "created": "2026-04-05T22:09:40.552052",
+      "applied": 0
+    },
+    "LRN-20260405-157": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-157",
+      "keyword": "cron",
+      "created": "2026-04-05T22:10:00.953566",
+      "applied": 0
+    },
+    "LRN-20260405-158": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-158",
+      "keyword": "cron",
+      "created": "2026-04-05T22:10:21.306675",
+      "applied": 0
+    },
+    "LRN-20260405-159": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-159",
+      "keyword": "cron",
+      "created": "2026-04-05T22:13:11.633086",
+      "applied": 0
+    },
+    "LRN-20260405-160": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-160",
+      "keyword": "cron",
+      "created": "2026-04-05T22:13:14.301295",
+      "applied": 0
+    },
+    "LRN-20260405-161": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-161",
+      "keyword": "cron",
+      "created": "2026-04-05T22:15:34.115442",
+      "applied": 0
+    },
+    "LRN-20260405-162": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-162",
+      "keyword": "cron",
+      "created": "2026-04-05T22:15:40.530092",
+      "applied": 0
+    },
+    "LRN-20260405-163": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-163",
+      "keyword": "cron",
+      "created": "2026-04-05T22:15:42.706829",
+      "applied": 0
+    },
+    "LRN-20260405-164": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-164",
+      "keyword": "cron",
+      "created": "2026-04-05T22:15:47.916112",
+      "applied": 0
+    },
+    "LRN-20260405-165": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-165",
+      "keyword": "cron",
+      "created": "2026-04-05T22:16:01.545851",
+      "applied": 0
+    },
+    "LRN-20260405-166": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-166",
+      "keyword": "cron",
+      "created": "2026-04-05T22:16:08.771146",
+      "applied": 0
+    },
+    "LRN-20260405-167": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-167",
+      "keyword": "cron",
+      "created": "2026-04-05T22:34:43.316440",
+      "applied": 0
+    },
+    "LRN-20260405-168": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-168",
+      "keyword": "cron",
+      "created": "2026-04-05T22:34:48.646197",
+      "applied": 0
+    },
+    "LRN-20260405-169": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-169",
+      "keyword": "cron",
+      "created": "2026-04-05T22:35:09.079734",
+      "applied": 0
+    },
+    "LRN-20260405-170": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-170",
+      "keyword": "cron",
+      "created": "2026-04-05T23:04:29.702814",
+      "applied": 0
+    },
+    "LRN-20260405-171": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-171",
+      "keyword": "cron",
+      "created": "2026-04-05T23:04:35.075115",
+      "applied": 0
+    },
+    "LRN-20260405-172": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-172",
+      "keyword": "cron",
+      "created": "2026-04-05T23:04:40.677416",
+      "applied": 0
+    },
+    "LRN-20260405-173": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-173",
+      "keyword": "cron",
+      "created": "2026-04-05T23:05:01.140292",
+      "applied": 0
+    },
+    "LRN-20260405-174": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-174",
+      "keyword": "cron",
+      "created": "2026-04-05T23:36:28.876141",
+      "applied": 0
+    },
+    "LRN-20260405-175": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-175",
+      "keyword": "cron",
+      "created": "2026-04-05T23:36:34.342478",
+      "applied": 0
+    },
+    "LRN-20260405-176": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260405-176",
+      "keyword": "cron",
+      "created": "2026-04-05T23:36:39.981609",
+      "applied": 0
     }
   },
   "stats": {
-    "total_recorded": 138,
+    "total_recorded": 176,
     "corrections": 4,
-    "errors": 132,
+    "errors": 170,
     "feature_requests": 0
   },
   "effectiveness": {},
@@ -2564,560 +3492,710 @@
       "存储",
       "清理",
       "资源"
+    ],
+    "LRN-20260405-145": [
+      "定时",
+      "任务",
+      "调度"
+    ],
+    "LRN-20260405-155": [
+      "定时",
+      "任务",
+      "调度"
     ]
   },
   "decay_state": {
     "LRN-20260401-001": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260401-002": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260401-003": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260401-004": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260401-005": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260401-006": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260401-007": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260401-008": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-009": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-010": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-011": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-012": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-013": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-014": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-015": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-016": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-017": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-018": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-019": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-020": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-021": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-022": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-023": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-024": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-025": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-026": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-027": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-028": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-029": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-030": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-031": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-032": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-033": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-034": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-035": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-036": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-037": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-038": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-039": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-040": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-041": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-042": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-043": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-044": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-045": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260402-046": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-047": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-048": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-049": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-050": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-051": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-052": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-053": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-054": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-055": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-056": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-057": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-058": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-059": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-060": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-061": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-062": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-063": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-064": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-065": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-066": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-067": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-068": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-069": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-070": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-071": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-072": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-073": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-074": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-075": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-076": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-077": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-078": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-079": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-080": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-081": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-082": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-083": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-084": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-085": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-086": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-087": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-088": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-089": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-090": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-091": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260403-092": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-093": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-094": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-095": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-096": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-097": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-098": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-099": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-100": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-101": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-102": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-103": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-104": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-105": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-106": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-107": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-108": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-109": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-110": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-111": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-112": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-113": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-114": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-115": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-116": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-117": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-118": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-119": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-120": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-121": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-122": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-123": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-124": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-125": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-126": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-127": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-128": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-129": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-130": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-131": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-132": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-133": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-134": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-135": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-136": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-137": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
     },
     "LRN-20260404-138": {
       "level": 0,
-      "last_check": "2026-04-04T22:05:23.073953"
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260404-139": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260404-140": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-141": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-142": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-143": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-144": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-145": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-146": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-147": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-148": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-149": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-150": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-151": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-152": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-153": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-154": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-155": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-156": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-157": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-158": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-159": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-160": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-161": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-162": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-163": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-164": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-165": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-166": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-167": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-168": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-169": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-170": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-171": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-172": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
+    },
+    "LRN-20260405-173": {
+      "level": 0,
+      "last_check": "2026-04-05T23:05:06.600594"
     }
   },
   "external_rules": [
@@ -3183,7 +4261,7 @@
         "success_rate": 0.0
       },
       "error": {
-        "count": 132,
+        "count": 167,
         "promoted": 0,
         "internalized": 0,
         "deprecated": 0,
@@ -3209,7 +4287,7 @@
         "repeated": 0
       },
       "cron": {
-        "learned": 1,
+        "learned": 3,
         "repeated": 0
       },
       "推送": {
@@ -3229,17 +4307,29 @@
         "repeated": 0
       },
       "记忆冲突": {
-        "learned": 128,
+        "learned": 132,
         "repeated": 0
       },
       "复盘": {
         "learned": 2,
         "repeated": 0
+      },
+      "自愈失败-cron_message_failed": {
+        "learned": 12,
+        "repeated": 0
+      },
+      "self_heal": {
+        "learned": 5,
+        "repeated": 0
+      },
+      "自愈失败-cron_timeout": {
+        "learned": 12,
+        "repeated": 0
       }
     },
     "best_learning_type": "correction",
     "hardest_categories": [],
-    "last_run": "2026-04-04T22:05:23.083201",
+    "last_run": "2026-04-05T23:05:06.619297",
     "recommendations": [
       "学习效率最高: correction类教训（成功率0%）"
     ]

@@ -1,33 +1,33 @@
 {
-  "ts": "2026-04-05T22:16:14.073477",
+  "ts": "2026-04-06T00:07:32.770553",
   "root_cause_analysis": {
-    "total_errors": 32,
+    "total_errors": 44,
     "total_fixes": 0,
     "fix_rate": 0.0,
     "systemic_issues": {
-      "cron_misconfiguration": 27
+      "cron_misconfiguration": 39
     },
     "high_frequency_errors": {
-      "9e923b4e857a": 20,
-      "476e077106ae": 7
+      "9e923b4e857a": 24,
+      "476e077106ae": 15
     },
     "by_category": {
       "network": 2,
       "config": 2,
       "permission": 1,
-      "cron": 27
+      "cron": 39
     },
     "by_root_cause": {
       "network_instability": 2,
       "config_error": 2,
       "permission_denied": 1,
-      "cron_misconfiguration": 27
+      "cron_misconfiguration": 39
     }
   },
   "discovered_patterns": [
     {
       "type": "time_concentration",
-      "detail": "错误集中在22:00时段（18次）",
+      "detail": "错误集中在22:00时段（22次）",
       "action": "在该时段前增加预防性检查"
     },
     {
@@ -40,19 +40,19 @@
     {
       "type": "systemic_fix",
       "priority": "high",
-      "message": "根因'cron_misconfiguration'已出现27次，需要系统级修复",
+      "message": "根因'cron_misconfiguration'已出现39次，需要系统级修复",
       "action": "检查cron_misconfiguration的底层原因并永久解决"
     },
     {
       "type": "fix_rate_low",
       "priority": "medium",
-      "message": "整体修复率仅0%（0/32）",
+      "message": "整体修复率仅0%（0/44）",
       "action": "审视修复策略，增加自动化修复能力"
     },
     {
       "type": "pattern_discovered",
       "priority": "medium",
-      "message": "错误集中在22:00时段（18次）",
+      "message": "错误集中在22:00时段（22次）",
       "action": "在该时段前增加预防性检查"
     },
     {

@@ -27,6 +27,61 @@
           "reason": "Cron频繁出错(27次)，降低触发阈值"
         }
       ]
+    },
+    {
+      "ts": "2026-04-05T23:05:01.147790",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 3,
+          "new": 3,
+          "reason": "Cron频繁出错(31次)，降低触发阈值"
+        }
+      ]
+    },
+    {
+      "ts": "2026-04-05T23:36:39.989034",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 3,
+          "new": 3,
+          "reason": "Cron频繁出错(36次)，降低触发阈值"
+        }
+      ]
+    },
+    {
+      "ts": "2026-04-06T00:07:26.169446",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 3,
+          "new": 3,
+          "reason": "Cron频繁出错(39次)，降低触发阈值"
+        }
+      ]
+    },
+    {
+      "ts": "2026-04-06T00:11:34.961141",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 3,
+          "new": 3,
+          "reason": "Cron频繁出错(39次)，降低触发阈值"
+        }
+      ]
+    },
+    {
+      "ts": "2026-04-06T00:12:10.136078",
+      "changes": [
+        {
+          "threshold": "cron_errors_crit",
+          "old": 3,
+          "new": 3,
+          "reason": "Cron频繁出错(39次)，降低触发阈值"
+        }
+      ]
     }
   ]
 }
