@@ -1,12 +1,12 @@
 {
   "root_causes": {
-    "system_instability": 35
+    "system_instability": 37
   },
   "discovered_patterns": [
     {
       "type": "recurring_pattern",
       "pattern": "cron_message_failed",
-      "count": 35,
+      "count": 36,
       "success_rate": 1.0,
       "recommendation": "添加到监控模式库"
     },
@@ -55,14 +55,14 @@
     },
     "cron_message_failed": {
       "success_rate": 1.0,
-      "avg_time_ms": 2813.542857142857,
-      "overall_score": 0.9155937142857142,
-      "attempts": 35,
+      "avg_time_ms": 2810.1666666666665,
+      "overall_score": 0.9156949999999999,
+      "attempts": 36,
       "recommendation": "保持"
     }
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-05T14:06:33.345841",
+  "last_evolve": "2026-04-05T16:14:07.369352",
   "memory_health": 79
 }

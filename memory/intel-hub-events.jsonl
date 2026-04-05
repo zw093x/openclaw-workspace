@@ -1,0 +1,1 @@
+{"timestamp": "2026-04-05T16:14:07.363884", "source": "unified_heal", "type": "fix_failed", "data": {"pattern": "cron_message_failed", "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7", "symptom": "⚠️ ✉️ Message failed", "root_cause": "system_instability"}}

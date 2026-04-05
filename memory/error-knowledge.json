@@ -64,20 +64,35 @@
       ],
       "sample_msg": "Permission denied: /tmp/output.txt",
       "last_seen": "2026-04-01T21:38:55.346186"
+    },
+    "9e923b4e857a": {
+      "type": "cron_message_failed",
+      "category": "cron",
+      "root_cause": "cron_misconfiguration",
+      "severity": "medium",
+      "first_seen": "2026-04-05T16:14:07.361355",
+      "count": 2,
+      "sources": [
+        "unified_heal"
+      ],
+      "sample_msg": "cron_message_failed",
+      "last_seen": "2026-04-05T16:14:07.362573"
     }
   },
   "fixes": {},
   "stats": {
-    "total_errors": 5,
+    "total_errors": 7,
     "by_category": {
       "network": 2,
       "config": 2,
-      "permission": 1
+      "permission": 1,
+      "cron": 2
     },
     "by_root_cause": {
       "network_instability": 2,
       "config_error": 2,
-      "permission_denied": 1
+      "permission_denied": 1,
+      "cron_misconfiguration": 2
     }
   }
 }
