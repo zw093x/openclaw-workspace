@@ -6,16 +6,16 @@
     {
       "type": "recurring_pattern",
       "pattern": "cron_message_failed",
-      "count": 38,
-      "success_rate": 0.9473684210526315,
+      "count": 40,
+      "success_rate": 0.9,
       "recommendation": "添加到监控模式库"
     },
     {
       "type": "time_pattern",
       "peak_hours": [
+        "16:00 (8次)",
         "23:00 (7次)",
-        "13:00 (6次)",
-        "16:00 (6次)"
+        "13:00 (6次)"
       ],
       "recommendation": "考虑在高峰时段前增加检查频率"
     },
@@ -54,15 +54,15 @@
       "recommendation": "保持"
     },
     "cron_message_failed": {
-      "success_rate": 0.9473684210526315,
-      "avg_time_ms": 3208.0789473684213,
-      "overall_score": 0.8669155263157894,
-      "attempts": 38,
+      "success_rate": 0.9,
+      "avg_time_ms": 3567.75,
+      "overall_score": 0.8229675,
+      "attempts": 40,
       "recommendation": "保持"
     }
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-05T16:14:53.990515",
+  "last_evolve": "2026-04-05T17:04:27.368501",
   "memory_health": 79
 }

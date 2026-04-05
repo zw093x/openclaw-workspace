@@ -142,3 +142,8 @@
 {"action": "record", "id": "LRN-20260405-142", "type": "error", "category": "记忆冲突", "summary": "发现成本矛盾: 2, 002841", "ts": "2026-04-05T01:04:14.625841"}
 {"action": "record", "id": "LRN-20260405-143", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T16:14:07.368550"}
 {"action": "record", "id": "LRN-20260405-144", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "⚠️ ✉️ Message failed", "ts": "2026-04-05T16:14:53.989733"}
+{"action": "record", "id": "LRN-20260405-145", "type": "error", "category": "cron", "summary": "cron_message_failed错误: cron_message_failed", "ts": "2026-04-05T17:04:12.448012"}
+{"action": "record", "id": "LRN-20260405-146", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_message_failed (根因:cron_message_failed)", "ts": "2026-04-05T17:04:12.453862"}
+{"action": "record", "id": "LRN-20260405-147", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_message_failed (根因:system_instability)", "ts": "2026-04-05T17:04:12.458562"}
+{"action": "record", "id": "LRN-20260405-148", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_message_failed (根因:cron_message_failed)", "ts": "2026-04-05T17:04:12.463339"}
+{"action": "record", "id": "LRN-20260405-149", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_message_failed (根因:system_instability)", "ts": "2026-04-05T17:04:12.468076"}
