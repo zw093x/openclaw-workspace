@@ -357,3 +357,4 @@
 {"type": "preemptive_fix", "name": "ComfyUI每周总结", "job_id": "324d8b01-b798-4486-915e-0a0a26e52934", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-07T03:06:35.889326", "root_cause": "unknown"}
 {"type": "preemptive_fix", "name": "🧠 记忆增强周检", "job_id": "c95c377b-41fe-41a1-8157-829740819289", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-07T03:06:41.342297", "root_cause": "unknown"}
 {"type": "preemptive_fix", "name": "🧠 记忆进化+主动蒸馏", "job_id": "929e7cf1-bdd9-4825-b52d-09453668d086", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-07T03:06:46.727322", "root_cause": "unknown"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "2d07315a-9e35-4fe1-a594-b4fab676172e", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-07T06:05:09.490557", "root_cause": "cron_delivered_healthy"}
