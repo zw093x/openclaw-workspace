@@ -16,7 +16,7 @@
       "peak_hours": [
         "3:00 (120次)",
         "1:00 (109次)",
-        "2:00 (38次)"
+        "2:00 (57次)"
       ],
       "recommendation": "考虑在高峰时段前增加检查频率"
     },
@@ -84,7 +84,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-07T02:07:52.197819",
+  "last_evolve": "2026-04-07T03:07:25.211794",
   "memory_health": 79,
   "prevention_strategies": [
     {
