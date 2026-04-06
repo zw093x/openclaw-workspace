@@ -1,17 +1,20 @@
 {
   "lastChecks": {
     "unified_heal": "2026-04-06T04:05",
-    "commodity_alert": "2026-04-06T04:29",
-    "cron_health": "2026-04-06T04:29"
+    "daily_briefing": "2026-04-06T07:30 OK",
+    "commodity_alert": "2026-04-06T04:29 已推送",
+    "cron_health": "2026-04-06T07:37",
+    "feishu_plugin": "2026-04-06T07:37 v1.0.37正常"
   },
   "cronTaskStatus": {
-    "3273567b_深度学习时段": "OK (checked 2026-04-06T04:29, next in 21h)",
-    "2d07315a_OpenClaw 自愈系统": "已重新启用 (2026-04-06T04:29, Message failed已处理)"
+    "3273567b_深度学习时段": "OK (6h ago, next in 18h)",
+    "17468e27_每日早报": "OK (8m ago)",
+    "8944a88c_AI综合日报": "OK (scheduled 08:00, in 23m)",
+    "2d07315a_OpenClaw自愈系统": "已启用"
   },
-  "lastHeartbeat": "2026-04-06T04:29",
+  "lastHeartbeat": "2026-04-06T07:37",
   "commodityAlerts": {
-    "白银": "-3.49% S2紧急已推送",
-    "黄金": "-2.56% S1预警已推送",
-    "甲醇": "+2.88% S1预警已推送"
+    "白银": "-3.49% S2紧急(04:29已推送)",
+    "甲醇": "+2.88% S1预警(04:29已推送)"
   }
 }
