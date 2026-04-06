@@ -14,7 +14,7 @@
     {
       "type": "time_pattern",
       "peak_hours": [
-        "3:00 (120次)",
+        "3:00 (139次)",
         "1:00 (109次)",
         "2:00 (57次)"
       ],
@@ -84,7 +84,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-07T03:07:25.211794",
+  "last_evolve": "2026-04-07T04:04:53.540740",
   "memory_health": 79,
   "prevention_strategies": [
     {
