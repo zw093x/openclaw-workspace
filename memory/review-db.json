@@ -105,5 +105,39 @@
     "total_predictions": 0,
     "avg_accuracy": 0,
     "avg_decision_score": 0.54
-  }
+  },
+  "error_events": [
+    {
+      "type": "cron_timeout",
+      "job_id": "test-job-001",
+      "error_msg": "任务超时：实际耗时 150s / 配置 120s",
+      "root_cause": "timeout_too_short",
+      "fix_result": "success",
+      "ts": "2026-04-06T11:57:46.631396"
+    },
+    {
+      "type": "cron_timeout",
+      "job_id": "test-job-1",
+      "error_msg": "超时120s",
+      "root_cause": "timeout_too_short",
+      "fix_result": "success",
+      "ts": "2026-04-06T11:58:01.397436"
+    },
+    {
+      "type": "cron_timeout",
+      "job_id": "test-job-2",
+      "error_msg": "超时100s",
+      "root_cause": "timeout_too_short",
+      "fix_result": "success",
+      "ts": "2026-04-06T11:58:01.397909"
+    },
+    {
+      "type": "cron_message_failed",
+      "job_id": "test-job-3",
+      "error_msg": "推送失败",
+      "root_cause": "push_occasional",
+      "fix_result": "success",
+      "ts": "2026-04-06T11:58:01.398405"
+    }
+  ]
 }

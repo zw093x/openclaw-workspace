@@ -84,6 +84,17 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-06T11:13:24.984279",
-  "memory_health": 79
+  "last_evolve": "2026-04-06T12:04:43.384811",
+  "memory_health": 79,
+  "prevention_strategies": [
+    {
+      "trigger": "cron_timeout ≥2次/周",
+      "action": "自动将对应任务的timeout扩容至600s",
+      "applicable_to": [
+        "cron_timeout"
+      ],
+      "confidence": 0.8,
+      "reason": "该类型错误出现3次，自动预防有效"
+    }
+  ]
 }

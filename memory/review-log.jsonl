@@ -12,3 +12,14 @@
 {"action": "outcome", "id": "DEC-20260402-005", "score": 0.5, "ts": "2026-04-02T01:21:23.701692"}
 {"action": "outcome", "id": "DEC-20260402-006", "score": 0.5, "ts": "2026-04-02T01:21:23.734698"}
 {"action": "outcome", "id": "DEC-20260402-007", "score": 0.5, "ts": "2026-04-02T01:21:23.768273"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-06T11:56:51.013420"}
+{"action": "error_received", "type": "cron_timeout", "job_id": "test-job-001", "error_msg": "任务超时：实际耗时 150s / 配置 120s", "root_cause": "timeout_too_short", "fix_result": "success", "ts": "2026-04-06T11:57:46.631719"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-06T11:57:46.632033"}
+{"action": "error_received", "type": "cron_timeout", "job_id": "test-job-1", "error_msg": "超时120s", "root_cause": "timeout_too_short", "fix_result": "success", "ts": "2026-04-06T11:58:01.397692"}
+{"action": "error_received", "type": "cron_timeout", "job_id": "test-job-2", "error_msg": "超时100s", "root_cause": "timeout_too_short", "fix_result": "success", "ts": "2026-04-06T11:58:01.398189"}
+{"action": "error_received", "type": "cron_message_failed", "job_id": "test-job-3", "error_msg": "推送失败", "root_cause": "push_occasional", "fix_result": "success", "ts": "2026-04-06T11:58:01.398692"}
+{"action": "export_prevention", "strategies_count": 1, "learned_count": 2, "ts": "2026-04-06T11:58:01.399256"}
+{"action": "export_prevention", "strategies_count": 1, "learned_count": 2, "ts": "2026-04-06T11:58:01.399472"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 1, "ts": "2026-04-06T11:58:01.399563"}
+{"action": "export_prevention", "strategies_count": 1, "learned_count": 2, "ts": "2026-04-06T12:04:32.996249"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 1, "ts": "2026-04-06T12:04:32.998746"}
