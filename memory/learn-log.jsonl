@@ -183,3 +183,5 @@
 {"action": "record", "id": "LRN-20260406-183", "type": "error", "category": "自愈失败-cron_message_failed", "summary": "", "ts": "2026-04-06T03:07:27.264847"}
 {"action": "record", "id": "LRN-20260406-184", "type": "success", "category": "自愈-cron_message_failed", "summary": "2d07315a: apply_fix_for_pattern", "ts": "2026-04-06T04:31:18.573506"}
 {"action": "record", "id": "LRN-20260406-185", "type": "success", "category": "自愈-cron_message_failed", "summary": "2d07315a: apply_fix_for_pattern", "ts": "2026-04-06T05:04:23.697384"}
+{"action": "record", "id": "LRN-20260406-186", "type": "success", "category": "自愈-cron_message_failed", "summary": "2d07315a: apply_fix_for_pattern", "ts": "2026-04-06T10:04:43.637424"}
+{"action": "record", "id": "LRN-20260406-187", "type": "success", "category": "自愈-cron_message_failed", "summary": "ec59e68f: apply_fix_for_pattern", "ts": "2026-04-06T10:04:43.647912"}
