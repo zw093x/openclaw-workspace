@@ -1,26 +1,47 @@
 # AI视频生成深度知识库
-> 基于Sora/AnimateDiff/Rectified Flow三篇核心论文 + P工研究方向整理
+> 基于Sora/AnimateDiff/Rectified Flow三篇核心论文 + 豆包AI绘画提示词课程
+> 整合：论文原理 + 提示词工程 + ComfyUI实践
 > 更新：2026-04-06
+
+---
+
+## 核心认知（必读）
+
+> AI绘画/视频提示词 ≠ 写文案，而是通过文本精准对齐模型的**视觉语义、空间逻辑、风格范式**，以及视频的**时序连贯性、运动规律与镜头叙事逻辑**，最终实现生成效果的可控化、可复现化、最优化。
 
 ---
 
 ## 一、扩散模型基础（前置知识）
 
-### 1.1 扩散模型（Diffusion Model）
-
-**核心原理**：通过逐步添加噪声再逐步去噪，学习从噪声中恢复清晰图像/视频。
+### 1.1 扩散模型原理
 
 ```
 训练：图片 + 噪声 → 模型学习预测噪声
 推理：从纯噪声开始 → 逐步去噪 → 生成清晰图片
 ```
 
-**与GAN的区别**：
-- GAN：一次生成，训练不稳定
-- 扩散模型：逐步生成，训练稳定、质量高
-- 缺点：推理慢（需要数百步迭代）
+**与GAN的区别**：GAN一次生成（不稳定），扩散模型逐步生成（稳定），但推理慢（100-1000步）。
 
-### 1.2 视频生成的特殊挑战
+### 1.2 CLIP — 文本到视觉的桥梁
+
+```
+论文：Learning Transferable Visual Models From Natural Language Supervision (2021)
+
+核心：CLIP = Contrastive Language-Image Pre-training
+
+训练：大规模图文对（400M）→ 对比学习
+  - 文本编码器：Transformer (63M params, 12 layers)
+  - 图像编码器：ViT (86M params)
+  - 目标：图文配对 → 高相似度；图文不配对 → 低相似度
+
+推理：给定文本 → 编码 → 映射到视觉特征空间 → 控制生成
+
+提示词 → CLIP编码 → 视觉特征 → 扩散模型生成
+
+关键：提示词的本质是"给CLIP提供无歧义的视觉锚点"
+```
+
+### 1.3 视频生成的特殊挑战
 
 | 挑战 | 描述 |
 |------|------|
@@ -31,223 +52,272 @@
 
 ---
 
-## 二、Sora — Video Generation Models as World Simulators（2024-02）
+## 二、干线提示词工程（豆包课程精华）
 
-### 2.1 核心创新
+### 2.1 主流模型提示词逻辑对比
 
-**Sora是OpenAI发布的视频生成模型**，核心技术特点：
+**必须先选定1个模型深耕，不同模型混学会导致效果失控。**
 
-### 架构
-- **基于Diffusion Transformer（DiT）**
-- 将视频编码为时空Patches（类似ViT处理图像的方式）
-- 使用Transformer处理时序信息
+| 模型类型 | 代表 | 提示词逻辑 | 适用场景 |
+|---------|------|-----------|---------|
+| 闭源创意 | Midjourney / DALL-E 3 | 自然语言长句优先，依赖模型原生语义理解 | 创意设计、商业插画、快速出图 |
+| 开源可控 | SD / SDXL / Flux | **结构化关键词+权重**，反向提示词至关重要 | 专业精细化创作、本地化部署 |
+| 长视频 | Sora | 电影级完整叙事文本，多镜头自然语言 | 长视频叙事、影视级 |
+| 短视频 | Pika / Runway Gen-3 | 精准动作+镜头描述，图生视频 | 短视频、动态海报 |
+| 开源视频 | SVD / AnimateDiff | 兼容SD体系，需配合运动模块 | 可控动画、本地创作 |
 
-### 技术突破
+### 2.2 万能提示词框架（六段式）
 
-**① 视频Patches统一表示**
-```
-图像 = 空间Patches的序列
-视频 = 空间Patches × 时间维度的序列
-→ 统一框架处理图像和视频
-```
-
-**② 视频压缩网络**
-- 训练一个降噪的视频压缩模型（类似VAE）
-- 将视频压缩到低维潜空间
-- 在潜空间做扩散生成（大幅降低计算量）
-
-**③ 长视频生成能力**
-- 最长可生成60秒视频
-- 能保持长程时间一致性
-- 支持不同分辨率和宽高比
-
-**④ 世界模拟能力**
-- Sora不仅是视频生成器，还是"世界模拟器"
-- 能模拟物理世界的某些规律（碰撞、液体流动等）
-- 3D一致性、物体持久性、远程相干性
-
-### 技术规格
-
-| 参数 | 值 |
-|------|-----|
-| 发布时间 | 2024年2月 |
-| 公司 | OpenAI |
-| 架构 | Diffusion Transformer |
-| 关键组件 | 视频压缩网络、时空Patches、Transformer |
-| 最长时长 | 60秒 |
-| 训练数据 | 视频+图片混合 |
-
-### 核心论文要点
+**按权重优先级排序，核心主体放最前端：**
 
 ```
-Abstract核心：
-- 研究视频生成作为世界模拟器的可能性
-- 视频生成模型可以模拟物理世界
-- 通过扩大视频生成模型，可以获得有益的世界模拟能力
+核心主体（带核心特征权重） + 场景环境 + 构图视角 + 光影色调 + 视觉风格 + 画质标准
 ```
 
----
-
-## 三、AnimateDiff — 个性化文生图扩散模型动画化
-
-### 3.1 核心问题
-
-Stable Diffusion等模型只能生成静态图，如何让它们直接生成动画视频？
-
-### 3.2 解决方案：Motion Modeling Module
-
-**AnimateDiff = 冻结的SD + 可学习的运动模块**
-
+**示例（AnimateDiff风格）：**
 ```
-架构：
-[冻结的SD模型] + [新插入的Motion Module]
-     ↓                    ↓
-  保持图像质量       学习运动模式
-     ↓
-  输出的图像序列 = 动画视频
+(1girl:1.3), (long flowing dress:1.1), walking forward through ancient chinese palace, 
+cherry blossoms falling slowly, golden sunset light, volumetric fog, anime style, 
+cinematic composition, 8K ultra detailed, soft color palette, bokeh depth
 ```
 
-### 3.3 技术细节
+### 2.3 SD权重语法
 
-**Motion Module = 3D卷积 + Temporal Attention**
-
-- 3D卷积：在时序维度上提取运动特征
-- Temporal Attention：让每帧关注其他帧，保持连贯性
-- 两个模块协同工作，确保运动自然
-
-**Adapter机制（类似LoRA）**
-- 不改变原始SD权重
-- 只训练新插入的模块
-- 推理成本几乎不增加
-
-### 3.4 与其他方法的对比
-
-| 方法 | 优点 | 缺点 |
+| 语法 | 作用 | 示例 |
 |------|------|------|
-| 逐帧生成后拼接 | 简单 | 缺乏时间连贯性 |
-| 视频微调SD | 效果好 | 需要大量视频数据 |
-| **AnimateDiff** | **无需视频数据+保持质量** | 运动模式有限制 |
+| `(关键词)` | 提升权重 | `(cat)` 强化猫 |
+| `[关键词]` | 降低权重 | `[cat]` 弱化猫 |
+| `(关键词:1.2)` | 精准权重赋值 | `(cat:1.3)` 权重1.3 |
+| `((关键词))` | 叠加提升 | 等价于权重×1.1² |
 
-### 3.5 对P工的价值
+**权重分配原则：**
+- 核心主体：1.2-1.5
+- 关键风格：1.1-1.3
+- 次要元素：0.8-1.0
+- 画质层：0.9-1.0
 
-- **ComfyUI已有AnimateDiff节点**：可以直接使用
-- 适合生成短视频/动画GIF
-- 可以与ControlNet结合增强可控性
-- **用途**：Logo动画、产品展示、概念视频
+> **核心规则：前置权重＞后置权重，关键词越多越稀释核心语义**
 
----
+### 2.4 关键参数
 
-## 四、Rectified Flow Transformers（文生视频核心架构）
+| 参数 | 说明 | 常规范围 |
+|------|------|---------|
+| CFG Scale | 提示词遵从度，过低跑题、过高过饱和 | 7-12 |
+| 采样器 | DPM++ 2M Karras（精细）/ Euler a（快速） | — |
+| 采样步数 | SD=20-30步 / SDXL=30-50步 | — |
+| Seed | 固定种子做对照实验，实现效果复现 | — |
 
-### 4.1 问题：扩散模型太慢
+### 2.5 反向提示词（解决80%画面崩坏）
 
-标准扩散需要100-1000步去噪，推理极慢。
-
-### 4.2 Rectified Flow核心思想
-
-**将噪声到数据的过程"拉直"**
-
+**三类模板：**
 ```
-传统扩散（曲折路径）：
-噪声 → 步骤1 → ... → 步骤N → 图像（100步以上）
-
-Rectified Flow（直线路径）：
-噪声 → 图像（1-4步，更直接）
-```
-
-**数学原理**：让路径变成直线，最优传输理论（Optimal Transport）
-
-### 4.3 与一致性模型的关系
-
-- **Consistency Model**：从任意步直接预测最终结果
-- **Rectified Flow**：通过直线插值+精炼（refinement），减少步数
-- **两者结合**：UltraFast SD（1-2步生成）
-
-### 4.4 在视频生成中的应用
-
-**主要应用于：加速视频生成推理**
-
-| 模型 | 步数 | 速度 |
-|------|------|------|
-| 标准SD + DDPM | 100步 | 慢 |
-| SD + DDIM | 20步 | 中 |
-| Rectified Flow | 4-8步 | 快 |
-| 一致性模型 | 1步 | 最快 |
-
-### 4.5 对P工的价值
-
-- ComfyUI中的`LCM`(Latent Consistency Model)节点就是基于一致性模型
-- 配合AnimateDiff可以实现"快速+有运动"的视频生成
-- **当前最实用的组合**：AnimateDiff + LCM = 快速动画生成
-
----
-
-## 五、AI视频生成技术全景图（我的判断）
-
-### 5.1 技术路线对比
-
-| 路线 | 代表工作 | 优势 | 劣势 | 当前成熟度 |
-|------|---------|------|------|----------|
-| DiT（Transformer）| Sora、Stable Video | 长视频+高质量 | 算力要求高 | 发展中 |
-| 扩散+运动模块 | AnimateDiff | 兼容SD生态 | 短视频为主 | ⭐⭐⭐ 可用 |
-| 一致性模型 | LCM、SDXL-Turbo | 极快推理 | 质量略降 | ⭐⭐⭐ 可用 |
-| 3D-Gaussia | DreamFusion/M3 | 3D一致性 | 速度慢 | ⭐发展中 |
-| 光流引导 | I2VGen-XL | 图像动画化 | 运动有限 | ⭐发展中 |
-
-### 5.2 当前最适合P工的方向
-
-**优先级排序（基于可用性和实用性）：**
-
-1. **⭐⭐⭐ AnimateDiff + LCM（立即可用）**
-   - ComfyUI已有节点
-   - 本地可运行
-   - 适合短视频/动画
-
-2. **⭐⭐ Sora类DiT视频（API调用）**
-   - 通过API访问（如有）
-   - 生成高质量长视频
-   - 成本较高
-
-3. **⭐ TripoSG/Meshy（3D建模辅助）**
-   - P工ComfyUI学习计划中
-   - AI生成3D模型草图 → 手动精修
-
-### 5.3 行业趋势判断
-
-**2024-2026年视频生成发展路径：**
-```
-2024: 长视频质量突破（Sora）
-2024-2025: 推理速度优化（LCM/Rectified Flow）
-2025-2026: 实时视频生成 + 控制性增强
-2026+: AI视频进入影视制作工作流
+画质低质类：worst quality, low quality, blurry, jpeg artifacts, noise
+主体崩坏类：deformed, bad anatomy, extra fingers, missing limbs, mutated
+画面干扰类：watermark, text, logo, signature, username, crop
 ```
 
----
+### 2.6 风格锁定三要素
 
-## 六、关键术语表
+三者结合才能避免风格跑偏：
 
-| 术语 | 解释 |
+| 要素 | 示例 |
 |------|------|
-| Diffusion Model | 扩散模型，通过逐步去噪生成 |
-| Latent Diffusion | 在潜空间做扩散，大幅加速 |
-| Patches | 将图像/视频切分为小块处理 |
-| DiT (Diffusion Transformer) | 用Transformer做扩散模型 |
-| Temporal Consistency | 时间一致性，帧间连贯 |
-| Motion Module | 学习运动模式的模块 |
-| Rectified Flow | 直线插值的生成方法 |
-| Consistency Model | 一致性模型，一步生成 |
-| LoRA/Adapter | 低秩适配，不改原模型权重 |
-| ControlNet | 控制条件引导生成 |
+| 艺术家/IP风格 | 宫崎骏、莫奈、新海诚、Moebius |
+| 艺术流派 | 印象派、赛博朋克、国潮水墨、浮世绘 |
+| 媒介材质 | 油画、水彩、C4D渲染、OC渲染、胶片摄影 |
+
+**进阶能力：** 固定种子 + 固定风格关键词 + 固定参数 → 仅改主体/场景 → 实现系列风格一致性
+
+### 2.7 构图·光影·空间专业术语
+
+**构图：**
+- 景别：特写、近景、中景、全景、远景
+- 镜头类型：广角、长焦、微距、鱼眼
+- 构图方式：三分法、对称构图、引导线构图、框架构图
+- 视角：平视、俯视、仰视、鸟瞰、虫视
+
+**光影：**
+- 光源类型：逆光、侧光、伦勃朗光、丁达尔效应
+- 光线质感：柔和漫射光、硬光、边缘光
+- 色调：暖色调、冷色调、莫兰迪色系、赛博霓虹
 
 ---
 
-## 七、行动建议（P工AI视频方向）
+## 三、可控生成三大技术
 
-1. **立即可用**：ComfyUI + AnimateDiff + LCM 组合
-2. **学习路径**：先掌握AnimateDiff节点使用 → 再研究Motion模块原理
-3. **垂直方向**：结合3D建模能力（TripoSG）做AI+3D工作流
-4. **关注**：Sora类DiT模型的技术进展（可能颠覆当前方案）
+### 3.1 模型/LoRA适配
+
+> 新手最易踩坑：下载模型必须查看作者说明，加入专属触发词才能激活模型能力。
+
+### 3.2 ControlNet（构图精准控制）
+
+```
+提示词负责：风格、光影、画质
+ControlNet负责：构图、结构、姿态
+
+常用ControlNet类型：
+  - 线稿控制（canny / softedge）：保持轮廓结构
+  - 深度图控制（depth）：保持空间深度关系
+  - 姿态控制（openpose）：精准人体姿态
+  - 语义分割（seg）：分区控制不同区域
+  - 法线图（normal）：表面凹凸细节
+```
+
+**视频ControlNet：**
+- TemporalNet：跨帧姿态一致性控制
+- I2V（Image to Video）：图生视频，保持原图结构
+- Video ControlNet：光流引导，保持时间连贯性
+
+### 3.3 区域提示词
+
+给画面不同分区写独立提示词，适配多主体复杂场景。
 
 ---
-*基于Sora/OpenAI 2024.02 / AnimateDiff 2023.07 / Rectified Flow 2023 整理*
-*个人判断，仅供参考*
+
+## 四、Sora — Video Generation as World Simulators（2024-02）
+
+### 核心创新
+
+**架构：DiT（Diffusion Transformer）**
+
+- 视频 → 时空Patches → Transformer处理
+- 视频压缩网络（类似VAE，但同时压缩时间+空间）
+- 最长60秒，支持任意分辨率/宽高比
+- 世界模拟能力：碰撞、液体流动、3D一致性
+
+### 对P工的价值
+
+- 长视频生成标杆
+- 电影级多镜头叙事基础
+- DiT架构是Flux / Stable Video底层
+
+---
+
+## 五、AnimateDiff — Motion Module（立即可用⭐⭐⭐）
+
+### 核心原理
+
+**AnimateDiff = 冻结的SD + 可学习的Motion Module**
+
+```
+[冻结SD] + [新插入Motion Module] = 输出动画帧序列
+
+Motion Module = 3D卷积 + Temporal Attention
+  - 3D卷积：提取时序运动特征
+  - Temporal Attention：帧间注意力，保持连贯性
+  - 不改变SD权重 → 保持图像质量
+```
+
+### AnimateDiff提示词要点（与图片的区别）
+
+| 要点 | 说明 |
+|------|------|
+| 主体固定 | 换场景不换主体 |
+| 环境词单一 | 多环境词导致帧间不一致 |
+| 动作词放主体后 | `(1girl), walking, cherry blossoms` |
+| 帧数建议 | 16-32帧（更短更稳定） |
+| Motion LoRA强度 | 0.7-0.9（太高形变） |
+
+### 推荐参数组合
+
+**AnimateDiff + LCM（最实用，速度最快）：**
+```
+Steps: 4-8步（LCM专用）
+CFG: 1.0-2.0（LCM低CFG）
+Denoise: 1.0（全强度）
+帧数: 16-24帧
+```
+
+---
+
+## 六、Rectified Flow — 加速推理
+
+### 核心思想
+
+```
+传统扩散：曲折路径，100-1000步
+Rectified Flow：直线路径，4-8步
+
+原理：最优传输理论（Optimal Transport）
+→ 将噪声到数据的路径"拉直"
+```
+
+### ComfyUI节点对应
+
+| 模型 | 步数 | ComfyUI节点 |
+|------|------|------------|
+| 标准SD | 100步 | KSampler |
+| SD+DDIM | 20步 | KSampler（ddim）|
+| LCM | 2-8步 | LCM Loader |
+| SDXL-Turbo | 1-4步 | SDXL-Turbo |
+
+---
+
+## 七、ComfyUI节点地图
+
+| 底层技术 | ComfyUI节点 | 用途 |
+|---------|------------|------|
+| Latent Diffusion | KSampler / KSamplerAdvanced | 采样器核心 |
+| CLIP Text Encoder | CLIP Text Encode | 文本条件注入 |
+| VAE | VAE Decode / VAE Encode | 潜空间↔像素 |
+| Motion Module | AnimateDiff / Animatediff Community | 运动生成 |
+| LCM | LCM / LCM Loader | 快速采样（2-8步） |
+| SDXL-Turbo | SDXL-Turbo / TurboVision | 1-4步生成 |
+| ControlNet | ControlNet Apply / Stacker | 条件控制 |
+| IP-Adapter | IPAdapter | 图像条件 |
+| Regional Prompter | Regional Prompter | 分区提示词 |
+
+---
+
+## 八、AI视频提示词词库（镜头运动）
+
+| 效果 | 提示词 |
+|------|--------|
+| 慢速平移 | `slow pan left/right` |
+| 推进/拉远 | `dolly in/out` |
+| 跟踪镜头 | `tracking shot` |
+| 固定 | `static / locked off` |
+| 缩放 | `zoom in/out` |
+| 环绕 | `slow orbit` |
+| 升格慢动作 | `slow motion, cinematic slow motion` |
+| 镜头推进 | `camera push in slowly` |
+| 风拂发 | `wind blows hair gently` |
+| 烟雾升腾 | `smoke rises slowly` |
+| 水波荡漾 | `water rippling` |
+| 粒子飘散 | `particles drifting in air` |
+
+---
+
+## 九、技术路线全景图
+
+| 路线 | 代表 | 成熟度 | P工价值 |
+|------|------|--------|--------|
+| DiT/Transformer | Sora、Stable Video | 发展中 | 长期储备 |
+| 扩散+运动模块 | AnimateDiff | ⭐⭐⭐可用 | **立即可用** |
+| 一致性模型 | LCM、SDXL-Turbo | ⭐⭐⭐可用 | **立即可用** |
+| 3D Gaussian | 3DGS | ⭐⭐发展中 | AI+3D工作流 |
+| 光流引导 | I2VGen-XL | ⭐发展中 | 图像动画化 |
+
+---
+
+## 十、必读论文清单
+
+| 论文 | 年 | 状态 | 核心贡献 |
+|------|---|------|---------|
+| CLIP | 2021 | ✅ | 文本-视觉对齐基础 |
+| Latent Diffusion | 2021 | ✅ | SD开山，潜空间扩散 |
+| DiT | 2022 | ✅ | Transformer扩散架构 |
+| AnimateDiff | 2023 | ✅ | Motion Module |
+| Rectified Flow | 2023 | ✅ | 直线流加速 |
+| LCM | 2023 | ✅ | 4步生成 |
+| SDXL-Turbo | 2023 | ✅ | 1-2步生成 |
+| 3D Gaussian Splatting | 2023 | ✅ | 高斯渲染 |
+| Instant NGP | 2022 | ✅ | 多分辨率哈希极速NeRF |
+| DeepSDF | 2020 | ✅ | SDF隐式表征 |
+| Point-NeRF | 2022 | ✅ | 点云+NeRF |
+| Sora | 2024 | ✅ | 视频世界模拟 |
+
+---
+
+*整合：Sora/AnimateDiff/Rectified Flow论文 + 豆包AI绘画提示词课程*
+*持续更新，结合P工ComfyUI学习计划*
