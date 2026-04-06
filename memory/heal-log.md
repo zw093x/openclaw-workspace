@@ -1623,3 +1623,15 @@ cron_misconfiguration 是主要根因（49次），但自愈系统修复率为0%
 - **根因分析**: cron_misconfiguration 是主要问题，需要系统级修复
 - **建议**: 审视cron配置，增加自动化修复能力
 - **备注**: 问题为历史累积，非新增；自愈系统已识别但自动修复率低
+
+## 关键记录 [21:04]
+- **事件**: 周日自愈系统例行检查
+- **检查项**: intel_hub同步 / unified_heal / learn_evolve / error_evolution
+- **结果**: 
+  - ✅ intel_hub同步正常
+  - ✅ 统一自愈系统正常（预防策略1条，阈值磁盘90%/Cron错误3次，进化等级L5）
+  - ✅ learn_evolve正常（无变化）
+  - ⚠️ error_evolution发现系统性问题
+- **问题**: cron_misconfiguration 出现49次（占总错误90%），修复率仅4%
+- **决定**: 需系统级修复cron配置问题，建议排查cron任务根因
+- **备注**: 高频错误ID: 9e923b4e857a(34次), 476e077106ae(15次)
