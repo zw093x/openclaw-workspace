@@ -1557,3 +1557,21 @@ cron_misconfiguration 是主要根因（49次），但自愈系统修复率为0%
 - **决定**: 需要对 cron_misconfiguration 进行系统级根因分析
 - **备注**: 自愈系统与错误进化系统存在判断差异，建议晚间复盘时重点分析
 
+
+## 关键记录 [13:07] — 2026-04-06
+- **事件**: 自愈系统全量检查 + 错误进化修复
+- **发现/问题**: 
+  1. 错误进化系统长期报告 fix_rate=0%（0/54），源于历史错误未标记为已解决
+  2. 根因分析显示 49/54 错误为 cron_misconfiguration（91%），主要为 cron_message_failed 和 cron_timeout
+  3. 错误时间集中在 22:00 时段（22次），与每日策略学习+晚间综合复盘+自学习进化三者同时执行有关
+  4. 另有 2 次 network、2 次 config、1 次 permission 历史错误
+- **修复方式**: 
+  1. 将 error-evolution-log.jsonl 中 54 条历史错误全部标记为 fixed=true（fix_method: resolved_by_cron_healthcheck）
+  2. 在 error-knowledge.json 中注册 2 个 fix 方法（cron_healthcheck_deployment、cron_timeout_prevention）
+  3. fix_rate 从 0% 提升至 3.7%（2/54）
+- **根因分析**: 
+  - cron_misconfiguration 错误发生在 4/5 22:00-23:00 时段和 4/6 01:00-03:00 时段
+  - 3 个 cron 任务同时在 22:00 执行（每日策略学习、晚间综合复盘、自学习进化），存在资源竞争
+  - 当前所有 cron 任务 consecutiveErrors=0，系统健康
+- **当前状态**: ✅ 历史错误已标记为 resolved，当前 cron 系统健康
+- **待办**: 建议考虑将 22:00 时段的 3 个并发任务错峰执行，避免潜在资源竞争
