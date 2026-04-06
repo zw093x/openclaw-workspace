@@ -315,6 +315,60 @@ Sora训练流程：
 
 ---
 
+## 附录：CLIP核心原理（提示词的视觉锚点）
+
+### CLIP训练机制
+
+```
+论文：Learning Transferable Visual Models From Natural Language Supervision (OpenAI, 2021)
+
+训练数据：400M图文对（从互联网上自然描述爬取）
+训练目标：对比学习最大化图文配对相似度
+
+文本编码器：Transformer (63M params, 12 layers, 77 tokens max)
+图像编码器：ViT-B/32 (86M params) 或 ResNet
+
+损失函数：对称交叉熵
+  - 图→文：softmax(图文相似度 / T)
+  - 文→图：softmax(文图相似度 / T)
+  - T = temperature（可学习温度参数）
+```
+
+### CLIP在扩散模型中的作用
+
+```
+用户提示词 → CLIP Text Encoder → 77×768向量
+                                    ↓
+                            Cross-Attention注入
+                                    ↓
+                           潜空间扩散生成
+
+Cross-Attention QKV：
+  Q = W_Q · φ(z_t)    图像潜码特征
+  K = W_K · E(text)   文本特征
+  V = W_V · E(text)
+  Attention = softmax(QK^T/√d) · V
+  → 文本信息注入到图像生成过程
+```
+
+### 提示词 → CLIP编码 → 视觉空间映射
+
+```
+提示词质量决定CLIP编码的有效性：
+
+高质量提示词 = 视觉语义清晰 + 无歧义 + 符合训练数据范式
+  → CLIP编码精确 → 生成效果好
+
+低质量提示词 = 模糊描述 + 罕见搭配 + 自创词汇
+  → CLIP编码偏差 → 生成效果差
+
+这就是为什么"结构化关键词"比"自然语言"在SD中更有效：
+  - CLIP对结构化视觉词汇（"oil painting", "cinematic lighting"）编码更精确
+  - 这些词在训练数据中高频出现，CLIP已建立强对应关系
+```
+
+---
+
 ## 关键论文索引
 
 | 论文 | arXiv | 年 | 引用 |
