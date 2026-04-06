@@ -717,3 +717,161 @@ if __name__ == "__main__":
 
     else:
         print(__doc__)
+
+
+# ============================================================
+# 错误进化闭环接口 — 与自愈系统形成反馈循环
+# ============================================================
+def receive_error_event(error_type: str, job_id: str, error_msg: str,
+                         root_cause: str, fix_result: str):
+    """
+    接收来自自愈系统的错误事件（自愈 → 错误进化）
+    将错误数据积累到学习材料库
+    
+    Args:
+        error_type: 错误类型 (cron_timeout / cron_message_failed / feishu_unreachable / ...)
+        job_id: 任务ID
+        error_msg: 错误消息
+        root_cause: 根因分析结果
+        fix_result: 修复结果 (success / failed / skipped)
+    """
+    db = load_review_db()
+    errors = db.setdefault("error_events", [])
+    
+    entry = {
+        "type": error_type,
+        "job_id": job_id,
+        "error_msg": error_msg[:200],
+        "root_cause": root_cause,
+        "fix_result": fix_result,
+        "ts": datetime.now().isoformat(),
+    }
+    errors.append(entry)
+    
+    # 只保留最近200条
+    if len(errors) > 200:
+        errors[:] = errors[-200:]
+    
+    save_review_db(db)
+    append_log({"action": "error_received", **entry})
+    return entry
+
+
+def export_prevention_strategies() -> dict:
+    """
+    从错误进化系统导出预防策略（错误进化 → 自愈系统）
+    分析错误历史，生成可在问题发生前执行的预防策略
+    
+    Returns:
+        {
+            "strategies": [
+                {
+                    "trigger": "条件触发词",
+                    "action": "执行的操作",
+                    "applicable_to": ["cron_timeout", "..."],
+                    "confidence": 0.8,
+                    "reason": "基于X次错误分析"
+                }
+            ],
+            "learned_patterns": [...]
+        }
+    """
+    db = load_review_db()
+    errors = db.get("error_events", [])
+    
+    if len(errors) < 3:
+        return {"strategies": [], "learned_patterns": [], "note": "样本不足(<3条)"}
+    
+    # 分析错误类型频率
+    from collections import Counter
+    type_freq = Counter(e.get("type") for e in errors)
+    
+    # 分析根因频率
+    cause_freq = Counter(e.get("root_cause") for e in errors if e.get("root_cause"))
+    
+    strategies = []
+    learned = []
+    
+    # 从高频错误类型生成预防策略
+    for err_type, count in type_freq.most_common(5):
+        if count < 2:
+            continue
+        
+        # 根据错误类型生成策略
+        if err_type == "cron_timeout":
+            # 高频超时：预防性扩容timeout
+            strategies.append({
+                "trigger": "cron_timeout ≥2次/周",
+                "action": "自动将对应任务的timeout扩容至600s",
+                "applicable_to": ["cron_timeout"],
+                "confidence": min(0.5 + count * 0.1, 0.95),
+                "reason": f"该类型错误出现{count}次，自动预防有效"
+            })
+            learned.append(f"cron_timeout高频({count}次)→预防性扩容timeout")
+        
+        elif err_type == "cron_message_failed":
+            # 推送失败：预防性检查飞书连接
+            strategies.append({
+                "trigger": "cron_message_failed ≥2次/周",
+                "action": "触发gateway连接自检，不盲目重跑任务",
+                "applicable_to": ["cron_message_failed"],
+                "confidence": min(0.5 + count * 0.1, 0.95),
+                "reason": f"推送失败{count}次，多为偶发，应先检查连接"
+            })
+            learned.append(f"推送失败({count}次)→先检查gateway再决定是否重跑")
+        
+        elif err_type == "feishu_unreachable":
+            strategies.append({
+                "trigger": "飞书连接失败 ≥1次",
+                "action": "立即重启gateway，确认恢复",
+                "applicable_to": ["feishu_unreachable"],
+                "confidence": 0.9,
+                "reason": "飞书连接失败直接影响所有推送，必须立即处理"
+            })
+            learned.append("飞书连接失败→gateway重启")
+    
+    # 从高频根因生成策略
+    for cause, count in cause_freq.most_common(3):
+        if count >= 2:
+            learned.append(f"根因[{cause}]出现{count}次")
+    
+    append_log({
+        "action": "export_prevention",
+        "strategies_count": len(strategies),
+        "learned_count": len(learned)
+    })
+    
+    return {
+        "strategies": strategies,
+        "learned_patterns": learned,
+        "error_count": len(errors),
+        "timestamp": datetime.now().isoformat()
+    }
+
+
+def integrate_with_unified_heal():
+    """
+    初始化时调用：从错误进化系统加载预防策略，写入统一知识中枢
+    由 unified_heal.py 在启动时调用
+    """
+    result = export_prevention_strategies()
+    
+    # 写入 intel_hub
+    try:
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent))
+        import intel_hub
+        intel_hub.receive_heal_event("prevention_strategies", {
+            "strategies": result.get("strategies", []),
+            "learned": result.get("learned_patterns", []),
+            "source": "review_evolve"
+        })
+    except Exception:
+        pass  # intel_hub 不可用时静默跳过
+    
+    append_log({
+        "action": "integrate_with_unified_heal",
+        "strategies_loaded": len(result.get("strategies", []))
+    })
+    
+    return result

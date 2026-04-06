@@ -19,7 +19,7 @@
     },
     "obsidian": {
       "version": "1.0.0",
-      "installedAt": 1775050922672
+      "installedAt": 1775469916496
     },
     "weather": {
       "version": "1.0.0",
@@ -59,7 +59,7 @@
     },
     "finance-report-analyzer": {
       "version": "1.2.0",
-      "installedAt": 1775167271047
+      "installedAt": 1775426704296
     },
     "finance-radar": {
       "version": "1.1.0",
@@ -119,7 +119,7 @@
     },
     "skill-vetter": {
       "version": "1.0.0",
-      "installedAt": 1775340421582
+      "installedAt": 1775491262028
     },
     "skill-vetting": {
       "version": "1.1.0",
@@ -136,6 +136,22 @@
     "ai-ppt-generator": {
       "version": "1.1.5",
       "installedAt": 1775404981773
+    },
+    "openai-whisper": {
+      "version": "1.0.0",
+      "installedAt": 1775470021728
+    },
+    "outlook-api": {
+      "version": "1.0.3",
+      "installedAt": 1775470083733
+    },
+    "save-money": {
+      "version": "4.2.0",
+      "installedAt": 1775470202276
+    },
+    "searxng": {
+      "version": "1.0.3",
+      "installedAt": 1775470279024
     }
   }
 }

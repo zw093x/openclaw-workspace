@@ -2039,3 +2039,218 @@ cron: job execution timed out
 - Tags: 自愈失败-cron_message_failed, error
 ---
 
+
+## [LRN-20260406-181] error
+
+**Logged**: 2026-04-06T02:08:38.055867
+**Priority**: high
+**Status**: pending
+
+### Summary
+⚠️ ✉️ Message failed
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260406-182] error
+
+**Logged**: 2026-04-06T02:12:08.560987
+**Priority**: high
+**Status**: pending
+
+### Summary
+
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260406-183] error
+
+**Logged**: 2026-04-06T03:07:27.259260
+**Priority**: high
+**Status**: pending
+
+### Summary
+
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_message_failed, error
+---
+
+
+## [LRN-20260406-184] success
+
+**Logged**: 2026-04-06T04:31:18.565814
+**Priority**: low
+**Status**: pending
+
+### Summary
+2d07315a: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260406-185] success
+
+**Logged**: 2026-04-06T05:04:23.691077
+**Priority**: low
+**Status**: pending
+
+### Summary
+2d07315a: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260406-186] success
+
+**Logged**: 2026-04-06T10:04:43.632562
+**Priority**: low
+**Status**: pending
+
+### Summary
+2d07315a: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260406-187] success
+
+**Logged**: 2026-04-06T10:04:43.643154
+**Priority**: low
+**Status**: pending
+
+### Summary
+ec59e68f: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260406-188] success
+
+**Logged**: 2026-04-06T11:04:24.242366
+**Priority**: low
+**Status**: pending
+
+### Summary
+2d07315a: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260406-189] success
+
+**Logged**: 2026-04-06T11:04:24.251508
+**Priority**: low
+**Status**: pending
+
+### Summary
+ec59e68f: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260406-190] success
+
+**Logged**: 2026-04-06T11:05:02.395901
+**Priority**: low
+**Status**: pending
+
+### Summary
+ec59e68f: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## 2026-04-06 重要经验：日志系统隔离与幽灵错误
+
+### 问题回顾
+- 自愈系统从 v3.2 → v3.3 一路修复，但每周定时体检仍报54条"幽灵错误"
+- 根因：存在两个独立的错误进化系统，各自使用不同的日志文件
+  - `review_evolve.py` → `review-db.json` (干净)
+  - `error_evolution.py` → `error-evolution-log.jsonl` (54条旧数据)
+- 每次体检只清理了 `heal-unified-log.jsonl`，忽略了另一个日志文件
+
+### 教训
+1. **修复后必须检查所有相关日志**：不能只修一个日志，系统还有其他地方也在记录同类错误
+2. **两个独立的错误追踪系统造成混乱**：`review_evolve.py` 和 `error_evolution.py` 功能重叠但数据隔离
+3. **历史数据未清理**：升级版本后，旧的错误日志没有同步清理
+
+### 规则（写入系统）
+- 修复任何错误追踪系统时，必须检查所有相关日志文件
+- 日志清理命令：
+  ```bash
+  # 清空所有错误日志（升级后执行）
+  > memory/error-evolution-log.jsonl
+  # 验证清理结果
+  wc -l memory/error-evolution-log.jsonl
+  ```
+- 每周体检时，同时检查：
+  - `memory/heal-unified-log.jsonl`
+  - `memory/error-evolution-log.jsonl`
+  - `memory/review-db.json` (error_events)
+  - `memory/self_heal_registry.json` (errors)
+
+### 系统级改进建议
+- 将 `review_evolve.py` 和 `error_evolution.py` 合并为单一错误追踪系统
+- 或者明确分工：一个负责实时修复（heal-unified-log），一个负责离线分析（其他日志）
+- 避免同一问题在多个日志中重复记录
+

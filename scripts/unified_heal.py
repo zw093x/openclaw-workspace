@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-统一自愈系统 v3.2 — 精准修复版
+统一自愈系统 v3.3 — 根因终结版
 
 5层进化能力:
   L1 根因关联分析 — 症状→根因映射，避免重复表面修复
@@ -44,6 +44,13 @@ THRESHOLDS_FILE = WORKSPACE / "memory" / "heal-thresholds.json"
 
 # 导入错误进化引擎
 sys.path.insert(0, str(WORKSPACE / "scripts"))
+
+# 错误进化系统集成
+try:
+    import review_evolve
+    REVIEW_EVOLVE_AVAILABLE = True
+except Exception:
+    REVIEW_EVOLVE_AVAILABLE = False
 try:
     from error_evolution import report_error, get_suggestions, run_evolution as run_error_evolution
     HAS_EVOLUTION = True
@@ -164,12 +171,26 @@ def analyze_root_cause(symptom_pattern, error_msg, history):
     
     # 如果同一个根因频繁出现，标记为系统性问题
     cause_count = cause_counts.get(root_cause, 0)
-    if cause_count >= 3:
-        return root_cause, "systemic"  # 系统性问题，需要根治
+    
+    # 检查预防策略：是否有该错误类型的预防策略
+    prevention_strategies = history.get("prevention_strategies", [])
+    matched_strategy = None
+    for strat in prevention_strategies:
+        if symptom_pattern in strat.get("applicable_to", []):
+            matched_strategy = strat
+            break
+    
+    if matched_strategy:
+        # 有预防策略 → 这是预防动作的一部分，降低severity
+        severity = "preventive"
+    elif cause_count >= 3:
+        severity = "systemic"  # 系统性问题，需要根治
     elif cause_count >= 1:
-        return root_cause, "recurring" # 反复出现
+        severity = "recurring" # 反复出现
     else:
-        return root_cause, "new"       # 新问题
+        severity = "new"       # 新问题
+    
+    return root_cause, severity
 
 def get_root_cause_fix(root_cause):
     """根据根因给出根治方案"""
@@ -213,7 +234,7 @@ def discover_patterns(logs):
     for log in logs:
         pattern = log.get("pattern", "")
         target = log.get("target", "")
-        if pattern and pattern not in ("disk_warning", "cron_timeout"):
+        if pattern and pattern not in ("disk_warning", "cron_timeout", "cron_delivered_healthy"):
             error_patterns[pattern].append({
                 "ts": log.get("ts", ""),
                 "target": target,
@@ -546,7 +567,7 @@ def evaluate_repair_strategies(logs):
         result = log.get("result", "")
         time_ms = log.get("time_ms", 0)
         
-        if pattern and result:
+        if pattern and result and pattern not in ("cron_delivered_healthy", "cron_no_delivery_ignored"):
             pattern_results[pattern]["attempts"] += 1
             pattern_results[pattern]["total_time"] += time_ms
             if result == "success":
@@ -670,26 +691,69 @@ def check_cron_health():
         last_error = state.get("lastError", "")
         last_status = state.get("lastStatus", "ok")
         
-        # 诊断超时特征
-        is_timeout = bool(re.search(r'timeout|timed out|SIGTERM|execution time', last_error, re.IGNORECASE))
+        # 获取真实耗时数据
+        last_dur = state.get("lastDurationMs", 0) or 0
+        timeout_conf = job.get("payload", {}).get("timeoutSeconds") if job.get("payload") else None
         
-        # 优先按错误内容分类，超时类错误单独标记
-        if is_timeout and errors > 0:
+        # 判断真实超时：用实际耗时/配置timeout比值
+        is_truly_timed_out = False
+        if last_error:
+            # 方法1：错误消息包含超时关键词
+            is_truly_timed_out = bool(re.search(
+                r'timeout|timed out|sigterm|execution time|killed',
+                last_error, re.IGNORECASE
+            ))
+        # 方法2：durationMs / timeoutSeconds >= 0.85（任务跑满了配置时间的85%以上）
+        if not is_truly_timed_out and last_dur > 0 and timeout_conf and timeout_conf > 0:
+            usage_ratio = last_dur / (timeout_conf * 1000)
+            if usage_ratio >= 0.85:
+                is_truly_timed_out = True
+        
+        # 优先按真实超时分类，超时任务单独标记
+        if is_truly_timed_out and errors > 0:
             issues.append({
                 "name": job.get("name", "?"),
                 "id": job.get("id", ""),
                 "errors": errors,
                 "last_error": last_error[:200],
-                "last_status": "timeout"
+                "last_status": "timeout",
+                "duration_ms": last_dur,
+                "timeout_conf": timeout_conf
             })
         elif errors > 0:
-            issues.append({
-                "name": job.get("name", "?"),
-                "id": job.get("id", ""),
-                "errors": errors,
-                "last_error": last_error[:200],
-                "last_status": last_status if last_status != "ok" else "cron_message_failed"
-            })
+            delivery_mode = job.get("delivery", {}).get("mode", "none")
+            last_delivered = state.get("lastDelivered", False)
+            last_delivery_status = state.get("lastDeliveryStatus", "")
+            is_no_delivery = (delivery_mode == "none")
+            
+            # delivery=none 的任务：没有推送，不应该算 message_failed
+            if is_no_delivery:
+                issues.append({
+                    "name": job.get("name", "?"),
+                    "id": job.get("id", ""),
+                    "errors": errors,
+                    "last_error": last_error[:200],
+                    "last_status": "cron_no_delivery_ignored"
+                })
+            elif last_delivered or last_delivery_status == "delivered":
+                # 消息实际已送达成功 → 任务内容里的"Message failed"是探测结果，非投递失败
+                # 不进入任何修复流程（避免飞书健康检查自己探测自己的死循环）
+                issues.append({
+                    "name": job.get("name", "?"),
+                    "id": job.get("id", ""),
+                    "errors": errors,
+                    "last_error": last_error[:200],
+                    "last_status": "cron_delivered_healthy"
+                })
+            elif last_status != "ok":
+                # 真正的投递失败（lastDelivered=false 且 status=error）
+                issues.append({
+                    "name": job.get("name", "?"),
+                    "id": job.get("id", ""),
+                    "errors": errors,
+                    "last_error": last_error[:200],
+                    "last_status": "cron_message_failed"
+                })
     
     return issues, len(jobs)
 
@@ -697,19 +761,45 @@ def check_cron_health():
 def _verify_fix_by_rerun(job_id, timeout=180):
     """
     方向A核心：修复后重新运行任务，验证是否真正解决问题
+    处理 already-running 情况：任务已在运行中 → 跳过重跑，等待当前运行完成
     返回: (True/False, message)
     """
     import time as _time
-    # 先提交重跑
+    # 先检查任务是否已在运行
+    check_running, _ = run_cmd(f"openclaw cron runs --id {job_id} --limit 1 2>&1")
+    try:
+        entries = json.loads(check_running).get("entries", [])
+        if entries and entries[0].get("status") == "running":
+            # 任务已在运行中，等待它完成
+            for waited in range(0, timeout, 10):
+                _time.sleep(10)
+                check2, _ = run_cmd(f"openclaw cron runs --id {job_id} --limit 1 2>&1")
+                try:
+                    ents2 = json.loads(check2).get("entries", [])
+                    if ents2 and ents2[0].get("status") == "ok":
+                        return True, f"任务已在运行中，等待完成OK（耗时{ents2[0].get('durationMs',0)}ms）"
+                    elif ents2 and ents2[0].get("status") in ("error", "timeout"):
+                        return False, f"任务运行失败: {ents2[0].get('error', 'unknown')}"
+                except:
+                    pass
+            return False, f"任务长时间运行中，等待超时>{timeout}s"
+    except:
+        pass
+    
+    # 任务不在运行，提交重跑
     run_out, run_code = run_cmd(f"openclaw cron run {job_id} 2>&1")
+    
+    # 处理 already-running 情况（任务在检测间隙中启动了）
+    if "already-running" in run_out:
+        # 任务已经在运行，说明之前的运行是正常的 → 标记为成功
+        return True, f"任务已在运行中（正常），无需重跑"
+    
     if run_code != 0 or "enqueued" not in run_out:
         return False, f"重跑提交失败: {run_out[:100]}"
     
     # 等待最多timeout秒，检查runs状态
-    max_wait = timeout
-    interval = 15
-    for waited in range(0, max_wait, interval):
-        _time.sleep(interval)
+    for waited in range(0, max_wait, 15):
+        _time.sleep(15)
         check_out, _ = run_cmd(f"openclaw cron runs --id {job_id} --limit 1 2>&1")
         try:
             entries = json.loads(check_out).get("entries", [])
@@ -722,7 +812,7 @@ def _verify_fix_by_rerun(job_id, timeout=180):
                     return False, f"验证失败: {latest.get('error', status)}"
         except:
             continue
-    return False, f"验证超时（等待>{max_wait}s无结果）"
+    return False, f"验证超时（等待>{timeout}s无结果）"
 
 
 def _get_cron_timeout(job_id):
@@ -786,41 +876,58 @@ def apply_fix_for_pattern(pattern_name, job_id, job):
         return ok
     
     elif pattern_name == "cron_message_failed":
-        # 优化策略：不再盲目重跑任务
-        # Step 1: 检查 cron runs，看任务本身是否成功
+        # 彻底策略：只重试真正需要推送的任务
+        # Step 1: 检查 delivery 配置
+        delivery_mode = job.get("delivery", {}).get("mode", "none") if job else "none"
+        if delivery_mode == "none":
+            # mode=none 不推送，忽略
+            log_event({
+                "pattern": pattern_name,
+                "action": "skip_no_delivery",
+                "job_id": job_id,
+                "result": "skipped",
+                "msg": "mode=none，不推送，忽略message_failed检测"
+            })
+            return True  # 不计入失败
+        
+        # Step 2: 检查飞书连接
+        feishu = check_feishu_connection()
+        if feishu.get("status") != "ok":
+            # 飞书挂了，重启gateway
+            run_cmd("openclaw gateway restart 2>&1")
+            time.sleep(8)
+            feishu2 = check_feishu_connection()
+            log_event({
+                "pattern": pattern_name,
+                "action": "gateway_restart",
+                "job_id": job_id,
+                "result": "success" if feishu2.get("status") == "ok" else "failed",
+                "msg": f"飞书{feishu.get('status')}→重启→{feishu2.get('status')}"
+            })
+            return feishu2.get("status") == "ok"
+        
+        # Step 3: 飞书正常 → 检查任务本身是否成功
+        # 如果任务成功，推送偶发失败不重跑（避免 already-running 循环）
         runs_out, _ = run_cmd(f"openclaw cron runs --id {job_id} --limit 1 2>&1")
-        task_succeeded = False
         try:
             entries = json.loads(runs_out).get("entries", [])
-            if entries:
-                latest = entries[0]
-                task_succeeded = latest.get("status") == "ok"
-                dur_ms = latest.get("durationMs", 0)
+            if entries and entries[0].get("status") == "ok":
+                log_event({
+                    "pattern": pattern_name,
+                    "action": "push偶发_skip",
+                    "job_id": job_id,
+                    "result": "success",
+                    "msg": "任务本身成功，推送偶发失败，跳过重跑避免already-running"
+                })
+                return True  # 任务成功，推送偶发，不重跑
         except:
             pass
         
-        if task_succeeded:
-            # 任务本身成功 → 推送失败是偶发，不重跑
-            # 只需验证飞书连接仍然健康
-            feishu = check_feishu_connection()
-            ok = feishu.get("status") == "ok"
-            log_event({
-                "pattern": pattern_name,
-                "action": "push_only_retry",
-                "job_id": job_id,
-                "result": "success" if ok else "gateway_down",
-                "msg": f"任务本身成功(ok)，推送偶发。飞书状态={feishu.get('status','?')}"
-            })
-            if not ok:
-                # 飞书真的挂了，尝试重启gateway
-                run_cmd("openclaw gateway restart 2>&1")
-            return True  # 推送偶发不算失败，不重跑任务
-        else:
-            # 任务本身也失败了 → 才需要重跑
-            ok, msg = _verify_fix_by_rerun(job_id, timeout=120)
-            log_event({"pattern": pattern_name, "action": "task_rerun", "job_id": job_id,
-                        "result": "success" if ok else "failed", "msg": msg})
-            return ok
+        # 任务本身也失败 → 重跑
+        ok, msg = _verify_fix_by_rerun(job_id, timeout=120)
+        log_event({"pattern": pattern_name, "action": "task_rerun", "job_id": job_id,
+                    "result": "success" if ok else "failed", "msg": msg})
+        return ok
     
     elif pattern_name == "cron_timeout":
         # 策略 v3.0：真实耗时分析 → 精准分类处置
@@ -915,7 +1022,7 @@ def apply_fix_for_pattern(pattern_name, job_id, job):
 # ================================================================
 def generate_report(issues, feishu, disk, predictions, evolution, thresholds):
     """生成诊断报告（含进化分析）"""
-    lines = ["🔧 **统一自愈系统 v3.2 报告**", ""]
+    lines = ["🔧 **统一自愈系统 v3.3 报告**", ""]
     
     # 系统状态
     has_issues = bool(issues)
@@ -926,13 +1033,21 @@ def generate_report(issues, feishu, disk, predictions, evolution, thresholds):
         lines.append("✅ 所有系统正常")
     else:
         # Cron问题
-        if issues:
-            lines.append(f"⚠️ 发现 {len(issues)} 个 cron 异常：")
-            for i, issue in enumerate(issues, 1):
+        # 过滤掉 cron_delivered_healthy（投递成功，不需要显示）
+        real_issues = [i for i in issues if i.get("last_status") != "cron_delivered_healthy"]
+        if real_issues:
+            lines.append(f"⚠️ 发现 {len(real_issues)} 个 cron 异常：")
+            for i, issue in enumerate(real_issues, 1):
                 icon = "🔴" if issue.get("errors", 0) >= 3 else "🟡"
                 lines.append(f"  {i}. {icon} {issue['name']} — 连续{issue.get('errors',0)}次错误")
                 if issue.get("last_error"):
                     lines.append(f"     错误: {issue['last_error'][:80]}")
+        elif issues and not feishu_ok and not disk_ok:
+            lines.append(f"⚠️ 发现 {len(issues)} 个需关注项（投递探测结果）：")
+            for issue in issues:
+                if issue.get("last_status") == "cron_delivered_healthy":
+                    lines.append(f"  ✅ {issue['name']} — 投递成功（探测内容含失败标记，不影响系统）")
+
             lines.append("")
         
         # 飞书状态
@@ -996,6 +1111,20 @@ def main():
     thresholds = load_thresholds()
     evolution = load_evolution()
     logs = load_logs(500)
+
+    # ===== 错误进化闭环启动：加载预防策略 =====
+    prevention_loaded = False
+    if REVIEW_EVOLVE_AVAILABLE and do_fix:
+        try:
+            result = review_evolve.integrate_with_unified_heal()
+            strategies = result.get("strategies", [])
+            if strategies:
+                # 将预防策略写入 evolution 供修复时使用
+                evolution["prevention_strategies"] = strategies
+                prevention_loaded = True
+                print(f"  ✅ 预防策略已加载: {len(strategies)}条")
+        except Exception as e:
+            print(f"  ⚠️ 预防策略加载失败: {e}")
     
     # ===== 基础检查 =====
     feishu = check_feishu_connection()
@@ -1040,6 +1169,16 @@ def main():
             pattern_name = "cron_timeout"
         elif pattern_name == "error":
             pattern_name = "cron_message_failed"
+        elif pattern_name == "cron_delivered_healthy":
+            # 投递成功 → 任务本身健康，只是探测内容含"failed"，不需要修复
+            log_event({
+                "pattern": "cron_delivered_healthy",
+                "action": "skip",
+                "job_id": issue.get("id", ""),
+                "result": "skipped",
+                "msg": "投递成功，内容含probe结果，不修复"
+            })
+            continue
         
         root_cause, severity = analyze_root_cause(
             pattern_name, issue.get("last_error", ""), evolution
@@ -1076,6 +1215,15 @@ def main():
                         "method": "apply_fix_for_pattern",
                         "root_cause": root_cause
                     })
+                # 错误进化闭环：成功修复也记录（用于学习什么策略有效）
+                if REVIEW_EVOLVE_AVAILABLE:
+                    review_evolve.receive_error_event(
+                        error_type=pattern_name,
+                        job_id=issue.get("id", ""),
+                        error_msg=issue.get("last_error", ""),
+                        root_cause=root_cause,
+                        fix_result="success"
+                    )
             else:
                 if INTEL_HUB_AVAILABLE:
                     intel_hub.receive_heal_event("fix_failed", {
@@ -1084,6 +1232,15 @@ def main():
                         "symptom": issue.get("last_error", ""),
                         "root_cause": root_cause
                     })
+                # 错误进化闭环：错误发生时发送给review_evolve学习
+                if REVIEW_EVOLVE_AVAILABLE:
+                    review_evolve.receive_error_event(
+                        error_type=pattern_name,
+                        job_id=issue.get("id", ""),
+                        error_msg=issue.get("last_error", ""),
+                        root_cause=root_cause,
+                        fix_result="failed"
+                    )
     
     # 飞书修复
     if feishu.get("status") != "ok" and do_fix:
