@@ -82,21 +82,21 @@
       }
     ],
     "failure_patterns": [],
-    "last_updated": "2026-04-07T15:03:57.163143"
+    "last_updated": "2026-04-07T23:02:56.324051"
   },
   "strategy_scores": {},
   "cross_lessons": [
     {
       "pattern": "基于长期逻辑",
       "source_example": "改为长期持有",
-      "target_domain": "动力减仓",
-      "reason": "动力减仓存在失败记录,可应用成功模式"
+      "target_domain": "泰禾买入",
+      "reason": "泰禾买入存在失败记录,可应用成功模式"
     },
     {
       "pattern": "基于长期逻辑",
       "source_example": "改为长期持有",
-      "target_domain": "泰禾买入",
-      "reason": "泰禾买入存在失败记录,可应用成功模式"
+      "target_domain": "动力减仓",
+      "reason": "动力减仓存在失败记录,可应用成功模式"
     }
   ],
   "risks": [],
@@ -170,6 +170,22 @@
       "root_cause": "performance_bottleneck",
       "fix_result": "success",
       "ts": "2026-04-07T21:04:31.361959"
+    },
+    {
+      "type": "cron_no_delivery_ignored",
+      "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5",
+      "error_msg": "",
+      "root_cause": "unknown",
+      "fix_result": "failed",
+      "ts": "2026-04-07T22:06:06.497827"
+    },
+    {
+      "type": "cron_no_delivery_ignored",
+      "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5",
+      "error_msg": "",
+      "root_cause": "unknown",
+      "fix_result": "failed",
+      "ts": "2026-04-07T22:06:22.636318"
     }
   ]
 }

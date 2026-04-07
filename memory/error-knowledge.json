@@ -90,6 +90,19 @@
       ],
       "sample_msg": "cron_timeout",
       "last_seen": "2026-04-05T23:36:39.976259"
+    },
+    "2a47fd5e08ef": {
+      "type": "cron_no_delivery_ignored",
+      "category": "cron",
+      "root_cause": "cron_misconfiguration",
+      "severity": "medium",
+      "first_seen": "2026-04-07T22:06:06.468449",
+      "count": 2,
+      "sources": [
+        "unified_heal"
+      ],
+      "sample_msg": "cron_no_delivery_ignored",
+      "last_seen": "2026-04-07T22:06:22.626369"
     }
   },
   "fixes": {
@@ -111,8 +124,12 @@
     ]
   },
   "stats": {
-    "total_errors": 0,
-    "by_root_cause": {},
-    "by_category": {}
+    "total_errors": 2,
+    "by_root_cause": {
+      "cron_misconfiguration": 2
+    },
+    "by_category": {
+      "cron": 2
+    }
   }
 }

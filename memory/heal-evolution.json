@@ -1,7 +1,8 @@
 {
   "root_causes": {
     "system_instability": 57,
-    "performance_bottleneck": 18
+    "performance_bottleneck": 18,
+    "unknown": 2
   },
   "discovered_patterns": [
     {
@@ -19,6 +20,13 @@
       "recommendation": "需人工排查"
     },
     {
+      "type": "recurring_pattern",
+      "pattern": "cron_no_delivery_ignored",
+      "count": 2,
+      "success_rate": 0.0,
+      "recommendation": "需人工排查"
+    },
+    {
       "type": "time_pattern",
       "peak_hours": [
         "3:00 (139次)",
@@ -31,8 +39,8 @@
       "type": "correlated_failure",
       "time": "2026-04-05T22",
       "patterns": [
-        "",
-        "preventive_cron_degradation"
+        "preventive_cron_degradation",
+        ""
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -40,8 +48,8 @@
       "type": "correlated_failure",
       "time": "2026-04-05T23",
       "patterns": [
-        "",
-        "preventive_cron_degradation"
+        "preventive_cron_degradation",
+        ""
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -90,9 +98,9 @@
     },
     "cron_timeout": {
       "success_rate": 1.0,
-      "avg_time_ms": 5496.25,
-      "overall_score": 0.8351124999999999,
-      "attempts": 4,
+      "avg_time_ms": 4565.5,
+      "overall_score": 0.863035,
+      "attempts": 6,
       "recommendation": "保持"
     },
     "cron_message_failed": {
@@ -105,7 +113,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-07T21:04:31.362852",
+  "last_evolve": "2026-04-07T23:04:26.358130",
   "memory_health": 79,
   "prevention_strategies": [
     {

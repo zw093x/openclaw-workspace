@@ -525,6 +525,24 @@
       "file": "TOOLS.md"
     },
     {
+      "source": "彭煜",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
       "source": "ComfyUI",
       "target": "OpenClaw",
       "relation": "co_mentioned",
@@ -535,12 +553,6 @@
       "target": "飞书",
       "relation": "co_mentioned",
       "file": "memory/migration-guide.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "中国船舶",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-03.md"
     },
     {
       "source": "OpenClaw",
@@ -610,12 +622,6 @@
     },
     {
       "source": "彭煜",
-      "target": "彭煜",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "彭煜",
       "target": "湘电股份",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
@@ -659,12 +665,6 @@
     {
       "source": "三安光电",
       "target": "湘电股份",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "三安光电",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },

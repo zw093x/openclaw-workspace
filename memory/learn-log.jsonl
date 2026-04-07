@@ -192,3 +192,8 @@
 {"action": "record", "id": "LRN-20260407-192", "type": "success", "category": "自愈-cron_message_failed", "summary": "ec59e68f: apply_fix_for_pattern", "ts": "2026-04-07T19:04:23.526223"}
 {"action": "record", "id": "LRN-20260407-193", "type": "success", "category": "自愈-cron_timeout", "summary": "f0b28140: apply_fix_for_pattern", "ts": "2026-04-07T20:06:28.979128"}
 {"action": "record", "id": "LRN-20260407-194", "type": "success", "category": "自愈-cron_timeout", "summary": "f0b28140: apply_fix_for_pattern", "ts": "2026-04-07T21:04:31.361328"}
+{"action": "record", "id": "LRN-20260407-195", "type": "error", "category": "自愈失败-cron_no_delivery_ignored", "summary": "", "ts": "2026-04-07T22:06:06.493667"}
+{"action": "record", "id": "LRN-20260407-196", "type": "error", "category": "自愈失败-cron_no_delivery_ignored", "summary": "", "ts": "2026-04-07T22:06:22.635510"}
+{"action": "record", "id": "LRN-20260407-197", "type": "error", "category": "cron", "summary": "cron_no_delivery_ignored错误: cron_no_delivery_ignored", "ts": "2026-04-07T23:04:11.182910"}
+{"action": "record", "id": "LRN-20260407-198", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_no_delivery_ignored (根因:unknown)", "ts": "2026-04-07T23:04:11.194094"}
+{"action": "record", "id": "LRN-20260407-199", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_no_delivery_ignored (根因:unknown)", "ts": "2026-04-07T23:04:11.202605"}

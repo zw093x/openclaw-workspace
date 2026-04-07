@@ -369,3 +369,6 @@
 {"pattern": "cron_timeout", "target": "特朗普动态监控 (f0b28140)", "action": "auto_fix", "result": "success", "root_cause": "performance_bottleneck", "severity": "preventive", "time_ms": 10983, "ts": "2026-04-07T20:06:28.970599"}
 {"pattern": "cron_timeout", "action": "skip_偶发", "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5", "result": "success", "msg": "任务实际120.0s，偶发超时，不重跑", "ts": "2026-04-07T21:04:31.352385", "root_cause": "cron_timeout"}
 {"pattern": "cron_timeout", "target": "特朗普动态监控 (f0b28140)", "action": "auto_fix", "result": "success", "root_cause": "performance_bottleneck", "severity": "preventive", "time_ms": 5408, "ts": "2026-04-07T21:04:31.352523"}
+{"pattern": "cron_no_delivery_ignored", "target": "特朗普动态监控 (f0b28140)", "action": "auto_fix", "result": "failed", "root_cause": "unknown", "severity": "new", "time_ms": 0, "ts": "2026-04-07T22:06:06.467883"}
+{"pattern": "cron_no_delivery_ignored", "target": "特朗普动态监控 (f0b28140)", "action": "auto_fix", "result": "failed", "root_cause": "unknown", "severity": "recurring", "time_ms": 0, "ts": "2026-04-07T22:06:22.625862"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-07T23:04:26.357335", "root_cause": "cron_delivered_healthy"}

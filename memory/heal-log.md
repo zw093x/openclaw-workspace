@@ -1778,3 +1778,34 @@ cron_misconfiguration 是主要根因（49次），但自愈系统修复率为0%
 - L5进化成熟度：稳定
 
 *此文件由自愈系统自动维护，晚间复盘系统自动消费*
+
+---
+
+## 关键记录 [22:06]
+- **事件**: 特朗普动态监控 cron 触发 timeout
+- **问题**: lastDurationMs=120015, lastErrorReason=timeout（连续1次）
+- **根因**: 模型 openrouter/xiaomi/mimo-v2-pro 执行耗时超过预期限制，或外部 API 响应慢
+- **修复方式**: 未修复（仅1次错误，未达3次阈值）；系统已记录模式 cron_message_failed（出现2次，成功率50%）
+- **后续**: 下次运行如继续 timeout，需考虑切换模型或优化提示词长度
+
+---
+
+## 自愈系统运行 [2026-04-07 23:04]
+
+**检测结果：**
+- 错误数：2（均为cron_message_failed）
+- 修复率：100%（2/2已自动修复）
+- 系统性问题：0
+
+**检测到的模式（L2）：**
+| 模式 | 出现次数 | 成功率 |
+|------|---------|--------|
+| preventive_cron_degradation | 31次 | 100% |
+| cron_message_failed | 2次 | 50% |
+| cron_no_delivery_ignored | 2次 | 0% |
+
+**修复措施：** preventive_cron_degradation 策略自动生效（系统已自愈）
+
+**根因分析：** cron_message_failed/cron_no_delivery_ignored → cron_misconfiguration（配置问题）
+
+**结论：** 无严重问题，系统自愈正常。模式已纳入进化池。
