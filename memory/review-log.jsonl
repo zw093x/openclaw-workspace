@@ -85,3 +85,7 @@
 {"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-07T13:04:23.770241"}
 {"action": "export_prevention", "strategies_count": 0, "learned_count": 0, "ts": "2026-04-07T14:05:04.241504"}
 {"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-07T14:05:04.244065"}
+{"action": "export_prevention", "strategies_count": 0, "learned_count": 0, "ts": "2026-04-07T15:04:15.120978"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-07T15:04:15.123635"}
+{"action": "export_prevention", "strategies_count": 0, "learned_count": 0, "ts": "2026-04-07T15:04:41.553848"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-07T15:04:41.557748"}
