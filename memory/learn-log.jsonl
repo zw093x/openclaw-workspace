@@ -188,3 +188,7 @@
 {"action": "record", "id": "LRN-20260406-188", "type": "success", "category": "自愈-cron_message_failed", "summary": "2d07315a: apply_fix_for_pattern", "ts": "2026-04-06T11:04:24.247368"}
 {"action": "record", "id": "LRN-20260406-189", "type": "success", "category": "自愈-cron_message_failed", "summary": "ec59e68f: apply_fix_for_pattern", "ts": "2026-04-06T11:04:24.256202"}
 {"action": "record", "id": "LRN-20260406-190", "type": "success", "category": "自愈-cron_message_failed", "summary": "ec59e68f: apply_fix_for_pattern", "ts": "2026-04-06T11:05:02.400803"}
+{"action": "record", "id": "LRN-20260407-191", "type": "success", "category": "自愈-cron_timeout", "summary": "4897f5ed: apply_fix_for_pattern", "ts": "2026-04-07T18:10:22.610514"}
+{"action": "record", "id": "LRN-20260407-192", "type": "success", "category": "自愈-cron_message_failed", "summary": "ec59e68f: apply_fix_for_pattern", "ts": "2026-04-07T19:04:23.526223"}
+{"action": "record", "id": "LRN-20260407-193", "type": "success", "category": "自愈-cron_timeout", "summary": "f0b28140: apply_fix_for_pattern", "ts": "2026-04-07T20:06:28.979128"}
+{"action": "record", "id": "LRN-20260407-194", "type": "success", "category": "自愈-cron_timeout", "summary": "f0b28140: apply_fix_for_pattern", "ts": "2026-04-07T21:04:31.361328"}

@@ -138,6 +138,38 @@
       "root_cause": "push_occasional",
       "fix_result": "success",
       "ts": "2026-04-06T11:58:01.398405"
+    },
+    {
+      "type": "cron_timeout",
+      "job_id": "4897f5ed-0a9c-4f91-b2e0-771853ac8026",
+      "error_msg": "cron: job execution timed out",
+      "root_cause": "performance_bottleneck",
+      "fix_result": "success",
+      "ts": "2026-04-07T18:10:22.611885"
+    },
+    {
+      "type": "cron_message_failed",
+      "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7",
+      "error_msg": "⚠️ ✉️ Message failed",
+      "root_cause": "system_instability",
+      "fix_result": "success",
+      "ts": "2026-04-07T19:04:23.530267"
+    },
+    {
+      "type": "cron_timeout",
+      "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5",
+      "error_msg": "cron: job execution timed out",
+      "root_cause": "performance_bottleneck",
+      "fix_result": "success",
+      "ts": "2026-04-07T20:06:28.979836"
+    },
+    {
+      "type": "cron_timeout",
+      "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5",
+      "error_msg": "cron: job execution timed out",
+      "root_cause": "performance_bottleneck",
+      "fix_result": "success",
+      "ts": "2026-04-07T21:04:31.361959"
     }
   ]
 }

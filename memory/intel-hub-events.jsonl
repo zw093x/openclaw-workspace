@@ -75,3 +75,12 @@
 {"timestamp": "2026-04-07T15:04:15.123032", "source": "unified_heal", "type": "prevention_strategies", "data": {"strategies": [], "learned": [], "source": "review_evolve"}}
 {"timestamp": "2026-04-07T15:04:41.557255", "source": "unified_heal", "type": "prevention_strategies", "data": {"strategies": [], "learned": [], "source": "review_evolve"}}
 {"timestamp": "2026-04-07T16:06:49.751545", "source": "unified_heal", "type": "prevention_strategies", "data": {"strategies": [], "learned": [], "source": "review_evolve"}}
+{"timestamp": "2026-04-07T17:04:18.231400", "source": "unified_heal", "type": "prevention_strategies", "data": {"strategies": [], "learned": [], "source": "review_evolve"}}
+{"timestamp": "2026-04-07T18:10:02.347337", "source": "unified_heal", "type": "prevention_strategies", "data": {"strategies": [], "learned": [], "source": "review_evolve"}}
+{"timestamp": "2026-04-07T18:10:22.603625", "source": "unified_heal", "type": "fix_success", "data": {"pattern": "cron_timeout", "job_id": "4897f5ed-0a9c-4f91-b2e0-771853ac8026", "method": "apply_fix_for_pattern", "root_cause": "performance_bottleneck"}}
+{"timestamp": "2026-04-07T19:04:13.862561", "source": "unified_heal", "type": "prevention_strategies", "data": {"strategies": [], "learned": [], "source": "review_evolve"}}
+{"timestamp": "2026-04-07T19:04:23.505024", "source": "unified_heal", "type": "fix_success", "data": {"pattern": "cron_message_failed", "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7", "method": "apply_fix_for_pattern", "root_cause": "system_instability"}}
+{"timestamp": "2026-04-07T20:06:08.469661", "source": "unified_heal", "type": "prevention_strategies", "data": {"strategies": [], "learned": [], "source": "review_evolve"}}
+{"timestamp": "2026-04-07T20:06:28.972312", "source": "unified_heal", "type": "fix_success", "data": {"pattern": "cron_timeout", "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5", "method": "apply_fix_for_pattern", "root_cause": "performance_bottleneck"}}
+{"timestamp": "2026-04-07T21:04:16.077518", "source": "unified_heal", "type": "prevention_strategies", "data": {"strategies": [], "learned": [], "source": "review_evolve"}}
+{"timestamp": "2026-04-07T21:04:31.354460", "source": "unified_heal", "type": "fix_success", "data": {"pattern": "cron_timeout", "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5", "method": "apply_fix_for_pattern", "root_cause": "performance_bottleneck"}}
