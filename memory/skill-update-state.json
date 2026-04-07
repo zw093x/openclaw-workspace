@@ -1,10 +1,10 @@
 {
-  "last_index": 10,
-  "total_skills": 30,
-  "last_run": "2026-04-07T18:08:15+08:00",
-  "last_batch": "5-10",
+  "last_index": 15,
+  "total_skills": 28,
+  "last_run": "2026-04-08T00:09:05+08:00",
+  "last_batch": "10-15",
   "stats": {
-    "updated": 0,
+    "updated": 3,
     "up_to_date": 0,
     "failed": 0
   }

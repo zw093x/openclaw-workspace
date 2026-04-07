@@ -372,3 +372,4 @@
 {"pattern": "cron_no_delivery_ignored", "target": "特朗普动态监控 (f0b28140)", "action": "auto_fix", "result": "failed", "root_cause": "unknown", "severity": "new", "time_ms": 0, "ts": "2026-04-07T22:06:06.467883"}
 {"pattern": "cron_no_delivery_ignored", "target": "特朗普动态监控 (f0b28140)", "action": "auto_fix", "result": "failed", "root_cause": "unknown", "severity": "recurring", "time_ms": 0, "ts": "2026-04-07T22:06:22.625862"}
 {"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-07T23:04:26.357335", "root_cause": "cron_delivered_healthy"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T00:11:12.302608", "root_cause": "cron_delivered_healthy"}

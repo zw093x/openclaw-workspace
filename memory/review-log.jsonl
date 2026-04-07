@@ -113,3 +113,5 @@
 {"action": "error_received", "type": "cron_no_delivery_ignored", "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5", "error_msg": "", "root_cause": "unknown", "fix_result": "failed", "ts": "2026-04-07T22:06:22.636655"}
 {"action": "export_prevention", "strategies_count": 0, "learned_count": 0, "ts": "2026-04-07T23:04:16.437908"}
 {"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-07T23:04:16.440860"}
+{"action": "export_prevention", "strategies_count": 0, "learned_count": 0, "ts": "2026-04-08T00:11:01.670176"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-08T00:11:01.673235"}
