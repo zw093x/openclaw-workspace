@@ -373,3 +373,20 @@
 {"pattern": "cron_no_delivery_ignored", "target": "特朗普动态监控 (f0b28140)", "action": "auto_fix", "result": "failed", "root_cause": "unknown", "severity": "recurring", "time_ms": 0, "ts": "2026-04-07T22:06:22.625862"}
 {"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-07T23:04:26.357335", "root_cause": "cron_delivered_healthy"}
 {"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T00:11:12.302608", "root_cause": "cron_delivered_healthy"}
+{"type": "preemptive_fix", "name": "OpenClaw 自愈系统", "job_id": "2d07315a-9e35-4fe1-a594-b4fab676172e", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:04:28.231028", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "深度学习时段", "job_id": "3273567b-986e-4840-985d-d4158cf423ba", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:04:36.315693", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "特朗普动态监控", "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5", "actions": ["缓存清理", "timeout 300→600s"], "result": "success", "ts": "2026-04-08T01:04:54.111689", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "技能自动更新", "job_id": "bf6a5a60-fe46-4c12-92e8-aa83f92fb61a", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:05:02.138563", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "AI综合日报", "job_id": "8944a88c-bf11-484c-b594-ff8ac4f5517e", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:05:15.506148", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "A股盘前播报", "job_id": "a47a4994-6c25-4521-99d9-c9a47519347c", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:05:23.845568", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "ComfyUI 变更监控", "job_id": "e9a9fdac-f203-421b-9311-8f59cca4c82b", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:05:34.528237", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "每日策略学习", "job_id": "23344724-6cce-47a7-ba28-7791214bebbc", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:05:50.996059", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "晚间综合复盘", "job_id": "8ec0edd5-015a-435c-bd9f-7e8a0e8c5604", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:05:56.321533", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "自学习进化", "job_id": "d551fe86-b01d-47b4-a92c-0d566a66b956", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:01.766557", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "记忆进化", "job_id": "a1417fac-a0fc-4fdf-b077-57753d26af74", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:09.820099", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "复盘进化", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:15.261392", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "每周日综合周报", "job_id": "ee28465e-ff6a-4fa0-a35a-13e96cd9bbc6", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:23.793159", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "ComfyUI每周总结", "job_id": "324d8b01-b798-4486-915e-0a0a26e52934", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:29.088288", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "🧠 记忆增强周检", "job_id": "c95c377b-41fe-41a1-8157-829740819289", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:34.460121", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "🧠 记忆进化+主动蒸馏", "job_id": "929e7cf1-bdd9-4825-b52d-09453668d086", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:39.929681", "root_cause": "unknown"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T01:07:17.824089", "root_cause": "cron_delivered_healthy"}

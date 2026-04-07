@@ -1,86 +1,101 @@
 ---
 name: x-api
-description: Look up X/Twitter user profiles via BlockRun's API. Trigger when the user asks to look up, find, or get info about X/Twitter users or handles.
-metadata: { "openclaw": { "emoji": "𝕏", "requires": { "config": ["models.providers.blockrun"] } } }
+description: Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches like bird CLI.
 ---
 
-# X/Twitter User Lookup
+# x-api 🐦
 
-Look up X/Twitter user profiles — follower counts, bio, verified status — in one call. Payment is automatic via x402.
+Post to X using the official API (OAuth 1.0a).
 
-## How to Look Up Users
+## When to Use
 
-POST to `http://localhost:8402/v1/x/users/lookup`:
+- Posting tweets (cookie-based `bird tweet` gets blocked by bot detection)
+- Official API access is needed for reliability
 
+For **reading** (timeline, search, mentions), use `bird` CLI instead — it's free and works well for reads.
+
+## Setup
+
+### 1. Get API Credentials
+
+1. Go to https://developer.x.com/en/portal/dashboard
+2. Create a Project and App
+3. Set App permissions to **Read and Write**
+4. Get your keys from "Keys and tokens" tab:
+   - API Key (Consumer Key)
+   - API Key Secret (Consumer Secret)
+   - Access Token
+   - Access Token Secret
+
+### 2. Configure Credentials
+
+**Option A: Environment variables**
+```bash
+export X_API_KEY="your-api-key"
+export X_API_SECRET="your-api-secret"
+export X_ACCESS_TOKEN="your-access-token"
+export X_ACCESS_SECRET="your-access-token-secret"
+```
+
+**Option B: Config file** at `~/.clawdbot/secrets/x-api.json`
 ```json
 {
-  "usernames": ["elonmusk", "sama", "vitalikbuterin"]
+  "consumerKey": "your-api-key",
+  "consumerSecret": "your-api-secret",
+  "accessToken": "your-access-token",
+  "accessTokenSecret": "your-access-token-secret"
 }
 ```
 
-Also accepts a comma-separated string:
+### 3. Install Dependency
 
-```json
-{
-  "usernames": "elonmusk, sama, vitalikbuterin"
-}
+```bash
+npm install -g twitter-api-v2
 ```
 
-- `@` prefix is stripped automatically
-- Duplicates removed, normalized to lowercase
-- Max **100 users** per request
+## Post a Tweet
 
-## Response
-
-```json
-{
-  "users": [
-    {
-      "id": "44196397",
-      "userName": "elonmusk",
-      "name": "Elon Musk",
-      "profilePicture": "https://pbs.twimg.com/...",
-      "description": "Bio text here",
-      "followers": 219000000,
-      "following": 1234,
-      "isBlueVerified": true,
-      "verifiedType": "blue",
-      "location": "Texas, USA",
-      "joined": "2009-06-02T20:12:29.000Z"
-    }
-  ],
-  "not_found": ["unknownuser123"],
-  "total_requested": 3,
-  "total_found": 2
-}
+```bash
+x-post "Your tweet text here"
 ```
 
-## Pricing
+Or with full path:
+```bash
+node /path/to/skills/x-api/scripts/x-post.mjs "Your tweet text here"
+```
 
-| Batch size   | Cost                        |
-| ------------ | --------------------------- |
-| 1–10 users   | $0.01 (minimum)             |
-| 11–100 users | $0.001 per user             |
-| 100+ users   | $0.10 (capped at first 100) |
+Supports multi-line tweets:
+```bash
+x-post "Line one
 
-## Example Interactions
+Line two
 
-**User:** What are the follower counts for elonmusk and naval?
+Line three"
+```
 
-→ POST with `["elonmusk", "naval"]`, show follower counts from response.
+Returns the tweet URL on success.
 
-**User:** Look up these crypto influencers: vitalikbuterin, sassal0x, jessepollak
+## Limits
 
-→ POST with the array, display a table with name, followers, verified status, bio.
+- Free tier: 1,500 posts/month (requires credits in X Developer Portal)
+- Basic tier ($100/mo): Higher limits
 
-**User:** Find info about @pmarca
+## Reading (use bird)
 
-→ POST with `["pmarca"]` (strip @ automatically), display profile.
+For reading, searching, and monitoring — use the `bird` CLI:
 
-## Notes
+```bash
+bird home                    # Timeline
+bird mentions                # Mentions
+bird search "query"          # Search
+bird user-tweets @handle     # User's posts
+bird read <tweet-url>        # Single tweet
+```
 
-- Payment is automatic via x402 — deducted from the user's BlockRun wallet
-- If the call fails with a payment error, tell the user to fund their wallet at [blockrun.ai](https://blockrun.ai)
-- Rate limit: **20 requests per hour**
-- Users in `not_found` were not charged — only found users count toward the bill
-- Data is real-time from X/Twitter via [AttentionVC](https://api.attentionvc.ai/docs)
+## Troubleshooting
+
+**402 Credits Depleted**: Add credits in X Developer Portal → Dashboard
+
+**401 Unauthorized**: Regenerate Access Token (ensure Read+Write permissions are set first)
+
+**No credentials found**: Set env vars or create config file (see Setup above)

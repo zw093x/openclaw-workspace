@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-复盘进化系统 v1.0 — 7层进化
+复盘进化系统 v1.0 - 7层进化
 
-R1 决策追踪    — 记录每个决策→结果→教训
-R2 准确率分析  — 预测vs实际，自动统计
-R3 模式识别    — 发现成功/失败规律
-R4 策略优化    — 基于结果调整策略
-R5 跨域学习    — 一个领域的教训应用到其他领域
-R6 预测性复盘  — 提前识别风险
-R7 元复盘      — 复盘复盘系统本身
+R1 决策追踪    - 记录每个决策→结果→教训
+R2 准确率分析  - 预测vs实际,自动统计
+R3 模式识别    - 发现成功/失败规律
+R4 策略优化    - 基于结果调整策略
+R5 跨域学习    - 一个领域的教训应用到其他领域
+R6 预测性复盘  - 提前识别风险
+R7 元复盘      - 复盘复盘系统本身
 
 用法:
   python3 scripts/review_evolve.py --decide <topic> <decision> <reason>  # R1: 记录决策
@@ -107,7 +107,7 @@ def record_outcome(decision_id, result, score=0.5, lesson=""):
         return False
 
     d["outcome"] = result
-    d["score"] = score  # 0-1，越高越好
+    d["score"] = score  # 0-1,越高越好
     d["lesson"] = lesson
 
     # 更新平均分
@@ -289,7 +289,7 @@ def optimize_strategies():
 
     for topic, decs in low_score_topics.items():
         if len(decs) >= 2:
-            # 同一主题多次低分，需要优化
+            # 同一主题多次低分,需要优化
             common_issues = []
             for d in decs:
                 reason = d.get("reason", "")
@@ -340,7 +340,7 @@ def cross_domain_learning():
                         "pattern": pattern,
                         "source_example": source[:50],
                         "target_domain": domain,
-                        "reason": f"{domain}存在失败记录，可应用成功模式"
+                        "reason": f"{domain}存在失败记录,可应用成功模式"
                     })
 
     # 失败模式跨域警告
@@ -366,7 +366,7 @@ def identify_risks():
     risks = []
     now = datetime.now()
 
-    # 1. 未出结果的决策（悬而未决）
+    # 1. 未出结果的决策(悬而未决)
     pending = [d for d in decisions.values() if d.get("outcome") is None]
     for d in pending:
         try:
@@ -399,7 +399,7 @@ def identify_risks():
                 "type": "declining_topic",
                 "severity": "high",
                 "message": f"'{topic}'连续{len(scores[:2])}次低分",
-                "action": f"暂停'{topic}'新决策，先复盘根因"
+                "action": f"暂停'{topic}'新决策,先复盘根因"
             })
 
     # 3. 从交易日志检测风险
@@ -440,10 +440,10 @@ def meta_review():
 
     # 建议
     if coverage < 0.5 and total_decisions >= 3:
-        meta["suggestions"].append(f"决策复盘覆盖率仅{coverage:.0%}，需加强结果追踪")
+        meta["suggestions"].append(f"决策复盘覆盖率仅{coverage:.0%},需加强结果追踪")
 
     if stats.get("avg_accuracy", 0) < 0.5 and stats.get("total_predictions", 0) >= 3:
-        meta["suggestions"].append(f"预测准确率{stats['avg_accuracy']:.0%}偏低，需改进分析方法")
+        meta["suggestions"].append(f"预测准确率{stats['avg_accuracy']:.0%}偏低,需改进分析方法")
 
     # 复盘频率
     if REVIEW_LOG.exists():
@@ -452,7 +452,7 @@ def meta_review():
             recent = [l for l in lines if l and datetime.fromisoformat(json.loads(l).get("ts", "")).date() >= (datetime.now() - timedelta(days=7)).date()]
             meta["review_health"]["weekly_reviews"] = len(recent)
             if len(recent) < 3:
-                meta["suggestions"].append("本周复盘次数不足3次，建议增加复盘频率")
+                meta["suggestions"].append("本周复盘次数不足3次,建议增加复盘频率")
         except:
             pass
 
@@ -464,7 +464,7 @@ def generate_daily_template():
     now = datetime.now()
     weekday = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"][now.weekday()]
 
-    template = f"""# 每日复盘 — {now.strftime('%Y-%m-%d')} {weekday}
+    template = f"""# 每日复盘 - {now.strftime('%Y-%m-%d')} {weekday}
 
 ## 今日大事
 -
@@ -496,7 +496,7 @@ def generate_weekly_template():
     now = datetime.now()
     week_start = now - timedelta(days=now.weekday())
 
-    template = f"""# 每周复盘 — {week_start.strftime('%m/%d')}~{now.strftime('%m/%d')}
+    template = f"""# 每周复盘 - {week_start.strftime('%m/%d')}~{now.strftime('%m/%d')}
 
 ## 本周总结
 ### 股票表现
@@ -720,14 +720,14 @@ if __name__ == "__main__":
 
 
 # ============================================================
-# 错误进化闭环接口 — 与自愈系统形成反馈循环
+# 错误进化闭环接口 - 与自愈系统形成反馈循环
 # ============================================================
 def receive_error_event(error_type: str, job_id: str, error_msg: str,
                          root_cause: str, fix_result: str):
     """
-    接收来自自愈系统的错误事件（自愈 → 错误进化）
+    接收来自自愈系统的错误事件(自愈 → 错误进化)
     将错误数据积累到学习材料库
-    
+
     Args:
         error_type: 错误类型 (cron_timeout / cron_message_failed / feishu_unreachable / ...)
         job_id: 任务ID
@@ -737,7 +737,7 @@ def receive_error_event(error_type: str, job_id: str, error_msg: str,
     """
     db = load_review_db()
     errors = db.setdefault("error_events", [])
-    
+
     entry = {
         "type": error_type,
         "job_id": job_id,
@@ -747,11 +747,11 @@ def receive_error_event(error_type: str, job_id: str, error_msg: str,
         "ts": datetime.now().isoformat(),
     }
     errors.append(entry)
-    
+
     # 只保留最近200条
     if len(errors) > 200:
         errors[:] = errors[-200:]
-    
+
     save_review_db(db)
     append_log({"action": "error_received", **entry})
     return entry
@@ -759,9 +759,9 @@ def receive_error_event(error_type: str, job_id: str, error_msg: str,
 
 def export_prevention_strategies() -> dict:
     """
-    从错误进化系统导出预防策略（错误进化 → 自愈系统）
-    分析错误历史，生成可在问题发生前执行的预防策略
-    
+    从错误进化系统导出预防策略(错误进化 → 自愈系统)
+    分析错误历史,生成可在问题发生前执行的预防策略
+
     Returns:
         {
             "strategies": [
@@ -778,84 +778,92 @@ def export_prevention_strategies() -> dict:
     """
     db = load_review_db()
     errors = db.get("error_events", [])
-    
+
     if len(errors) < 3:
         return {"strategies": [], "learned_patterns": [], "note": "样本不足(<3条)"}
-    
-    # 分析错误类型频率
+
+    # 分析错误类型频率（按fingerprint去重，同一错误只计一次）
     from collections import Counter
-    type_freq = Counter(e.get("type") for e in errors)
-    
-    # 分析根因频率
-    cause_freq = Counter(e.get("root_cause") for e in errors if e.get("root_cause"))
-    
+    seen_fp = set()
+    unique_errors = []
+    for e in errors:
+        fp = e.get("fingerprint", e.get("type", "unknown"))
+        if fp not in seen_fp:
+            seen_fp.add(fp)
+            unique_errors.append(e)
+
+    type_freq = Counter(e.get("type") for e in unique_errors)
+    cause_freq = Counter(e.get("root_cause") for e in unique_errors if e.get("root_cause"))
+
     strategies = []
     learned = []
-    
+
     # 从高频错误类型生成预防策略
     for err_type, count in type_freq.most_common(5):
         if count < 2:
             continue
-        
+
         # 根据错误类型生成策略
         if err_type == "cron_timeout":
-            # 高频超时：预防性扩容timeout
+            # 高频超时:预防性扩容timeout
             strategies.append({
                 "trigger": "cron_timeout ≥2次/周",
                 "action": "自动将对应任务的timeout扩容至600s",
                 "applicable_to": ["cron_timeout"],
                 "confidence": min(0.5 + count * 0.1, 0.95),
-                "reason": f"该类型错误出现{count}次，自动预防有效"
+                "reason": f"该类型错误出现{count}次,自动预防有效"
             })
             learned.append(f"cron_timeout高频({count}次)→预防性扩容timeout")
-        
+
         elif err_type == "cron_message_failed":
-            # 推送失败：预防性检查飞书连接
+            # 推送失败:预防性检查飞书连接
             strategies.append({
                 "trigger": "cron_message_failed ≥2次/周",
-                "action": "触发gateway连接自检，不盲目重跑任务",
+                "action": "触发gateway连接自检,不盲目重跑任务",
                 "applicable_to": ["cron_message_failed"],
                 "confidence": min(0.5 + count * 0.1, 0.95),
-                "reason": f"推送失败{count}次，多为偶发，应先检查连接"
+                "reason": f"推送失败{count}次,多为偶发,应先检查连接"
             })
             learned.append(f"推送失败({count}次)→先检查gateway再决定是否重跑")
-        
+
         elif err_type == "feishu_unreachable":
             strategies.append({
                 "trigger": "飞书连接失败 ≥1次",
-                "action": "立即重启gateway，确认恢复",
+                "action": "立即重启gateway,确认恢复",
                 "applicable_to": ["feishu_unreachable"],
                 "confidence": 0.9,
-                "reason": "飞书连接失败直接影响所有推送，必须立即处理"
+                "reason": "飞书连接失败直接影响所有推送,必须立即处理"
             })
             learned.append("飞书连接失败→gateway重启")
-    
+
     # 从高频根因生成策略
     for cause, count in cause_freq.most_common(3):
         if count >= 2:
             learned.append(f"根因[{cause}]出现{count}次")
-    
+
     append_log({
         "action": "export_prevention",
         "strategies_count": len(strategies),
         "learned_count": len(learned)
     })
-    
+
     return {
         "strategies": strategies,
         "learned_patterns": learned,
         "error_count": len(errors),
+        "unique_error_count": len(unique_errors),
+        "dedup_note": "已按fingerprint去重，同一错误多次出现仅计一次",
         "timestamp": datetime.now().isoformat()
     }
 
 
 def integrate_with_unified_heal():
     """
-    初始化时调用：从错误进化系统加载预防策略，写入统一知识中枢
+    初始化时调用:从错误进化系统加载预防策略,写入统一知识中枢
     由 unified_heal.py 在启动时调用
     """
     result = export_prevention_strategies()
-    
+
     # 写入 intel_hub
     try:
         import sys
@@ -868,10 +876,10 @@ def integrate_with_unified_heal():
         })
     except Exception:
         pass  # intel_hub 不可用时静默跳过
-    
+
     append_log({
         "action": "integrate_with_unified_heal",
         "strategies_loaded": len(result.get("strategies", []))
     })
-    
+
     return result

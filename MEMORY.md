@@ -26,9 +26,10 @@
 
 | 股票 | 代码 | 持仓 | 成本 | 策略 |
 |------|------|------|------|------|
-| 中国船舶 | 600150 | 3,000股 | 38.696 | 长期 |
-| 中国动力 | 600482 | 2,000股 | 34.389 | 长期 |
+| 中国船舶 | 600150 | 3,000股 | 41.04 | 长期（2000核心+1000可操作） |
+| 中国动力 | 600482 | 2,000股 | 35.079 | 长期（核心仓位全固定不动） |
 | 三安光电 | 600703 | 500股 | 11.44 | 试探建仓 |
+| 视源股份 | 002841 | 500股 | 33.80 | 朋友账户（朋友账户） |
 
 - 详细记录：`memory/stock-portfolio.md`
 - 知识库：`memory/stock-knowledge.md`
@@ -64,6 +65,10 @@
 - **进度文件**: `memory/comfyui-learning-progress.md`
 - **知识库**: `memory/comfyui-knowledge.md`
 - **教程**: `memory/comfyui-tutorial-guide.md`
+- **即梦AI提示词库**: `memory/jimeng-prompt-library.md`（1000+词，通用词库10类目）
+- **即梦AI精准词库**: `memory/jimeng-precision-library.md`（主体特征/核心动作/运镜/时长/画面比例）
+- **即梦AI提示词工程研究**: `memory/jimeng-prompt-engineering-research.md`（五大核心技巧：正负向控制/具象化/风格精准化/一致性/功能绑定）
+- **即梦AI三视图公式**: `memory/jimeng-threeview-formula.md`（角色生成公式：8模块+最优参数+避坑指南）
 - 关注：v0.17.0+异步架构、Tripo3D/Meshy 3D节点、AI→手动精修流水线
 
 ## 服务器信息

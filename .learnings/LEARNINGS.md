@@ -2,8 +2,10 @@
 
 **Logged**: 2026-04-02T13:08:00+08:00
 **Priority**: high
-**Status**: active
+**Status**: resolved
 **Area**: behavior
+**Resolved**: 2026-04-07
+**Resolution**: AGENTS.md 加入 🔴 持仓/记忆预检规则，强制预检机制已建立（见 AGENTS.md Red Lines）
 
 ### Summary
 重复询问已知需求——昨天已要求追踪湘电/三安，今天还问"是否需要追踪"
@@ -30,7 +32,9 @@
 
 **Logged**: 2026-04-02T14:04:53.265097
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -48,7 +52,9 @@ N/A
 
 **Logged**: 2026-04-02T14:04:53.268299
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -66,7 +72,9 @@ N/A
 
 **Logged**: 2026-04-02T15:04:19.871516
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -84,7 +92,9 @@ N/A
 
 **Logged**: 2026-04-02T15:04:19.873249
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -102,7 +112,9 @@ N/A
 
 **Logged**: 2026-04-02T16:05:36.005234
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -120,7 +132,9 @@ N/A
 
 **Logged**: 2026-04-02T16:05:36.006743
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -138,7 +152,9 @@ N/A
 
 **Logged**: 2026-04-02T17:04:13.620821
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -156,7 +172,9 @@ N/A
 
 **Logged**: 2026-04-02T17:04:13.622402
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -174,7 +192,9 @@ N/A
 
 **Logged**: 2026-04-02T18:05:06.796769
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -192,7 +212,9 @@ N/A
 
 **Logged**: 2026-04-02T18:05:06.799579
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -210,7 +232,9 @@ N/A
 
 **Logged**: 2026-04-02T19:04:16.563666
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -228,7 +252,9 @@ N/A
 
 **Logged**: 2026-04-02T19:04:16.565479
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -246,7 +272,9 @@ N/A
 
 **Logged**: 2026-04-02T20:04:40.561379
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -264,7 +292,9 @@ N/A
 
 **Logged**: 2026-04-02T20:04:40.564068
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -282,7 +312,9 @@ N/A
 
 **Logged**: 2026-04-02T21:04:34.433475
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -300,7 +332,9 @@ N/A
 
 **Logged**: 2026-04-02T21:04:34.435372
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -318,7 +352,9 @@ N/A
 
 **Logged**: 2026-04-02T22:04:43.662833
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -336,7 +372,9 @@ N/A
 
 **Logged**: 2026-04-02T22:04:43.664899
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -354,7 +392,9 @@ N/A
 
 **Logged**: 2026-04-02T23:04:18.067922
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现持仓矛盾: 000, 500, 000, 4000, 1000, 500, 250, 3000, 250, 250, 000, 000, 500, 000, 500, 000, 500, 3000, 500, 3000
@@ -372,7 +412,9 @@ N/A
 
 **Logged**: 2026-04-02T23:04:18.069858
 **Priority**: high
-**Status**: pending
+**Status**: resolved
+**Resolved**: 2026-04-07
+**Resolution**: 记忆已协调，重复条目关闭
 
 ### Summary
 发现成本矛盾: 2, 002841
@@ -2253,4 +2295,177 @@ ec59e68f: apply_fix_for_pattern
 - 将 `review_evolve.py` 和 `error_evolution.py` 合并为单一错误追踪系统
 - 或者明确分工：一个负责实时修复（heal-unified-log），一个负责离线分析（其他日志）
 - 避免同一问题在多个日志中重复记录
+
+
+## [修复] 错误进化系统知识库未随日志清空而重置（2026-04-07）
+
+**问题**: 凌晨清空 error-evolution-log.jsonl 后，心跳仍报告54条历史错误
+**根因**: `error_evolution.py` 的 `get_root_cause_analysis()` 从 `error-knowledge.json` 读取累积统计，非从日志文件
+**数据流**: 
+  - 日志写入: error-evolution-log.jsonl → 积累到 → error-knowledge.json (stats字段)
+  - 报告读取: error-knowledge.json stats 字段
+**影响**: 清空日志不影响知识库，知识库须单独重置
+**教训**: 错误进化系统有两个数据源（原始日志 + 知识库统计），清理时须同步
+**修复**: 重置 error-knowledge.json 的 stats 和 count 字段
+
+## [LRN-20260407-191] success
+
+**Logged**: 2026-04-07T18:10:22.605509
+**Priority**: low
+**Status**: pending
+
+### Summary
+4897f5ed: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260407-192] success
+
+**Logged**: 2026-04-07T19:04:23.511785
+**Priority**: low
+**Status**: pending
+
+### Summary
+ec59e68f: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260407-193] success
+
+**Logged**: 2026-04-07T20:06:28.974097
+**Priority**: low
+**Status**: pending
+
+### Summary
+f0b28140: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260407-194] success
+
+**Logged**: 2026-04-07T21:04:31.356333
+**Priority**: low
+**Status**: pending
+
+### Summary
+f0b28140: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260407-195] error
+
+**Logged**: 2026-04-07T22:06:06.480401
+**Priority**: high
+**Status**: pending
+
+### Summary
+
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_no_delivery_ignored, error
+---
+
+
+## [LRN-20260407-196] error
+
+**Logged**: 2026-04-07T22:06:22.630518
+**Priority**: high
+**Status**: pending
+
+### Summary
+
+
+### Details
+需要新解法，请分析其他可用工具
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈失败-cron_no_delivery_ignored, error
+---
+
+
+## [LRN-20260407-197] error
+
+**Logged**: 2026-04-07T23:04:11.176665
+**Priority**: medium
+**Status**: pending
+
+### Summary
+cron_no_delivery_ignored错误: cron_no_delivery_ignored
+
+### Details
+来源:['unified_heal'] 出现2次
+
+### Metadata
+- Source: auto_record
+- Tags: cron, error
+---
+
+
+## [LRN-20260407-198] error
+
+**Logged**: 2026-04-07T23:04:11.188038
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: cron_no_delivery_ignored (根因:unknown)
+
+### Details
+自愈系统修复cron_no_delivery_ignored失败，根因:unknown
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260407-199] error
+
+**Logged**: 2026-04-07T23:04:11.196506
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: cron_no_delivery_ignored (根因:unknown)
+
+### Details
+自愈系统修复cron_no_delivery_ignored失败，根因:unknown
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
 
