@@ -390,3 +390,39 @@
 {"type": "preemptive_fix", "name": "🧠 记忆增强周检", "job_id": "c95c377b-41fe-41a1-8157-829740819289", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:34.460121", "root_cause": "unknown"}
 {"type": "preemptive_fix", "name": "🧠 记忆进化+主动蒸馏", "job_id": "929e7cf1-bdd9-4825-b52d-09453668d086", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T01:06:39.929681", "root_cause": "unknown"}
 {"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T01:07:17.824089", "root_cause": "cron_delivered_healthy"}
+{"type": "preemptive_fix", "name": "特朗普动态监控", "job_id": "f0b28140-2f7b-405d-9b12-fc23a3db7ef5", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:05:14.038055", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "OpenClaw 自愈系统", "job_id": "2d07315a-9e35-4fe1-a594-b4fab676172e", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:05:19.318904", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "飞书连接健康检查", "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:05:30.210068", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "技能自动更新", "job_id": "bf6a5a60-fe46-4c12-92e8-aa83f92fb61a", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:05:35.984289", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "AI综合日报", "job_id": "8944a88c-bf11-484c-b594-ff8ac4f5517e", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:05:49.291866", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "A股盘前播报", "job_id": "a47a4994-6c25-4521-99d9-c9a47519347c", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:05:57.442192", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "ComfyUI 变更监控", "job_id": "e9a9fdac-f203-421b-9311-8f59cca4c82b", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:06:08.116358", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "每日策略学习", "job_id": "23344724-6cce-47a7-ba28-7791214bebbc", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:06:24.663079", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "晚间综合复盘", "job_id": "8ec0edd5-015a-435c-bd9f-7e8a0e8c5604", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:06:29.975504", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "自学习进化", "job_id": "d551fe86-b01d-47b4-a92c-0d566a66b956", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:06:35.275019", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "记忆进化", "job_id": "a1417fac-a0fc-4fdf-b077-57753d26af74", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:06:43.230853", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "复盘进化", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:06:48.579190", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "深度学习时段", "job_id": "3273567b-986e-4840-985d-d4158cf423ba", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:06:54.168190", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "每周日综合周报", "job_id": "ee28465e-ff6a-4fa0-a35a-13e96cd9bbc6", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:07:04.810276", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "ComfyUI每周总结", "job_id": "324d8b01-b798-4486-915e-0a0a26e52934", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:07:10.575645", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "🧠 记忆增强周检", "job_id": "c95c377b-41fe-41a1-8157-829740819289", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:07:16.003992", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "🧠 记忆进化+主动蒸馏", "job_id": "929e7cf1-bdd9-4825-b52d-09453668d086", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T02:07:22.864886", "root_cause": "unknown"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T02:08:00.928970", "root_cause": "cron_delivered_healthy"}
+{"type": "preemptive_fix", "name": "OpenClaw 自愈系统", "job_id": "2d07315a-9e35-4fe1-a594-b4fab676172e", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:04:33.920744", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "飞书连接健康检查", "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:04:44.803746", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "技能自动更新", "job_id": "bf6a5a60-fe46-4c12-92e8-aa83f92fb61a", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:04:53.200076", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "AI综合日报", "job_id": "8944a88c-bf11-484c-b594-ff8ac4f5517e", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:05:06.610578", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "A股盘前播报", "job_id": "a47a4994-6c25-4521-99d9-c9a47519347c", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:05:14.583798", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "ComfyUI 变更监控", "job_id": "e9a9fdac-f203-421b-9311-8f59cca4c82b", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:05:25.471596", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "每日策略学习", "job_id": "23344724-6cce-47a7-ba28-7791214bebbc", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:05:42.019595", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "晚间综合复盘", "job_id": "8ec0edd5-015a-435c-bd9f-7e8a0e8c5604", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:05:47.380372", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "自学习进化", "job_id": "d551fe86-b01d-47b4-a92c-0d566a66b956", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:05:52.679492", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "记忆进化", "job_id": "a1417fac-a0fc-4fdf-b077-57753d26af74", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:06:00.780328", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "复盘进化", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:06:06.239656", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "深度学习时段", "job_id": "3273567b-986e-4840-985d-d4158cf423ba", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:06:11.624795", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "每周日综合周报", "job_id": "ee28465e-ff6a-4fa0-a35a-13e96cd9bbc6", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:06:22.944524", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "ComfyUI每周总结", "job_id": "324d8b01-b798-4486-915e-0a0a26e52934", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:06:28.285509", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "🧠 记忆增强周检", "job_id": "c95c377b-41fe-41a1-8157-829740819289", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:06:33.633715", "root_cause": "unknown"}
+{"type": "preemptive_fix", "name": "🧠 记忆进化+主动蒸馏", "job_id": "929e7cf1-bdd9-4825-b52d-09453668d086", "actions": ["缓存清理"], "result": "success", "ts": "2026-04-08T03:06:38.974330", "root_cause": "unknown"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T03:07:17.123094", "root_cause": "cron_delivered_healthy"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T04:05:00.556041", "root_cause": "cron_delivered_healthy"}

@@ -29,9 +29,9 @@
     {
       "type": "time_pattern",
       "peak_hours": [
-        "3:00 (139次)",
-        "1:00 (109次)",
-        "2:00 (57次)"
+        "3:00 (156次)",
+        "1:00 (126次)",
+        "2:00 (75次)"
       ],
       "recommendation": "考虑在高峰时段前增加检查频率"
     },
@@ -39,8 +39,8 @@
       "type": "correlated_failure",
       "time": "2026-04-05T22",
       "patterns": [
-        "",
-        "preventive_cron_degradation"
+        "preventive_cron_degradation",
+        ""
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -48,8 +48,8 @@
       "type": "correlated_failure",
       "time": "2026-04-05T23",
       "patterns": [
-        "",
-        "preventive_cron_degradation"
+        "preventive_cron_degradation",
+        ""
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -77,6 +77,33 @@
       "patterns": [
         "",
         "preventive_cron_degradation"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-08T01",
+      "patterns": [
+        "",
+        "cron_delivered_healthy"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-08T02",
+      "patterns": [
+        "",
+        "cron_delivered_healthy"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-08T03",
+      "patterns": [
+        "",
+        "cron_delivered_healthy"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     }
@@ -113,7 +140,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-08T01:07:17.824901",
+  "last_evolve": "2026-04-08T04:05:00.556847",
   "memory_health": 79,
   "prevention_strategies": [
     {
