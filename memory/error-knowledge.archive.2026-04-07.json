@@ -6,7 +6,7 @@
       "root_cause": "network_instability",
       "severity": "medium",
       "first_seen": "2026-04-01T21:38:55.343981",
-      "count": 0,
+      "count": 1,
       "sources": [
         "stock_monitor"
       ],
@@ -19,7 +19,7 @@
       "root_cause": "network_instability",
       "severity": "medium",
       "first_seen": "2026-04-01T21:38:55.344588",
-      "count": 0,
+      "count": 1,
       "sources": [
         "finance_updater"
       ],
@@ -32,7 +32,7 @@
       "root_cause": "config_error",
       "severity": "medium",
       "first_seen": "2026-04-01T21:38:55.345089",
-      "count": 0,
+      "count": 1,
       "sources": [
         "weather"
       ],
@@ -45,7 +45,7 @@
       "root_cause": "config_error",
       "severity": "medium",
       "first_seen": "2026-04-01T21:38:55.345693",
-      "count": 0,
+      "count": 1,
       "sources": [
         "tech_analysis"
       ],
@@ -58,7 +58,7 @@
       "root_cause": "permission_denied",
       "severity": "high",
       "first_seen": "2026-04-01T21:38:55.346178",
-      "count": 0,
+      "count": 1,
       "sources": [
         "card_delivery"
       ],
@@ -71,7 +71,7 @@
       "root_cause": "cron_misconfiguration",
       "severity": "medium",
       "first_seen": "2026-04-05T16:14:07.361355",
-      "count": 0,
+      "count": 34,
       "sources": [
         "unified_heal"
       ],
@@ -84,7 +84,7 @@
       "root_cause": "cron_misconfiguration",
       "severity": "medium",
       "first_seen": "2026-04-05T20:07:56.834194",
-      "count": 0,
+      "count": 15,
       "sources": [
         "unified_heal"
       ],
@@ -111,8 +111,20 @@
     ]
   },
   "stats": {
-    "total_errors": 0,
-    "by_root_cause": {},
-    "by_category": {}
+    "total_errors": 54,
+    "by_category": {
+      "network": 2,
+      "config": 2,
+      "permission": 1,
+      "cron": 49
+    },
+    "by_root_cause": {
+      "network_instability": 2,
+      "config_error": 2,
+      "permission_denied": 1,
+      "cron_misconfiguration": 49
+    },
+    "resolved_errors": 54,
+    "active_errors": 0
   }
 }
