@@ -1,22 +1,22 @@
 {
-  "ts": "2026-04-08T19:53:29.369368",
+  "ts": "2026-04-08T20:06:23.322100",
   "root_cause_analysis": {
-    "total_errors": 8,
+    "total_errors": 9,
     "total_fixes": 2,
-    "fix_rate": 0.25,
+    "fix_rate": 0.2222222222222222,
     "systemic_issues": {
-      "resource_exhaustion": 6
+      "resource_exhaustion": 7
     },
     "high_frequency_errors": {
-      "b40bbac0237a": 6
+      "b40bbac0237a": 7
     },
     "by_category": {
       "cron": 2,
-      "resource": 6
+      "resource": 7
     },
     "by_root_cause": {
       "cron_misconfiguration": 2,
-      "resource_exhaustion": 6
+      "resource_exhaustion": 7
     }
   },
   "discovered_patterns": [],
@@ -24,13 +24,13 @@
     {
       "type": "systemic_fix",
       "priority": "high",
-      "message": "根因'resource_exhaustion'已出现6次，需要系统级修复",
+      "message": "根因'resource_exhaustion'已出现7次，需要系统级修复",
       "action": "检查resource_exhaustion的底层原因并永久解决"
     },
     {
       "type": "fix_rate_low",
       "priority": "medium",
-      "message": "整体修复率仅25%（2/8）",
+      "message": "整体修复率仅22%（2/9）",
       "action": "审视修复策略，增加自动化修复能力"
     }
   ]

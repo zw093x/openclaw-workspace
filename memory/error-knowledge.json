@@ -110,12 +110,12 @@
       "root_cause": "resource_exhaustion",
       "severity": "high",
       "first_seen": "2026-04-08T14:53:37.368802",
-      "count": 6,
+      "count": 7,
       "sources": [
         "unified_heal"
       ],
       "sample_msg": "disk_warning",
-      "last_seen": "2026-04-08T19:52:52.220846"
+      "last_seen": "2026-04-08T20:06:13.447784"
     }
   },
   "fixes": {
@@ -137,14 +137,14 @@
     ]
   },
   "stats": {
-    "total_errors": 8,
+    "total_errors": 9,
     "by_root_cause": {
       "cron_misconfiguration": 2,
-      "resource_exhaustion": 6
+      "resource_exhaustion": 7
     },
     "by_category": {
       "cron": 2,
-      "resource": 6
+      "resource": 7
     }
   }
 }

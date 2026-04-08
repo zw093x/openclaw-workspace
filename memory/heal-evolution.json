@@ -8,7 +8,7 @@
     {
       "type": "recurring_pattern",
       "pattern": "preventive_cron_degradation",
-      "count": 34,
+      "count": 35,
       "success_rate": 1.0,
       "recommendation": "添加到监控模式库"
     },
@@ -39,8 +39,8 @@
       "type": "correlated_failure",
       "time": "2026-04-05T22",
       "patterns": [
-        "",
-        "preventive_cron_degradation"
+        "preventive_cron_degradation",
+        ""
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -48,8 +48,8 @@
       "type": "correlated_failure",
       "time": "2026-04-05T23",
       "patterns": [
-        "",
-        "preventive_cron_degradation"
+        "preventive_cron_degradation",
+        ""
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -120,10 +120,10 @@
       "type": "correlated_failure",
       "time": "2026-04-08T17",
       "patterns": [
-        "cron_delivered_healthy",
         "disk_warning",
-        "cron_message_failed",
-        "cron_timeout"
+        "cron_delivered_healthy",
+        "cron_timeout",
+        "cron_message_failed"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -137,21 +137,30 @@
         "cron_timeout"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-08T19",
+      "patterns": [
+        "preventive_cron_degradation",
+        "disk_warning"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
     }
   ],
   "repair_scores": {
     "disk_warning": {
-      "success_rate": 0.7619047619047619,
-      "avg_time_ms": 761.9047619047619,
-      "overall_score": 0.8104761904761904,
-      "attempts": 21,
+      "success_rate": 0.7391304347826086,
+      "avg_time_ms": 739.1304347826087,
+      "overall_score": 0.7952173913043477,
+      "attempts": 23,
       "recommendation": "保持"
     },
     "preventive_cron_degradation": {
       "success_rate": 1.0,
       "avg_time_ms": 1000.0,
       "overall_score": 0.97,
-      "attempts": 34,
+      "attempts": 35,
       "recommendation": "保持"
     },
     "cron_timeout": {
@@ -171,7 +180,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-08T19:52:52.223977",
+  "last_evolve": "2026-04-08T20:06:13.451042",
   "memory_health": 79,
   "prevention_strategies": [
     {
