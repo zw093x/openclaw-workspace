@@ -2469,3 +2469,219 @@ cron_no_delivery_ignored错误: cron_no_delivery_ignored
 - Tags: self_heal, error
 ---
 
+
+## [LRN-20260408-200] error
+
+**Logged**: 2026-04-08T17:04:21.853695
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: disk_warning (根因:disk_warning)
+
+### Details
+自愈系统修复disk_warning失败，根因:disk_warning
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260408-201] success
+
+**Logged**: 2026-04-08T17:04:34.500378
+**Priority**: low
+**Status**: pending
+
+### Summary
+ec59e68f: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260408-202] success
+
+**Logged**: 2026-04-08T17:04:37.401310
+**Priority**: low
+**Status**: pending
+
+### Summary
+61979e27: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260408-203] success
+
+**Logged**: 2026-04-08T17:05:05.275140
+**Priority**: low
+**Status**: pending
+
+### Summary
+ec59e68f: apply_fix_for_pattern
+
+### Details
+适用于cron_message_failed模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_message_failed, success
+---
+
+
+## [LRN-20260408-204] success
+
+**Logged**: 2026-04-08T17:05:08.553625
+**Priority**: low
+**Status**: pending
+
+### Summary
+61979e27: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260408-205] error
+
+**Logged**: 2026-04-08T18:04:53.793797
+**Priority**: high
+**Status**: pending
+
+### Summary
+disk_warning错误: disk_warning
+
+### Details
+来源:['unified_heal'] 出现3次
+
+### Metadata
+- Source: auto_record
+- Tags: resource, error
+---
+
+
+## [LRN-20260408-206] success
+
+**Logged**: 2026-04-08T18:05:17.801262
+**Priority**: low
+**Status**: pending
+
+### Summary
+bf6a5a60: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260408-207] success
+
+**Logged**: 2026-04-08T18:05:20.900628
+**Priority**: low
+**Status**: pending
+
+### Summary
+f2b10d4e: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260408-208] success
+
+**Logged**: 2026-04-08T18:05:26.094344
+**Priority**: low
+**Status**: pending
+
+### Summary
+61979e27: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260408-209] success
+
+**Logged**: 2026-04-08T18:29:28.273566
+**Priority**: low
+**Status**: pending
+
+### Summary
+bf6a5a60: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260408-210] success
+
+**Logged**: 2026-04-08T18:29:31.327791
+**Priority**: low
+**Status**: pending
+
+### Summary
+f2b10d4e: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+
+
+## [LRN-20260408-211] success
+
+**Logged**: 2026-04-08T18:29:34.206346
+**Priority**: low
+**Status**: pending
+
+### Summary
+61979e27: apply_fix_for_pattern
+
+### Details
+适用于cron_timeout模式
+
+### Metadata
+- Source: auto_record
+- Tags: 自愈-cron_timeout, success
+---
+

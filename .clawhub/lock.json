@@ -147,15 +147,19 @@
     },
     "save-money": {
       "version": "4.2.0",
-      "installedAt": 1775470202276
+      "installedAt": 1775599382133
     },
     "searxng": {
       "version": "1.0.3",
-      "installedAt": 1775470279024
+      "installedAt": 1775599442656
     },
     "x-api": {
       "version": "0.1.0",
       "installedAt": 1775512982526
+    },
+    "web-tools-guide": {
+      "version": "1.0.0",
+      "installedAt": 1775631106767
     }
   }
 }
