@@ -1832,3 +1832,78 @@ cron_misconfiguration 是主要根因（49次），但自愈系统修复率为0%
 3. 磁盘使用率95% → 需关注，但未达紧急级别（阈值90%）
 
 **结论：** 无严重问题，以上均为轻微警告，未触发自动修复。继续观察。
+
+---
+
+## 自愈系统运行 [2026-04-08 18:04]
+
+**检测结果：**
+- 错误数：6（cron:2, resource:4）
+- 修复率：33%（2/6）
+- 系统性问题：resource_exhaustion（出现4次，需系统级修复）
+
+**检测到的异常：**
+| 异常 | 严重度 | 错误信息 | 连续次数 |
+|------|--------|---------|---------|
+| 技能自动更新 | 🟡低 | Request timed out | 1次 |
+| Cron 自检修复 | 🟡低 | Request timed out | 1次 |
+| 鱼盆模型每日更新 | 🟡低 | Request timed out | 1次 |
+| 磁盘使用率 | 🔴高 | 95%（可用2.0G），阈值90% | N/A |
+| preventive_cron_degradation | 🟡观察 | 出现31次，成功率100% | 稳定 |
+| cron_message_failed | 🟡观察 | 出现6次，成功率50% | 需关注 |
+| cron_no_delivery_ignored | 🟡观察 | 出现2次，成功率0% | 需关注 |
+
+**预防性预警（L4预测）：**
+- 🔴 Cron模式'disk_warning'已失败3次 → 建议检查disk_warning根因
+
+**发现的模式（L2）：**
+- preventive_cron_degradation: 31次，成功率100%（稳定）
+- cron_message_failed: 6次，成功率50%（需优化）
+- cron_no_delivery_ignored: 2次，成功率0%（需修复）
+
+**根因分析：**
+1. Request timed out（3个cron）→ 网络或API响应慢，可能resource_exhaustion导致处理延迟
+2. 磁盘使用率95% → 需清理，否则影响所有cron执行
+3. cron_message_failed/cron_no_delivery_ignored → delivery.channel配置问题残留
+
+**修复措施：**
+- intel_hub.py --sync 同步完成
+- unified_heal.py --fix --report --evolve 执行（检测为主，未自动修复）
+- learn_evolve.py --evolve 执行（无跨域迁移/反馈闭环）
+- error_evolution.py --evolve 发现系统性resource_exhaustion问题
+
+**结论：** 
+- ⚠️ 需关注：磁盘清理（95%→建议降至85%以下）
+- ⚠️ 需关注：3个cron的timeout问题（可能是资源紧张导致）
+- 系统自愈机制运行正常，无严重故障
+
+**运行中修复（2026-04-08 18:05）：**
+- journalctl --vacuum-size=50M → 释放 151.5M
+- 磁盘使用率：96%→95%（2.0G→2.1G可用）
+- Docker缓存：无可回收（活动容器占用）
+
+## 关键记录 [18:29] - 统一自愈系统 v3.3 例行巡检
+- **日期**: 2026-04-08 18:29 CST
+- **执行脚本**: intel_hub --sync → unified_heal --fix --report --evolve → learn_evolve --evolve → error_evolution --evolve
+
+### 发现的问题
+
+| # | 问题类型 | 详情 | 根因分析 |
+|---|---------|------|---------|
+| 1 | 🟡 Cron异常 | 技能自动更新 — 连续1次超时错误 | Request timed out，可能外部API调用超时 |
+| 2 | 🟡 Cron异常 | Cron自检修复 — 连续1次超时错误 | 同上 |
+| 3 | 🟡 Cron异常 | 鱼盆模型每日更新 — 连续1次超时错误 | 同上 |
+| 4 | 🔴 磁盘预警 | 使用率96%，可用仅1.7G | 资源耗尽，为系统性根因（出现5次） |
+| 5 | 🔴 模式预警 | disk_warning cron已失败4次 | 磁盘清理机制失效 |
+
+### 进化系统发现
+
+- **L2模式**: `cron_message_failed` 出现6次，成功率50% — 说明部分cron任务的投递失败率偏高
+- **L4预警**: `cron_mode='disk_warning'` 连续失败4次，需检查根因
+- **修复率**: 仅29%（2/7），需提升自动化修复能力
+
+### 待修复项
+1. **高优先级**: 清理磁盘空间（目标降至80%以下）
+2. **高优先级**: 排查disk_warning cron失败根因
+3. **中优先级**: 审视cron_message_failed（50%成功率）的投递问题
+

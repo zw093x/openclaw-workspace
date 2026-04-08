@@ -202,3 +202,10 @@
 {"action": "record", "id": "LRN-20260408-202", "type": "success", "category": "自愈-cron_timeout", "summary": "61979e27: apply_fix_for_pattern", "ts": "2026-04-08T17:04:37.406645"}
 {"action": "record", "id": "LRN-20260408-203", "type": "success", "category": "自愈-cron_message_failed", "summary": "ec59e68f: apply_fix_for_pattern", "ts": "2026-04-08T17:05:05.280679"}
 {"action": "record", "id": "LRN-20260408-204", "type": "success", "category": "自愈-cron_timeout", "summary": "61979e27: apply_fix_for_pattern", "ts": "2026-04-08T17:05:08.559083"}
+{"action": "record", "id": "LRN-20260408-205", "type": "error", "category": "resource", "summary": "disk_warning错误: disk_warning", "ts": "2026-04-08T18:04:53.801886"}
+{"action": "record", "id": "LRN-20260408-206", "type": "success", "category": "自愈-cron_timeout", "summary": "bf6a5a60: apply_fix_for_pattern", "ts": "2026-04-08T18:05:17.806719"}
+{"action": "record", "id": "LRN-20260408-207", "type": "success", "category": "自愈-cron_timeout", "summary": "f2b10d4e: apply_fix_for_pattern", "ts": "2026-04-08T18:05:20.905921"}
+{"action": "record", "id": "LRN-20260408-208", "type": "success", "category": "自愈-cron_timeout", "summary": "61979e27: apply_fix_for_pattern", "ts": "2026-04-08T18:05:26.111451"}
+{"action": "record", "id": "LRN-20260408-209", "type": "success", "category": "自愈-cron_timeout", "summary": "bf6a5a60: apply_fix_for_pattern", "ts": "2026-04-08T18:29:28.279296"}
+{"action": "record", "id": "LRN-20260408-210", "type": "success", "category": "自愈-cron_timeout", "summary": "f2b10d4e: apply_fix_for_pattern", "ts": "2026-04-08T18:29:31.333235"}
+{"action": "record", "id": "LRN-20260408-211", "type": "success", "category": "自愈-cron_timeout", "summary": "61979e27: apply_fix_for_pattern", "ts": "2026-04-08T18:29:34.211772"}
