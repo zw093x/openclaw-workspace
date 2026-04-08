@@ -1980,3 +1980,48 @@ cron_misconfiguration 是主要根因（49次），但自愈系统修复率为0%
 
 **disk_warning cron**：历史失败计数将在下次执行成功后自动清除
 **结论**：✅ 磁盘危机已解除，无需停机
+
+---
+
+## 2026-04-08 22:04 自愈系统运行记录
+- **执行时间**: 2026-04-08 22:04 CST
+- **执行脚本**: intel_hub --sync → unified_heal --fix --report --evolve → learn_evolve --evolve → error_evolution --evolve
+
+### 运行结果
+| 脚本 | 状态 | 详情 |
+|------|------|------|
+| intel_hub --sync | ✅ 正常 | 全量同步完成 |
+| unified_heal --fix --report --evolve | ✅ 正常 | 预防性预警1条（L4预测），无新修复 |
+| learn_evolve --evolve | ✅ 正常 | L6-L11完成，0条变化 |
+| error_evolution --evolve | ✅ 完成 | 9错误/2修复（fix_rate 22%） |
+
+### 发现的问题
+| 问题 | 详情 | 严重度 |
+|------|------|--------|
+| disk_warning cron失败历史 | Cron模式'disk_warning'已失败7次 | 🟡 历史积压 |
+| resource_exhaustion根因 | 错误进化检测到累计出现7次 | 🟡 系统级历史 |
+| 整体修复率22% | 9个错误仅修复2个 | 🟡 待提升 |
+
+### 预防性预警（L4）
+- 🔴 Cron模式'disk_warning'已失败7次 → 建议检查disk_warning根因
+
+### 自动发现的模式（L2）
+- preventive_cron_degradation: 37次，成功率100%（稳定）
+- cron_message_failed: 6次，成功率50%（需优化）
+- cron_no_delivery_ignored: 2次，成功率0%（需修复）
+
+### 根因分析
+- **disk_warning cron失败**：历史积压（7次），根因resource_exhaustion已于21:30清理npm/pnpm缓存解决
+- **系统当前状态**：磁盘已从99%降至88%（4.7GB可用），disk_warning cron应已恢复正常
+- **cron_message_failed/cron_no_delivery_ignored**：投递配置问题，需后续审视
+
+### 已修复问题
+- **磁盘空间耗尽（21:30 手动清理）** ✅
+  - npm cache: 2.9GB → 763MB
+  - pnpm store: 1.7GB → 16MB
+  - 释放 ~4GB，磁盘使用率: 99% → 88%
+
+### 待处理
+- disk_warning cron历史失败计数（下次成功执行后自动清除）
+- 监控磁盘使用率，防止再次接近99%
+- 审视cron投递配置（cron_message_failed 50%成功率）
