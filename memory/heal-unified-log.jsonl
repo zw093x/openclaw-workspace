@@ -429,3 +429,4 @@
 {"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T05:04:24.200835", "root_cause": "cron_delivered_healthy"}
 {"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T06:05:00.246523", "root_cause": "cron_delivered_healthy"}
 {"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T07:04:25.810557", "root_cause": "cron_delivered_healthy"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T08:08:20.285971", "root_cause": "cron_delivered_healthy"}
