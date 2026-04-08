@@ -135,3 +135,5 @@
 {"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-08T09:04:19.746345"}
 {"action": "export_prevention", "strategies_count": 0, "learned_count": 0, "ts": "2026-04-08T09:04:32.650354"}
 {"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-08T09:04:32.653360"}
+{"action": "export_prevention", "strategies_count": 0, "learned_count": 0, "ts": "2026-04-08T10:05:32.277281"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-08T10:05:32.280996"}
