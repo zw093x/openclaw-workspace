@@ -441,3 +441,17 @@
 {"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T14:53:37.069122", "root_cause": "cron_delivered_healthy"}
 {"pattern": "disk_warning", "action": "verify", "result": "failed", "msg": "disk 95%", "ts": "2026-04-08T14:53:37.368386", "root_cause": "disk_warning"}
 {"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "root_cause": "resource_exhaustion", "time_ms": 1000, "ts": "2026-04-08T14:53:37.369558"}
+{"pattern": "cron_message_failed", "action": "skip_no_delivery", "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7", "result": "skipped", "msg": "mode=none，不推送，忽略message_failed检测", "ts": "2026-04-08T17:04:34.496509", "root_cause": "cron_message_failed"}
+{"pattern": "cron_message_failed", "target": "飞书连接健康检查 (ec59e68f)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 0, "ts": "2026-04-08T17:04:34.496639"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T17:04:34.506797", "root_cause": "cron_delivered_healthy"}
+{"pattern": "cron_timeout", "action": "skip_偶发", "job_id": "61979e27-a0e5-4203-b361-25a7f2ceaa3c", "result": "success", "msg": "任务实际83.0s，偶发超时，不重跑", "ts": "2026-04-08T17:04:37.397297", "root_cause": "cron_timeout"}
+{"pattern": "cron_timeout", "target": "鱼盆模型每日更新 (61979e27)", "action": "auto_fix", "result": "success", "root_cause": "performance_bottleneck", "severity": "preventive", "time_ms": 2890, "ts": "2026-04-08T17:04:37.397446"}
+{"pattern": "disk_warning", "action": "verify", "result": "failed", "msg": "disk 95%", "ts": "2026-04-08T17:04:37.822901", "root_cause": "disk_warning"}
+{"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "root_cause": "resource_exhaustion", "time_ms": 1000, "ts": "2026-04-08T17:04:37.824438"}
+{"pattern": "cron_message_failed", "action": "skip_no_delivery", "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7", "result": "skipped", "msg": "mode=none，不推送，忽略message_failed检测", "ts": "2026-04-08T17:05:05.271097", "root_cause": "cron_message_failed"}
+{"pattern": "cron_message_failed", "target": "飞书连接健康检查 (ec59e68f)", "action": "auto_fix", "result": "success", "root_cause": "system_instability", "severity": "systemic", "time_ms": 0, "ts": "2026-04-08T17:05:05.271224"}
+{"pattern": "cron_delivered_healthy", "action": "skip", "job_id": "754c79b3-92e9-4b4e-a783-4e020549ffcd", "result": "skipped", "msg": "投递成功，内容含probe结果，不修复", "ts": "2026-04-08T17:05:05.282083", "root_cause": "cron_delivered_healthy"}
+{"pattern": "cron_timeout", "action": "skip_偶发", "job_id": "61979e27-a0e5-4203-b361-25a7f2ceaa3c", "result": "success", "msg": "任务实际83.0s，偶发超时，不重跑", "ts": "2026-04-08T17:05:08.549769", "root_cause": "cron_timeout"}
+{"pattern": "cron_timeout", "target": "鱼盆模型每日更新 (61979e27)", "action": "auto_fix", "result": "success", "root_cause": "performance_bottleneck", "severity": "preventive", "time_ms": 3267, "ts": "2026-04-08T17:05:08.549902"}
+{"pattern": "disk_warning", "action": "verify", "result": "failed", "msg": "disk 95%", "ts": "2026-04-08T17:05:08.621032", "root_cause": "disk_warning"}
+{"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "root_cause": "resource_exhaustion", "time_ms": 1000, "ts": "2026-04-08T17:05:08.621906"}

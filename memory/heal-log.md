@@ -1809,3 +1809,26 @@ cron_misconfiguration 是主要根因（49次），但自愈系统修复率为0%
 **根因分析：** cron_message_failed/cron_no_delivery_ignored → cron_misconfiguration（配置问题）
 
 **结论：** 无严重问题，系统自愈正常。模式已纳入进化池。
+
+---
+
+## 自愈系统运行 [2026-04-08 17:04]
+
+**检测结果：**
+- 错误数：2（均为cron级别警告）
+- 修复率：N/A（连续1次错误，未达阈值3次，未触发自动修复）
+- 系统性问题：0
+
+**检测到的异常：**
+| 异常 | 严重度 | 错误信息 | 连续次数 |
+|------|--------|---------|---------|
+| 飞书连接健康检查 | 🟡低 | Channel is required (no configured channels detected). Set delivery.channel explicitly. | 1次 |
+| 鱼盆模型每日更新 | 🟡低 | Request timed out before a response was generated. | 1次 |
+| 磁盘使用率 | 🟡低 | 95% (可用2.0G)，阈值90% | N/A |
+
+**根因分析：**
+1. 飞书连接健康检查 → cron_misconfiguration：delivery.channel 未显式配置
+2. 鱼盆模型每日更新 → Request timeout，可能为网络或API响应慢
+3. 磁盘使用率95% → 需关注，但未达紧急级别（阈值90%）
+
+**结论：** 无严重问题，以上均为轻微警告，未触发自动修复。继续观察。

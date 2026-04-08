@@ -186,6 +186,38 @@
       "root_cause": "unknown",
       "fix_result": "failed",
       "ts": "2026-04-07T22:06:22.636318"
+    },
+    {
+      "type": "cron_message_failed",
+      "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7",
+      "error_msg": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel.",
+      "root_cause": "system_instability",
+      "fix_result": "success",
+      "ts": "2026-04-08T17:04:34.506374"
+    },
+    {
+      "type": "cron_timeout",
+      "job_id": "61979e27-a0e5-4203-b361-25a7f2ceaa3c",
+      "error_msg": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
+      "root_cause": "performance_bottleneck",
+      "fix_result": "success",
+      "ts": "2026-04-08T17:04:37.407579"
+    },
+    {
+      "type": "cron_message_failed",
+      "job_id": "ec59e68f-86f9-4b6a-a80c-76e6b8d79aa7",
+      "error_msg": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel.",
+      "root_cause": "system_instability",
+      "fix_result": "success",
+      "ts": "2026-04-08T17:05:05.281622"
+    },
+    {
+      "type": "cron_timeout",
+      "job_id": "61979e27-a0e5-4203-b361-25a7f2ceaa3c",
+      "error_msg": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
+      "root_cause": "performance_bottleneck",
+      "fix_result": "success",
+      "ts": "2026-04-08T17:05:08.559887"
     }
   ]
 }

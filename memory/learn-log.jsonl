@@ -197,3 +197,8 @@
 {"action": "record", "id": "LRN-20260407-197", "type": "error", "category": "cron", "summary": "cron_no_delivery_ignored错误: cron_no_delivery_ignored", "ts": "2026-04-07T23:04:11.182910"}
 {"action": "record", "id": "LRN-20260407-198", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_no_delivery_ignored (根因:unknown)", "ts": "2026-04-07T23:04:11.194094"}
 {"action": "record", "id": "LRN-20260407-199", "type": "error", "category": "self_heal", "summary": "自愈失败: cron_no_delivery_ignored (根因:unknown)", "ts": "2026-04-07T23:04:11.202605"}
+{"action": "record", "id": "LRN-20260408-200", "type": "error", "category": "self_heal", "summary": "自愈失败: disk_warning (根因:disk_warning)", "ts": "2026-04-08T17:04:21.858921"}
+{"action": "record", "id": "LRN-20260408-201", "type": "success", "category": "自愈-cron_message_failed", "summary": "ec59e68f: apply_fix_for_pattern", "ts": "2026-04-08T17:04:34.505651"}
+{"action": "record", "id": "LRN-20260408-202", "type": "success", "category": "自愈-cron_timeout", "summary": "61979e27: apply_fix_for_pattern", "ts": "2026-04-08T17:04:37.406645"}
+{"action": "record", "id": "LRN-20260408-203", "type": "success", "category": "自愈-cron_message_failed", "summary": "ec59e68f: apply_fix_for_pattern", "ts": "2026-04-08T17:05:05.280679"}
+{"action": "record", "id": "LRN-20260408-204", "type": "success", "category": "自愈-cron_timeout", "summary": "61979e27: apply_fix_for_pattern", "ts": "2026-04-08T17:05:08.559083"}

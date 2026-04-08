@@ -1,7 +1,7 @@
 {
   "root_causes": {
-    "system_instability": 57,
-    "performance_bottleneck": 18,
+    "system_instability": 59,
+    "performance_bottleneck": 20,
     "unknown": 2
   },
   "discovered_patterns": [
@@ -15,7 +15,7 @@
     {
       "type": "recurring_pattern",
       "pattern": "cron_message_failed",
-      "count": 2,
+      "count": 4,
       "success_rate": 0.5,
       "recommendation": "需人工排查"
     },
@@ -106,14 +106,34 @@
         "cron_delivered_healthy"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-08T14",
+      "patterns": [
+        "cron_delivered_healthy",
+        "disk_warning"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-08T17",
+      "patterns": [
+        "cron_delivered_healthy",
+        "cron_timeout",
+        "disk_warning",
+        "cron_message_failed"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
     }
   ],
   "repair_scores": {
     "disk_warning": {
-      "success_rate": 1.0,
-      "avg_time_ms": 1000.0,
-      "overall_score": 0.97,
-      "attempts": 11,
+      "success_rate": 0.8666666666666667,
+      "avg_time_ms": 866.6666666666666,
+      "overall_score": 0.8806666666666667,
+      "attempts": 15,
       "recommendation": "保持"
     },
     "preventive_cron_degradation": {
@@ -125,22 +145,22 @@
     },
     "cron_timeout": {
       "success_rate": 1.0,
-      "avg_time_ms": 4565.5,
-      "overall_score": 0.863035,
-      "attempts": 6,
+      "avg_time_ms": 3785.375,
+      "overall_score": 0.8864387499999999,
+      "attempts": 8,
       "recommendation": "保持"
     },
     "cron_message_failed": {
       "success_rate": 0.5,
       "avg_time_ms": 0.0,
       "overall_score": 0.6499999999999999,
-      "attempts": 2,
+      "attempts": 4,
       "recommendation": "需优化"
     }
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-08T14:53:37.371916",
+  "last_evolve": "2026-04-08T17:05:08.624215",
   "memory_health": 79,
   "prevention_strategies": [
     {
