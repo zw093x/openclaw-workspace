@@ -8,7 +8,7 @@
     {
       "type": "recurring_pattern",
       "pattern": "preventive_cron_degradation",
-      "count": 32,
+      "count": 34,
       "success_rate": 1.0,
       "recommendation": "添加到监控模式库"
     },
@@ -120,10 +120,10 @@
       "type": "correlated_failure",
       "time": "2026-04-08T17",
       "patterns": [
-        "cron_message_failed",
-        "cron_timeout",
+        "cron_delivered_healthy",
         "disk_warning",
-        "cron_delivered_healthy"
+        "cron_message_failed",
+        "cron_timeout"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -131,34 +131,34 @@
       "type": "correlated_failure",
       "time": "2026-04-08T18",
       "patterns": [
-        "disk_warning",
-        "cron_timeout",
         "preventive_cron_degradation",
-        "cron_delivered_healthy"
+        "disk_warning",
+        "cron_delivered_healthy",
+        "cron_timeout"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     }
   ],
   "repair_scores": {
     "disk_warning": {
-      "success_rate": 0.7894736842105263,
-      "avg_time_ms": 789.4736842105264,
-      "overall_score": 0.8289473684210525,
-      "attempts": 19,
+      "success_rate": 0.7619047619047619,
+      "avg_time_ms": 761.9047619047619,
+      "overall_score": 0.8104761904761904,
+      "attempts": 21,
       "recommendation": "保持"
     },
     "preventive_cron_degradation": {
       "success_rate": 1.0,
       "avg_time_ms": 1000.0,
       "overall_score": 0.97,
-      "attempts": 32,
+      "attempts": 34,
       "recommendation": "保持"
     },
     "cron_timeout": {
       "success_rate": 1.0,
-      "avg_time_ms": 2900.625,
-      "overall_score": 0.91298125,
-      "attempts": 16,
+      "avg_time_ms": 2510.590909090909,
+      "overall_score": 0.9246822727272727,
+      "attempts": 22,
       "recommendation": "保持"
     },
     "cron_message_failed": {
@@ -171,7 +171,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-08T18:29:34.638332",
+  "last_evolve": "2026-04-08T19:52:52.223977",
   "memory_health": 79,
   "prevention_strategies": [
     {
