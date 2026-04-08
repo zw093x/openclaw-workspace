@@ -8,7 +8,7 @@
     {
       "type": "recurring_pattern",
       "pattern": "preventive_cron_degradation",
-      "count": 42,
+      "count": 46,
       "success_rate": 1.0,
       "recommendation": "添加到监控模式库"
     },
@@ -120,10 +120,10 @@
       "type": "correlated_failure",
       "time": "2026-04-08T17",
       "patterns": [
-        "cron_message_failed",
-        "cron_timeout",
         "cron_delivered_healthy",
-        "disk_warning"
+        "disk_warning",
+        "cron_timeout",
+        "cron_message_failed"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -131,10 +131,10 @@
       "type": "correlated_failure",
       "time": "2026-04-08T18",
       "patterns": [
-        "cron_timeout",
         "cron_delivered_healthy",
+        "disk_warning",
         "preventive_cron_degradation",
-        "disk_warning"
+        "cron_timeout"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -142,8 +142,8 @@
       "type": "correlated_failure",
       "time": "2026-04-08T19",
       "patterns": [
-        "preventive_cron_degradation",
-        "disk_warning"
+        "disk_warning",
+        "preventive_cron_degradation"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -151,8 +151,8 @@
       "type": "correlated_failure",
       "time": "2026-04-08T20",
       "patterns": [
-        "preventive_cron_degradation",
-        "disk_warning"
+        "disk_warning",
+        "preventive_cron_degradation"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     }
@@ -169,7 +169,7 @@
       "success_rate": 1.0,
       "avg_time_ms": 1000.0,
       "overall_score": 0.97,
-      "attempts": 42,
+      "attempts": 46,
       "recommendation": "保持"
     },
     "cron_timeout": {
@@ -189,7 +189,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-09T04:06:10.441316",
+  "last_evolve": "2026-04-09T07:06:23.448505",
   "memory_health": 79,
   "prevention_strategies": [
     {
