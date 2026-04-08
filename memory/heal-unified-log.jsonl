@@ -475,3 +475,4 @@
 {"pattern": "cron_timeout", "target": "鱼盆模型每日更新 (61979e27)", "action": "auto_fix", "result": "success", "root_cause": "performance_bottleneck", "severity": "preventive", "time_ms": 2867, "ts": "2026-04-08T18:29:34.201890"}
 {"pattern": "disk_warning", "action": "verify", "result": "failed", "msg": "disk 96%", "ts": "2026-04-08T18:29:34.634964", "root_cause": "disk_warning"}
 {"pattern": "disk_warning", "target": "disk", "action": "auto_fix", "result": "success", "root_cause": "resource_exhaustion", "time_ms": 1000, "ts": "2026-04-08T18:29:34.636029"}
+{"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败5次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-08T19:06:44.539245"}
