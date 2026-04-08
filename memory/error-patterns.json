@@ -1,16 +1,18 @@
 {
-  "ts": "2026-04-08T13:04:32.884919",
+  "ts": "2026-04-08T14:53:43.810512",
   "root_cause_analysis": {
-    "total_errors": 2,
+    "total_errors": 3,
     "total_fixes": 2,
-    "fix_rate": 1.0,
+    "fix_rate": 0.6666666666666666,
     "systemic_issues": {},
     "high_frequency_errors": {},
     "by_category": {
-      "cron": 2
+      "cron": 2,
+      "resource": 1
     },
     "by_root_cause": {
-      "cron_misconfiguration": 2
+      "cron_misconfiguration": 2,
+      "resource_exhaustion": 1
     }
   },
   "discovered_patterns": [],

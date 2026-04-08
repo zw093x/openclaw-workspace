@@ -103,6 +103,19 @@
       ],
       "sample_msg": "cron_no_delivery_ignored",
       "last_seen": "2026-04-07T22:06:22.626369"
+    },
+    "b40bbac0237a": {
+      "type": "disk_warning",
+      "category": "resource",
+      "root_cause": "resource_exhaustion",
+      "severity": "high",
+      "first_seen": "2026-04-08T14:53:37.368802",
+      "count": 1,
+      "sources": [
+        "unified_heal"
+      ],
+      "sample_msg": "disk_warning",
+      "last_seen": "2026-04-08T14:53:37.368809"
     }
   },
   "fixes": {
@@ -124,12 +137,14 @@
     ]
   },
   "stats": {
-    "total_errors": 2,
+    "total_errors": 3,
     "by_root_cause": {
-      "cron_misconfiguration": 2
+      "cron_misconfiguration": 2,
+      "resource_exhaustion": 1
     },
     "by_category": {
-      "cron": 2
+      "cron": 2,
+      "resource": 1
     }
   }
 }
