@@ -8,7 +8,7 @@
     {
       "type": "recurring_pattern",
       "pattern": "preventive_cron_degradation",
-      "count": 40,
+      "count": 41,
       "success_rate": 1.0,
       "recommendation": "添加到监控模式库"
     },
@@ -30,7 +30,7 @@
       "type": "time_pattern",
       "peak_hours": [
         "3:00 (156次)",
-        "1:00 (126次)",
+        "1:00 (127次)",
         "2:00 (75次)"
       ],
       "recommendation": "考虑在高峰时段前增加检查频率"
@@ -120,10 +120,10 @@
       "type": "correlated_failure",
       "time": "2026-04-08T17",
       "patterns": [
-        "cron_timeout",
         "cron_delivered_healthy",
-        "cron_message_failed",
-        "disk_warning"
+        "cron_timeout",
+        "disk_warning",
+        "cron_message_failed"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -131,10 +131,10 @@
       "type": "correlated_failure",
       "time": "2026-04-08T18",
       "patterns": [
-        "cron_timeout",
         "cron_delivered_healthy",
         "preventive_cron_degradation",
-        "disk_warning"
+        "disk_warning",
+        "cron_timeout"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -169,7 +169,7 @@
       "success_rate": 1.0,
       "avg_time_ms": 1000.0,
       "overall_score": 0.97,
-      "attempts": 40,
+      "attempts": 41,
       "recommendation": "保持"
     },
     "cron_timeout": {
@@ -189,7 +189,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-09T01:06:11.775708",
+  "last_evolve": "2026-04-09T03:06:25.466589",
   "memory_health": 79,
   "prevention_strategies": [
     {
