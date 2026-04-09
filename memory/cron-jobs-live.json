@@ -6,7 +6,7 @@
       "name": "盘中实时股票监控",
       "enabled": true,
       "createdAtMs": 1774725718767,
-      "updatedAtMs": 1775700077627,
+      "updatedAtMs": 1775700936270,
       "schedule": {
         "kind": "cron",
         "expr": "0,15,30,45 9-14 * * 1-5",
@@ -25,55 +25,20 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775700900000,
-        "lastRunAtMs": 1775700000019,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 77608,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 1,
-        "lastError": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
-        "lastErrorReason": "timeout",
-        "lastDeliveryError": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config."
-      }
-    },
-    {
-      "id": "dd4e6515-92b2-44db-a64d-095286d808d4",
-      "name": "盘中减仓监控",
-      "enabled": false,
-      "createdAtMs": 1774725718779,
-      "updatedAtMs": 1774851137322,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0,30 9-15 * * 1-5",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "执行盘中股票监控任务：\n1. 运行 `python3 /root/.openclaw/workspace/scripts/stock_analyzer.py` 获取实时技术面数据\n2. 检查减仓策略文件 `memory/stock-strategy-20260325.md` 中的减仓位\n3. 如触发以下任一条件，立即通过飞书主动推送（不要回复给当前session）：\n   - 任何股票触及或突破减",
-        "kind": "agentTurn"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1774850439056,
+        "nextRunAtMs": 1775701800000,
+        "lastRunAtMs": 1775700900011,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 44960,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 36259,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
     {
       "id": "7ce5bf24-06d1-4de7-9962-aea583012218",
       "name": "每日开源项目推荐",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1774725718797,
       "updatedAtMs": 1774840547940,
       "schedule": {
@@ -107,7 +72,7 @@
       "name": "ComfyUI 变更监控",
       "enabled": true,
       "createdAtMs": 1774725718832,
-      "updatedAtMs": 1775613892747,
+      "updatedAtMs": 1775700310915,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -126,11 +91,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775700183057,
-        "lastRunAtMs": 1775613880273,
+        "nextRunAtMs": 1775786583057,
+        "lastRunAtMs": 1775700183065,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12474,
+        "lastDurationMs": 127850,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -141,7 +106,7 @@
       "name": "大宗商品播报",
       "enabled": true,
       "createdAtMs": 1774725718865,
-      "updatedAtMs": 1775632822785,
+      "updatedAtMs": 1775701181985,
       "schedule": {
         "kind": "every",
         "everyMs": 21600000,
@@ -160,11 +125,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775701143910,
-        "lastRunAtMs": 1775632812697,
+        "nextRunAtMs": 1775722743917,
+        "lastRunAtMs": 1775701143917,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10088,
+        "lastDurationMs": 38068,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -173,7 +138,7 @@
     {
       "id": "2fc3762f-5e73-4e68-9b50-24a5581b6db3",
       "name": "船舶行业新闻监控",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1774725718887,
       "updatedAtMs": 1774947765826,
       "schedule": {
@@ -240,7 +205,7 @@
     {
       "id": "38671060-04ad-4a11-a4fa-45f4725b3493",
       "name": "ComfyUI每日学习提醒",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1774725718932,
       "updatedAtMs": 1774836961413,
       "schedule": {
@@ -267,40 +232,6 @@
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
-      }
-    },
-    {
-      "id": "7922caa8-18ee-477f-b61b-8ebe8a8ee706",
-      "name": "股票每日复盘",
-      "enabled": false,
-      "createdAtMs": 1774725718948,
-      "updatedAtMs": 1774966205637,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 22 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。分析今日股票市场表现。\n持仓：中国船舶(600150) 3000股（成本38.696）、中国动力(600482) 3000股（成本34.389）\n内容：收盘数据、大盘回顾、板块分析、技术面（K线/均线/MACD）、持仓盈亏、明日展望\n\n---\n【输出格式】\n标题：📊 股票复盘 | 日期，用 --- 分隔板块，数据加粗，盈亏标注红绿，全文 15-20 行\n\n---\n【投递方式】\n将完整内容写入文件：write /tmp/stock_review.txt（内容）\n然后执行：exec python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"📊 股票复盘\" --type stock_close --file /tmp/stock_review.txt --fallback\n完成后回复 NO_REPLY",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1774965605608,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 600029,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "lastError": "Error: cron: job execution timed out",
-        "lastErrorReason": "timeout"
       }
     },
     {
@@ -340,7 +271,7 @@
     {
       "id": "db9ed006-7825-4cc0-99db-7401936bb436",
       "name": "ComfyUI每日复盘",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1774725718982,
       "updatedAtMs": 1774836964853,
       "schedule": {
@@ -403,72 +334,6 @@
         "lastDelivered": false,
         "lastErrorReason": "timeout",
         "lastDeliveryError": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config."
-      }
-    },
-    {
-      "id": "b826f128-7234-4f56-bea5-8602b82ccf61",
-      "name": "每日节气节日提醒",
-      "enabled": false,
-      "createdAtMs": 1774725719014,
-      "updatedAtMs": 1774998576020,
-      "schedule": {
-        "expr": "0 7 * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。查询今日节气/节日信息并推送。\n\n要求：\n1. 查询今日农历、节气（距下一节气天数）\n2. 传统节日/现代节日\n3. 节气习俗和养生要点\n4. 与坐月子结合的建议（配偶产后恢复中）\n\n---\n【输出格式要求】\n1. 标题：🌸 节气节日 | 日期\n2. 用 --- 分隔板块\n3. 全文 8-12 行\n4. 无特殊节日时回复简洁版",
-        "kind": "agentTurn",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1774998304293,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 271727,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "e96cd217-9d93-42f0-a0a0-bbaaa1fe12e9",
-      "name": "每日健康小贴士",
-      "enabled": false,
-      "createdAtMs": 1774725719029,
-      "updatedAtMs": 1774919063949,
-      "schedule": {
-        "expr": "0 7 * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。结合今日天气推送健康养生建议。\n\n背景：配偶坐月子中（产后第19天），宝宝出生19天\n\n要求：\n1. 搜索今日广州/佛山天气\n2. 结合天气的养生建议（饮食/起居/运动）\n3. 产妇专项护理建议\n4. 宝宝护理提示\n5. 推荐1-2道适合今日的汤品/菜品\n\n\n信息来源：\n1. 运行 `python3 /root/.openclaw/workspace/scripts/get_weather.py` 获取逐时天气预报\n2. 将脚本输出的天气数据融入报告\n\n---\n【输出格式要求】\n1. 标题：💡 健康小贴士 | 日期\n2. 用 --- 分隔板块\n3. 全文 10-15 行",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1774911936931,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 17959,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
       }
     },
     {
@@ -574,42 +439,9 @@
       }
     },
     {
-      "id": "e1a5659e-5cf0-4da9-bf86-9564ccda671b",
-      "name": "每日天气穿衣饮食提醒",
-      "enabled": false,
-      "createdAtMs": 1774725719093,
-      "updatedAtMs": 1775002046274,
-      "schedule": {
-        "expr": "0 8 * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "已合并到每日早报，此任务已禁用。",
-        "kind": "agentTurn",
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1775001916296,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 129978,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
-      }
-    },
-    {
       "id": "9ab1a76b-d2fc-4a5e-b67e-a3c2c141b0c9",
       "name": "AI绘画日报",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1774725719109,
       "updatedAtMs": 1775004234624,
       "schedule": {
@@ -676,7 +508,7 @@
     {
       "id": "817bddbc-9d36-4b73-9578-5431c29db316",
       "name": "每日股票开盘提醒",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1774725719147,
       "updatedAtMs": 1774921952330,
       "schedule": {
@@ -707,66 +539,9 @@
       }
     },
     {
-      "id": "3ed26121-06e1-4765-9221-2dc9a0b530dd",
-      "name": "科技资讯日报",
-      "enabled": false,
-      "createdAtMs": 1774725719168,
-      "updatedAtMs": 1774921946323,
-      "schedule": {
-        "expr": "0 9 * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。搜索今日科技行业资讯。\n\n关注方向：\n1. 硬件芯片：GPU/CPU新品、存储技术、消费电子\n2. 软件平台：操作系统、开发工具、云服务\n3. 互联网：社交平台、电商、搜索引擎\n4. 游戏：新游发布、游戏技术、主机/PC硬件\n5. 手机/智能设备：手机新品、穿戴设备、IoT\n\n搜索关键词：今日科技新闻、科技行业大事、tech news today\n\n---\n【输出格式要求】\n1. 标题：⚡ 科技日报 | 日期\n2. 用 --- 分隔：硬件芯片 / 软件平台 / 互联网 / 游戏 / 手机数码\n3. 每条标注来源\n4. 重要新闻加粗\n5. 全文 12-18 行",
-        "kind": "agentTurn",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1774919326732,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 339327,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
-      }
-    },
-    {
-      "id": "5008c302-8842-4b14-b575-ea5098726b73",
-      "name": "周末生活指南",
-      "enabled": false,
-      "createdAtMs": 1774725719183,
-      "updatedAtMs": 1774840542012,
-      "schedule": {
-        "expr": "0 9 * * 6",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n发送周末生活指南：天气、家庭建议（产妇护理+宝宝照护+家人互动）、饮食建议。\n格式：\n【🏡 周末生活指南】日期\n---\n🌤️ 天气：广州/佛山概况\n👶 护理提示：（产后+宝宝）\n🍲 饮食建议：周末适宜的月子餐\n👨‍👩‍👧 家庭活动：（如有建议）\n---\n温馨简洁。",
-        "kind": "agentTurn"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {}
-    },
-    {
       "id": "7e026d2b-7362-40f0-bd3d-c0f9085ba3b4",
       "name": "股票每周总结",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1774725719198,
       "updatedAtMs": 1774840545054,
       "schedule": {
@@ -889,39 +664,6 @@
       }
     },
     {
-      "id": "1992aa8b-6f31-4a5a-86da-eb4291ff98df",
-      "name": "月子阶段转换-第21天",
-      "enabled": false,
-      "deleteAfterRun": true,
-      "createdAtMs": 1774725719269,
-      "updatedAtMs": 1775002077387,
-      "schedule": {
-        "at": "2026-04-01T00:00:00.000Z",
-        "kind": "at"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书（专业秘书风格：正式、高效、精准、结构化）。\n产妇进入产后第21天，第三阶段→第四阶段（调理恢复期）。\n格式：\n【🍼 月子阶段转换】产后第21天 | 第四阶段开启\n---\n📋 护理重点调整：从催乳滋补转为调理恢复\n🍲 饮食建议：温补食材——当归、黄芪、党参\n⏰ 提醒：恭喜月子即将满月！\n---",
-        "kind": "agentTurn"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1775002052960,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 24427,
-        "lastError": "⚠️ ✉️ Message failed",
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1
-      }
-    },
-    {
       "id": "cafbeb91-edc8-4b69-af1a-8235c885472d",
       "name": "每月财务提醒",
       "enabled": true,
@@ -990,54 +732,6 @@
       }
     },
     {
-      "id": "332a4d19-c541-4833-9ccd-0a8337652e58",
-      "name": "ComfyUI学习-第1周检查点",
-      "enabled": false,
-      "deleteAfterRun": true,
-      "createdAtMs": 1774725719318,
-      "updatedAtMs": 1774840550874,
-      "schedule": {
-        "at": "2026-04-01T14:00:00.000Z",
-        "kind": "at"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "ComfyUI 学习计划第 1 周检查点（3/22-3/28）。\n\n请检查学习进度：\n1. 读取 memory/comfyui-learning-progress.md 了解当前进度\n2. 询问用户本周完成情况\n3. 更新进度文件\n4. 如有延迟，给出调整建议\n\n以专业秘书口吻发送周报：\n【ComfyUI 学习周报 - 第 1 周】\n本周目标完成情况、遇到的问题、下周计划预览。",
-        "kind": "agentTurn"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {}
-    },
-    {
-      "id": "7994c747-2ef0-4ae0-b6e9-fd747086253d",
-      "name": "ComfyUI学习-第2周检查点",
-      "enabled": false,
-      "deleteAfterRun": true,
-      "createdAtMs": 1774725719349,
-      "updatedAtMs": 1774840553750,
-      "schedule": {
-        "at": "2026-04-08T14:00:00.000Z",
-        "kind": "at"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "ComfyUI 学习计划第 2 周检查点（3/29-4/4）。\n\n请检查学习进度：\n1. 读取 memory/comfyui-learning-progress.md 了解当前进度\n2. 询问用户本周完成情况（LoRA管理、批量出图、工作流模块化）\n3. 更新进度文件\n4. 下周进入 3D 生成重点阶段，做好准备提醒\n\n以专业秘书口吻发送周报。",
-        "kind": "agentTurn"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {}
-    },
-    {
       "id": "a124d144-2f0d-4593-a180-e92fa1847043",
       "name": "宝宝满月提醒",
       "enabled": true,
@@ -1063,54 +757,6 @@
       "state": {
         "nextRunAtMs": 1775782800000
       }
-    },
-    {
-      "id": "3d7f969d-d7b2-40f8-806e-6af43ce3de37",
-      "name": "ComfyUI学习-第3周检查点",
-      "enabled": false,
-      "deleteAfterRun": true,
-      "createdAtMs": 1774725719388,
-      "updatedAtMs": 1774840556754,
-      "schedule": {
-        "at": "2026-04-15T14:00:00.000Z",
-        "kind": "at"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "ComfyUI 学习计划第 3 周检查点（4/5-4/11）- 3D 生成重点周。\n\n请检查学习进度：\n1. 读取 memory/comfyui-learning-progress.md 了解当前进度\n2. 询问用户 Tripo3D/Meshy/TripoSR 测试情况\n3. 评估 AI 3D 生成质量是否达到预期\n4. 更新进度文件\n\n以专业秘书口吻发送周报，重点评估 3D 生成能力是否达标。",
-        "kind": "agentTurn"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {}
-    },
-    {
-      "id": "a28ee258-9be3-4b18-98e5-ff7c87d6952e",
-      "name": "ComfyUI学习-第4周总结",
-      "enabled": false,
-      "deleteAfterRun": true,
-      "createdAtMs": 1774725719403,
-      "updatedAtMs": 1774840559650,
-      "schedule": {
-        "at": "2026-04-22T14:00:00.000Z",
-        "kind": "at"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "ComfyUI 学习计划最终总结（4/12-4/18）。\n\n请完成最终评估：\n1. 读取 memory/comfyui-learning-progress.md 了解完整进度\n2. 评估 5 个里程碑是否达成\n3. 整理已掌握的技能清单\n4. 识别仍需深入的领域\n5. 制定后续进阶学习计划\n\n以专业秘书口吻输出最终学习报告：\n【ComfyUI 学习总结报告】\n四周学习成果、技能掌握评估、后续建议。",
-        "kind": "agentTurn"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {}
     },
     {
       "id": "2dbbdd11-0dac-4a0f-9d9c-35d0c036a2e3",
@@ -1362,38 +1008,6 @@
       }
     },
     {
-      "id": "73d65bb2-9465-4cf6-b7a5-1606aad1a403",
-      "name": "学习复盘报告",
-      "enabled": false,
-      "createdAtMs": 1774547429699,
-      "updatedAtMs": 1774840512366,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 6 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "message": "你是用户的专业秘书。生成今日学习复盘报告，包含：1)昨晚深度学习内容摘要 2)持仓分析发现 3)明日学习计划。推送到飞书。",
-        "kind": "agentTurn"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1774829460661,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 89481,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
-      }
-    },
-    {
       "id": "f2b10d4e-e461-4a56-903e-9bfefaa170e5",
       "agentId": "main",
       "sessionKey": "agent:main:feishu:direct:ou_a6469ccc2902a590994b6777b9c8ae8f",
@@ -1438,7 +1052,7 @@
       "name": "飞书连接健康检查",
       "enabled": true,
       "createdAtMs": 1774798057079,
-      "updatedAtMs": 1775642625551,
+      "updatedAtMs": 1775700156987,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -1457,15 +1071,14 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775700012226,
-        "lastRunAtMs": 1775642543947,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 81604,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1775700079820
+        "nextRunAtMs": 1775707212226,
+        "lastRunAtMs": 1775700079825,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 77162,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -1475,7 +1088,7 @@
       "name": "OpenClaw 自愈系统",
       "enabled": true,
       "createdAtMs": 1774798709213,
-      "updatedAtMs": 1775644268495,
+      "updatedAtMs": 1775700496101,
       "schedule": {
         "expr": "0 * * * *",
         "kind": "cron",
@@ -1495,14 +1108,14 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775700242061,
-        "lastRunAtMs": 1775644112345,
+        "nextRunAtMs": 1775703842061,
+        "lastRunAtMs": 1775700312967,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 156150,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 183134,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": false
       }
     },
     {
@@ -1535,40 +1148,6 @@
         "lastRunStatus": "ok",
         "lastStatus": "ok",
         "lastDurationMs": 57417,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false
-      }
-    },
-    {
-      "id": "93c3207a-3a43-4c29-afdc-e382dfa47483",
-      "agentId": "main",
-      "name": "📊 BDI指数每日更新",
-      "enabled": false,
-      "createdAtMs": 1774854728473,
-      "updatedAtMs": 1774923546802,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * 1-6",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "执行航运指数获取脚本：\npython3 /root/.openclaw/workspace/scripts/shipping_index.py\n\n将脚本输出保存到文件，然后通过卡片发送：\nexec python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"📊 BDI指数更新\" --type system --file /tmp/bdi_out.txt --fallback\n\n完成后回复 NO_REPLY。",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "feishu",
-        "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
-      },
-      "state": {
-        "lastRunAtMs": 1774919676057,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 30336,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -1821,7 +1400,7 @@
       "description": "每30分钟扫描新增对话，追加重要内容到memory并推送Gitee",
       "enabled": true,
       "createdAtMs": 1775313189599,
-      "updatedAtMs": 1775644448102,
+      "updatedAtMs": 1775700521892,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1841,11 +1420,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775700189599,
-        "lastRunAtMs": 1775644427582,
+        "nextRunAtMs": 1775702296101,
+        "lastRunAtMs": 1775700496101,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 20520,
+        "lastDurationMs": 25791,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
