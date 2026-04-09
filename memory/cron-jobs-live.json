@@ -6,7 +6,7 @@
       "name": "盘中实时股票监控",
       "enabled": true,
       "createdAtMs": 1774725718767,
-      "updatedAtMs": 1775702709140,
+      "updatedAtMs": 1775706004224,
       "schedule": {
         "kind": "cron",
         "expr": "0,15,30,45 9-14 * * 1-5",
@@ -15,8 +15,8 @@
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "message": "盘中实时股票监控。\n\n1. 先检查当前时间：如果是 11:30-13:00（午间休盘），回复 NO_REPLY（不执行任何操作）\n2. 运行：python3 /root/.openclaw/workspace/scripts/stock_realtime_monitor.py\n3. 检查输出：如果有预警信号（包含\"⚠️\"或\"🚨\"），用卡片发送：\n   将结果写入 /tmp/alert_out.txt，然后执行 python3 /root/.openclaw/workspace/scripts/card_delivery.py --title \"🚨 股票异动预警\" --type stock_alert --file /tmp/alert_out.txt --fallback\n4. 无预警时不发送任何消息（静默）。\n\n分析标的从 /root/.openclaw/workspace/config/holdings.json 读取。\n预警触发：涨跌幅±3%(警告)/±5%(紧急)、触及减仓价位、跌破止损、关键技术位突破、成交量异常。\n同类预警1小时内不重复。\n完成后回复 NO_REPLY。",
-        "kind": "agentTurn",
+        "message": "python3 /root/.openclaw/workspace/scripts/stock_realtime_monitor.py && python3 /root/.openclaw/workspace/scripts/stock_alert_card.py",
+        "kind": "exec",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -25,11 +25,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775703600000,
-        "lastRunAtMs": 1775702700009,
+        "nextRunAtMs": 1775706300000,
+        "lastRunAtMs": 1775705993769,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9131,
+        "lastDurationMs": 10455,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1024,7 +1024,7 @@
       "name": "OpenClaw 自愈系统",
       "enabled": true,
       "createdAtMs": 1774798709213,
-      "updatedAtMs": 1775700496101,
+      "updatedAtMs": 1775703990409,
       "schedule": {
         "expr": "0 */3 * * *",
         "kind": "cron",
@@ -1044,11 +1044,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1775703842061,
-        "lastRunAtMs": 1775700312967,
+        "nextRunAtMs": 1775707442061,
+        "lastRunAtMs": 1775703842068,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 183134,
+        "lastDurationMs": 148341,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -1234,7 +1234,7 @@
       "description": "每30分钟扫描新增对话，追加重要内容到memory并推送Gitee",
       "enabled": true,
       "createdAtMs": 1775313189599,
-      "updatedAtMs": 1775702331147,
+      "updatedAtMs": 1775705918304,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1254,11 +1254,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775704096111,
-        "lastRunAtMs": 1775702296111,
+        "nextRunAtMs": 1775707696132,
+        "lastRunAtMs": 1775705896132,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 35036,
+        "lastDurationMs": 22172,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
