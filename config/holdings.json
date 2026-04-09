@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-04-02T13:49:56+08:00",
+  "last_updated": "2026-04-09T11:15:31.577874+08:00",
   "holdings": [
     {
       "name": "中国船舶",
       "code": "600150",
       "market": "sh",
       "shares": 3000,
-      "cost_price": 38.696,
+      "cost_price": 41.04,
       "reduce_levels": [],
       "stop_loss": 0,
       "add_level": {
@@ -25,7 +25,7 @@
       "code": "600482",
       "market": "sh",
       "shares": 2000,
-      "cost_price": 34.389,
+      "cost_price": 35.079,
       "reduce_levels": [],
       "stop_loss": 0,
       "add_level": {
@@ -105,5 +105,6 @@
     "accelerate_above": 3950,
     "hold_below": 3880,
     "panic_below": 3800
-  }
+  },
+  "notes": "2026-04-09 更新持仓成本"
 }
