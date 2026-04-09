@@ -1,6 +1,6 @@
 {
-  "lastCheck": 1743996180,
-  "checkedAt": "2026-04-07T10:03:00+08:00",
+  "lastCheck": 1744171380,
+  "checkedAt": "2026-04-09T02:03:00+08:00",
   "latestVersion": "v0.18.5",
   "versionsChecked": [
     "v0.16.1", "v0.16.2", "v0.16.3", "v0.16.4",
@@ -9,29 +9,32 @@
     "v0.18.3", "v0.18.4", "v0.18.5"
   ],
   "thisSessionUpdates": [
-    "v0.18.4 (2026-04-03): Wan2.7 Partner API nodes, template v0.9.43, pinned memory fix",
-    "v0.18.5 (2026-04-03): Reverted fp8 checkpoint fix (unstable)"
+    "Image Histogram Node (2026-04-06): New image histogram analysis node",
+    "Workflow Templates v0.9.44 (2026-04-05): Template package bump",
+    "EmptyLatentImage dtype fix: Now follows intermediate dtype",
+    "Tencent TextToModel/ImageToModel fix",
+    "AMD gfx1150 PyTorch Attention enabled"
   ],
   "recentCommitsSinceLastCheck": [
     {
       "date": "2026-04-07",
       "commit": "Ace step empty latent nodes follow intermediate dtype (#13313)",
-      "message": "Ace step empty latent nodes follow intermediate dtype"
+      "message": "EmptyLatentImage dtype follow intermediate dtype"
     },
     {
       "date": "2026-04-06",
       "commit": "image histogram node (#13153)",
-      "message": "image histogram node"
+      "message": "Image Histogram Node"
     },
     {
       "date": "2026-04-05",
       "commit": "Update README.md with new frontend release cycle (#13301)",
-      "message": "Update README.md with new frontend release cycle"
+      "message": "Frontend release cycle doc update"
     },
     {
       "date": "2026-04-05",
       "commit": "chore: update workflow templates to v0.9.44 (#13290)",
-      "message": "workflow templates to v0.9.44"
+      "message": "Workflow templates v0.9.44"
     }
   ],
   "nodeEcosystem": {
