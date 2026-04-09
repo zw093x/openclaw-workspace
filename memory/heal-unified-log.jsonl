@@ -493,3 +493,4 @@
 {"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败7次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-09T06:06:45.486813"}
 {"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败7次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-09T06:07:54.634338"}
 {"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败7次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-09T07:06:23.447634"}
+{"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败7次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-09T08:18:44.508287"}
