@@ -499,3 +499,4 @@
 {"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败7次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-09T11:06:10.077502"}
 {"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败7次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-09T18:23:48.866474"}
 {"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败7次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-09T18:31:31.159499"}
+{"pattern": "preventive_cron_degradation", "target": "system", "action": "preventive_fix", "detail": "Cron模式'disk_warning'已失败7次", "result": "success", "root_cause": "predictive", "time_ms": 1000, "ts": "2026-04-09T18:53:29.224151"}
