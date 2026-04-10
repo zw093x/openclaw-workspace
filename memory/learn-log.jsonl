@@ -209,3 +209,12 @@
 {"action": "record", "id": "LRN-20260408-209", "type": "success", "category": "自愈-cron_timeout", "summary": "bf6a5a60: apply_fix_for_pattern", "ts": "2026-04-08T18:29:28.279296"}
 {"action": "record", "id": "LRN-20260408-210", "type": "success", "category": "自愈-cron_timeout", "summary": "f2b10d4e: apply_fix_for_pattern", "ts": "2026-04-08T18:29:31.333235"}
 {"action": "record", "id": "LRN-20260408-211", "type": "success", "category": "自愈-cron_timeout", "summary": "61979e27: apply_fix_for_pattern", "ts": "2026-04-08T18:29:34.211772"}
+{"action": "record", "id": "LRN-20260410-001", "type": "error", "category": "cron", "summary": "cron_no_delivery_ignored错误: cron_no_delivery_ignored", "ts": "2026-04-10T23:40:44.412168"}
+{"action": "record", "id": "LRN-20260410-001", "type": "error", "category": "resource", "summary": "disk_warning错误: disk_warning", "ts": "2026-04-10T23:40:44.414024"}
+{"action": "record", "id": "LRN-20260410-001", "type": "error", "category": "self_heal", "summary": "自愈失败: disk_warning (根因:disk_warning)", "ts": "2026-04-10T23:40:44.415637"}
+{"action": "record", "id": "LRN-20260410-001", "type": "error", "category": "self_heal", "summary": "自愈失败: disk_warning (根因:disk_warning)", "ts": "2026-04-10T23:40:44.416103"}
+{"action": "record", "id": "LRN-20260410-002", "type": "error", "category": "self_heal", "summary": "自愈失败: disk_warning (根因:disk_warning)", "ts": "2026-04-10T23:40:44.416637"}
+{"action": "record", "id": "LRN-20260410-003", "type": "error", "category": "复盘", "summary": "复盘低分: 动力减仓 - 32.60卖出500股", "ts": "2026-04-10T23:41:15.528955"}
+{"action": "record", "id": "LRN-20260410-004", "type": "error", "category": "复盘", "summary": "复盘低分: 泰禾买入 - 21.10买入500股", "ts": "2026-04-10T23:41:15.529580"}
+{"action": "record", "id": "LRN-20260410-005", "type": "error", "category": "cron", "summary": "cron_no_delivery_ignored错误: cron_no_delivery_ignored", "ts": "2026-04-10T23:43:37.953435"}
+{"action": "record", "id": "LRN-20260410-006", "type": "error", "category": "resource", "summary": "disk_warning错误: disk_warning", "ts": "2026-04-10T23:43:37.954018"}

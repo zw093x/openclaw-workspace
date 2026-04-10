@@ -2685,3 +2685,165 @@ f2b10d4e: apply_fix_for_pattern
 - Tags: 自愈-cron_timeout, success
 ---
 
+
+## [LRN-20260410-001] error
+
+**Logged**: 2026-04-10T23:40:44.411760
+**Priority**: medium
+**Status**: pending
+
+### Summary
+cron_no_delivery_ignored错误: cron_no_delivery_ignored
+
+### Details
+来源:['unified_heal'] 出现2次
+
+### Metadata
+- Source: auto_record
+- Tags: cron, error
+---
+
+
+## [LRN-20260410-001] error
+
+**Logged**: 2026-04-10T23:40:44.413775
+**Priority**: high
+**Status**: pending
+
+### Summary
+disk_warning错误: disk_warning
+
+### Details
+来源:['unified_heal'] 出现7次
+
+### Metadata
+- Source: auto_record
+- Tags: resource, error
+---
+
+
+## [LRN-20260410-001] error
+
+**Logged**: 2026-04-10T23:40:44.415370
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: disk_warning (根因:disk_warning)
+
+### Details
+自愈系统修复disk_warning失败，根因:disk_warning
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260410-001] error
+
+**Logged**: 2026-04-10T23:40:44.415815
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: disk_warning (根因:disk_warning)
+
+### Details
+自愈系统修复disk_warning失败，根因:disk_warning
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260410-002] error
+
+**Logged**: 2026-04-10T23:40:44.416366
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: disk_warning (根因:disk_warning)
+
+### Details
+自愈系统修复disk_warning失败，根因:disk_warning
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+
+
+## [LRN-20260410-003] error
+
+**Logged**: 2026-04-10T23:41:15.528149
+**Priority**: medium
+**Status**: pending
+
+### Summary
+复盘低分: 动力减仓 - 32.60卖出500股
+
+### Details
+原因:套用通用减仓框架 教训:减仓前应先验证用户长期逻辑
+
+### Metadata
+- Source: auto_record
+- Tags: 复盘, error
+---
+
+
+## [LRN-20260410-004] error
+
+**Logged**: 2026-04-10T23:41:15.529264
+**Priority**: high
+**Status**: pending
+
+### Summary
+复盘低分: 泰禾买入 - 21.10买入500股
+
+### Details
+原因:阳光新能源借壳题材 教训:题材股无催化剂不应建仓
+
+### Metadata
+- Source: auto_record
+- Tags: 复盘, error
+---
+
+
+## [LRN-20260410-005] error
+
+**Logged**: 2026-04-10T23:43:37.953076
+**Priority**: medium
+**Status**: pending
+
+### Summary
+cron_no_delivery_ignored错误: cron_no_delivery_ignored
+
+### Details
+来源:['unified_heal'] 出现2次
+
+### Metadata
+- Source: auto_record
+- Tags: cron, error
+---
+
+
+## [LRN-20260410-006] error
+
+**Logged**: 2026-04-10T23:43:37.953715
+**Priority**: high
+**Status**: pending
+
+### Summary
+disk_warning错误: disk_warning
+
+### Details
+来源:['unified_heal'] 出现7次
+
+### Metadata
+- Source: auto_record
+- Tags: resource, error
+---
+

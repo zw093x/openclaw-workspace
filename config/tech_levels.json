@@ -1,150 +1,132 @@
 {
-  "updated_at": "2026-04-09T15:20:02.181245",
+  "updated_at": "2026-04-10T15:20:02.362722",
   "stocks": {
     "sh600150": {
       "code": "600150",
       "name": "中国船舶",
       "market": "sh",
-      "date": "2026-04-09",
-      "price": 32.23,
-      "ma5": 31.61,
-      "ma10": 31.2,
-      "ma20": 32.45,
-      "ma60": 34.79,
+      "date": "2026-04-10",
+      "price": 32.65,
+      "ma5": 31.96,
+      "ma10": 31.4,
+      "ma20": 32.28,
+      "ma60": 34.76,
       "support": 30.0,
       "secondary_support": 30.52,
-      "resistance": 36.65,
-      "atr_14": 0.954,
-      "volume_ratio": 0.71,
-      "rsi_14": 38.7,
-      "macd_dif": -1.063,
-      "macd_dea": -1.201,
-      "macd_bar": 0.277,
-      "bb_upper": 35.94,
-      "bb_middle": 32.45,
-      "bb_lower": 28.95,
+      "resistance": 35.98,
+      "atr_14": 0.911,
+      "volume_ratio": 0.78,
+      "rsi_14": 46.9,
+      "macd_dif": -0.939,
+      "macd_dea": -1.166,
+      "macd_bar": 0.454,
+      "bb_upper": 35.38,
+      "bb_middle": 32.28,
+      "bb_lower": 29.18,
       "volume_divergence": "none",
-      "dynamic_stop_loss": 29.57,
+      "dynamic_stop_loss": 29.61,
       "reduce_levels": [
         {
           "range": [
-            32.29,
-            32.61
+            35.26,
+            35.98
           ],
           "sell": 250,
-          "label": "MA20减仓(32.45)",
-          "trigger": "price_in_range"
-        },
-        {
-          "range": [
-            35.92,
-            36.65
-          ],
-          "sell": 250,
-          "label": "阻力位减仓(36.65)",
+          "label": "阻力位减仓(35.98)",
           "trigger": "price_in_range"
         }
       ],
-      "trend": "MA5>MA10 金叉 跌破MA60 RSI=38.7 MACD金叉",
-      "updated_at": "2026-04-09T15:20:01.979457"
+      "trend": "MA5>MA10 金叉 跌破MA60 RSI=46.9 MACD金叉",
+      "updated_at": "2026-04-10T15:20:02.152380"
     },
     "sh600482": {
       "code": "600482",
       "name": "中国动力",
       "market": "sh",
-      "date": "2026-04-09",
-      "price": 36.76,
-      "ma5": 33.85,
-      "ma10": 32.74,
-      "ma20": 32.27,
-      "ma60": 30.13,
+      "date": "2026-04-10",
+      "price": 40.44,
+      "ma5": 35.49,
+      "ma10": 33.67,
+      "ma20": 32.57,
+      "ma60": 30.43,
       "support": 29.1,
       "secondary_support": 30.36,
-      "resistance": 37.48,
-      "atr_14": 1.981,
-      "volume_ratio": 1.13,
-      "rsi_14": 74.3,
-      "macd_dif": 0.689,
-      "macd_dea": 0.359,
-      "macd_bar": 0.661,
-      "bb_upper": 35.45,
-      "bb_middle": 32.27,
-      "bb_lower": 29.09,
+      "resistance": 40.44,
+      "atr_14": 2.163,
+      "volume_ratio": 1.04,
+      "rsi_14": 80.0,
+      "macd_dif": 1.206,
+      "macd_dea": 0.518,
+      "macd_bar": 1.377,
+      "bb_upper": 37.26,
+      "bb_middle": 32.57,
+      "bb_lower": 27.87,
       "volume_divergence": "none",
-      "dynamic_stop_loss": 28.38,
+      "dynamic_stop_loss": 28.2,
       "reduce_levels": [
         {
           "range": [
-            34.74,
-            35.45
+            36.51,
+            37.26
           ],
           "sell": 250,
-          "label": "布林上轨减仓(35.45)",
+          "label": "布林上轨减仓(37.26)",
           "trigger": "bb_upper"
         },
         {
           "range": [
-            36.71,
-            36.809999999999995
+            40.39,
+            40.489999999999995
           ],
           "sell": 250,
-          "label": "RSI超买减仓(RSI=74.3)",
+          "label": "RSI超买减仓(RSI=80.0)",
           "trigger": "rsi_overbought"
-        },
-        {
-          "range": [
-            36.73,
-            37.48
-          ],
-          "sell": 250,
-          "label": "阻力位减仓(37.48)",
-          "trigger": "price_in_range"
         }
       ],
-      "trend": "MA5>MA10 金叉 站上MA60 RSI=74.3(超买) MACD金叉 零轴上方",
-      "updated_at": "2026-04-09T15:20:02.085043"
+      "trend": "MA5>MA10 金叉 站上MA60 RSI=80.0(超买) MACD金叉 零轴上方",
+      "updated_at": "2026-04-10T15:20:02.256489"
     },
     "sh600703": {
       "code": "600703",
       "name": "三安光电",
       "market": "sh",
-      "date": "2026-04-09",
-      "price": 11.84,
-      "ma5": 11.86,
-      "ma10": 12.05,
-      "ma20": 14.22,
-      "ma60": 15.29,
+      "date": "2026-04-10",
+      "price": 11.94,
+      "ma5": 11.97,
+      "ma10": 11.95,
+      "ma20": 13.88,
+      "ma60": 15.24,
       "support": 11.33,
       "secondary_support": 11.45,
       "resistance": 18.77,
-      "atr_14": 0.889,
-      "volume_ratio": 1.3,
-      "rsi_14": 17.7,
-      "macd_dif": -1.172,
-      "macd_dea": -0.98,
-      "macd_bar": -0.384,
-      "bb_upper": 19.16,
-      "bb_middle": 14.22,
-      "bb_lower": 9.28,
+      "atr_14": 0.848,
+      "volume_ratio": 1.15,
+      "rsi_14": 18.9,
+      "macd_dif": -1.146,
+      "macd_dea": -1.015,
+      "macd_bar": -0.263,
+      "bb_upper": 18.45,
+      "bb_middle": 13.88,
+      "bb_lower": 9.31,
       "volume_divergence": "none",
-      "dynamic_stop_loss": 10.56,
+      "dynamic_stop_loss": 10.6,
       "reduce_levels": [
         {
           "range": [
-            11.99,
-            12.11
+            11.89,
+            12.01
           ],
           "sell": 250,
-          "label": "MA10减仓(12.05)",
+          "label": "MA10减仓(11.95)",
           "trigger": "price_in_range"
         },
         {
           "range": [
-            14.15,
-            14.29
+            13.81,
+            13.95
           ],
           "sell": 250,
-          "label": "MA20减仓(14.22)",
+          "label": "MA20减仓(13.88)",
           "trigger": "price_in_range"
         },
         {
@@ -157,8 +139,8 @@
           "trigger": "price_in_range"
         }
       ],
-      "trend": "MA5<MA10 死叉 跌破MA60 RSI=17.7(超卖) MACD死叉",
-      "updated_at": "2026-04-09T15:20:02.181203"
+      "trend": "MA5>MA10 金叉 跌破MA60 RSI=18.9(超卖) MACD死叉",
+      "updated_at": "2026-04-10T15:20:02.362680"
     }
   }
 }
