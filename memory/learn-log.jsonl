@@ -218,3 +218,4 @@
 {"action": "record", "id": "LRN-20260410-004", "type": "error", "category": "复盘", "summary": "复盘低分: 泰禾买入 - 21.10买入500股", "ts": "2026-04-10T23:41:15.529580"}
 {"action": "record", "id": "LRN-20260410-005", "type": "error", "category": "cron", "summary": "cron_no_delivery_ignored错误: cron_no_delivery_ignored", "ts": "2026-04-10T23:43:37.953435"}
 {"action": "record", "id": "LRN-20260410-006", "type": "error", "category": "resource", "summary": "disk_warning错误: disk_warning", "ts": "2026-04-10T23:43:37.954018"}
+{"action": "record", "id": "LRN-20260411-007", "type": "error", "category": "self_heal", "summary": "自愈失败: feishu_unreachable (根因:feishu_unreachable)", "ts": "2026-04-11T15:06:37.900871"}

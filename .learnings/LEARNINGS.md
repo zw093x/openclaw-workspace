@@ -2847,3 +2847,21 @@ disk_warning错误: disk_warning
 - Tags: resource, error
 ---
 
+
+## [LRN-20260411-007] error
+
+**Logged**: 2026-04-11T15:06:37.900312
+**Priority**: high
+**Status**: pending
+
+### Summary
+自愈失败: feishu_unreachable (根因:feishu_unreachable)
+
+### Details
+自愈系统修复feishu_unreachable失败，根因:feishu_unreachable
+
+### Metadata
+- Source: auto_record
+- Tags: self_heal, error
+---
+

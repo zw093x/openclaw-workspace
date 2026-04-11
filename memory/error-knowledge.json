@@ -116,6 +116,19 @@
       ],
       "sample_msg": "disk_warning",
       "last_seen": "2026-04-08T20:06:13.447784"
+    },
+    "eb443b3c5dae": {
+      "type": "feishu_unreachable",
+      "category": "network",
+      "root_cause": "network_instability",
+      "severity": "medium",
+      "first_seen": "2026-04-11T15:03:31.749060",
+      "count": 1,
+      "sources": [
+        "unified_heal"
+      ],
+      "sample_msg": "feishu_unreachable",
+      "last_seen": "2026-04-11T15:03:31.749083"
     }
   },
   "fixes": {
@@ -137,14 +150,16 @@
     ]
   },
   "stats": {
-    "total_errors": 9,
+    "total_errors": 10,
     "by_root_cause": {
       "cron_misconfiguration": 2,
-      "resource_exhaustion": 7
+      "resource_exhaustion": 7,
+      "network_instability": 1
     },
     "by_category": {
       "cron": 2,
-      "resource": 7
+      "resource": 7,
+      "network": 1
     }
   }
 }
