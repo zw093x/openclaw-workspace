@@ -25,7 +25,7 @@
 | GAP-015 | 2026-04-06 | 数据质量 | 分笔数据获取不足（船舶/动力），技术指标依赖日线数据，精度有限 | 2026-04-07 | ✅ 已完成（Day21：日线级形态体系已建立，头肩/双底/旗形等日线形态已覆盖，分笔数据影响短期择时，日线形态判断仍有效） |
 | GAP-016 | 2026-04-06 | 系统修复 | cron_misconfiguration系统性根因：49次配置错误积累，22:00时段集中，需闭环 | 🔄 进行中 | 今日已修复2条，fix_rate=4% |
 | GAP-017 | 2026-04-06 | LLM诊断 | LLM request rejected (tool id not found) 偶发错误，根因待查 | 📌 待学习 | 偶发性，非持续 |
-| GAP-018 | 2026-04-06 | AI基础理论 | CLIP/Latent Diffusion/DiT奠基论文未完整阅读，影响提示词原理深层理解 | 📌 待学习 | 豆包课程延伸 |
+| GAP-018 | 2026-04-06 | AI基础理论 | CLIP/Latent Diffusion/DiT奠基论文未完整阅读，影响提示词原理深层理解 | ✅ Day22-23已闭环 | Day22深度覆盖DiT/Latent Diffusion原理，Day23补充CLIP对比学习框架，详见stock-knowledge Day22-23 |
 
 ## 已学习
 
