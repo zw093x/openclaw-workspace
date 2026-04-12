@@ -7,6 +7,7 @@
       "memory/migration-guide.md",
       "memory/comfyui-knowledge.md",
       "memory/2026-04-03.md",
+      "memory/heal-log.md",
       "memory/2026-04-02.md",
       "memory/deep-dive-protocol.md",
       "memory/2026-03-26.md",
@@ -48,18 +49,18 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "中国船舶",
-      "策略",
-      "加仓",
-      "买入",
-      "成本",
       "卖出",
       "股票",
-      "持仓",
+      "买入",
+      "中国动力",
+      "策略",
+      "中国船舶",
+      "成本",
       "减仓",
-      "中国动力"
+      "持仓",
+      "加仓"
     ],
-    "size": 585338
+    "size": 653628
   },
   "系统运维": {
     "members": [
@@ -72,6 +73,7 @@
       "memory/heal-log.md",
       "memory/2026-04-02.md",
       "memory/2026-04-12.md",
+      "memory/2026-04-13.md",
       "memory/deep-dive-protocol.md",
       "memory/2026-03-26.md",
       "memory/info-priority-rules.md",
@@ -113,16 +115,16 @@
     ],
     "keywords": [
       "cron",
+      "自愈",
       "gateway",
       "超时",
-      "错误",
-      "磁盘",
-      "修复",
       "飞书",
-      "自愈",
-      "异常"
+      "修复",
+      "异常",
+      "磁盘",
+      "错误"
     ],
-    "size": 636630
+    "size": 673847
   },
   "学习进化": {
     "members": [
@@ -134,6 +136,7 @@
       "memory/heal-log.md",
       "memory/2026-04-02.md",
       "memory/knowledge-ai-video-tech-modules.md",
+      "memory/2026-04-13.md",
       "memory/2026-03-26.md",
       "memory/info-priority-rules.md",
       "memory/2026-04-08.md",
@@ -148,6 +151,7 @@
       "memory/stock-knowledge.md",
       "memory/2026-04-05.md",
       "memory/2026-03-30-review.md",
+      "memory/knowledge-gaps.md",
       "memory/comfyui-tutorial-guide.md",
       "memory/clawhub-skills-catalog.md",
       "memory/agentskills-spec-study.md",
@@ -168,15 +172,15 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "进化",
-      "教训",
       "最佳实践",
-      "学习",
-      "模式",
+      "进化",
       "纠正",
-      "规则"
+      "学习",
+      "教训",
+      "规则",
+      "模式"
     ],
-    "size": 612930
+    "size": 652922
   },
   "家庭护理": {
     "members": [
@@ -194,14 +198,14 @@
     ],
     "keywords": [
       "宝宝",
-      "产后",
       "护理",
-      "配偶",
-      "月子",
       "疫苗",
-      "喂养"
+      "产后",
+      "喂养",
+      "月子",
+      "配偶"
     ],
-    "size": 277036
+    "size": 278770
   },
   "AI工具": {
     "members": [
@@ -233,12 +237,12 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "模型",
+      "自动化",
       "技能",
-      "大模型",
-      "自动化"
+      "模型",
+      "大模型"
     ],
-    "size": 439128
+    "size": 441623
   },
   "服务器": {
     "members": [
@@ -257,11 +261,11 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "代理",
-      "mihomo",
       "端口",
-      "部署"
+      "代理",
+      "部署",
+      "mihomo"
     ],
-    "size": 283475
+    "size": 286669
   }
 }

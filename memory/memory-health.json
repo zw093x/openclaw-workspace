@@ -1,17 +1,25 @@
 {
-  "timestamp": "2026-04-12T14:51:25.595702",
+  "timestamp": "2026-04-13T04:51:08.559317",
   "stale_files": [],
   "empty_files": [
     "commodity-s2-state.json"
   ],
   "large_files": [
     {
+      "file": "heal-log.md",
+      "size_kb": 49
+    },
+    {
       "file": "2026-04-04.md",
       "size_kb": 70
     },
     {
+      "file": "stock-knowledge.md",
+      "size_kb": 59
+    },
+    {
       "file": "memory-index.json",
-      "size_kb": 90
+      "size_kb": 98
     }
   ],
   "inconsistent_dates": [
@@ -20,5 +28,5 @@
     "2026-03-29.md",
     "2026-04-05.md"
   ],
-  "overall_score": 80
+  "overall_score": 70
 }

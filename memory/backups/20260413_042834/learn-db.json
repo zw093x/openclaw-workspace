@@ -1,0 +1,272 @@
+{
+  "lessons": {
+    "LRN-20260410-001": {
+      "id": "LRN-20260410-001",
+      "type": "error",
+      "category": "self_heal",
+      "summary": "自愈失败: disk_warning (根因:disk_warning)",
+      "details": "自愈系统修复disk_warning失败，根因:disk_warning",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "self_heal"
+      ],
+      "created": "2026-04-10T23:40:44.415815",
+      "last_triggered": "2026-04-10T23:40:44.415815",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260410-002": {
+      "id": "LRN-20260410-002",
+      "type": "error",
+      "category": "self_heal",
+      "summary": "自愈失败: disk_warning (根因:disk_warning)",
+      "details": "自愈系统修复disk_warning失败，根因:disk_warning",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "self_heal"
+      ],
+      "created": "2026-04-10T23:40:44.416366",
+      "last_triggered": "2026-04-10T23:40:44.416366",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260410-003": {
+      "id": "LRN-20260410-003",
+      "type": "error",
+      "category": "复盘",
+      "summary": "复盘低分: 动力减仓 - 32.60卖出500股",
+      "details": "原因:套用通用减仓框架 教训:减仓前应先验证用户长期逻辑",
+      "priority": "medium",
+      "files": [],
+      "domains": [
+        "复盘"
+      ],
+      "created": "2026-04-10T23:41:15.528149",
+      "last_triggered": "2026-04-10T23:41:15.528149",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260410-004": {
+      "id": "LRN-20260410-004",
+      "type": "error",
+      "category": "复盘",
+      "summary": "复盘低分: 泰禾买入 - 21.10买入500股",
+      "details": "原因:阳光新能源借壳题材 教训:题材股无催化剂不应建仓",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "复盘"
+      ],
+      "created": "2026-04-10T23:41:15.529264",
+      "last_triggered": "2026-04-10T23:41:15.529264",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260410-005": {
+      "id": "LRN-20260410-005",
+      "type": "error",
+      "category": "cron",
+      "summary": "cron_no_delivery_ignored错误: cron_no_delivery_ignored",
+      "details": "来源:['unified_heal'] 出现2次",
+      "priority": "medium",
+      "files": [],
+      "domains": [
+        "cron"
+      ],
+      "created": "2026-04-10T23:43:37.953076",
+      "last_triggered": "2026-04-10T23:43:37.953076",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260410-006": {
+      "id": "LRN-20260410-006",
+      "type": "error",
+      "category": "resource",
+      "summary": "disk_warning错误: disk_warning",
+      "details": "来源:['unified_heal'] 出现7次",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "resource"
+      ],
+      "created": "2026-04-10T23:43:37.953715",
+      "last_triggered": "2026-04-10T23:43:37.953715",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    },
+    "LRN-20260411-007": {
+      "id": "LRN-20260411-007",
+      "type": "error",
+      "category": "self_heal",
+      "summary": "自愈失败: feishu_unreachable (根因:feishu_unreachable)",
+      "details": "自愈系统修复feishu_unreachable失败，根因:feishu_unreachable",
+      "priority": "high",
+      "files": [],
+      "domains": [
+        "self_heal"
+      ],
+      "created": "2026-04-11T15:06:37.900312",
+      "last_triggered": "2026-04-11T15:06:37.900312",
+      "applied_count": 0,
+      "violated_count": 0,
+      "status": "pending",
+      "confidence": 0.5
+    }
+  },
+  "rules": {
+    "LRN-20260410-005": {
+      "rule": "cron任务超时→检查是否需要增大timeout-seconds",
+      "source": "LRN-20260410-005",
+      "keyword": "cron",
+      "created": "2026-04-10T23:43:37.953076",
+      "applied": 0
+    }
+  },
+  "stats": {
+    "total_recorded": 7,
+    "corrections": 0,
+    "errors": 7,
+    "feature_requests": 0
+  },
+  "effectiveness": {},
+  "cross_domain": {
+    "LRN-20260410-005": [
+      "定时",
+      "任务",
+      "调度"
+    ]
+  },
+  "decay_state": {
+    "LRN-20260410-001": {
+      "level": 0,
+      "last_check": "2026-04-13T03:04:58.606716"
+    },
+    "LRN-20260410-002": {
+      "level": 0,
+      "last_check": "2026-04-13T03:04:58.606716"
+    },
+    "LRN-20260410-003": {
+      "level": 0,
+      "last_check": "2026-04-13T03:04:58.606716"
+    },
+    "LRN-20260410-004": {
+      "level": 0,
+      "last_check": "2026-04-13T03:04:58.606716"
+    },
+    "LRN-20260410-005": {
+      "level": 0,
+      "last_check": "2026-04-13T03:04:58.606716"
+    },
+    "LRN-20260410-006": {
+      "level": 0,
+      "last_check": "2026-04-13T03:04:58.606716"
+    },
+    "LRN-20260411-007": {
+      "level": 0,
+      "last_check": "2026-04-13T03:04:58.606716"
+    }
+  },
+  "external_rules": [
+    {
+      "domain": "系统运维",
+      "rule": "定期清理日志，防止单文件超过100MB",
+      "source": "ops_best_practice"
+    },
+    {
+      "domain": "系统运维",
+      "rule": "磁盘使用率超过85%时主动清理",
+      "source": "ops_best_practice"
+    },
+    {
+      "domain": "投资分析",
+      "rule": "建仓前必须确认止损位，距离不超过5%",
+      "source": "trading_best_practice"
+    },
+    {
+      "domain": "投资分析",
+      "rule": "题材股持仓不超过总仓位10%",
+      "source": "trading_best_practice"
+    },
+    {
+      "domain": "自动化",
+      "rule": "定时任务失败3次应通知人工介入",
+      "source": "automation_best_practice"
+    },
+    {
+      "domain": "自动化",
+      "rule": "批量操作之间加入间隔，避免被限速",
+      "source": "automation_best_practice"
+    },
+    {
+      "domain": "AI使用",
+      "rule": "复杂推理用大模型，日常对话用快模型",
+      "source": "ai_best_practice"
+    },
+    {
+      "domain": "AI使用",
+      "rule": "上下文超过2小时主动建议开新会话",
+      "source": "ai_best_practice"
+    },
+    {
+      "domain": "安全",
+      "rule": "敏感信息不写入日志文件",
+      "source": "security_best_practice"
+    },
+    {
+      "domain": "安全",
+      "rule": "外部操作前必须确认",
+      "source": "security_best_practice"
+    }
+  ],
+  "predictions": [],
+  "meta_stats": {
+    "type_stats": {
+      "error": {
+        "count": 7,
+        "promoted": 0,
+        "internalized": 0,
+        "deprecated": 0,
+        "avg_confidence": 0.5,
+        "success_rate": 0.0
+      }
+    },
+    "category_effectiveness": {
+      "self_heal": {
+        "learned": 3,
+        "repeated": 0
+      },
+      "复盘": {
+        "learned": 2,
+        "repeated": 0
+      },
+      "cron": {
+        "learned": 1,
+        "repeated": 0
+      },
+      "resource": {
+        "learned": 1,
+        "repeated": 0
+      }
+    },
+    "best_learning_type": "error",
+    "hardest_categories": [],
+    "last_run": "2026-04-13T03:04:58.609342",
+    "recommendations": [
+      "学习效率最高: error类教训（成功率0%）"
+    ]
+  }
+}

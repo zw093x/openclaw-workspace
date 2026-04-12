@@ -603,6 +603,12 @@
       "file": "memory/2026-04-12.md"
     },
     {
+      "source": "云服务器",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-13.md"
+    },
+    {
       "source": "OpenClaw",
       "target": "P工",
       "relation": "co_mentioned",
@@ -622,12 +628,6 @@
     },
     {
       "source": "OpenClaw",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-08.md"
-    },
-    {
-      "source": "云服务器",
       "target": "云服务器",
       "relation": "co_mentioned",
       "file": "memory/2026-04-08.md"
