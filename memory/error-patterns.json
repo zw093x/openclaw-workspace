@@ -1,9 +1,9 @@
 {
-  "ts": "2026-04-11T14:48:15.733189",
+  "ts": "2026-04-12T14:25:37.553639",
   "root_cause_analysis": {
-    "total_errors": 9,
+    "total_errors": 10,
     "total_fixes": 2,
-    "fix_rate": 0.2222222222222222,
+    "fix_rate": 0.2,
     "systemic_issues": {
       "resource_exhaustion": 7
     },
@@ -12,11 +12,13 @@
     },
     "by_category": {
       "cron": 2,
-      "resource": 7
+      "resource": 7,
+      "network": 1
     },
     "by_root_cause": {
       "cron_misconfiguration": 2,
-      "resource_exhaustion": 7
+      "resource_exhaustion": 7,
+      "network_instability": 1
     }
   },
   "discovered_patterns": [],
@@ -30,7 +32,7 @@
     {
       "type": "fix_rate_low",
       "priority": "medium",
-      "message": "整体修复率仅22%（2/9）",
+      "message": "整体修复率仅20%（2/10）",
       "action": "审视修复策略，增加自动化修复能力"
     }
   ]
