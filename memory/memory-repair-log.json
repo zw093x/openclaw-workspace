@@ -1,5 +1,16 @@
 {
-  "timestamp": "2026-04-05T21:05:35.636319",
-  "total_repaired": 0,
-  "actions": []
+  "timestamp": "2026-04-13T04:55:24.974804",
+  "total_repaired": 2,
+  "actions": [
+    {
+      "file": "memory/commodity-s2-state.json",
+      "action": "空文件_待清理",
+      "size": 2
+    },
+    {
+      "file": "memory/heal-unified-log.jsonl",
+      "action": "大文件_需拆分",
+      "size_kb": 207
+    }
+  ]
 }

@@ -1,5 +1,50 @@
 {
-  "timestamp": "2026-04-05T21:05:35.674375",
-  "conflicts": [],
-  "total": 0
+  "timestamp": "2026-04-13T04:55:25.014492",
+  "conflicts": [
+    {
+      "type": "价格矛盾",
+      "stock": "600150",
+      "values": [
+        [
+          600482.0,
+          "memory/stock-knowledge.md"
+        ],
+        [
+          600482.0,
+          "memory/stock-knowledge.md"
+        ],
+        [
+          41.04,
+          "memory/2026-04-07.md"
+        ],
+        [
+          30.77,
+          "memory/2026-04-04.md"
+        ]
+      ],
+      "diff_pct": 1951417.71,
+      "severity": "high"
+    },
+    {
+      "type": "价格矛盾",
+      "stock": "600482",
+      "values": [
+        [
+          35.46,
+          "memory/stock-knowledge.md"
+        ],
+        [
+          35.079,
+          "memory/2026-04-07.md"
+        ],
+        [
+          30.86,
+          "memory/2026-04-04.md"
+        ]
+      ],
+      "diff_pct": 14.91,
+      "severity": "high"
+    }
+  ],
+  "total": 2
 }
