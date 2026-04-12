@@ -585,10 +585,22 @@
       "file": "memory/heal-log.md"
     },
     {
+      "source": "Docker",
+      "target": "OpenClaw",
+      "relation": "co_mentioned",
+      "file": "memory/heal-log.md"
+    },
+    {
       "source": "中国动力",
       "target": "中国动力",
       "relation": "co_mentioned",
       "file": "memory/2026-04-02.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-12.md"
     },
     {
       "source": "OpenClaw",
@@ -609,10 +621,16 @@
       "file": "memory/2026-03-26.md"
     },
     {
-      "source": "Docker",
-      "target": "OpenClaw",
+      "source": "OpenClaw",
+      "target": "云服务器",
       "relation": "co_mentioned",
-      "file": "memory/2026-03-26.md"
+      "file": "memory/2026-04-08.md"
+    },
+    {
+      "source": "云服务器",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-08.md"
     },
     {
       "source": "P工",
@@ -623,12 +641,6 @@
     {
       "source": "彭煜",
       "target": "湘电股份",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-04.md"
-    },
-    {
-      "source": "OpenClaw",
-      "target": "彭煜",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -767,18 +779,6 @@
     {
       "source": "云服务器",
       "target": "湘电股份",
-      "relation": "co_mentioned",
-      "file": "memory/memory-graph.json"
-    },
-    {
-      "source": "OpenClaw",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "memory/memory-graph.json"
-    },
-    {
-      "source": "云服务器",
-      "target": "云服务器",
       "relation": "co_mentioned",
       "file": "memory/memory-graph.json"
     }

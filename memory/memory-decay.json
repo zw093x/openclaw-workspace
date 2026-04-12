@@ -3,702 +3,758 @@
     "MEMORY.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.714,
+      "days_inactive": 4,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "USER.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.667,
-      "days_inactive": 5,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.5,
+      "days_inactive": 10,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "TOOLS.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.769,
-      "days_inactive": 3,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.556,
+      "days_inactive": 8,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/spacex-news.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.556,
-      "days_inactive": 8,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.435,
+      "days_inactive": 13,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/migration-guide.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.455,
-      "days_inactive": 12,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/comfyui-knowledge.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.556,
-      "days_inactive": 8,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.435,
+      "days_inactive": 13,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-600150-finance.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-22-comfyui-analysis.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/comfyui-ecosystem-monitor-2026-03-29.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.526,
-      "days_inactive": 9,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.417,
+      "days_inactive": 14,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-600482-finance.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/deep-dive-protocol.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.455,
-      "days_inactive": 12,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-26.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/info-priority-rules.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.625,
-      "days_inactive": 6,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.476,
+      "days_inactive": 11,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-31.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.714,
+      "days_inactive": 4,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/stock-strategy-20260325.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.435,
-      "days_inactive": 13,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-28.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-shipping.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.455,
-      "days_inactive": 12,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-29.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/cron-fault-knowledge.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.556,
-      "days_inactive": 8,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.435,
+      "days_inactive": 13,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/analysis-accuracy.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-25.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/stock-strategy-20260331.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.625,
-      "days_inactive": 6,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.476,
+      "days_inactive": 11,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-ai.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.455,
-      "days_inactive": 12,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-600416-finance.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/comfyui-openspec-learning-plan.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.435,
-      "days_inactive": 13,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.357,
+      "days_inactive": 18,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/comfyui-install-guide.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.417,
-      "days_inactive": 14,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.357,
+      "days_inactive": 18,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/广桂月子饮食指南.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.37,
-      "days_inactive": 17,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.312,
+      "days_inactive": 22,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-cpo-microled.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.625,
-      "days_inactive": 6,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.5,
+      "days_inactive": 10,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/agentskills-deep-digest.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.435,
-      "days_inactive": 13,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/comfyui-openspec-concept.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.435,
-      "days_inactive": 13,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/comfyui-learning-progress.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.556,
-      "days_inactive": 8,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.435,
+      "days_inactive": 13,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/stock-knowledge.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.909,
+      "days_inactive": 1,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-600416.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.625,
-      "days_inactive": 6,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.476,
+      "days_inactive": 11,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-30-review.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/comfyui-tutorial-guide.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.385,
-      "days_inactive": 16,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.323,
+      "days_inactive": 21,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/clawhub-skills-catalog.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.476,
-      "days_inactive": 11,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.385,
+      "days_inactive": 16,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-600703-finance.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/agentskills-spec-study.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.435,
-      "days_inactive": 13,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-22.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/stock-portfolio.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.769,
+      "days_inactive": 3,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-24.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-30.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-600703.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.625,
-      "days_inactive": 6,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.5,
+      "days_inactive": 10,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/trade-journal.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.714,
+      "days_inactive": 4,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-03-27.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/育儿月子指南.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.37,
-      "days_inactive": 17,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.312,
+      "days_inactive": 22,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/friend-account.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.435,
-      "days_inactive": 13,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-04-01.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.625,
-      "days_inactive": 6,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 1.0,
+      "days_inactive": 0,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/memory-health.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/gold-last-price.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.435,
-      "days_inactive": 13,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.357,
+      "days_inactive": 18,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/heartbeat-state.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.625,
+      "days_inactive": 6,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/cron-backup.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.455,
-      "days_inactive": 12,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/memory-clusters.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/intel-hub-state.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/gold-price-state.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.769,
+      "days_inactive": 3,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/alert-cooldown.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.769,
+      "days_inactive": 3,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/heal-evolution.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/learn-db.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/memory-graph.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/analysis-accuracy.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.588,
-      "days_inactive": 7,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.455,
+      "days_inactive": 12,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/comfyui-monitor-state.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.833,
+      "days_inactive": 2,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/heal-stats.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.625,
-      "days_inactive": 6,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.5,
+      "days_inactive": 10,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/skill-update-state.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.909,
+      "days_inactive": 1,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/gold-price-last.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.455,
-      "days_inactive": 12,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.37,
+      "days_inactive": 17,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/error-patterns.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/error-knowledge.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/trade-journal.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.588,
-      "days_inactive": 7,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.455,
+      "days_inactive": 12,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/memory-index.json": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     ".learnings/LEARNINGS.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     ".learnings/ERRORS.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     ".learnings/FEATURE_REQUESTS.md": {
       "first_seen": "2026-04-02T00:35:47.474064",
       "access_count": 0,
-      "retention": 0.435,
-      "days_inactive": 13,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.357,
+      "days_inactive": 18,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/heal-log.md": {
       "first_seen": "2026-04-02T22:30:13.537244",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.769,
+      "days_inactive": 3,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/tdx-troubleshoot-report.md": {
       "first_seen": "2026-04-02T22:30:13.537244",
       "access_count": 0,
-      "retention": 0.667,
-      "days_inactive": 5,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.526,
+      "days_inactive": 9,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-04-02.md": {
       "first_seen": "2026-04-02T22:30:13.537244",
       "access_count": 0,
-      "retention": 0.667,
-      "days_inactive": 5,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 1.0,
+      "days_inactive": 0,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-gaps.md": {
       "first_seen": "2026-04-02T22:30:13.537244",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.909,
+      "days_inactive": 1,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/memory-decay.json": {
       "first_seen": "2026-04-02T22:30:13.537244",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.714,
+      "days_inactive": 4,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/fish-basin-latest.json": {
       "first_seen": "2026-04-02T22:30:13.537244",
       "access_count": 0,
-      "retention": 0.714,
-      "days_inactive": 4,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.556,
+      "days_inactive": 8,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/review-db.json": {
       "first_seen": "2026-04-02T22:30:13.537244",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.769,
+      "days_inactive": 3,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-04-03.md": {
       "first_seen": "2026-04-03T23:05:46.433644",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/inspiration-diary.md": {
       "first_seen": "2026-04-03T23:05:46.433644",
       "access_count": 0,
-      "retention": 0.769,
-      "days_inactive": 3,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.556,
+      "days_inactive": 8,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-04-04.md": {
       "first_seen": "2026-04-04T01:04:53.380522",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 1.0,
+      "days_inactive": 0,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-ai-tools.md": {
       "first_seen": "2026-04-04T22:30:05.938409",
       "access_count": 0,
-      "retention": 0.769,
-      "days_inactive": 3,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/AI绘画提示词万能框架深度研究报告.md": {
       "first_seen": "2026-04-04T22:30:05.938409",
       "access_count": 0,
-      "retention": 0.769,
-      "days_inactive": 3,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.588,
+      "days_inactive": 7,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/memory_backup_state.json": {
       "first_seen": "2026-04-04T23:05:45.480596",
       "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-04-05.md": {
       "first_seen": "2026-04-05T00:22:01.501274",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 1.0,
+      "days_inactive": 0,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/memory-conflicts.json": {
       "first_seen": "2026-04-05T22:07:00.507224",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.625,
+      "days_inactive": 6,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/topic-index.json": {
       "first_seen": "2026-04-05T22:07:00.507224",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.625,
+      "days_inactive": 6,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/memory-repair-log.json": {
       "first_seen": "2026-04-05T22:07:00.507224",
       "access_count": 0,
-      "retention": 0.833,
-      "days_inactive": 2,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.625,
+      "days_inactive": 6,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/heal-thresholds.json": {
       "first_seen": "2026-04-05T22:16:38.173909",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.625,
+      "days_inactive": 6,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-ai-video-tech-modules.md": {
       "first_seen": "2026-04-06T22:32:12.263966",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-ai-video.md": {
       "first_seen": "2026-04-06T22:32:12.263966",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-04-06.md": {
       "first_seen": "2026-04-06T22:32:12.263966",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/knowledge-3d-graphics-deep-learning.md": {
       "first_seen": "2026-04-06T22:32:12.263966",
       "access_count": 0,
-      "retention": 0.909,
-      "days_inactive": 1,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/2026-04-07.md": {
       "first_seen": "2026-04-07T22:30:12.723109",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.714,
+      "days_inactive": 4,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/jimeng-prompt-engineering-research.md": {
       "first_seen": "2026-04-07T22:30:12.723109",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/jimeng-threeview-formula.md": {
       "first_seen": "2026-04-07T22:30:12.723109",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/jimeng-prompt-library.md": {
       "first_seen": "2026-04-07T22:30:12.723109",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/jimeng-precision-library.md": {
       "first_seen": "2026-04-07T22:30:12.723109",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/holdings-2026-04-07.json": {
       "first_seen": "2026-04-07T22:30:12.723109",
       "access_count": 0,
-      "retention": 1.0,
-      "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "retention": 0.714,
+      "days_inactive": 4,
+      "last_check": "2026-04-12T14:51:25.972662"
     },
     "memory/error-knowledge.archive.2026-04-07.json": {
       "first_seen": "2026-04-07T22:30:12.723109",
       "access_count": 0,
+      "retention": 0.667,
+      "days_inactive": 5,
+      "last_check": "2026-04-12T14:51:25.972662"
+    },
+    "memory/2026-04-12.md": {
+      "first_seen": "2026-04-12T14:51:25.972662",
+      "access_count": 0,
       "retention": 1.0,
       "days_inactive": 0,
-      "last_check": "2026-04-07T22:30:12.723109"
+      "last_check": "2026-04-12T14:51:25.972662"
+    },
+    "memory/2026-04-08.md": {
+      "first_seen": "2026-04-12T14:51:25.972662",
+      "access_count": 0,
+      "retention": 0.769,
+      "days_inactive": 3,
+      "last_check": "2026-04-12T14:51:25.972662"
+    },
+    "memory/2026-04-09.md": {
+      "first_seen": "2026-04-12T14:51:25.972662",
+      "access_count": 0,
+      "retention": 0.833,
+      "days_inactive": 2,
+      "last_check": "2026-04-12T14:51:25.972662"
+    },
+    "memory/2026-04-10.md": {
+      "first_seen": "2026-04-12T14:51:25.972662",
+      "access_count": 0,
+      "retention": 0.909,
+      "days_inactive": 1,
+      "last_check": "2026-04-12T14:51:25.972662"
+    },
+    "memory/2026-04-11.md": {
+      "first_seen": "2026-04-12T14:51:25.972662",
+      "access_count": 0,
+      "retention": 0.909,
+      "days_inactive": 1,
+      "last_check": "2026-04-12T14:51:25.972662"
+    },
+    "memory/cron-jobs-live.json": {
+      "first_seen": "2026-04-12T14:51:25.972662",
+      "access_count": 0,
+      "retention": 0.769,
+      "days_inactive": 3,
+      "last_check": "2026-04-12T14:51:25.972662"
+    },
+    "memory/openclaw-upgrade-state.json": {
+      "first_seen": "2026-04-12T14:51:25.972662",
+      "access_count": 0,
+      "retention": 0.769,
+      "days_inactive": 3,
+      "last_check": "2026-04-12T14:51:25.972662"
+    },
+    "memory/commodity-s2-state.json": {
+      "first_seen": "2026-04-12T14:51:25.972662",
+      "access_count": 0,
+      "retention": 1.0,
+      "days_inactive": 0,
+      "last_check": "2026-04-12T14:51:25.972662"
     }
   }
 }
