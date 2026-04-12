@@ -8,135 +8,25 @@
     {
       "type": "recurring_pattern",
       "pattern": "preventive_cron_degradation",
-      "count": 50,
+      "count": 493,
       "success_rate": 1.0,
       "recommendation": "添加到监控模式库"
     },
     {
       "type": "recurring_pattern",
-      "pattern": "cron_message_failed",
-      "count": 6,
-      "success_rate": 0.5,
-      "recommendation": "需人工排查"
-    },
-    {
-      "type": "recurring_pattern",
-      "pattern": "cron_no_delivery_ignored",
+      "pattern": "feishu_unreachable",
       "count": 2,
-      "success_rate": 0.0,
+      "success_rate": 0.5,
       "recommendation": "需人工排查"
     },
     {
       "type": "time_pattern",
       "peak_hours": [
-        "3:00 (157次)",
-        "1:00 (127次)",
-        "2:00 (75次)"
+        "15:00 (35次)",
+        "13:00 (34次)",
+        "14:00 (34次)"
       ],
       "recommendation": "考虑在高峰时段前增加检查频率"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-05T22",
-      "patterns": [
-        "",
-        "preventive_cron_degradation"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-05T23",
-      "patterns": [
-        "",
-        "preventive_cron_degradation"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-06T01",
-      "patterns": [
-        "",
-        "preventive_cron_degradation"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-06T02",
-      "patterns": [
-        "",
-        "preventive_cron_degradation"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-06T03",
-      "patterns": [
-        "",
-        "preventive_cron_degradation"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-08T01",
-      "patterns": [
-        "",
-        "cron_delivered_healthy"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-08T02",
-      "patterns": [
-        "",
-        "cron_delivered_healthy"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-08T03",
-      "patterns": [
-        "",
-        "cron_delivered_healthy"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-08T14",
-      "patterns": [
-        "cron_delivered_healthy",
-        "disk_warning"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-08T17",
-      "patterns": [
-        "cron_delivered_healthy",
-        "cron_timeout",
-        "cron_message_failed",
-        "disk_warning"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
-    },
-    {
-      "type": "correlated_failure",
-      "time": "2026-04-08T18",
-      "patterns": [
-        "cron_delivered_healthy",
-        "cron_timeout",
-        "disk_warning",
-        "preventive_cron_degradation"
-      ],
-      "recommendation": "这些故障可能有共同根因，需关联分析"
     },
     {
       "type": "correlated_failure",
@@ -155,41 +45,43 @@
         "preventive_cron_degradation"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
+    },
+    {
+      "type": "correlated_failure",
+      "time": "2026-04-11T15",
+      "patterns": [
+        "feishu_unreachable",
+        "preventive_cron_degradation"
+      ],
+      "recommendation": "这些故障可能有共同根因，需关联分析"
     }
   ],
   "repair_scores": {
     "disk_warning": {
-      "success_rate": 0.72,
-      "avg_time_ms": 720.0,
-      "overall_score": 0.7824,
-      "attempts": 25,
+      "success_rate": 0.6,
+      "avg_time_ms": 600.0,
+      "overall_score": 0.702,
+      "attempts": 5,
       "recommendation": "保持"
     },
     "preventive_cron_degradation": {
       "success_rate": 1.0,
       "avg_time_ms": 1000.0,
       "overall_score": 0.97,
-      "attempts": 50,
+      "attempts": 493,
       "recommendation": "保持"
     },
-    "cron_timeout": {
-      "success_rate": 1.0,
-      "avg_time_ms": 2510.590909090909,
-      "overall_score": 0.9246822727272727,
-      "attempts": 22,
-      "recommendation": "保持"
-    },
-    "cron_message_failed": {
+    "feishu_unreachable": {
       "success_rate": 0.5,
-      "avg_time_ms": 0.0,
-      "overall_score": 0.6499999999999999,
-      "attempts": 6,
+      "avg_time_ms": 2500.0,
+      "overall_score": 0.575,
+      "attempts": 2,
       "recommendation": "需优化"
     }
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-09T11:06:10.078844",
+  "last_evolve": "2026-04-13T06:10:38.111795",
   "memory_health": 70,
   "prevention_strategies": [
     {
