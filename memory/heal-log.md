@@ -2073,3 +2073,29 @@ cron_misconfiguration 是主要根因（49次），但自愈系统修复率为0%
 4. 修复率 22% → 根因：历史错误（resource_exhaustion）占大多数，实际新错误少
 
 **结论：** 系统运行正常，无新增严重问题。历史问题已消化完毕。
+
+---
+
+## 2026-04-13 04:08 (周一凌晨)
+
+### 自愈系统 (unified_heal)
+- **状态**: ⚠️ 飞书异常（Feishu连接检测异常）
+- **说明**: unified_heal检测到飞书连接问题，返回None
+- **根因**: 凌晨时段飞书服务可能存在间歇性连接问题
+
+### 错误进化 (error_evolution)
+- **总错误**: 10 | **总修复**: 2 | **修复率**: 20%
+- **系统性问题**: `resource_exhaustion` 出现7次（占70%）
+- **高频错误**: b40bbac0237a (7次)
+- **分类**: cron×2, resource×7, network×1
+- **根因**: cron_misconfiguration×2, resource_exhaustion×7, network_instability×1
+- **建议**: 系统级修复resource_exhaustion底层原因；审视修复策略
+
+### 自学习进化 (learn_evolve)
+- **教训**: 7条（待处理7条）| **规则**: 1条 | **外部规则**: 10条
+- **最近教训**: feishu_unreachable, disk_warning, cron_no_delivery_ignored, 泰禾买入错误, 动力减仓错误
+- **跨域迁移**: 3条（LRN-20260410-005 → 定时/任务/调度）
+- **元学习**: error类教训成功率0%，需重点关注
+
+### 情报中心 (intel_hub --sync)
+- **状态**: ✅ 6个同步方向均无数据变化
