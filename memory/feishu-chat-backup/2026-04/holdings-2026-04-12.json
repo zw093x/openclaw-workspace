@@ -1,0 +1,110 @@
+{
+  "last_updated": "2026-04-09T11:15:31.577874+08:00",
+  "holdings": [
+    {
+      "name": "中国船舶",
+      "code": "600150",
+      "market": "sh",
+      "shares": 3000,
+      "cost_price": 41.04,
+      "reduce_levels": [],
+      "stop_loss": 0,
+      "add_level": {
+        "range": [
+          28.0,
+          29.0
+        ],
+        "buy": 500,
+        "label": "28以下加仓"
+      },
+      "target_floor": 1500,
+      "status": "holding"
+    },
+    {
+      "name": "中国动力",
+      "code": "600482",
+      "market": "sh",
+      "shares": 2000,
+      "cost_price": 35.079,
+      "reduce_levels": [],
+      "stop_loss": 0,
+      "add_level": {
+        "range": [
+          29.0,
+          30.0
+        ],
+        "buy": 500,
+        "label": "30以下加仓"
+      },
+      "target_floor": 1500,
+      "status": "holding"
+    },
+    {
+      "name": "泰禾智能",
+      "code": "603656",
+      "market": "sh",
+      "shares": 0,
+      "cost_price": 21.1,
+      "reduce_levels": [],
+      "stop_loss": 20.0,
+      "status": "sold",
+      "note": "已清仓，不再纳入监控",
+      "sold_date": "2026-04-01",
+      "sold_price": 21.0,
+      "sold_pnl": -50.0
+    },
+    {
+      "name": "三安光电",
+      "code": "600703",
+      "market": "sh",
+      "shares": 500,
+      "cost_price": 11.44,
+      "reduce_levels": [],
+      "stop_loss": 11.0,
+      "add_level": {
+        "range": [
+          10.5,
+          11.0
+        ],
+        "buy": 500,
+        "label": "10.5-11.0加仓"
+      },
+      "target_floor": 500,
+      "status": "holding"
+    }
+  ],
+  "watching": [
+    {
+      "name": "视源股份",
+      "code": "002841",
+      "market": "sz",
+      "shares": 500,
+      "cost": 33.8,
+      "stop_loss": 32.11,
+      "stop_loss_hard": 30.42,
+      "note": "朋友账户"
+    },
+    {
+      "name": "湘电股份",
+      "code": "600416",
+      "market": "sh",
+      "shares": 0,
+      "note": "船舶综合电力系统(市占100%)+磁悬浮核心电机，待建仓"
+    }
+  ],
+  "index": [
+    "sh000001"
+  ],
+  "total_cost": 219255,
+  "concentration": "船舶+动力=核心仓位(长期持有)，泰禾=题材投机",
+  "market_bias": {
+    "cautious_zone": [
+      3900,
+      3950
+    ],
+    "accelerate_above": 3950,
+    "hold_below": 3880,
+    "panic_below": 3800
+  },
+  "notes": "2026-04-09 更新持仓成本"
+}
