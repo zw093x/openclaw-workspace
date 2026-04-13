@@ -82,21 +82,21 @@
       }
     ],
     "failure_patterns": [],
-    "last_updated": "2026-04-07T23:02:56.324051"
+    "last_updated": "2026-04-13T11:00:26.824210"
   },
   "strategy_scores": {},
   "cross_lessons": [
     {
       "pattern": "基于长期逻辑",
       "source_example": "改为长期持有",
-      "target_domain": "泰禾买入",
-      "reason": "泰禾买入存在失败记录,可应用成功模式"
+      "target_domain": "动力减仓",
+      "reason": "动力减仓存在失败记录,可应用成功模式"
     },
     {
       "pattern": "基于长期逻辑",
       "source_example": "改为长期持有",
-      "target_domain": "动力减仓",
-      "reason": "动力减仓存在失败记录,可应用成功模式"
+      "target_domain": "泰禾买入",
+      "reason": "泰禾买入存在失败记录,可应用成功模式"
     }
   ],
   "risks": [],

@@ -32,8 +32,8 @@
       "type": "correlated_failure",
       "time": "2026-04-08T19",
       "patterns": [
-        "disk_warning",
-        "preventive_cron_degradation"
+        "preventive_cron_degradation",
+        "disk_warning"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -41,8 +41,8 @@
       "type": "correlated_failure",
       "time": "2026-04-08T20",
       "patterns": [
-        "disk_warning",
-        "preventive_cron_degradation"
+        "preventive_cron_degradation",
+        "disk_warning"
       ],
       "recommendation": "这些故障可能有共同根因，需关联分析"
     },
@@ -81,7 +81,7 @@
   },
   "trends": {},
   "evolution_level": 5,
-  "last_evolve": "2026-04-13T06:10:38.111795",
+  "last_evolve": "2026-04-13T10:59:23.669028",
   "memory_health": 70,
   "prevention_strategies": [
     {

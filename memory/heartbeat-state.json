@@ -1,11 +1,12 @@
 {
   "lastChecks": {
     "cron_health": "2026-04-06T13:02",
-    "feishu_health": "OK (59m ago, 12:04成功)"
+    "feishu_health": "OK",
+    "commodity": "2026-04-13T10:58"
   },
   "cronTaskStatus": {
-    "ec59e68f_飞书连接健康检查": "OK (12:04成功恢复)",
-    "a8d0f9e7_CG科技日报": "OK (12:30成功)"
+    "ec59e68f_\u98de\u4e66\u8fde\u63a5\u5065\u5eb7\u68c0\u67e5": "OK (12:04\u6210\u529f\u6062\u590d)",
+    "a8d0f9e7_CG\u79d1\u6280\u65e5\u62a5": "OK (12:30\u6210\u529f)"
   },
-  "lastHeartbeat": "2026-04-06T13:02"
+  "lastHeartbeat": "2026-04-13T10:58"
 }
