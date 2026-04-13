@@ -53,6 +53,8 @@
 |--------|---------|---------|---------|------|------|
 | GAP-021 | 2026-04-13 | 系统稳定 | sessions.json 63MB导致V8 OOM崩溃，缺乏自动归档机制 | 📌 待学习 | OpenClaw sessions文件定期清理机制 |
 | GAP-022 | 2026-04-13 | 系统稳定 | memory-tdai插件在session文件过大时导致Gateway无法启动 | 📌 待学习 | 禁用后Gateway正常，说明该插件存在内存问题 |
+| GAP-023 | 2026-04-13 | 系统设计 | 飞书健康检查cron触发AI agent自动禁用飞书插件，形成循环崩溃 | 📌 待学习 | cron健康检查不应触发自动禁用操作，需增加二次确认 |
+| GAP-024 | 2026-04-13 | 通道配置 | 多通道（lightclawbot/feishu/元宝）配置时，delivery.target必须显式指定 | 📌 待学习 | 否则Channel is required when multiple channels configured错误 |
 
 ---
 
