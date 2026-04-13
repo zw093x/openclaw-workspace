@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-13T02:39:33.261Z",
+  "entries": {
+    "memory:memory/2026-03-30.md:164:180": {
+      "key": "memory:memory/2026-03-30.md:164:180",
+      "path": "memory/2026-03-30.md",
+      "startLine": 164,
+      "endLine": 180,
+      "source": "memory",
+      "snippet": "- `scripts/cron_diagnose.py` — 诊断+自动修复（9种模式） - `scripts/update_fault_registry.py` — 故障知识库更新 - `scripts/self_heal_registry.json` — 自愈系统注册表（已集成9种修复方案） - `memory/cron-fault-knowledge.md` — 完整故障文档 - `memory/cron-error-log.jsonl` — 错误日志 ### 6. 用户反馈与建议 用户复盘后提出的改进建议： 1. **架构统一** — 统一用系统 crontab + 卡片脚本投递，放弃 OpenClaw cron 投递 2. **持仓中心化** — 创建 holdings.json 作为唯一数据源 3. **任务精简** — 从 45+ 精简到 25-30 个 4. **频率先确认** — 新任务上线前先问用户频率 5. **推送上限** — 每天总消息数控制在 15 条以内 ### ⚠️ 待办 - [ ] 精简 cron 任务到 30 个以内 - [ ] 创建 holdings.json 持仓中心化 - [ ] 统一所有推送走卡片投递 - [ ] 持仓变动自动同步机制",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.8824610099233038,
+      "maxScore": 0.8824610099233038,
+      "firstRecalledAt": "2026-04-13T02:39:33.261Z",
+      "lastRecalledAt": "2026-04-13T02:39:33.261Z",
+      "queryHashes": [
+        "efa4acce66e6"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "scripts/cron-diagnose.py",
+        "scripts/update-fault-registry.py",
+        "scripts/self-heal-registry.json",
+        "memory/cron-fault-knowledge.md",
+        "memory/cron-error-log.jsonl",
+        "holdings.json",
+        "25-30",
+        "scripts"
+      ]
+    },
+    "memory:memory/2026-03-25.md:69:99": {
+      "key": "memory:memory/2026-03-25.md:69:99",
+      "path": "memory/2026-03-25.md",
+      "startLine": 69,
+      "endLine": 99,
+      "source": "memory",
+      "snippet": "| 每日节气节日提醒 | 07:00 | ✅ | | 每日早报 | 07:30 | ✅ | | 每日天气穿衣饮食提醒 | 08:00 | ✅ | | CG行业资讯日报 | 08:00 | ✅ | | AI行业日报 | 08:00 | ✅ | | AI绘画日报 | 08:30 | ⏳ 待执行 | | 航运行业资讯 | 08:14 | ❌ 失败，已重跑 | ### 股票调仓操作（09:43 已执行） **调仓①（上午）** | 操作 | 股票 | 数量 | 价格 | 金额 | |------|------|------|------|------| | 卖出 | 中国动力 600482 | 500 股 | 32.44 | +16,220 | | 买入 | 中国船舶 600150 | 500 股 | 32.02 | -16,010 | | **净现金** | — | — | — | **+210 元** | **调仓②（下午，减仓+新建仓）** | 操作 | 股票 | 数量 | 价格 | 金额 | |------|------|------|------|------| | 卖出 | 中国船舶 600150 | 500 股 | 31.72 | +15,860 | | 卖出 | 中国船舶 600150 | 500 股 | 31.81 | +15,905 | | 买入 | 泰禾智能 603656 | 800 股 | 22.00 | -17,600 | | **净现金** | — | — | — | **+14,165 元** | **当前持仓：船舶3,000股 / 动力3,000股 /",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.8557778458853394,
+      "maxScore": 0.8557778458853394,
+      "firstRecalledAt": "2026-04-13T02:39:33.261Z",
+      "lastRecalledAt": "2026-04-13T02:39:33.261Z",
+      "queryHashes": [
+        "efa4acce66e6"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "32.44",
+        "32.02",
+        "31.72",
+        "31.81",
+        "22.00",
+        "每日",
+        "节气",
+        "节日"
+      ]
+    }
+  }
+}
