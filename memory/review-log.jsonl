@@ -1619,3 +1619,11 @@
 {"action": "integrate_with_unified_heal", "strategies_loaded": 0, "ts": "2026-04-13T10:58:02.392514"}
 {"action": "export_prevention", "strategies_count": 0, "learned_count": 0, "ts": "2026-04-13T11:01:35.755541"}
 {"action": "export_prevention", "strategies_count": 2, "learned_count": 2, "ts": "2026-04-13T11:02:35.739023"}
+{"action": "export_prevention", "strategies_count": 2, "learned_count": 2, "ts": "2026-04-13T12:19:06.068514"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 2, "ts": "2026-04-13T12:19:06.070243"}
+{"action": "export_prevention", "strategies_count": 2, "learned_count": 2, "ts": "2026-04-13T12:22:16.525322"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 2, "ts": "2026-04-13T12:22:16.525919"}
+{"action": "export_prevention", "strategies_count": 2, "learned_count": 2, "ts": "2026-04-13T12:25:22.308363"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 2, "ts": "2026-04-13T12:25:22.309017"}
+{"action": "export_prevention", "strategies_count": 2, "learned_count": 2, "ts": "2026-04-13T12:29:12.349784"}
+{"action": "integrate_with_unified_heal", "strategies_loaded": 2, "ts": "2026-04-13T12:29:12.350705"}
