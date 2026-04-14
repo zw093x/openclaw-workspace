@@ -2,13 +2,21 @@
   "lastChecks": {
     "cron_health": "2026-04-14T08:33",
     "feishu_health": "OK",
-    "commodity": "2026-04-14T08:22",
-    "elevated_fix": "2026-04-14T08:33"
+    "commodity": "2026-04-15T00:10",
+    "elevated_fix": "2026-04-14T08:33",
+    "system_check": "2026-04-15T00:10"
   },
   "cronTaskStatus": {
-    "ec59e68f_\u98d8\u4e66\u8fde\u63a5\u5065\u5eb7\u68c0\u67e5": "OK (04-14 12:04\u6210\u529f\u6062\u590d)",
-    "a8d0f9e7_CG\u79d1\u6280\u65e5\u62a5": "OK (04-14 12:30\u6210\u529f)",
-    "3273567b_\u6df1\u5ea6\u5b66\u4e60\u65f6\u6bb5": "error->fixed (elevated\u6743\u9650\u95ee\u9898, 04-14 08:33\u4fee\u590d)"
+    "ec59e68f_飘书连接健康检查": "OK (04-14 12:04成功恢复)",
+    "a8d0f9e7_CG科技日报": "OK (04-14 12:30成功)",
+    "3273567b_深度学习时段": "error->fixed (elevated权限问题, 04-14 08:33修复)"
   },
-  "lastHeartbeat": "2026-04-14T08:43"
+  "lastHeartbeat": "2026-04-15T00:10",
+  "systemStatus": {
+    "silver_alert": "already_sent",
+    "deep_learn_task": "OK_enabled_next_01:30",
+    "oom_kills": "none_detected",
+    "openclaw_sigkill": "可能内存紧张,已避免",
+    "memory_mb_free": 699
+  }
 }
