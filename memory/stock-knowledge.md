@@ -2939,3 +2939,289 @@ Step 5：等正确信号（减仓三条件同时满足）→ 执行
 
 *Day 25 深度学习完成（2026-04-13 04:47）。核心：行为金融学核心理论（前景理论Kahneman）、散户六大错误决策模式（处置效应/羊群/确认偏误/后见之明/近期偏误/过度自信）、4/8动力减仓五重错误叠加完整归因、逆向投资心理学（情绪周期四阶段+机构vs散户对比）、操作前中后完整流程（检查清单+盘中不决策原则+复盘框架）。关键认知：损失厌恶是散户第一大敌人；忘掉持仓成本；复盘聚焦"决策过程"而非"结果"；操作前9+8条检查清单是情绪防火墙。累计经验法则141条。下一个学习重点：凯尔夫人的42字口诀/首富思考法/交易系统构建。*
 
+
+---
+
+## Day 26 深度学习（2026-04-15 凌晨 01:30）—— A股数据源体系 + 数据获取主动性专题
+
+### 一、学习背景
+
+**缺口来源：**
+- GAP-025：财报/业绩数据无法自主获取，需P工逐条提供
+- GAP-026：对数据源清单缺乏系统性梳理
+
+**目标：** 建立完整的A股数据源认知体系，实现"自主找资源→自主获取数据"的闭环
+
+---
+
+### 二、当前系统数据源诊断
+
+#### 已安装库实测结果
+
+| 库 | 版本 | 功能定位 | 船舶数据可用性 | 网络要求 |
+|----|------|---------|--------------|---------|
+| **akshare** | 1.18.49 | 综合数据（东方财富/同花顺/东方财富） | ⚠️ 部分可用 | 大部分无需代理 |
+| **tushare** | 1.4.29 | 财务/行情（需要积分Token） | ✅ 需Token | 需要 |
+| **mootdx** | 0.11.7 | 通达信数据 | ✅ 需本地数据 | 需要 |
+
+#### akshare实测可用接口（无需代理）
+
+```
+✅ 财务摘要（同花顺）
+   stock_financial_abstract_ths(code, "按年度") → 30行×25列
+   stock_financial_abstract_ths(code, "按报告期") → 季度数据
+   
+✅ 个股基本信息（东方财富）
+   stock_individual_info_em("600150") → 9项核心指标
+   
+✅ BDI指数（波罗的海交易所）
+   macro_shipping_bdi() → 最新值+历史BDI/BCI/BSI/BHMI
+   
+✅ 宏观运价指数（中国）
+   macro_china_freight_index() → BDI历史×5000行
+   
+✅ 行业板块列表
+   stock_board_industry_name_ths() → 90个行业分类
+   
+✅ 个股资金流向（东方财富）
+   stock_fund_flow_individual("600150") → 主力/散户/大单流向
+
+❌ 实时行情（东方财富）
+   stock_zh_a_spot_em() → 连接被关闭（需代理）
+   
+❌ 历史K线
+   stock_zh_a_hist() → 连接被关闭（需代理）
+```
+
+---
+
+### 三、akshare数据源全景图
+
+#### 3.1 行情数据（实时+历史）
+
+| 函数 | 数据类型 | 来源 | 免费 | 代理需求 |
+|------|---------|------|------|---------|
+| stock_zh_a_spot_em | 全市场实时行情 | 东方财富 | ✅ | ❌ 但常被限流 |
+| stock_zh_a_hist | 个股历史K线 | 东方财富 | ✅ | ✅ 推荐 |
+| stock_zh_a_daily | 日线行情 | 乌龟量化 | ✅ | ✅ |
+| stock_us_hist | 美股历史 | - | ✅ | ✅ |
+
+**关键发现：** 历史K线和实时行情连接被重置，原因是东方财富对云服务器IP有限流。云服务器通过代理（mihomo）访问时，东方财富可能识别为异常流量。
+
+**解决方案：** 
+- 日线数据 → 使用akshare的历史接口，通过代理访问
+- 盘中数据 → 依赖P工手动提供或使用券商API
+
+#### 3.2 财务数据（最可靠）
+
+| 函数 | 数据类型 | 来源 | 免费 | 可靠性 |
+|------|---------|------|------|--------|
+| stock_financial_abstract_ths | 财务摘要 | 同花顺 | ✅ | ⭐⭐⭐⭐⭐ |
+| stock_financial_report_sina | 财报原始数据 | 新浪 | ✅ | ⭐⭐⭐⭐ |
+| stock_profit_forecast | 业绩预告/快报 | 东方财富 | ✅ | ⭐⭐⭐⭐ |
+| stock_cash_flow_sheet_by_quarterly_em | 现金流表 | 东方财富 | ✅ | ⭐⭐⭐⭐ |
+
+**实战价值：**
+- `stock_financial_abstract_ths` 是最稳定接口，返回营收/净利/ROE/毛利率等25个指标
+- 支持"按年度"和"按报告期"两种维度
+- 实测600150返回30条历史记录（覆盖多年）
+
+#### 3.3 资金流向数据
+
+| 函数 | 数据类型 | 来源 | 免费 | 备注 |
+|------|---------|------|------|------|
+| stock_fund_flow_individual | 个股主力资金流向 | 东方财富 | ✅ | 5日/10日/20日/60日 |
+| stock_hsgt_fund_flow_summary_em | 北向资金概况 | 东方财富 | ✅ | 实时更新 |
+| stock_hsgt_hold_stock_em | 北向资金持股明细 | 东方财富 | ✅ | 按持股比例排序 |
+| stock_hsgt_stock_statistics_em | 北向个股统计 | 东方财富 | ✅ | 持仓/加仓/减持排名 |
+
+**船舶股北向资金查询方法：**
+```python
+import akshare as ak
+df = ak.stock_hsgt_hold_stock_em(symbol='北向资金')
+ship = df[df['名称'].str.contains('船舶|动力', na=False)]
+```
+
+#### 3.4 船舶行业专用数据
+
+| 函数 | 数据类型 | 来源 | 免费 |
+|------|---------|------|------|
+| macro_shipping_bdi | 波罗的海BDI指数 | 波罗的海交易所 | ✅ |
+| macro_shipping_bci | 好望角型船运价指数 | 波罗的海交易所 | ✅ |
+| macro_shipping_bsi | 超级大灵便型船指数 | 波罗的海交易所 | ✅ |
+| macro_shipping_bpi | 巴拿马型船指数 | 波罗的海交易所 | ✅ |
+| macro_china_freight_index | 中国出口集装箱运价指数 | 中国航运交易所 | ✅ |
+
+**BDI指数数据示例（2026-04-14）：**
+- BDI: 2354（近1年涨幅 +83.6%）
+- 近3月涨幅 +50.3%
+- 近6月涨幅 +16.4%
+
+#### 3.5 行业/板块数据
+
+| 函数 | 数据类型 | 来源 | 免费 |
+|------|---------|------|------|
+| stock_board_industry_name_ths | 行业板块列表 | 同花顺 | ✅ |
+| stock_board_concept_name_ths | 概念板块列表 | 同花顺 | ✅ |
+| stock_board_industry_cons_ths | 行业成分股 | 同花顺 | ✅ |
+
+**查询船舶制造行业：**
+```python
+df = ak.stock_board_industry_name_ths()
+print(df[df['name'].str.contains('船舶')])
+# 返回: 船舶制造(板块代码)
+```
+
+#### 3.6 宏观数据
+
+| 函数 | 数据类型 | 来源 | 免费 |
+|------|---------|------|------|
+| macro_china_gdp | 中国GDP | 国家统计局 | ✅ |
+| macro_china_cpi | 中国CPI/PPI | 国家统计局 | ✅ |
+| macro_china_money_supply | 货币供应量 | 央行 | ✅ |
+| macro_china_pmi | 中国PMI | 国家统计局 | ✅ |
+| macro_usa_interest_rate | 美联储利率 | 美联储 | ✅ |
+
+---
+
+### 四、数据获取主动性体系（闭环方案）
+
+#### 4.1 当前障碍分析
+
+**GAP-025根因：** 云服务器访问东方财富实时数据受限流保护，导致：
+- `stock_zh_a_spot_em()` 返回连接重置
+- `stock_zh_a_hist()` 返回连接重置
+- 但财务数据接口稳定可用（同花顺数据源）
+
+**GAP-026根因：** 缺乏系统性数据源文档，导致每次需要数据时：
+- 不知道该用哪个函数
+- 不知道数据来源是否可靠
+- 不知道是否需要代理
+
+#### 4.2 数据源分层架构
+
+```
+┌─────────────────────────────────────────────────────┐
+│  Layer 1: 核心数据（财务/BDI/行业）                   │
+│  无需代理 → 稳定可用 → 每日自动采集                   │
+│  • 财报数据：stock_financial_abstract_ths          │
+│  • BDI指数：macro_shipping_bdi                       │
+│  • 行业板块：stock_board_industry_name_ths          │
+│  • 北向资金：stock_hsgt_hold_stock_em               │
+├─────────────────────────────────────────────────────┤
+│  Layer 2: 延伸数据（资金流/估值/宏观）                │
+│  无需代理 → 可用但偶发失败 → 定期采集                 │
+│  • 资金流向：stock_fund_flow_individual              │
+│  • 估值数据：stock_a_valuation_ttm                   │
+│  • PMI/CPI：macro_china_pmi/macro_china_cpi         │
+├─────────────────────────────────────────────────────┤
+│  Layer 3: 实时数据（行情/K线/分时）                   │
+│  需要代理 → 当前受限 → 依赖P工提供                    │
+│  • 实时行情：stock_zh_a_spot_em（需mihomo代理）      │
+│  • 历史K线：stock_zh_a_hist（需mihomo代理）          │
+│  • 融资融券：stock_margin_detail_szse               │
+└─────────────────────────────────────────────────────┘
+```
+
+#### 4.3 自主数据获取脚本框架
+
+```python
+#!/usr/bin/env python3
+"""
+每日数据自动采集脚本
+覆盖Layer 1 + Layer 2，稳定可靠
+"""
+
+import akshare as ak
+from datetime import datetime, timezone, timedelta
+import json
+
+STOCKS = {
+    "600150": "中国船舶",
+    "600482": "中国动力",
+}
+
+def采集_财务数据(code):
+    """Layer 1: 财务数据（同花顺，稳定）"""
+    annual = ak.stock_financial_abstract_ths(code, "按年度")
+    quarterly = ak.stock_financial_abstract_ths(code, "按报告期")
+    return annual, quarterly
+
+def采集_资金流向(code):
+    """Layer 2: 资金流向（东方财富）"""
+    df = ak.stock_fund_flow_individual(code)
+    return df[df['日期'] >= (datetime.now()-timedelta(days=30))]
+
+def采集_北向资金():
+    """Layer 1: 北向资金持股"""
+    df = ak.stock_hsgt_hold_stock_em(symbol='北向资金')
+    return df[df['名称'].str.contains('船舶|动力', na=False)]
+
+def采集_BDI():
+    """Layer 1: BDI指数"""
+    return ak.macro_shipping_bdi().tail(1)
+
+def采集_船舶板块():
+    """Layer 1: 船舶行业成分股"""
+    industries = ak.stock_board_industry_name_ths()
+    ship_industry = industries[industries['name'].str.contains('船舶')]
+    return ship_industry
+```
+
+---
+
+### 五、数据源优缺点对比（经验法则补充）
+
+**经验法则#142：**
+> "akshare财务数据接口（stock_financial_abstract_ths）是最稳定的数据源，不受网络代理影响，建议作为每日自动采集的首选。"
+
+**经验法则#143：**
+> "实时行情和历史K线数据在中国大陆云服务器上访问受限，但财务数据接口（来自同花顺）稳定可用，差异在于数据源而非网络。"
+
+**经验法则#144：**
+> "查询北向资金持股中的船舶股：akshare.stock_hsgt_hold_stock_em(symbol='北向资金') → 名称列筛选。"
+
+**经验法则#145：**
+> "BDI指数是船舶股最强的宏观先行指标，BDI持续上涨→船东新船下单意愿增强→船舶制造订单预期改善。"
+
+**经验法则#146：**
+> "数据源选择优先级：同花顺（财务）> 波罗的海交易所（BDI）> 东方财富（资金流）> 其他。"
+
+---
+
+### 六、GAP-025/GAP-026闭环确认
+
+| 缺口 | 解决方案 | 状态 |
+|------|---------|------|
+| GAP-025: 无法自主获取财务数据 | 已验证 stock_financial_abstract_ths 稳定可用 | ✅ 闭环 |
+| GAP-025: 无法自主获取行情数据 | Layer 3需代理，当前云服务器受限；财务数据不受限 | ⚠️ 部分闭环 |
+| GAP-026: 缺乏数据源系统性梳理 | 本文建立完整数据源分类体系（6大类×20+接口） | ✅ 闭环 |
+
+**后续行动项：**
+1. 完善 finance_updater.py → 增加北向资金采集+BDI采集
+2. 建立 data-sources.md → 持久化数据源文档
+3. Layer 3数据 → 通过mihomo代理访问东方财富，或使用tushare Token
+
+---
+
+### 七、数据源速查表（实践版）
+
+**查询目标 → 函数映射：**
+
+| 查询目标 | 函数 | 免费 | 稳定性 |
+|---------|------|------|--------|
+| 个股F10财务数据 | stock_financial_abstract_ths(code, "按年度") | ✅ | ⭐⭐⭐⭐⭐ |
+| 最新收盘价 | stock_individual_info_em(code)['总市值'] | ✅ | ⭐⭐⭐ |
+| BDI实时指数 | macro_shipping_bdi().tail(1) | ✅ | ⭐⭐⭐⭐ |
+| 北向资金持股 | stock_hsgt_hold_stock_em('北向资金') | ✅ | ⭐⭐⭐⭐ |
+| 行业板块列表 | stock_board_industry_name_ths() | ✅ | ⭐⭐⭐⭐ |
+| 个股资金流向 | stock_fund_flow_individual(code) | ✅ | ⭐⭐⭐ |
+| 历史K线 | stock_zh_a_hist(code, period='daily') | ✅ | ⚠️ 需代理 |
+| 实时行情全市场 | stock_zh_a_spot_em() | ✅ | ⚠️ 需代理 |
+
+---
+
+### 八、累计经验法则
+
+**总计：146条**（较Day25增加6条核心数据源法则）
+
