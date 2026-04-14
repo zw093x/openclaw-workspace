@@ -20,7 +20,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -121,7 +121,7 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -155,7 +155,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -189,7 +189,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -360,7 +360,7 @@
         "timeoutSeconds": 600
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
@@ -495,7 +495,7 @@
         "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "none",
+        "mode": "announce",
         "channel": "feishu",
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
