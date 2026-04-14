@@ -9,18 +9,6 @@
       "type": "人"
     },
     {
-      "id": "中国船舶",
-      "type": "股票"
-    },
-    {
-      "id": "中国动力",
-      "type": "股票"
-    },
-    {
-      "id": "三安光电",
-      "type": "股票"
-    },
-    {
       "id": "自愈系统",
       "type": "系统"
     },
@@ -49,8 +37,20 @@
       "type": "服务器"
     },
     {
+      "id": "中国船舶",
+      "type": "股票"
+    },
+    {
+      "id": "中国动力",
+      "type": "股票"
+    },
+    {
       "id": "本地服务器",
       "type": "服务器"
+    },
+    {
+      "id": "三安光电",
+      "type": "股票"
     },
     {
       "id": "OpenClaw",
@@ -64,24 +64,6 @@
   "edges": [
     {
       "source": "P工",
-      "target": "彭煜",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "彭煜",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "彭煜",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "三安光电",
       "target": "彭煜",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
@@ -136,24 +118,6 @@
     },
     {
       "source": "P工",
-      "target": "中国船舶",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "P工",
-      "target": "中国动力",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "P工",
-      "target": "三安光电",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "P工",
       "target": "自愈系统",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
@@ -190,150 +154,6 @@
     },
     {
       "source": "P工",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "中国船舶",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "中国船舶",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "飞书",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "ComfyUI",
-      "target": "中国船舶",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "Docker",
-      "target": "中国船舶",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国船舶",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "中国动力",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "飞书",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "ComfyUI",
-      "target": "中国动力",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "Docker",
-      "target": "中国动力",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "三安光电",
-      "target": "飞书",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "ComfyUI",
-      "target": "三安光电",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "Docker",
-      "target": "三安光电",
-      "relation": "co_mentioned",
-      "file": "MEMORY.md"
-    },
-    {
-      "source": "三安光电",
       "target": "云服务器",
       "relation": "co_mentioned",
       "file": "MEMORY.md"
@@ -489,6 +309,60 @@
       "file": "MEMORY.md"
     },
     {
+      "source": "中国船舶",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
+      "source": "P工",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
+      "source": "P工",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "USER.md"
+    },
+    {
       "source": "P工",
       "target": "本地服务器",
       "relation": "co_mentioned",
@@ -531,14 +405,74 @@
       "file": "memory/2026-04-07.md"
     },
     {
+      "source": "三安光电",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
       "source": "中国船舶",
       "target": "中国船舶",
       "relation": "co_mentioned",
       "file": "memory/2026-04-07.md"
     },
     {
+      "source": "中国船舶",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "错误进化",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "中国动力",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
       "source": "三安光电",
       "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "错误进化",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-07.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "错误进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-07.md"
     },
@@ -615,8 +549,20 @@
       "file": "memory/2026-03-26.md"
     },
     {
+      "source": "Docker",
+      "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "memory/2026-03-26.md"
+    },
+    {
       "source": "OpenClaw",
       "target": "中国船舶",
+      "relation": "co_mentioned",
+      "file": "memory/2026-03-26.md"
+    },
+    {
+      "source": "Docker",
+      "target": "中国动力",
       "relation": "co_mentioned",
       "file": "memory/2026-03-26.md"
     },
@@ -631,6 +577,12 @@
       "target": "云服务器",
       "relation": "co_mentioned",
       "file": "memory/2026-04-08.md"
+    },
+    {
+      "source": "P工",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-04.md"
     },
     {
       "source": "P工",
@@ -658,6 +610,12 @@
     },
     {
       "source": "中国船舶",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-04.md"
+    },
+    {
+      "source": "中国船舶",
       "target": "本地服务器",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
@@ -665,6 +623,12 @@
     {
       "source": "中国动力",
       "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-04.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "记忆进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
     },
@@ -681,7 +645,25 @@
       "file": "memory/2026-04-04.md"
     },
     {
+      "source": "三安光电",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-04.md"
+    },
+    {
       "source": "OpenClaw",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-04.md"
+    },
+    {
+      "source": "ComfyUI",
+      "target": "三安光电",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-04.md"
+    },
+    {
+      "source": "Docker",
       "target": "三安光电",
       "relation": "co_mentioned",
       "file": "memory/2026-04-04.md"
@@ -775,6 +757,24 @@
       "target": "湘电股份",
       "relation": "co_mentioned",
       "file": "memory/knowledge-600416.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/knowledge-gaps.md"
+    },
+    {
+      "source": "三安光电",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/knowledge-gaps.md"
+    },
+    {
+      "source": "中国船舶",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/memory-graph.json"
     },
     {
       "source": "云服务器",

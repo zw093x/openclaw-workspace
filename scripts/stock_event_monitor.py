@@ -42,6 +42,7 @@ def load_holdings():
             "shares": item.get("shares", 0),
             "stop_loss": item.get("stop_loss", 0),
             "watch_mode": True,
+            "buy_watch": item.get("buy_watch"),  # 保留建仓观察条件
         }
     return holdings
 
@@ -127,52 +128,74 @@ def main():
         chg_pct = q["chg_pct"]
         vol_ratio = q.get("vol_ratio", 1)
         cost = pos["cost"]
-        pnl_pct = (price / cost - 1) * 100
+        pnl_pct = (price / cost - 1) * 100 if cost > 0 else 0
         pnl_amount = (price - cost) * pos["shares"]
         emoji = "🔴" if chg_pct < 0 else "🟢"
 
-        # 1. 涨跌幅预警
-        for level, threshold, label in [(5.0, "S2紧急"), (3.0, "S1警告")]:
-            if abs(chg_pct) >= level:
-                key = f"{code}_chg_{label}"
+        # 跳过watch_only股票的持仓逻辑（无持仓、无成本）
+        if not pos.get("watch_mode"):
+            # 1. 涨跌幅预警
+            for level, threshold, label in [(5.0, "S2紧急"), (3.0, "S1警告")]:
+                if abs(chg_pct) >= level:
+                    key = f"{code}_chg_{label}"
+                    if check_cooldown(key, state):
+                        alerts.append(f"🚨 {pos['name']}({code}) 涨跌 {chg_pct:+.2f}% [{label}] | 现价{price} | 成本{cost}")
+                        trigger_alert(key, state)
+
+            # 2. 跌破止损
+            if pos["stop_loss"] > 0 and price <= pos["stop_loss"]:
+                key = f"{code}_stoploss"
                 if check_cooldown(key, state):
-                    alerts.append(f"🚨 {pos['name']}({code}) 涨跌 {chg_pct:+.2f}% [{label}] | 现价{price} | 成本{cost}")
+                    alerts.append(f"🚨 {pos['name']}({code}) 触发止损！现价{price} <= 止损{pos['stop_loss']}")
                     trigger_alert(key, state)
 
-        # 2. 跌破止损
-        if pos["stop_loss"] > 0 and price <= pos["stop_loss"]:
-            key = f"{code}_stoploss"
-            if check_cooldown(key, state):
-                alerts.append(f"🚨 {pos['name']}({code}) 触发止损！现价{price} <= 止损{pos['stop_loss']}")
-                trigger_alert(key, state)
+            # 3. 触及减仓价位
+            for level in pos.get("reduce_levels", []):
+                rng = level["range"]
+                if rng[0] <= price <= rng[1]:
+                    key = f"{code}_reduce_{level['label']}"
+                    if check_cooldown(key, state):
+                        alerts.append(f"⚠️ {pos['name']}({code}) 触及减仓价位 {level['label']} [{price}] | 成本{cost} | 浮亏{pnl_pct:+.1f}%")
+                        trigger_alert(key, state)
 
-        # 3. 触及减仓价位
-        for level in pos.get("reduce_levels", []):
-            rng = level["range"]
-            if rng[0] <= price <= rng[1]:
-                key = f"{code}_reduce_{level['label']}"
+            # 4. 成交量异常
+            if vol_ratio >= 1.5:
+                key = f"{code}_volume"
                 if check_cooldown(key, state):
-                    alerts.append(f"⚠️ {pos['name']}({code}) 触及减仓价位 {level['label']} [{price}] | 成本{cost} | 浮亏{pnl_pct:+.1f}%")
+                    alerts.append(f"📊 {pos['name']}({code}) 成交量放大 {vol_ratio:.1f}倍 | 均量触发")
+
+            # 5. 技术破位（收盘<布林下轨）
+            bl_bottom = cost * 0.85
+            if price < bl_bottom:
+                key = f"{code}_boll"
+                if check_cooldown(key, state):
+                    alerts.append(f"⚠️ {pos['name']}({code}) 技术破位 | 现价{price} < 布林下轨估算{bl_bottom:.2f}")
                     trigger_alert(key, state)
 
-        # 4. 成交量异常
-        if vol_ratio >= 1.5:
-            key = f"{code}_volume"
-            if check_cooldown(key, state):
-                alerts.append(f"📊 {pos['name']}({code}) 成交量放大 {vol_ratio:.1f}倍 | 均量触发")
-
-        # 5. 技术破位（收盘<布林下轨）
-        bl_bottom = cost * 0.85  # 简化：布林下轨估算
-        if price < bl_bottom and not pos.get("watch_mode"):
-            key = f"{code}_boll"
-            if check_cooldown(key, state):
-                alerts.append(f"⚠️ {pos['name']}({code}) 技术破位 | 现价{price} < 布林下轨估算{bl_bottom:.2f}")
-                trigger_alert(key, state)
-
-        # 行情摘要（总有）
-        summary_lines.append(f"{emoji} {pos['name']} {price} ({chg_pct:+.2f}%) 浮亏{pnl_pct:+.1f}%")
+            # 行情摘要（持仓股）
+            summary_lines.append(f"{emoji} {pos['name']} {price} ({chg_pct:+.2f}%) 浮亏{pnl_pct:+.1f}%")
 
     save_state(state)
+
+    # 检查观察列表buy_watch触发（直接从已获取的quotes中检查）
+    for code, q in quotes.items():
+        pos = holdings.get(code, {})
+        bw = pos.get('buy_watch')
+        if not bw:
+            continue
+        price = q['price']
+        floor = bw['floor']
+        target = bw['target']
+        if price <= floor:
+            key = f"{code}_buy_watch"
+            if check_cooldown(key, state):
+                alerts.append(f"💡 {pos['name']}({code}) 回落到建仓观察价！{price} <= {floor} | 目标{target} | {bw['reason']}")
+                trigger_alert(key, state)
+        elif price >= target:
+            key = f"{code}_target_hit"
+            if check_cooldown(key, state):
+                alerts.append(f"🎯 {pos['name']}({code}) 触及目标价！{price} >= {target}")
+                trigger_alert(key, state)
 
     if alerts:
         output = {

@@ -9,7 +9,7 @@
       "updatedAtMs": 1775706004224,
       "schedule": {
         "kind": "cron",
-        "expr": "0,15,30,45 9-14 * * 1-5",
+        "expr": "15,45 9-11 * * 1-5,0,30 13-14 * * 1-5",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
@@ -105,7 +105,7 @@
     {
       "id": "7f7a0ce8-4d2c-478f-9f63-78bc05ca9147",
       "name": "大宗商品播报",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1774725718865,
       "updatedAtMs": 1775701181985,
       "schedule": {
@@ -1231,14 +1231,14 @@
     {
       "id": "4897f5ed-0a9c-4f91-b2e0-771853ac8026",
       "name": "增量Memory备份",
-      "description": "每30分钟扫描新增对话，追加重要内容到memory并推送Gitee",
+      "description": "每天00:00和12:00执行增量Memory备份并推送Gitee",
       "enabled": true,
       "createdAtMs": 1775313189599,
       "updatedAtMs": 1775705918304,
       "schedule": {
-        "kind": "every",
-        "everyMs": 1800000,
-        "anchorMs": 1775313189599
+        "kind": "cron",
+        "expr": "0 0,12 * * *",
+        "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",

@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 """
-记忆进化系统 v2.0 — 16层全进化
+记忆进化系统 v2.1 — 16层全进化 / 3阶段分组
 
+【阶段1 采集分析】
 M1  自动压缩 — 日志提炼到 MEMORY.md
 M2  冲突检测 — 发现矛盾信息
 M3  健康检查 — 过时信息标记/归档
 M4  智能关联 — 跨文件链接
 M5  优先级排序 — 重要记忆置顶
-M6  自动备份 — 关键变更快照
 M7  语义聚类 — 按含义分组
 M8  去重合并 — 相似记忆合并
+
+【阶段2 推理输出】
 M9  时序推理 — 因果关系链
+M13 知识图谱 — 实体关系可视化
+M14 场景化输出 — 进化结果同步至场景记忆系统
+
+【阶段3 保障巩固】
+M6  自动备份 — 关键变更快照
 M10 上下文感知 — 当前任务相关记忆调取
 M11 预测需求 — 预判下一步需要的信息
 M12 跨系统记忆 — 所有子系统共享
-M13 知识图谱 — 实体关系可视化
-M14 主动创建 — 对话中自动创建记忆
 M15 记忆巩固 — 定期复习强化
 M16 记忆模拟 — 智能遗忘曲线
 """
@@ -34,6 +39,8 @@ MEMORY_FILE = WORKSPACE / "MEMORY.md"
 USER_FILE = WORKSPACE / "USER.md"
 TOOLS_FILE = WORKSPACE / "TOOLS.md"
 MEMORY_DIR = WORKSPACE / "memory"
+SCENE_DIR = WORKSPACE / "skills" / "scene-memory" / "references"
+SCENE_INDEX = SCENE_DIR / "场景索引.md"
 LEARNINGS_DIR = WORKSPACE / ".learnings"
 MEMORY_INDEX = WORKSPACE / "memory" / "memory-index.json"
 MEMORY_HEALTH = WORKSPACE / "memory" / "memory-health.json"
@@ -834,7 +841,118 @@ def build_knowledge_graph():
     save_json(MEMORY_GRAPH, graph)
     return {"nodes": len(graph["nodes"]), "edges": len(graph["edges"])}
 
-# ===== M14: 主动创建 =====
+# ===== M14: 场景化输出 =====
+SCENE_CATEGORIES = {
+    "01-数字环境与工作流": {
+        "keywords": ["openclaw", "cron", "定时", "备份", "git", "docker", "服务器", "腾讯云", "mihomo", "skill", "插件", "代理", "脚本", "记忆进化", "自愈", "自学习", "盘中监控", "大宗商品", "持仓", "股价", "股票"],
+        "entities": ["OpenClaw", "服务器", "云服务器", "本地服务器", "自愈系统", "自学习系统", "记忆进化", "统一智能层"]
+    },
+    "02-投资管理与交易策略": {
+        "keywords": ["股票", "持仓", "成本", "买入", "卖出", "建仓", "清仓", "止损", "涨跌", "大盘", "板块", "资金", "主力", "船舶", "动力", "三安", "视源", "大宗商品", "黄金", "白银", "甲醇"],
+        "entities": ["中国船舶", "中国动力", "三安光电", "视源股份", "600150", "600482", "600703", "002841"]
+    },
+    "03-AI技术与产品研究": {
+        "keywords": ["ai", "comfyui", "提示词", "即梦", "生图", "文生图", "3d", "建模", "模型师", "视频生成", "stable diffusion", "midjourney", "dall", "cuda", "gpu", "渲染", "人工智能", "大模型"],
+        "entities": ["ComfyUI", "即梦", "Stable Diffusion", "Midjourney", "DALL"]
+    },
+    "04-宝宝健康成长": {
+        "keywords": ["宝宝", "疫苗", "接种", "母乳", "产后", "月子", "儿", "喂养", "体重", "发育", "健康", "检查", "复查", "儿保"],
+        "entities": ["宝宝", "疫苗", "儿保", "月子"]
+    }
+}
+
+def _get_scene_updates(graph_data, cluster_data):
+    """根据知识图谱和聚类结果，计算各场景的更新"""
+    nodes = graph_data.get("nodes", [])
+    scene_updates = {k: {"new_entities": [], "confidence": 0} for k in SCENE_CATEGORIES}
+    
+    # 按关键词/实体匹配场景
+    for node in nodes:
+        name = node.get("id", "")
+        for scene, cfg in SCENE_CATEGORIES.items():
+            # 直接实体匹配
+            if name in cfg.get("entities", []):
+                scene_updates[scene]["new_entities"].append(name)
+                scene_updates[scene]["confidence"] += 2
+            # 关键词匹配
+            for kw in cfg.get("keywords", []):
+                if kw.lower() in name.lower():
+                    scene_updates[scene]["new_entities"].append(name)
+                    scene_updates[scene]["confidence"] += 1
+    
+    return scene_updates
+
+def _update_scene_index():
+    """更新场景索引的热度"""
+    index_file = SCENE_INDEX
+    if not index_file.exists():
+        return
+    
+    with open(index_file, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    # 每30天衰减10%，简单处理：每次进化热度+1
+    import re
+    for scene in SCENE_CATEGORIES:
+        pattern = rf'(\| {re.escape(scene)} \|.*?\|\s*)(\d+)(\s*\|)'
+        match = re.search(pattern, content)
+        if match:
+            current_heat = int(match.group(2))
+            new_heat = current_heat + 1
+            new_line = match.group(1) + str(new_heat) + match.group(3)
+            content = content[:match.start()] + new_line + content[match.end():]
+    
+    with open(index_file, "w", encoding="utf-8") as f:
+        f.write(content)
+
+def scene_output():
+    """M14: 将记忆进化结果输出到场景化记忆系统"""
+    graph = load_json(MEMORY_GRAPH, {"nodes": [], "edges": []})
+    clusters = load_json(MEMORY_CLUSTERS, {})
+    
+    if not SCENE_DIR.exists():
+        return {"updated": 0, "reason": "scene_dir_not_found"}
+    
+    scene_updates = _get_scene_updates(graph, clusters)
+    updated_scenes = []
+    
+    # 更新各场景文件
+    for scene_file in SCENE_DIR.glob("*.md"):
+        scene_name = scene_file.name
+        if scene_name == "场景索引.md":
+            continue
+        
+        # 检查该场景是否有新实体
+        has_update = False
+        for scene_key, updates in scene_updates.items():
+            if scene_key == scene_name and updates["confidence"] > 0:
+                has_update = True
+                break
+        
+        if has_update:
+            # 更新时间戳
+            with open(scene_file, "r", encoding="utf-8") as f:
+                content = f.read()
+            
+            # 替换更新时间行
+            import re
+            updated = re.sub(
+                r'(热度：\d+ \| 最后更新：)\d{4}-\d{2}-\d{2}',
+                lambda m: m.group(1) + datetime.now().strftime("%Y-%m-%d"),
+                content
+            )
+            
+            with open(scene_file, "w", encoding="utf-8") as f:
+                f.write(updated)
+            
+            updated_scenes.append(scene_name)
+    
+    # 更新索引热度
+    _update_scene_index()
+    
+    return {"updated": len(updated_scenes), "scenes": updated_scenes}
+
+# ===== M15: 主动创建 =====
 def proactive_memory_creation(conversation_text):
     """从对话中自动提取并创建记忆条目"""
     created = []
@@ -1104,83 +1222,97 @@ def distill_weekly_memories():
 
 
 def full_evolve():
-    """执行全量记忆进化 (M1-M16)"""
+    """执行全量记忆进化 (M1-M16)，优化输出：仅显示有实质工作的模块"""
     results = {}
+    lines = []  # 存储本次进化的输出行
 
-    print("  M1  自动压缩...", end=" ")
+    # 阶段1：采集分析
     r1 = compress_daily_logs()
-    results["M1_压缩"] = f"{len(r1['compressed'])}个文件"
-    print(f"✅ {results['M1_压缩']}")
+    if r1['compressed']:
+        lines.append(f"  压缩: {len(r1['compressed'])}个文件")
 
-    print("  M2  冲突检测...", end=" ")
     r2 = detect_conflicts()
-    results["M2_冲突"] = f"{len(r2)}个"
-    print(f"✅ {results['M2_冲突']}")
+    if r2:
+        lines.append(f"  冲突: {len(r2)}个矛盾")
 
-    print("  M3  健康检查...", end=" ")
     r3 = check_memory_health()
-    results["M3_健康"] = f"{r3['overall_score']}分"
-    print(f"✅ {results['M3_健康']}")
+    score = r3['overall_score']
+    icon = "✅" if score >= 80 else "⚠️" if score >= 60 else "🔴"
+    lines.append(f"  健康: {icon}{score}分")
 
-    print("  M4  智能关联...", end=" ")
     r4 = build_memory_links()
-    results["M4_关联"] = f"{r4['entities']}实体/{r4['topics']}主题"
-    print(f"✅ {results['M4_关联']}")
+    if r4['entities']:
+        lines.append(f"  关联: {r4['entities']}实体/{r4['topics']}主题")
 
-    print("  M5  优先级...", end=" ")
     r5 = prioritize_memories()
-    results["M5_优先级"] = f"{len(r5['critical'])}核心/{len(r5['high'])}重要"
-    print(f"✅ {results['M5_优先级']}")
+    if r5['critical'] or r5['high']:
+        lines.append(f"  优先级: {len(r5['critical'])}核心/{len(r5['high'])}重要")
 
-    print("  M6  自动备份...", end=" ")
-    r6 = backup_critical_files()
-    results["M6_备份"] = f"{len(r6['backed_up'])}个文件"
-    print(f"✅ {results['M6_备份']}")
-
-    print("  M7  语义聚类...", end=" ")
     r7 = semantic_clustering()
-    results["M7_聚类"] = f"{len(r7)}个主题"
-    print(f"✅ {results['M7_聚类']}")
+    if r7:
+        lines.append(f"  聚类: {len(r7)}个主题")
 
-    print("  M8  去重合并...", end=" ")
     r8 = deduplicate_memories()
-    results["M8_去重"] = f"{r8['duplicates']}个重复"
-    print(f"✅ {results['M8_去重']}")
+    if r8['duplicates']:
+        lines.append(f"  去重: {r8['duplicates']}个重复")
 
-    print("  M9  时序推理...", end=" ")
+    # 阶段2：推理输出
     r9 = temporal_reasoning()
-    results["M9_时序"] = f"{r9['chains']}条因果链/{r9['total_events']}个事件"
-    print(f"✅ {results['M9_时序']}")
+    if r9['chains']:
+        lines.append(f"  时序: {r9['chains']}条因果链/{r9['total_events']}个事件")
 
-    print("  M10 上下文感知...", end=" ")
-    r10 = context_aware_retrieval()
-    results["M10_上下文"] = f"{r10['matched']}个匹配"
-    print(f"✅ {results['M10_上下文']}")
-
-    print("  M11 预测需求...", end=" ")
-    r11 = predict_needs()
-    results["M11_预测"] = f"{r11['predictions']}个预测"
-    print(f"✅ {results['M11_预测']}")
-
-    print("  M12 跨系统...", end=" ")
-    r12 = cross_system_memory()
-    results["M12_跨系统"] = f"{r12['synced_systems']}个系统"
-    print(f"✅ {results['M12_跨系统']}")
-
-    print("  M13 知识图谱...", end=" ")
     r13 = build_knowledge_graph()
-    results["M13_图谱"] = f"{r13['nodes']}节点/{r13['edges']}边"
-    print(f"✅ {results['M13_图谱']}")
+    if r13['nodes']:
+        lines.append(f"  图谱: {r13['nodes']}节点/{r13['edges']}边")
 
-    print("  M15 记忆巩固...", end=" ")
+    r14 = scene_output()
+    if r14.get('updated', 0) > 0:
+        lines.append(f"  场景: {r14['updated']}个场景更新")
+
+    # 阶段3：保障巩固
+    r6 = backup_critical_files()
+    if r6['backed_up']:
+        lines.append(f"  备份: {len(r6['backed_up'])}个文件")
+
+    r10 = context_aware_retrieval()
+    if r10['matched']:
+        lines.append(f"  上下文: {r10['matched']}个匹配")
+
+    r11 = predict_needs()
+    if r11['predictions']:
+        lines.append(f"  预测: {r11['predictions']}个需求")
+
+    r12 = cross_system_memory()
+    if r12['synced_systems']:
+        lines.append(f"  跨系统: {r12['synced_systems']}个系统")
+
     r15 = memory_consolidation()
-    results["M15_巩固"] = f"{r15['needs_review']}个需复习"
-    print(f"✅ {results['M15_巩固']}")
+    if r15['needs_review']:
+        lines.append(f"  巩固: {r15['needs_review']}个需复习")
 
-    print("  M16 记忆模拟...", end=" ")
     r16 = memory_decay_simulation()
-    results["M16_遗忘"] = f"{r16['forgotten']}遗忘/{r16['needs_reinforcement']}需强化"
-    print(f"✅ {results['M16_遗忘']}")
+    if r16['needs_reinforcement']:
+        lines.append(f"  强化: {r16['needs_reinforcement']}个待强化")
+
+    results = {
+        "M3_健康": score,
+        "M4_关联": r4['entities'],
+        "M7_聚类": len(r7),
+        "M13_图谱": r13['nodes'],
+    }
+
+    # 输出优化：阶段分组 + 底部一行总结
+    if lines:
+        print("  📊 " + " / ".join(lines[:5]))  # 前5个关键指标
+        if len(lines) > 5:
+            for l in lines[5:]:
+                print("     " + l)
+
+    # 底部一行总结（供cron使用）
+    active = len(lines)
+    total = 16
+    idle = total - active
+    print(f"\n✅ 完成 M1-M16 ({active}项有效/{idle}项空闲) 健康{icon}{score}分 · 关联{r4['entities']}实体 · {len(r7)}主题 · 图谱{r13['nodes']}节点")
 
     return results
 
@@ -1337,8 +1469,7 @@ if __name__ == "__main__":
         r = memory_decay_simulation()
         print(f"✅ 遗忘: {r['forgotten']}个可遗忘, {r['needs_reinforcement']}个需强化")
     elif args[0] == "--evolve":
-        print("🧬 执行全量记忆进化 (M1-M16)...")
+        print("🧬 记忆进化 M1-M16...")
         results = full_evolve()
-        print(f"\n✅ 进化完成")
     else:
         print(__doc__)

@@ -5,8 +5,8 @@
       "name": "中国船舶",
       "code": "600150",
       "market": "sh",
-      "shares": 3000,
-      "cost_price": 41.04,
+      "shares": 0,
+      "cost_price": 0,
       "reduce_levels": [],
       "stop_loss": 0,
       "add_level": {
@@ -24,8 +24,8 @@
       "name": "中国动力",
       "code": "600482",
       "market": "sh",
-      "shares": 2000,
-      "cost_price": 35.079,
+      "shares": 0,
+      "cost_price": 0,
       "reduce_levels": [],
       "stop_loss": 0,
       "add_level": {
@@ -44,7 +44,7 @@
       "code": "603656",
       "market": "sh",
       "shares": 0,
-      "cost_price": 21.1,
+      "cost_price": 0,
       "reduce_levels": [],
       "stop_loss": 20.0,
       "status": "sold",
@@ -57,8 +57,8 @@
       "name": "三安光电",
       "code": "600703",
       "market": "sh",
-      "shares": 500,
-      "cost_price": 11.44,
+      "shares": 0,
+      "cost_price": 0,
       "reduce_levels": [],
       "stop_loss": 11.0,
       "add_level": {
@@ -90,6 +90,17 @@
       "market": "sh",
       "shares": 0,
       "note": "船舶综合电力系统(市占100%)+磁悬浮核心电机，待建仓"
+    },
+    {
+      "name": "中船防务",
+      "code": "600685",
+      "market": "sh",
+      "buy_watch": {
+        "floor": 28.0,
+        "target": 30.0,
+        "reason": "Q1业绩+95~133%，回踩28元建仓观察",
+        "position_size": 500
+      }
     }
   ],
   "index": [

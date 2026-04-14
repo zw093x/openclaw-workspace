@@ -73,6 +73,13 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - **状态**: 已安装, 需配置 SecretId/SecretKey
 - **配置**: `tccli configure set`
 
+## Tushare Pro
+
+- **Token**: `bef931c637d474128c75d44e652686fd42f8da725f3979756ee7360c`（P工的Token，56位）
+- **积分**: 100（不足，财务类接口需要2000积分）
+- **Skill路径**: `/root/.openclaw/workspace/skills/tushare/`
+- **状态**: Token有效但积分不够，暂时不可用
+
 ## Proxy (mihomo)
 
 - **Status**: ✅ Running (systemd, enabled)

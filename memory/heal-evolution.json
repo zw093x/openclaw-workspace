@@ -82,7 +82,7 @@
   "trends": {},
   "evolution_level": 5,
   "last_evolve": "2026-04-13T10:59:23.669028",
-  "memory_health": 70,
+  "memory_health": 65,
   "prevention_strategies": [
     {
       "trigger": "cron_timeout ≥2次/周",
