@@ -6,7 +6,7 @@
       "code": "600150",
       "market": "sh",
       "shares": 3000,
-      "cost_price": 41.04,
+      "cost_price": 0,
       "reduce_levels": [],
       "stop_loss": 0,
       "add_level": {
@@ -25,7 +25,7 @@
       "code": "600482",
       "market": "sh",
       "shares": 2000,
-      "cost_price": 35.079,
+      "cost_price": 0,
       "reduce_levels": [],
       "stop_loss": 0,
       "add_level": {
@@ -44,7 +44,7 @@
       "code": "603656",
       "market": "sh",
       "shares": 0,
-      "cost_price": 21.1,
+      "cost_price": 0,
       "reduce_levels": [],
       "stop_loss": 20.0,
       "status": "sold",
@@ -58,7 +58,7 @@
       "code": "600703",
       "market": "sh",
       "shares": 500,
-      "cost_price": 11.44,
+      "cost_price": 0,
       "reduce_levels": [],
       "stop_loss": 11.0,
       "add_level": {

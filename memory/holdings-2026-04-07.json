@@ -2,15 +2,74 @@
   "last_updated": "2026-04-07",
   "note": "2026-04-07 综合更新：修正船舶成本41.04、动力成本35.079，新增视源持仓信息",
   "holdings": [
-    {"name": "中国船舶", "code": "600150", "market": "sh", "shares": 3000, "cost_price": 41.04, "core": 2000, "tradable": 1000, "status": "holding", "stop_loss": 0, "note": "长期持有，2000核心+1000可操作做T"},
-    {"name": "中国动力", "code": "600482", "market": "sh", "shares": 2000, "cost_price": 35.079, "core": 2000, "tradable": 0, "status": "holding", "stop_loss": 0, "note": "长期持有，核心仓位全部固定不动"},
-    {"name": "三安光电", "code": "600703", "market": "sh", "shares": 500, "cost_price": 11.44, "core": 500, "tradable": 0, "status": "holding", "stop_loss": 11.0, "note": "试探建仓"},
-    {"name": "视源股份", "code": "002841", "market": "sz", "shares": 500, "cost_price": 33.80, "core": 0, "tradable": 0, "status": "holding", "stop_loss_soft": 32.11, "stop_loss_hard": 30.42, "note": "朋友账户，500股，成本33.80"}
+    {
+      "name": "中国船舶",
+      "code": "600150",
+      "market": "sh",
+      "shares": 3000,
+      "cost_price": 0,
+      "core": 2000,
+      "tradable": 1000,
+      "status": "holding",
+      "stop_loss": 0,
+      "note": "长期持有，2000核心+1000可操作做T"
+    },
+    {
+      "name": "中国动力",
+      "code": "600482",
+      "market": "sh",
+      "shares": 2000,
+      "cost_price": 0,
+      "core": 2000,
+      "tradable": 0,
+      "status": "holding",
+      "stop_loss": 0,
+      "note": "长期持有，核心仓位全部固定不动"
+    },
+    {
+      "name": "三安光电",
+      "code": "600703",
+      "market": "sh",
+      "shares": 500,
+      "cost_price": 0,
+      "core": 500,
+      "tradable": 0,
+      "status": "holding",
+      "stop_loss": 11.0,
+      "note": "试探建仓"
+    },
+    {
+      "name": "视源股份",
+      "code": "002841",
+      "market": "sz",
+      "shares": 500,
+      "cost_price": 0,
+      "core": 0,
+      "tradable": 0,
+      "status": "holding",
+      "stop_loss_soft": 32.11,
+      "stop_loss_hard": 30.42,
+      "note": "朋友账户，500股，成本33.80"
+    }
   ],
   "watching": [
-    {"name": "湘电股份", "code": "600416", "market": "sh", "shares": 0, "note": "船舶综合电力系统(市占100%)+磁悬浮核心电机，待建仓"}
+    {
+      "name": "湘电股份",
+      "code": "600416",
+      "market": "sh",
+      "shares": 0,
+      "note": "船舶综合电力系统(市占100%)+磁悬浮核心电机，待建仓"
+    }
   ],
   "sold": [
-    {"name": "泰禾智能", "code": "603656", "sold_date": "2026-04-01", "sold_price": 21.0, "cost": 21.1, "pnl": -50, "note": "已清仓，不再纳入"}
+    {
+      "name": "泰禾智能",
+      "code": "603656",
+      "sold_date": "2026-04-01",
+      "sold_price": 21.0,
+      "cost": 21.1,
+      "pnl": -50,
+      "note": "已清仓，不再纳入"
+    }
   ]
 }
