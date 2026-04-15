@@ -161,3 +161,17 @@
 ```
 
 **触发条件：** ≥3次同类错误 → 自动生成预防策略 → 下次自愈系统启动时加载
+
+## AI Art 自主学习系统（2026-04-16）
+
+### Tavily API（AI搜索）
+- **Key**: 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
+- **存储**: TOOLS.md
+- **用途**: AI Art 自主学习脚本，每周自动搜索最新资讯
+
+### 系统组件
+- **Cron**: 每周日 21:00（`ai-art-self-learn.py`）
+- **知识库**: `memory/ai-art-research.md`
+- **技能**: `skills/ai-art-master/SKILL.md`
+- **日志**: `memory/ai-art-self-learn.log`
+- **来源过滤**: A/B级优先，C级降权

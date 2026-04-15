@@ -31,7 +31,7 @@ NAMES = {
     '000001': '上证指数',  '399001': '深证成指',
     '399006': '创业板指',  '000300': '沪深300',
 }
-COSTS = {'600150': 41.04, '600482': 35.079, '600703': 11.44, '002841': 33.80}
+COSTS = {'600150': 0, '600482': 0, '600703': 0, '002841': 0}
 
 
 def mootdx_fetch(symbols):
@@ -99,17 +99,14 @@ def make_report(data, dt_str):
             lines.append(f"⚠️ {name} 数据获取失败")
     lines.append("")
 
-    # 持仓
+    # 持仓行情
     lines.append("【持仓】")
     for code in CODES:
         name = NAMES[code]
         if code in data and data[code]['price'] > 0:
             d = data[code]
             e = "📈" if d['chg_pct'] >= 0 else "📉"
-            cost = COSTS[code]
-            pnl = (d['price'] - cost) * 1000 if code not in ('002841',) else (d['price'] - cost) * 100
-            tag = "浮盈" if pnl >= 0 else "浮亏"
-            lines.append(f"{e} {name}({code}) = {d['price']:.2f} [成本{cost:.2f}] {tag}{abs(pnl):.0f}元")
+            lines.append(f"{e} {name}({code}) = {d['price']:.2f} ({d['chg_pct']:+.2f}%)")
         else:
             lines.append(f"⚠️ {name}({code}) 数据获取失败")
     lines.append("")

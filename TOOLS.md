@@ -173,3 +173,11 @@ curl -s -X PATCH "https://open.feishu.cn/open-apis/drive/v1/permissions/{doc_id}
   - `turbo_score(q, kp, sketch, norm_res, S)` — 推断端打分
 - **适用场景**: KV Cache 压缩、注意力分数近似计算、d≤64 小维度效果最佳
 - **配置参考**: d=128 推荐 PolarQuant 3-bit（10.7x 压缩）或 TurboQuant m=256（6.4x 压缩，接近传统精度）
+
+
+## Tavily API (AI搜索)
+
+- **Key**: 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
+- **用途**: AI优化搜索，用于AI Art自主学习脚本
+- **状态**: 已配置
+

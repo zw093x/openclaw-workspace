@@ -155,7 +155,7 @@
     },
     "x-api": {
       "version": "0.1.0",
-      "installedAt": 1776139321946
+      "installedAt": 1776204122179
     },
     "web-tools-guide": {
       "version": "1.0.0",
@@ -164,6 +164,10 @@
     "humanizer": {
       "version": "1.0.0",
       "installedAt": 1776160862258
+    },
+    "tushare": {
+      "version": "1.0.9",
+      "installedAt": 1776204062724
     }
   }
 }

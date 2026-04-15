@@ -14,6 +14,7 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+5. **autoRecall**: After reading context files, call `memory_search` with the current topic/query to pull relevant historical memories before responding
 
 Don't ask permission. Just do it.
 
@@ -387,7 +388,7 @@ record_memory_access("memory/stock-portfolio.md")  # 替换为实际文件路径
 
 ## 🔧 一键体检命令（收到"能解决的问题直接执行"时）
 
-执行顺序：先诊断，发现问题立即修复，不需要再问。
+执行顺序：先诊断，列出问题清单，用户确认后再修复。
 
 **四大系统检查清单：**
 
@@ -405,4 +406,4 @@ record_memory_access("memory/stock-portfolio.md")  # 替换为实际文件路径
    ✅ 能修：财务数据刷新、持仓股评分重新计算
 ```
 
-**执行原则：能修复的立即修，修不了的评估后给出报告+建议。**
+**执行原则：先列清单，用户确认后再执行修复。**
