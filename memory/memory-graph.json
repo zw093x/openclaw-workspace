@@ -49,12 +49,12 @@
       "type": "服务器"
     },
     {
-      "id": "三安光电",
-      "type": "股票"
-    },
-    {
       "id": "OpenClaw",
       "type": "工具"
+    },
+    {
+      "id": "三安光电",
+      "type": "股票"
     },
     {
       "id": "湘电股份",
@@ -402,7 +402,49 @@
       "source": "彭煜",
       "target": "彭煜",
       "relation": "co_mentioned",
-      "file": "memory/2026-04-07.md"
+      "file": "memory/2026-04-15.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "彭煜",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-15.md"
+    },
+    {
+      "source": "记忆进化",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-15.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "记忆进化",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-15.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "自愈系统",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-15.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "飞书",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-15.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "OpenClaw",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-15.md"
+    },
+    {
+      "source": "OpenClaw",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-15.md"
     },
     {
       "source": "三安光电",
@@ -484,37 +526,7 @@
     },
     {
       "source": "OpenClaw",
-      "target": "飞书",
-      "relation": "co_mentioned",
-      "file": "memory/migration-guide.md"
-    },
-    {
-      "source": "OpenClaw",
-      "target": "自愈系统",
-      "relation": "co_mentioned",
-      "file": "memory/heal-log.md"
-    },
-    {
-      "source": "OpenClaw",
       "target": "错误进化",
-      "relation": "co_mentioned",
-      "file": "memory/heal-log.md"
-    },
-    {
-      "source": "记忆进化",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "memory/heal-log.md"
-    },
-    {
-      "source": "OpenClaw",
-      "target": "记忆进化",
-      "relation": "co_mentioned",
-      "file": "memory/heal-log.md"
-    },
-    {
-      "source": "OpenClaw",
-      "target": "OpenClaw",
       "relation": "co_mentioned",
       "file": "memory/heal-log.md"
     },
@@ -529,12 +541,6 @@
       "target": "中国动力",
       "relation": "co_mentioned",
       "file": "memory/2026-04-02.md"
-    },
-    {
-      "source": "OpenClaw",
-      "target": "彭煜",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-12.md"
     },
     {
       "source": "云服务器",
@@ -573,12 +579,6 @@
       "file": "memory/2026-03-26.md"
     },
     {
-      "source": "OpenClaw",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "memory/2026-04-08.md"
-    },
-    {
       "source": "P工",
       "target": "三安光电",
       "relation": "co_mentioned",
@@ -753,28 +753,28 @@
       "file": "memory/2026-04-04.md"
     },
     {
-      "source": "湘电股份",
-      "target": "湘电股份",
-      "relation": "co_mentioned",
-      "file": "memory/knowledge-600416.md"
-    },
-    {
-      "source": "中国动力",
-      "target": "云服务器",
-      "relation": "co_mentioned",
-      "file": "memory/knowledge-gaps.md"
-    },
-    {
       "source": "三安光电",
       "target": "云服务器",
       "relation": "co_mentioned",
-      "file": "memory/knowledge-gaps.md"
+      "file": "memory/stock-knowledge.md"
     },
     {
       "source": "中国船舶",
       "target": "云服务器",
       "relation": "co_mentioned",
-      "file": "memory/memory-graph.json"
+      "file": "memory/stock-knowledge.md"
+    },
+    {
+      "source": "中国动力",
+      "target": "云服务器",
+      "relation": "co_mentioned",
+      "file": "memory/stock-knowledge.md"
+    },
+    {
+      "source": "湘电股份",
+      "target": "湘电股份",
+      "relation": "co_mentioned",
+      "file": "memory/knowledge-600416.md"
     },
     {
       "source": "云服务器",

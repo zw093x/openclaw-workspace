@@ -1,33 +1,34 @@
 {
-  "lastCheck": 1775416800,
-  "checkedAt": "2026-04-13T04:18:00+08:00",
-  "latestVersion": "v0.18.2",
+  "lastCheck": 1775599680,
+  "checkedAt": "2026-04-15T13:28:00+08:00",
+  "latestVersion": "v0.19.0",
   "versionsChecked": [
     "v0.16.1","v0.16.2","v0.16.3","v0.16.4","v0.17.0",
-    "v0.17.1","v0.17.2","v0.18.0","v0.18.1","v0.18.2"
+    "v0.17.1","v0.17.2","v0.18.0","v0.18.1","v0.18.2","v0.19.0"
   ],
   "thisSessionUpdates": [
-    "Ernie Image model (#13369) - 2026-04-12: 百度文心新模型集成至主程序",
-    "ImageUpscaleWithModel intermediate device/dtype fix (#13357) - 2026-04-11",
-    "Workflow templates v0.9.45 (#13353) - 2026-04-10",
-    "comfyui-frontend 1.42.10 (#13346) - 2026-04-10",
-    "supports_fp64 function (#13368) - 2026-04-12",
-    "SDPose/GrokVideoReferenceNode/brightness 修复"
+    "v0.19.0 (2026-04-13) - Tencent3D update (Partner Nodes)",
+    "v0.19.0 (2026-04-13) - CORE-15: Qwen3.5 文本生成模型支持",
+    "v0.19.0 (2026-04-13) - LTX2: 参考音频 ID-LoRA 支持",
+    "v0.19.0 (2026-04-13) - CURVE node 新节点",
+    "v0.19.0 (2026-04-13) - Number Convert node 新节点",
+    "v0.19.0 (2026-04-13) - [Trainer] FP8 backward 实验性支持",
+    "v0.19.0 (2026-04-13) - Qwen 8B TextGenerate node",
+    "v0.19.0 (2026-04-13) - RT-DETRv4 detection (CORE-13)",
+    "v0.19.0 (2026-04-13) - Ace Step 1.5 XL (CORE-39)"
   ],
   "recentCommitsSinceLastCheck": [
-    {"date": "2026-04-12", "commit": "#13369", "message": "Ernie Image model"},
-    {"date": "2026-04-12", "commit": "#13368", "message": "Add supports_fp64 function"},
-    {"date": "2026-04-11", "commit": "#13357", "message": "ImageUpscaleWithModel intermediate device/dtype"},
-    {"date": "2026-04-10", "commit": "#13353", "message": "Workflow templates v0.9.45"},
-    {"date": "2026-04-10", "commit": "#13346", "message": "comfyui-frontend 1.42.10"}
+    {"date": "2026-04-13", "version": "v0.19.0", "tag": "major_release"}
   ],
   "nodeEcosystem": {
     "ComfyUI-3D-Pack": {"lastCommit": "2025-11-17", "status": "stable"},
     "Hunyuan3D-2.1": {"status": "stable"},
     "TRELLIS": {"status": "hot"},
     "StableFast3D": {"status": "stable"},
-    "Tencent TextToModel/ImageToModel": {"status": "integrated_v0.18.0"},
-    "Ernie Image": {"status": "new_2026-04-12"}
+    "Tencent TextToModel/ImageToModel": {"status": "updated_v0.19.0"},
+    "Ernie Image": {"status": "integrated_v0.18.2"},
+    "Qwen3.5": {"status": "new_core-15_v0.19.0"},
+    "LTX2": {"status": "audio_ref_v0.19.0"}
   },
   "notificationSent": true
 }

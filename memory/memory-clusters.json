@@ -3,6 +3,7 @@
     "members": [
       "MEMORY.md",
       "USER.md",
+      "memory/2026-04-15.md",
       "memory/2026-04-07.md",
       "memory/migration-guide.md",
       "memory/comfyui-knowledge.md",
@@ -53,22 +54,23 @@
     ],
     "keywords": [
       "中国动力",
-      "股票",
       "买入",
-      "加仓",
-      "中国船舶",
-      "减仓",
-      "卖出",
-      "策略",
       "持仓",
-      "成本"
+      "成本",
+      "股票",
+      "策略",
+      "卖出",
+      "加仓",
+      "减仓",
+      "中国船舶"
     ],
-    "size": 731591
+    "size": 807932
   },
   "系统运维": {
     "members": [
       "MEMORY.md",
       "TOOLS.md",
+      "memory/2026-04-15.md",
       "memory/2026-04-07.md",
       "memory/migration-guide.md",
       "memory/comfyui-knowledge.md",
@@ -118,22 +120,23 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "磁盘",
-      "自愈",
       "修复",
-      "异常",
-      "错误",
-      "飞书",
       "超时",
+      "异常",
+      "磁盘",
       "gateway",
-      "cron"
+      "自愈",
+      "错误",
+      "cron",
+      "飞书"
     ],
-    "size": 725903
+    "size": 802178
   },
   "学习进化": {
     "members": [
       "MEMORY.md",
       "TOOLS.md",
+      "memory/2026-04-15.md",
       "memory/2026-04-07.md",
       "memory/migration-guide.md",
       "memory/2026-04-03.md",
@@ -177,15 +180,15 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "模式",
       "教训",
       "规则",
+      "最佳实践",
       "学习",
       "纠正",
       "进化",
-      "最佳实践"
+      "模式"
     ],
-    "size": 705873
+    "size": 782148
   },
   "家庭护理": {
     "members": [
@@ -202,20 +205,21 @@
       "memory/memory-index.json"
     ],
     "keywords": [
-      "喂养",
-      "护理",
-      "配偶",
-      "产后",
       "月子",
+      "宝宝",
+      "配偶",
+      "喂养",
       "疫苗",
-      "宝宝"
+      "护理",
+      "产后"
     ],
-    "size": 282424
+    "size": 284652
   },
   "AI工具": {
     "members": [
       "MEMORY.md",
       "USER.md",
+      "memory/2026-04-15.md",
       "memory/comfyui-knowledge.md",
       "memory/2026-03-22-comfyui-analysis.md",
       "memory/comfyui-ecosystem-monitor-2026-03-29.md",
@@ -243,22 +247,25 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "技能",
       "模型",
-      "大模型",
-      "自动化"
+      "技能",
+      "自动化",
+      "大模型"
     ],
-    "size": 500988
+    "size": 558796
   },
   "服务器": {
     "members": [
       "MEMORY.md",
       "TOOLS.md",
+      "memory/2026-04-15.md",
       "memory/migration-guide.md",
       "memory/heal-log.md",
       "memory/2026-03-26.md",
       "memory/2026-03-25.md",
       "memory/2026-04-04.md",
+      "memory/data-sources.md",
+      "memory/stock-knowledge.md",
       "memory/knowledge-gaps.md",
       "memory/2026-03-27.md",
       "memory/memory-clusters.json",
@@ -267,11 +274,11 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "mihomo",
-      "部署",
       "代理",
-      "端口"
+      "部署",
+      "端口",
+      "mihomo"
     ],
-    "size": 292087
+    "size": 429606
   }
 }
