@@ -78,3 +78,9 @@
   - ControlNet类型与应用场景（10种类型+3D辅助工作流）
   - AI视频工具精选矩阵（Runway/Sora/Pika/ComfyUI Video对比）
 - **学习产出**: 形成完整AI绘画知识体系，补充ComfyUI/即梦知识库的模型层空白
+
+## AI Art Master 专属技能（2026-04-16 新增）
+- **定位**: 3D模型师专属AI绘画/视频生成技能
+- **覆盖**: FLUX.1 + SDXL + 即梦 + Seedance + ComfyUI
+- **文件**: `workspace/skills/ai-art-master/SKILL.md`
+- **触发词**: AI绘画、AI视频、AI出图、FLUX提示词、概念设计等
