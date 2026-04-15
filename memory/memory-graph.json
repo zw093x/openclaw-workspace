@@ -441,6 +441,12 @@
       "file": "memory/2026-04-15.md"
     },
     {
+      "source": "ComfyUI",
+      "target": "OpenClaw",
+      "relation": "co_mentioned",
+      "file": "memory/2026-04-15.md"
+    },
+    {
       "source": "OpenClaw",
       "target": "云服务器",
       "relation": "co_mentioned",
@@ -517,12 +523,6 @@
       "target": "错误进化",
       "relation": "co_mentioned",
       "file": "memory/2026-04-07.md"
-    },
-    {
-      "source": "ComfyUI",
-      "target": "OpenClaw",
-      "relation": "co_mentioned",
-      "file": "memory/migration-guide.md"
     },
     {
       "source": "OpenClaw",
