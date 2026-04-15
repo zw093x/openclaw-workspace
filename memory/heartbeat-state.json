@@ -2,21 +2,19 @@
   "lastChecks": {
     "cron_health": "2026-04-14T08:33",
     "feishu_health": "OK",
-    "commodity": "2026-04-15T00:10",
+    "commodity": "2026-04-15T06:04",
     "elevated_fix": "2026-04-14T08:33",
-    "system_check": "2026-04-15T00:10"
+    "system_check": "2026-04-15T06:04"
   },
   "cronTaskStatus": {
     "ec59e68f_飘书连接健康检查": "OK (04-14 12:04成功恢复)",
     "a8d0f9e7_CG科技日报": "OK (04-14 12:30成功)",
-    "3273567b_深度学习时段": "error->fixed (elevated权限问题, 04-14 08:33修复)"
+    "3273567b_深度学习时段": "running_via_sessions_spawn_06:02"
   },
-  "lastHeartbeat": "2026-04-15T00:10",
+  "lastHeartbeat": "2026-04-15T06:04",
   "systemStatus": {
-    "silver_alert": "already_sent",
-    "deep_learn_task": "OK_enabled_next_01:30",
-    "oom_kills": "none_detected",
-    "openclaw_sigkill": "可能内存紧张,已避免",
-    "memory_mb_free": 699
+    "openclaw_exec_sigkill": "systemic_已知问题",
+    "deep_learn": "running (subagent deep-learn-0415)",
+    "silver": "no_new_alert"
   }
 }
