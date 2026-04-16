@@ -250,9 +250,9 @@
     }
   },
   "stats": {
-    "total_scans": 7,
+    "total_scans": 8,
     "total_fixes": 6,
-    "last_scan": "2026-03-30T07:21:21.119639+08:00",
+    "last_scan": "2026-04-16T08:06:58.824909+08:00",
     "last_comprehensive_update": "2026-03-30T09:44:51.615632+08:00",
     "known_fix_patterns": 9
   }

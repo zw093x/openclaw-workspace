@@ -1,68 +1,65 @@
 #!/usr/bin/env python3
 """
 A股盘前播报数据生成
-主源：mootdx（通达信）- 无需代理
-备源：腾讯行情（qt.gtimg.cn）
+- 主源：腾讯行情（qt.gtimg.cn）
+- 持仓从 holdings.json 读取（已清仓的不显示）
 """
 
 import sys
 import ssl
 import urllib.request
+import json
 from datetime import datetime
 
-# ── mootdx 主源 ──────────────────────────────────────────
-try:
-    from mootdx.quotes import Quotes
-    HAS_MOOTDX = True
-except ImportError:
-    HAS_MOOTDX = False
+# ── 配置 ──────────────────────────────────────────────
+HOLDINGS_FILE = '/root/.openclaw/workspace/config/holdings.json'
+INDICES = ['000001', '399001', '399006', '000300']
 
-# ── 腾讯备源 ───────────────────────────────────────────
+# ── 腾讯行情 ─────────────────────────────────────────
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-# ── 配置 ────────────────────────────────────────────────
-CODES = ['600150', '600482', '600703', '002841']
-INDICES = ['000001', '399001', '399006', '000300']
-NAMES = {
-    '600150': '中国船舶', '600482': '中国动力',
-    '600703': '三安光电',  '002841': '视源股份',
-    '000001': '上证指数',  '399001': '深证成指',
-    '399006': '创业板指',  '000300': '沪深300',
-}
-COSTS = {'600150': 0, '600482': 0, '600703': 0, '002841': 0}
 
+def load_holdings():
+    """从 holdings.json 读取持仓（含已清仓状态）"""
+    try:
+        with open(HOLDINGS_FILE) as f:
+            h = json.load(f)
+        holdings = h.get('holdings', [])
+        watching = h.get('watching', [])
+        notes = h.get('notes', '')
 
-def mootdx_fetch(symbols):
-    """用通达信(mootdx)拉行情"""
-    client = Quotes.factory(market='std', timeout=8)
-    results = {}
-    for sym in symbols:
-        try:
-            df = client.quotes(symbol=sym)
-            if df is not None and not df.empty:
-                row = df.iloc[0]
-                p = float(row.get('price', 0))
-                pc = float(row.get('last_close', 0))
-                chg = round((p - pc) / pc * 100, 2) if pc else 0
-                results[sym] = {'price': p, 'prev_close': pc, 'chg_pct': chg}
-                print(f"  ✅ mootdx {sym}: {p} ({chg:+.2f}%)", file=sys.stderr)
-            else:
-                print(f"  ❌ mootdx {sym}: 无数据", file=sys.stderr)
-        except Exception as e:
-            print(f"  ❌ mootdx {sym}: {e}", file=sys.stderr)
-    return results
+        # 有效持仓（shares > 0）
+        active = [x for x in holdings if x.get('shares', 0) > 0]
+
+        # watching 代码列表
+        watching_codes = [w['code'] for w in watching if w.get('code')]
+
+        return holdings, active, watching, watching_codes, notes
+    except Exception as e:
+        print(f"⚠️ 读取holdings.json失败: {e}", file=sys.stderr)
+        return [], [], [], [], ''
 
 
 def tencent_fetch(symbols):
-    """用腾讯行情拉行情（备源，无需代理）"""
+    """腾讯行情（无需代理）"""
     def _sym(s):
+        # 指数代码：000开头 → sh（上证），399开头 → sz（深证）
+        # 股票代码：6开头 → sh（上交所），0/3开头 → sz（深交所）
+        if s.startswith('000') or s.startswith('399'):
+            return ('sh' if s.startswith('000') else 'sz') + s
         return ('sh' if s.startswith('6') else 'sz') + s
+
     url = f'http://qt.gtimg.cn/q={",".join(_sym(s) for s in symbols)}'
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req, timeout=10, context=ctx) as r:
-        raw = r.read().decode('gbk')
+    try:
+        with urllib.request.urlopen(req, timeout=10, context=ctx) as r:
+            raw = r.read().decode('gbk')
+    except Exception as e:
+        print(f"❌ 腾讯行情请求失败: {e}", file=sys.stderr)
+        return {}
+
     results = {}
     for line in raw.strip().split('\n'):
         parts = line.split('~')
@@ -72,25 +69,28 @@ def tencent_fetch(symbols):
         sym = raw_sym[2:]  # 去掉 sh/sz 前缀
         try:
             price = float(parts[3]) if parts[3] else 0
-            prev = float(parts[4]) if parts[4] else 0
-            chg = float(parts[32]) if parts[32] else 0
+            prev  = float(parts[4]) if parts[4] else 0
+            chg   = float(parts[32]) if parts[32] else 0
             results[sym] = {'price': price, 'prev_close': prev, 'chg_pct': chg}
-            print(f"  ✅ tencent {sym}: {price} ({chg:+.2f}%)", file=sys.stderr)
-        except Exception as e:
-            print(f"  ❌ tencent {sym}: {e}", file=sys.stderr)
+        except Exception:
+            continue
     return results
 
 
-def make_report(data, dt_str):
+def make_report(data, dt_str, active, watching, watching_codes, notes):
     lines = []
     now = datetime.now().strftime('%Y-%m-%d %H:%M')
     lines.append(f"📊 A股盘前播报 | {dt_str}")
     lines.append("")
 
-    # 大盘指数
+    # ── 大盘指数 ─────────────────────────────────
     lines.append("【大盘】")
+    idx_names = {
+        '000001': '上证指数', '399001': '深证成指',
+        '399006': '创业板指', '000300': '沪深300',
+    }
     for idx in INDICES:
-        name = NAMES[idx]
+        name = idx_names.get(idx, idx)
         if idx in data and data[idx]['price'] > 0:
             d = data[idx]
             e = "📈" if d['chg_pct'] >= 0 else "📉"
@@ -99,19 +99,54 @@ def make_report(data, dt_str):
             lines.append(f"⚠️ {name} 数据获取失败")
     lines.append("")
 
-    # 持仓行情
-    lines.append("【持仓】")
-    for code in CODES:
-        name = NAMES[code]
-        if code in data and data[code]['price'] > 0:
-            d = data[code]
-            e = "📈" if d['chg_pct'] >= 0 else "📉"
-            lines.append(f"{e} {name}({code}) = {d['price']:.2f} ({d['chg_pct']:+.2f}%)")
-        else:
-            lines.append(f"⚠️ {name}({code}) 数据获取失败")
-    lines.append("")
+    # ── 有效持仓 ───────────────────────────────
+    if active:
+        lines.append("【持仓】")
+        # code → price 映射
+        price_map = {code: data[code] for code in data
+                     if code in [x['code'] for x in active]}
+        for h in active:
+            code = h['code']
+            name = h.get('name', code)
+            shares = h.get('shares', 0)
+            cost   = h.get('cost_price', 0)
+            if code in data and data[code]['price'] > 0:
+                d = data[code]
+                e = "📈" if d['chg_pct'] >= 0 else "📉"
+                unrealized = (d['price'] - cost) * shares if cost else 0
+                u_str = f"({unrealized:+,.0f})" if cost else ""
+                lines.append(f"{e} {name}({code}) × {shares}股 "
+                             f"现价{d['price']:.2f} ({d['chg_pct']:+.2f}%) {u_str}")
+            else:
+                lines.append(f"⚠️ {name}({code}) 数据获取失败")
+        lines.append("")
+    else:
+        lines.append("【持仓】✅ 已清仓")
+        lines.append("")
 
-    # 简评
+    # ── Watching ────────────────────────────────
+    if watching_codes:
+        # 过滤掉已经在持仓里的
+        held_codes = {h['code'] for h in active}
+        watch_display = [c for c in watching_codes if c not in held_codes]
+        if watch_display:
+            lines.append("【观察】")
+            for code in watch_display:
+                # 找name
+                name = code
+                for w in watching:
+                    if w.get('code') == code:
+                        name = w.get('name', code)
+                        break
+                if code in data and data[code]['price'] > 0:
+                    d = data[code]
+                    e = "📈" if d['chg_pct'] >= 0 else "📉"
+                    lines.append(f"{e} {name}({code}) = {d['price']:.2f} ({d['chg_pct']:+.2f}%)")
+                else:
+                    lines.append(f"⚠️ {name}({code}) 数据获取失败")
+            lines.append("")
+
+    # ── 市场简评 ────────────────────────────────
     lines.append("【参考】")
     if '000001' in data and data['000001']['price'] > 0:
         c = data['000001']['chg_pct']
@@ -134,24 +169,28 @@ if __name__ == '__main__':
     dt_str = datetime.now().strftime('%Y-%m-%d')
     print("=== A股盘前数据 ===", file=sys.stderr)
 
-    all_syms = INDICES + CODES
+    # 读持仓
+    holdings, active, watching, watching_codes, notes = load_holdings()
+    print(f"有效持仓: {[x['code'] for x in active]}", file=sys.stderr)
+    print(f"观察列表: {watching_codes}", file=sys.stderr)
 
-    # 主源：mootdx
-    data = mootdx_fetch(all_syms)
+    # 所有需要拉行情的代码
+    all_syms = INDICES + [h['code'] for h in holdings] + watching_codes
 
-    # 备源：腾讯（填充 mootdx 拿不到的数据）
-    if any(data.get(s, {}).get('price', 0) == 0 for s in all_syms):
-        print("\n→ mootdx 部分失败，切换腾讯备源...", file=sys.stderr)
-        tc = tencent_fetch(all_syms)
-        for sym, vals in tc.items():
-            if vals['price'] > 0 and data.get(sym, {}).get('price', 0) == 0:
-                data[sym] = vals
+    # 去重
+    all_syms = list(dict.fromkeys(all_syms))
 
-    if not data or all(v.get('price', 0) == 0 for v in data.values()):
-        print("❌ 所有数据源均失败", file=sys.stderr)
+    # 拉行情
+    data = tencent_fetch(all_syms)
+    print(f"成功获取: {list(data.keys())}", file=sys.stderr)
+
+    if not data:
+        print("❌ 数据获取失败", file=sys.stderr)
         sys.exit(1)
 
-    report = make_report(data, dt_str)
+    # 生成报告
+    report = make_report(data, dt_str, active, watching, watching_codes, notes)
+
     with open('/tmp/stock_premarket.txt', 'w', encoding='utf-8') as f:
         f.write(report)
 

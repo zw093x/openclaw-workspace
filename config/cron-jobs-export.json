@@ -6,7 +6,7 @@
       "description": "每30分钟扫描新增对话，追加重要内容到memory并推送Gitee",
       "enabled": true,
       "createdAtMs": 1775313189599,
-      "updatedAtMs": 1776274399882,
+      "updatedAtMs": 1776360917781,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -27,14 +27,14 @@
         "bestEffort": true
       },
       "state": {
-        "lastRunAtMs": 1776274390164,
+        "lastRunAtMs": 1776360907330,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9718,
+        "lastDurationMs": 10451,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "nextRunAtMs": 1776276190164
+        "nextRunAtMs": 1776362707330
       }
     },
     {
@@ -42,7 +42,7 @@
       "name": "每日早报",
       "enabled": true,
       "createdAtMs": 1774725719049,
-      "updatedAtMs": 1776209440185,
+      "updatedAtMs": 1776295837157,
       "schedule": {
         "kind": "cron",
         "expr": "30 7 * * *",
@@ -63,11 +63,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1776295800000,
-        "lastRunAtMs": 1776209400006,
+        "nextRunAtMs": 1776382200000,
+        "lastRunAtMs": 1776295800007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 40179,
+        "lastDurationMs": 37150,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -78,7 +78,7 @@
       "name": "AI综合日报",
       "enabled": true,
       "createdAtMs": 1774725719080,
-      "updatedAtMs": 1776211466053,
+      "updatedAtMs": 1776297709763,
       "schedule": {
         "expr": "0 8 * * *",
         "kind": "cron",
@@ -98,11 +98,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1776297600000,
-        "lastRunAtMs": 1776211200006,
+        "nextRunAtMs": 1776384000000,
+        "lastRunAtMs": 1776297600006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 266047,
+        "lastDurationMs": 109757,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -113,7 +113,7 @@
       "name": "🌍 全球热点新闻",
       "enabled": true,
       "createdAtMs": 1774854356046,
-      "updatedAtMs": 1776254474080,
+      "updatedAtMs": 1776340872894,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,20 * * *",
@@ -133,11 +133,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1776297600000,
-        "lastRunAtMs": 1776254400006,
+        "nextRunAtMs": 1776384000000,
+        "lastRunAtMs": 1776340800003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 74074,
+        "lastDurationMs": 72891,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -150,7 +150,7 @@
       "name": "AI行业新闻精选",
       "enabled": true,
       "createdAtMs": 1775843525125,
-      "updatedAtMs": 1776230748471,
+      "updatedAtMs": 1776301440942,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -170,14 +170,14 @@
         "to": "user:ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "lastRunAtMs": 1776230682361,
+        "lastRunAtMs": 1776301200004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 66110,
+        "lastDurationMs": 240938,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1776301200000
+        "nextRunAtMs": 1776387600000
       }
     },
     {
@@ -185,7 +185,7 @@
       "name": "每日开源项目推荐",
       "enabled": true,
       "createdAtMs": 1774725718797,
-      "updatedAtMs": 1776230902299,
+      "updatedAtMs": 1776304861959,
       "schedule": {
         "expr": "0 10 * * *",
         "kind": "cron",
@@ -204,14 +204,14 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "lastRunAtMs": 1776230748471,
+        "lastRunAtMs": 1776304800006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 153828,
+        "lastDurationMs": 61953,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true,
-        "nextRunAtMs": 1776304800000
+        "nextRunAtMs": 1776391200000
       }
     },
     {
@@ -219,7 +219,7 @@
       "name": "ComfyUI 变更监控",
       "enabled": true,
       "createdAtMs": 1774725718832,
-      "updatedAtMs": 1776230997049,
+      "updatedAtMs": 1776305073717,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -239,14 +239,14 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "lastRunAtMs": 1776230902299,
+        "lastRunAtMs": 1776304983061,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 94750,
+        "lastDurationMs": 90656,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "nextRunAtMs": 1776304983057
+        "nextRunAtMs": 1776391383057
       }
     },
     {
@@ -254,7 +254,7 @@
       "name": "技能自动更新",
       "enabled": true,
       "createdAtMs": 1774725719002,
-      "updatedAtMs": 1776268836366,
+      "updatedAtMs": 1776355339547,
       "schedule": {
         "kind": "cron",
         "expr": "0 */12 * * *",
@@ -275,11 +275,11 @@
         "to": "ou_a6469ccc2902a590994b6777b9c8ae8f"
       },
       "state": {
-        "nextRunAtMs": 1776312000000,
-        "lastRunAtMs": 1776268800005,
+        "nextRunAtMs": 1776398400000,
+        "lastRunAtMs": 1776355200006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 36361,
+        "lastDurationMs": 139541,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -290,7 +290,7 @@
       "name": "记忆进化",
       "enabled": true,
       "createdAtMs": 1775058791395,
-      "updatedAtMs": 1776263435869,
+      "updatedAtMs": 1776349845044,
       "schedule": {
         "kind": "cron",
         "expr": "30 22 * * *",
@@ -311,14 +311,14 @@
         "bestEffort": true
       },
       "state": {
-        "lastRunAtMs": 1776263400006,
+        "lastRunAtMs": 1776349800006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 35863,
+        "lastDurationMs": 45038,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "nextRunAtMs": 1776349800000
+        "nextRunAtMs": 1776436200000
       }
     },
     {

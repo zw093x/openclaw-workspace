@@ -1,0 +1,128 @@
+元宝 OpenClaw 插件自动修复报告（Doctor 模式）
+生成时间: 2026-04-16 12:30:03
+传入参数: --token ***:*** (appKey+appSecret)
+========================================
+
+╔══════════════════════════════════════════════════════════════╗
+║        🦞 元宝 OpenClaw 插件自动修复工具（Doctor）🦞        ║
+╚══════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. OpenClaw 安装状态  [12:30:03]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ OpenClaw 已安装：OpenClaw 2026.4.8 (9ece252)
+✓ OpenClaw gateway 正在运行 (PID: 1141872)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  2. 插件安装状态  [12:30:04]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  配置文件：/root/.openclaw/openclaw.json
+✓ 插件 'openclaw-plugin-yuanbao' 已在配置中
+✓ 插件目录存在：/root/.openclaw/extensions/openclaw-plugin-yuanbao
+✓ 插件入口文件存在：dist/index.js
+✓ 插件 manifest 存在：openclaw.plugin.json
+  Manifest 中的插件 ID：'openclaw-plugin-yuanbao'
+✓ 插件 ID 匹配
+  插件版本：2.7.2
+✓ 插件版本与环境匹配
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  3. 插件加载状态  [12:30:24]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ 插件已在 OpenClaw 中注册
+✓ 插件已启用
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  4. 所有 Channels 状态  [12:31:22]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  已配置的 channels：
+
+    [plugins] [adp-openclaw] Plugin register() called
+    [plugins] [adp-openclaw] Plugin registration complete
+    [plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+    [plugins] [lcm] Compaction summarization model: (unconfigured)
+    Config warnings:\n- plugins.entries.feishu: plugin disabled (disabled in config) but config is present
+    - plugins.entries.lossless-claw: plugin disabled (not in allowlist) but config is present
+    Config warnings:\n- plugins.entries.feishu: plugin disabled (disabled in config) but config is present
+    - plugins.entries.lossless-claw: plugin disabled (not in allowlist) but config is present
+    │
+    ◇  Config warnings ─────────────────────────────────────────────────────╮
+    │                                                                       │
+    │  - plugins.entries.feishu: plugin disabled (disabled in config) but   │
+    │    config is present                                                  │
+    │  - plugins.entries.lossless-claw: plugin disabled (not in allowlist)  │
+    │    but config is present                                              │
+    │                                                                       │
+    ├───────────────────────────────────────────────────────────────────────╯
+    Chat channels:
+    - LightClawBot default: configured, token=config, enabled
+    - Feishu default: configured, enabled
+    - 元宝 Bot default: not configured, enabled
+    
+    Auth providers (OAuth + API keys):
+    - minimax-portal:default (oauth)
+    
+    Usage:
+      MiniMax (Coding Plan · MiniMax-M*)
+        5h: 91% left · resets 2h 28m
+    
+    Docs: https://docs.openclaw.ai/gateway/configuration
+
+⚠ ⚠ 6 个 channel 未激活/已断开
+  \033[1;33m说明：\033[0m不显示凭证信息。下方仅检查元宝 channel 的配置详情。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  5. 元宝 Channel 配置  [12:31:52]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ 元宝 channel 配置已找到
+✗ appKey 未配置
+✗ appSecret 未配置
+⚠ 在 channels 状态中未找到元宝 channel
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  6. 网络连接性（仅元宝）  [12:32:40]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  检查 API 域名：bot.yuanbao.tencent.com
+✓ API 域名可达
+  检查 WebSocket 域名：bot-wss.yuanbao.tencent.com
+✓ WebSocket 域名可达（端口 443）
+  DNS 解析 bot.yuanbao.tencent.com:
+✓ DNS 解析成功
+    bot.yuanbao.tencent.com has address 43.140.152.251
+    bot.yuanbao.tencent.com has address 124.220.119.237
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  7. 最近的 Gateway 日志（元宝相关）  [12:32:40]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠ 日志文件未找到：[plugins] [adp-openclaw] Plugin register() called
+[plugins] [adp-openclaw] Plugin registration complete
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [lcm] Compaction summarization model: (unconfigured)
+/tmp/openclaw/openclaw-2026-04-16.log
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  8. 运行时状态输出（已知错误特征匹配）  [12:32:58]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠ [status 匹配] 插件已禁用
+  从运行时输出中额外识别到 1 个问题
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  诊断结果汇总
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  共发现 4 个问题：
+
+  [1] 插件已禁用
+       ⚠ 警告  |  来源：status 输出
+  [2] appKey 未配置
+       ✗ 阻断  |  来源：结构检查
+  [3] appSecret 未配置
+       ✗ 阻断  |  来源：结构检查
+  [4] 其他 Channel 断联或错误
+       ⚠ 警告  |  来源：结构检查
+
+开始修复
+
+✓ 配置已备份：/root/.openclaw/openclaw.json.yuanbao-20260416_123406.bak
+配置备份：/root/.openclaw/openclaw.json.yuanbao-20260416_123406.bak
+→ 修复：启用插件
