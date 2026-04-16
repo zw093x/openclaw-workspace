@@ -73,6 +73,13 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - **状态**: 已安装, 需配置 SecretId/SecretKey
 - **配置**: `tccli configure set`
 
+## Tushare Pro
+
+- **Token**: `bef931c637d474128c75d44e652686fd42f8da725f3979756ee7360c`（P工的Token，56位）
+- **积分**: 100（不足，财务类接口需要2000积分）
+- **Skill路径**: `/root/.openclaw/workspace/skills/tushare/`
+- **状态**: Token有效但积分不够，暂时不可用
+
 ## Proxy (mihomo)
 
 - **Status**: ✅ Running (systemd, enabled)
@@ -166,3 +173,11 @@ curl -s -X PATCH "https://open.feishu.cn/open-apis/drive/v1/permissions/{doc_id}
   - `turbo_score(q, kp, sketch, norm_res, S)` — 推断端打分
 - **适用场景**: KV Cache 压缩、注意力分数近似计算、d≤64 小维度效果最佳
 - **配置参考**: d=128 推荐 PolarQuant 3-bit（10.7x 压缩）或 TurboQuant m=256（6.4x 压缩，接近传统精度）
+
+
+## Tavily API (AI搜索)
+
+- **Key**: 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
+- **用途**: AI优化搜索，用于AI Art自主学习脚本
+- **状态**: 已配置
+

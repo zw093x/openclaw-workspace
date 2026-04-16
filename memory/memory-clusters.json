@@ -54,18 +54,18 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "卖出",
-      "中国动力",
-      "加仓",
-      "减仓",
       "策略",
-      "买入",
-      "成本",
-      "持仓",
       "中国船舶",
+      "中国动力",
+      "减仓",
+      "成本",
+      "买入",
+      "卖出",
+      "持仓",
+      "加仓",
       "股票"
     ],
-    "size": 836727
+    "size": 842374
   },
   "系统运维": {
     "members": [
@@ -103,6 +103,7 @@
       "memory/clawhub-skills-catalog.md",
       "memory/2026-04-14.md",
       "memory/memory-integration-plan.md",
+      "memory/2026-04-16.md",
       "memory/2026-03-30.md",
       "memory/2026-03-27.md",
       "memory/2026-04-01.md",
@@ -123,16 +124,16 @@
     ],
     "keywords": [
       "修复",
-      "gateway",
-      "飞书",
       "错误",
-      "异常",
-      "超时",
-      "cron",
       "磁盘",
+      "异常",
+      "飞书",
+      "cron",
+      "gateway",
+      "超时",
       "自愈"
     ],
-    "size": 830973
+    "size": 854817
   },
   "学习进化": {
     "members": [
@@ -157,6 +158,7 @@
       "memory/2026-04-04.md",
       "memory/2026-04-06.md",
       "memory/agentskills-deep-digest.md",
+      "memory/comfyui-learning-progress.md",
       "memory/stock-knowledge.md",
       "memory/2026-04-05.md",
       "memory/2026-03-30-review.md",
@@ -167,6 +169,7 @@
       "memory/memory-integration-plan.md",
       "memory/agentskills-spec-study.md",
       "memory/2026-03-22.md",
+      "memory/2026-04-16.md",
       "memory/2026-03-30.md",
       "memory/trade-journal.md",
       "memory/2026-03-27.md",
@@ -183,15 +186,15 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "模式",
-      "进化",
-      "教训",
-      "规则",
+      "纠正",
       "最佳实践",
+      "进化",
       "学习",
-      "纠正"
+      "教训",
+      "模式",
+      "规则"
     ],
-    "size": 810937
+    "size": 837269
   },
   "家庭护理": {
     "members": [
@@ -208,15 +211,15 @@
       "memory/memory-index.json"
     ],
     "keywords": [
+      "配偶",
+      "护理",
+      "宝宝",
       "喂养",
       "疫苗",
       "产后",
-      "配偶",
-      "月子",
-      "护理",
-      "宝宝"
+      "月子"
     ],
-    "size": 287735
+    "size": 290923
   },
   "AI工具": {
     "members": [
@@ -230,15 +233,18 @@
       "memory/heal-log.md",
       "memory/2026-04-13.md",
       "memory/2026-03-26.md",
+      "memory/ai-art-research.md",
       "memory/2026-04-08.md",
       "memory/2026-04-09.md",
       "memory/2026-03-25.md",
       "memory/2026-04-04.md",
       "memory/knowledge-ai.md",
       "memory/comfyui-openspec-learning-plan.md",
+      "memory/comfyui-learning-progress.md",
       "memory/2026-04-10.md",
       "memory/clawhub-skills-catalog.md",
       "memory/agentskills-spec-study.md",
+      "memory/2026-04-16.md",
       "memory/2026-03-27.md",
       "memory/AI绘画提示词万能框架深度研究报告.md",
       "memory/cron-jobs-live.json",
@@ -250,12 +256,12 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "自动化",
       "大模型",
+      "模型",
       "技能",
-      "模型"
+      "自动化"
     ],
-    "size": 571154
+    "size": 603927
   },
   "服务器": {
     "members": [
@@ -278,11 +284,11 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "mihomo",
-      "部署",
       "代理",
-      "端口"
+      "mihomo",
+      "端口",
+      "部署"
     ],
-    "size": 458395
+    "size": 462846
   }
 }

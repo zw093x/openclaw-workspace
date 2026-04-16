@@ -14,6 +14,12 @@
 - **所有推送飞书优先**（2026-04-02 确认）
 - **统一用卡片形式**（card_delivery.py）
 
+## AI角色定位（2026-04-16更新）
+- **角色**：资深金融证券研究人员（不再是"专属秘书"）
+- **专长**：金融/证券/投资领域信息搜索与整合
+- **风格**：心细、严谨、专业、易懂
+- **原则**：信息不足时明确说，不脑补，不过度推论
+
 ## P工核心行为准则（2026-04-02）
 1. **能做的先做** — 不踢皮球，直接给结论
 2. **记住说过的话** — 立即记录，不重复问
@@ -22,13 +28,11 @@
 5. **推送精简** — 单条<10行，一结论
 6. **举一反三** — 学一个能力，自动扩展所有相关场景
 
-## 股票持仓（2026-04-02）
+## 系统配置操作规范（2026-04-16）
+1. **配置重启确认制** — 任何涉及 openclaw.json 配置重启的操作，必须先确认，非必要不重启 gateway
+2. **热加载优先制** — 配置修改优先使用 hot reload 生效；确实需要重启 gateway 时，也必须先确认
 
-| 股票 | 代码 | 持仓 | 成本 | 策略 |
-|------|------|------|------|------|
-| 中国船舶 | 600150 | 3,000股 | 38.696 | 长期 |
-| 中国动力 | 600482 | 2,000股 | 34.389 | 长期 |
-| 三安光电 | 600703 | 500股 | 11.44 | 试探建仓 |
+## 股票持仓
 
 - 详细记录：`memory/stock-portfolio.md`
 - 知识库：`memory/stock-knowledge.md`
@@ -64,6 +68,10 @@
 - **进度文件**: `memory/comfyui-learning-progress.md`
 - **知识库**: `memory/comfyui-knowledge.md`
 - **教程**: `memory/comfyui-tutorial-guide.md`
+- **即梦AI提示词库**: `memory/jimeng-prompt-library.md`（1000+词，通用词库10类目）
+- **即梦AI精准词库**: `memory/jimeng-precision-library.md`（主体特征/核心动作/运镜/时长/画面比例）
+- **即梦AI提示词工程研究**: `memory/jimeng-prompt-engineering-research.md`（五大核心技巧：正负向控制/具象化/风格精准化/一致性/功能绑定）
+- **即梦AI三视图公式**: `memory/jimeng-threeview-formula.md`（角色生成公式：8模块+最优参数+避坑指南）
 - 关注：v0.17.0+异步架构、Tripo3D/Meshy 3D节点、AI→手动精修流水线
 
 ## 服务器信息
@@ -163,3 +171,17 @@
 ```
 
 **触发条件：** ≥3次同类错误 → 自动生成预防策略 → 下次自愈系统启动时加载
+
+## AI Art 自主学习系统（2026-04-16）
+
+### Tavily API（AI搜索）
+- **Key**: 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
+- **存储**: TOOLS.md
+- **用途**: AI Art 自主学习脚本，每周自动搜索最新资讯
+
+### 系统组件
+- **Cron**: 每周日 21:00（`ai-art-self-learn.py`）
+- **知识库**: `memory/ai-art-research.md`
+- **技能**: `skills/ai-art-master/SKILL.md`
+- **日志**: `memory/ai-art-self-learn.log`
+- **来源过滤**: A/B级优先，C级降权
