@@ -1,0 +1,10 @@
+{
+  "protocol_version": "1.0",
+  "last_validation": "2026-04-17T14:42:42.566243",
+  "authoritative_source": "/root/.openclaw/workspace/config/latest_holdings.json",
+  "rules": [
+    "所有股票分析必须先读取此文件",
+    "每次分析前必须向用户展示持仓摘要",
+    "文件数据与用户描述冲突时，以用户确认为准"
+  ]
+}

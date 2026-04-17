@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "last_validated": "2026-04-17T14:44:39.167395",
+    "data_source": "用户最新确认 2026-04-17",
+    "validated_by": "彭煜（用户直接确认）",
+    "cash_balance": 25400,
+    "currency": "CNY",
+    "protocol_version": "1.0"
+  },
+  "holdings": [
+    {
+      "name": "三安光电",
+      "code": "600703",
+      "shares": 1000,
+      "cost_price": 11.79,
+      "status": "holding",
+      "market": "sh"
+    },
+    {
+      "name": "北部湾港",
+      "code": "000582",
+      "shares": 1000,
+      "cost_price": 10.955,
+      "status": "holding",
+      "market": "sz"
+    },
+    {
+      "name": "中兵红箭",
+      "code": "000519",
+      "shares": 1500,
+      "cost_price": 19.218,
+      "status": "holding",
+      "market": "sz"
+    },
+    {
+      "name": "电投产融",
+      "code": "000958",
+      "shares": 2000,
+      "cost_price": 7.488,
+      "status": "holding",
+      "market": "sz"
+    }
+  ],
+  "notes": [
+    "电投产融策略：等待趋势明朗（放量突破或正式公告）再加仓",
+    "现金保留：25400元完整保留，趋势明朗时使用",
+    "交易原则：趋势优先，不抄底下降趋势（湘电教训）"
+  ]
+}

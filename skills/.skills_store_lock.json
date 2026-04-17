@@ -276,6 +276,36 @@
       "zip_url": "https://lightmake.site/api/v1/download?slug=weather",
       "source": "skillhub",
       "version": "1.0.0"
+    },
+    "akshare-stock": {
+      "name": "A股量化 AkShare",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=akshare-stock",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "market-analysis-cn": {
+      "name": "Market Analysis CN | 市场分析服务",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=market-analysis-cn",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "china-stock-analysis": {
+      "name": "China Stock Analysis",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=china-stock-analysis",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "stock-monitor-skill": {
+      "name": "Stock Monitor",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=stock-monitor-skill",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "self-improving": {
+      "name": "Self-Improving + Proactive Agent",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=self-improving",
+      "source": "skillhub",
+      "version": "1.2.16"
     }
   }
 }

@@ -119,7 +119,7 @@
     },
     "skill-vetter": {
       "version": "1.0.0",
-      "installedAt": 1775491262028
+      "installedAt": 1776435765398
     },
     "skill-vetting": {
       "version": "1.1.0",
@@ -168,6 +168,34 @@
     "tushare": {
       "version": "1.0.9",
       "installedAt": 1776204062724
+    },
+    "akshare-stock": {
+      "version": "1.0.1",
+      "installedAt": 1776435948627
+    },
+    "market-analysis-cn": {
+      "version": "1.0.0",
+      "installedAt": 1776435949184
+    },
+    "china-stock-analysis": {
+      "version": "1.0.0",
+      "installedAt": 1776435949709
+    },
+    "stock-monitor-skill": {
+      "version": "0.1.0",
+      "installedAt": 1776435950246
+    },
+    "stock-watcher": {
+      "version": "1.0.0",
+      "installedAt": 1776435950801
+    },
+    "self-improving-agent": {
+      "version": "1.0.11",
+      "installedAt": 1776435801032
+    },
+    "self-improving": {
+      "version": "1.2.16",
+      "installedAt": 1776435855790
     }
   }
 }

@@ -28,8 +28,8 @@ def load_holdings():
     friends = {}
 
     for item in data.get("holdings", []):
-        if item.get("status") == "sold" or item.get("shares", 0) == 0:
-            continue  # 跳过已清仓
+        if item.get("status") == "sold":
+            continue  # 只跳过已清仓，shares=0但status=holding仍需监控
         code = f"{item['market']}{item['code']}"
         holdings[code] = {
             "name": item["name"],
@@ -59,9 +59,32 @@ HOLDINGS, FRIEND = load_holdings()
 # 异动阈值
 ALERT_S1 = 3.0   # ±3%警告
 ALERT_S2 = 5.0   # ±5%紧急
-VOLUME_RATIO = 1.5  # 成交量>1.5倍均量触发
+VOLUME_RATIO = 1.5  # 成交量>1.5倍均量触发（放量）
+VOLUME_RATIO_LOW = 0.5  # 成交量<0.5倍均量触发（缩量）
 COOLDOWN_MINUTES = 60  # 同类型预警冷却时间（分钟）
 STATE_FILE = "/root/.openclaw/workspace/memory/alert-cooldown.json"
+
+# 大资金流向动态阈值（根据流通市值）
+def get_moneyflow_threshold(market_cap):
+    """根据流通市值获取大资金预警阈值（单位：万元）"""
+    if market_cap < 200:  # <200亿
+        return 1000
+    elif market_cap < 500:  # 200-500亿
+        return 2000
+    else:  # >500亿
+        return 3000
+
+# 判断价格位置相对于布林带
+def get_price_position(price, bb_mid, bb_upper):
+    """判断价格位置：低位/中位/高位"""
+    if bb_mid is None or bb_upper is None:
+        return "unknown"
+    if price < bb_mid:
+        return "低位"
+    elif price <= bb_upper:
+        return "中位"
+    else:
+        return "高位"
 
 # ====== 工具函数 ======
 def load_cooldown_state():
@@ -329,7 +352,9 @@ def check_alerts(quotes):
         if tech and tech.get("volume_ratio"):
             vol_r = tech["volume_ratio"]
             if vol_r >= VOLUME_RATIO:
-                alerts.append(f"📈量能异动 {name} 成交量比{vol_r}x（>{VOLUME_RATIO}x阈值）")
+                alerts.append(f"📈放量异动 {name} 成交量比{vol_r:.1f}x（>{VOLUME_RATIO}x阈值）")
+            elif vol_r < VOLUME_RATIO_LOW:
+                alerts.append(f"📉缩量异常 {name} 成交量比{vol_r:.1f}x（<{VOLUME_RATIO_LOW}x阈值），关注方向选择")
         
         # 7. RSI 超买超卖
         rsi = tech.get("rsi_14")
@@ -353,6 +378,8 @@ def check_alerts(quotes):
         divergence = tech.get("volume_divergence")
         if divergence == "bearish":
             alerts.append(f"⚠️量价背离 {name} 价涨量缩，趋势弱化信号")
+        elif divergence == "bullish":
+            alerts.append(f"🟢量价背离 {name} 价跌量增，底部背离信号，关注反弹机会")
         
         # 7. 盈亏状态（关注股成本可能为0，跳过盈亏分析）
         cost = config.get("cost", 0)
@@ -404,8 +431,34 @@ def check_alerts(quotes):
                     alerts.append(f"📉板块弱跑 {s['name']}跑输板块{abs(s['rs_vs_sector']):.1f}%，优先减仓此股")
             mf = analysis.get("money_flow", {})
             for code, info in mf.items():
-                if info.get("main_net", 0) < -3000:
-                    alerts.append(f"💸大资金流出 {info['name']}主力净流出{abs(info['main_net']):.0f}万，注意出货风险")
+                # 获取动态技术指标判断价格位置
+                tech = DYNAMIC_TECH.get(code, {}) or TECH_LEVELS.get(code, {})
+                bb_mid = tech.get("bb_mid")
+                bb_upper = tech.get("bb_upper")
+                price = None
+                if code in quotes:
+                    price = quotes[code]["price"]
+                position = get_price_position(price, bb_mid, bb_upper)
+                
+                # 获取流通市值，计算动态阈值
+                market_cap = info.get("market_cap", 600)  # 默认600亿
+                threshold = get_moneyflow_threshold(market_cap)
+                
+                main_net = info.get("main_net", 0)
+                # 大资金流入
+                if main_net > threshold:
+                    if position == "低位":
+                        alerts.append(f"🟢大资金吸筹 {info['name']} 主力净流入{main_net:.0f}万，位于{position}，关注机会")
+                    elif position == "高位":
+                        alerts.append(f"📈大资金拉升 {info['name']} 主力净流入{main_net:.0f}万，位于{position}，追高谨慎")
+                    else:
+                        alerts.append(f"📈大资金流入 {info['name']} 主力净流入{main_net:.0f}万，位于{position}")
+                # 大资金流出
+                elif main_net < -threshold:
+                    if position == "高位":
+                        alerts.append(f"💸大资金出货 {info['name']} 主力净流出{abs(main_net):.0f}万，位于{position}，警惕出货")
+                    else:
+                        alerts.append(f"⚠️大资金流出 {info['name']} 主力净流出{abs(main_net):.0f}万，位于{position}，持续观察")
     
     return alerts
 
