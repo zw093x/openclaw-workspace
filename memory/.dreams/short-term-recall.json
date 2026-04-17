@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-13T02:39:33.261Z",
+  "updatedAt": "2026-04-17T01:21:31.591Z",
   "entries": {
     "memory:memory/2026-03-30.md:164:180": {
       "key": "memory:memory/2026-03-30.md:164:180",
@@ -60,6 +60,96 @@
         "每日",
         "节气",
         "节日"
+      ]
+    },
+    "memory:memory/2026-04-15.md:3528:3552": {
+      "key": "memory:memory/2026-04-15.md:3528:3552",
+      "path": "memory/2026-04-15.md",
+      "startLine": 3528,
+      "endLine": 3552,
+      "source": "memory",
+      "snippet": "- **原因**: 切换 MiniMax 直连后，`MiniMax-M2.7` 纯文本模型不支持视觉，image 工具失败 - **解决**: 在 OpenClaw 配置里把图片模型改为 `openrouter/gpt-4o-mini`，重启 Gateway 生效 ### Hermes 系统修复 - **CardKit 400 错误**: 流式卡片 API 失败 → 配置 `feishu_streaming_card: enabled: false` 禁用 - **两个代码 bug**: `formatted`→`content`；`_get_tenant_access_token` 方法缺失 - **MiniMax 529**: 服务器端过载，客户端无法修复，只能等恢复 ### autoRecall 机制部署 - **执行**: 在 SOUL.md + AGENTS.md 添加「每次响应前先 memory_search 相关记忆」 - **同步**: 已同步到 Hermes SOUL.md - **效果**: 对话时自动带上下文，无需手动触发 ### 股票文件同步 Hermes - 已同步: MEMORY.md、stock-knowledge.md、stock-strategy-20260331.md、trade-journal.md、analysis-accuracy.json ### 叶老板 Mem0 方案评估 - **已写入**: memory/memory-integration-plan.md - **优先执行**: autoRecall（最大短板） - *",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.8975717287086743,
+      "maxScore": 0.8975717287086743,
+      "firstRecalledAt": "2026-04-17T01:21:31.591Z",
+      "lastRecalledAt": "2026-04-17T01:21:31.591Z",
+      "queryHashes": [
+        "f716839c278d"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "router",
+        "minimax-m2.7",
+        "openrouter/gpt-4o-mini",
+        "feishu-streaming-card",
+        "get-tenant-access-token",
+        "soul.md"
+      ]
+    },
+    "memory:memory/2026-04-15.md:2470:2524": {
+      "key": "memory:memory/2026-04-15.md:2470:2524",
+      "path": "memory/2026-04-15.md",
+      "startLine": 2470,
+      "endLine": 2524,
+      "source": "memory",
+      "snippet": "**08:30** System: [2026-04-15 08:30:23 GMT+8] Feishu[default] DM | 彭煜 (ou_a6469ccc2902a590994b6777b9c8ae8f) [msg:om_x100b52d98f20d0acb25b029cfd7cf83] ```json [消息] ``` ```json { \"label\": \"彭煜 (ou_a6469ccc2902a590994b6777b9c8ae8f)\", \"id\": \"ou_a6469ccc2902a590994b6777b9c8ae8f\", \"name\": \"彭煜\" } ``` 在服务器上安装 Hermes Agent **08:56** System: [2026-04-15 08:56:52 GMT+8] Feishu[default] DM | 彭煜 (ou_a6469ccc2902a590994b6777b9c8ae8f) [msg:om_x100b52da6bfbc080b3f6eedc1258c1f] ```json [消息] ``` ```json { \"label\": \"彭煜 (ou_a6469ccc2902a590994b6777b9c8ae8f)\", \"id\": \"ou_a6469ccc2902a590994b6777b9c8ae8f\", \"name\": \"彭煜\" } ``` 安装成功没有 **08:57** System (untrusted): [2026-04-15 08:57:11 GMT+8] Exec",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.8819787427472567,
+      "maxScore": 0.8819787427472567,
+      "firstRecalledAt": "2026-04-17T01:21:31.591Z",
+      "lastRecalledAt": "2026-04-17T01:21:31.591Z",
+      "queryHashes": [
+        "f716839c278d"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "system",
+        "gmt",
+        "feishu",
+        "消息",
+        "label",
+        "name",
+        "服务",
+        "安装"
+      ]
+    },
+    "memory:memory/2026-04-15.md:3033:3087": {
+      "key": "memory:memory/2026-04-15.md:3033:3087",
+      "path": "memory/2026-04-15.md",
+      "startLine": 3033,
+      "endLine": 3087,
+      "source": "memory",
+      "snippet": "**08:30** System: [2026-04-15 08:30:23 GMT+8] Feishu[default] DM | 彭煜 (ou_a6469ccc2902a590994b6777b9c8ae8f) [msg:om_x100b52d98f20d0acb25b029cfd7cf83] ```json [消息] ``` ```json { \"label\": \"彭煜 (ou_a6469ccc2902a590994b6777b9c8ae8f)\", \"id\": \"ou_a6469ccc2902a590994b6777b9c8ae8f\", \"name\": \"彭煜\" } ``` 在服务器上安装 Hermes Agent **08:56** System: [2026-04-15 08:56:52 GMT+8] Feishu[default] DM | 彭煜 (ou_a6469ccc2902a590994b6777b9c8ae8f) [msg:om_x100b52da6bfbc080b3f6eedc1258c1f] ```json [消息] ``` ```json { \"label\": \"彭煜 (ou_a6469ccc2902a590994b6777b9c8ae8f)\", \"id\": \"ou_a6469ccc2902a590994b6777b9c8ae8f\", \"name\": \"彭煜\" } ``` 安装成功没有 **08:57** System (untrusted): [2026-04-15 08:57:11 GMT+8] Exec",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.8819787427472567,
+      "maxScore": 0.8819787427472567,
+      "firstRecalledAt": "2026-04-17T01:21:31.591Z",
+      "lastRecalledAt": "2026-04-17T01:21:31.591Z",
+      "queryHashes": [
+        "f716839c278d"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "system",
+        "gmt",
+        "feishu",
+        "消息",
+        "label",
+        "name",
+        "服务",
+        "安装"
       ]
     }
   }
