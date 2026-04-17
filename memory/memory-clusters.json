@@ -55,17 +55,17 @@
     ],
     "keywords": [
       "策略",
-      "中国船舶",
-      "中国动力",
+      "股票",
       "减仓",
-      "成本",
-      "买入",
       "卖出",
-      "持仓",
+      "中国船舶",
+      "成本",
       "加仓",
-      "股票"
+      "中国动力",
+      "持仓",
+      "买入"
     ],
-    "size": 842374
+    "size": 843753
   },
   "系统运维": {
     "members": [
@@ -75,6 +75,7 @@
       "memory/2026-04-07.md",
       "memory/migration-guide.md",
       "memory/comfyui-knowledge.md",
+      "memory/2026-04-17.md",
       "memory/2026-04-03.md",
       "memory/heal-log.md",
       "memory/2026-04-02.md",
@@ -124,16 +125,16 @@
     ],
     "keywords": [
       "修复",
-      "错误",
-      "磁盘",
-      "异常",
       "飞书",
-      "cron",
-      "gateway",
+      "错误",
       "超时",
-      "自愈"
+      "cron",
+      "自愈",
+      "gateway",
+      "异常",
+      "磁盘"
     ],
-    "size": 854817
+    "size": 871744
   },
   "学习进化": {
     "members": [
@@ -186,15 +187,15 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
+      "学习",
+      "模式",
+      "规则",
+      "教训",
       "纠正",
       "最佳实践",
-      "进化",
-      "学习",
-      "教训",
-      "模式",
-      "规则"
+      "进化"
     ],
-    "size": 837269
+    "size": 840418
   },
   "家庭护理": {
     "members": [
@@ -211,15 +212,15 @@
       "memory/memory-index.json"
     ],
     "keywords": [
-      "配偶",
-      "护理",
       "宝宝",
-      "喂养",
       "疫苗",
+      "配偶",
+      "喂养",
       "产后",
+      "护理",
       "月子"
     ],
-    "size": 290923
+    "size": 292045
   },
   "AI工具": {
     "members": [
@@ -227,6 +228,7 @@
       "USER.md",
       "memory/2026-04-15.md",
       "memory/comfyui-knowledge.md",
+      "memory/2026-04-17.md",
       "memory/2026-03-22-comfyui-analysis.md",
       "memory/comfyui-ecosystem-monitor-2026-03-29.md",
       "memory/2026-04-03.md",
@@ -256,12 +258,12 @@
       ".learnings/ERRORS.md"
     ],
     "keywords": [
-      "大模型",
-      "模型",
       "技能",
-      "自动化"
+      "大模型",
+      "自动化",
+      "模型"
     ],
-    "size": 603927
+    "size": 620859
   },
   "服务器": {
     "members": [
@@ -285,10 +287,10 @@
     ],
     "keywords": [
       "代理",
-      "mihomo",
       "端口",
+      "mihomo",
       "部署"
     ],
-    "size": 462846
+    "size": 463968
   }
 }
